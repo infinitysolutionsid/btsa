@@ -1,0 +1,19 @@
+user-agent:*
+Disallow: /cgi-bin
+Disallow: /css/
+Disallow: /image/
+Disallow: /v2/
+Disallow: /admin/
+Disallow: /rs-plugin/
+Disallow: /.htaccess$
+Disallow: /js/
+Disallow: /socmed/
+Disallow: /fonts/
+Disallow: /icon/
+Disallow: /common-css/
+Disallow: /common-js/
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.inc$
+Disallow: /*.css$
+Disallow: /*.txt$
