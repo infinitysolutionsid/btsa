@@ -201,6 +201,9 @@ button {
    ========================================================================== */
 .page-wrapper {
     min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 body {
@@ -254,7 +257,7 @@ h6 {
 }
 
 .bg-dark {
-    background: #1a1a1a;
+    background: rgba(0, 0, 0, 0.65);
 }
 
 .bg-gra-01 {
@@ -724,4 +727,8 @@ textarea {
 .card-body i {
     font-size: 6px;
     color: red;
+}
+
+.form-check-label {
+    margin-left: 10px;
 }

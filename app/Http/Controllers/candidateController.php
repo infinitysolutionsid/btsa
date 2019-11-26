@@ -8,12 +8,18 @@ class candidateController extends Controller
 {
     public function index()
     {
-        return view('candidate.index');
+        $interviewer = \App\candidateDB::all();
+        return view('candidate.index', ['interviewer' => $interviewer]);
+    }
+    public function step2()
+    {
+        return view('candidate.form2');
     }
     public function proses(Request $request)
     {
 
         $interviewer = new \App\candidateDB();
+        $interviewer->candidate_id;
         $interviewer->appliedposition = $request->appliedposition;
         $interviewer->nama_lengkap = $request->nama_lengkap;
         $interviewer->nama_panggilan = $request->nama_panggilan;
@@ -34,11 +40,20 @@ class candidateController extends Controller
         $interviewer->noHp = $request->noHp;
         $interviewer->created_by = $request->getClientIp();
         $interviewer->updated_by = $request->getClientIp();
+        $interviewer->info_lowongan = $request->info_lowongan;
+        $interviewer->req_datein = $request->req_datein;
+        $interviewer->income = $request->income;
+
         if ($request->hasFile('profilephoto')) {
-            $request->file('profilephoto')->move('file/', $request->file('profilephoto')->getClientOriginalName());
+            $request->file('profilephoto')->move('file/img/', $request->file('profilephoto')->getClientOriginalName());
             $interviewer->profilephoto = $request->file('profilephoto')->getClientOriginalName();
         }
+        if ($request->hasFile('file_cv')) {
+            $request->file('file_cv')->move('file/doc/', $request->file('file_cv')->getClientOriginalName());
+            $interviewer->filecv = $request->file('file_cv')->getClientOriginalName();
+        }
+
         $interviewer->save();
-        // dd($interviewer);
+        return view('candidate.form2', ['$interviewer' => $interviewer]);
     }
 }

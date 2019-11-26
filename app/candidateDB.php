@@ -26,7 +26,12 @@ class candidateDB extends Model
         'alamatTinggal',
         'statusrumah',
         'email',
-        'noHp'
+        'noHp',
+        'filecv',
+        'info_lowongan',
+        'income',
+        'req_datein',
+        'fasilitas'
     ];
     public function getAvatar()
     {

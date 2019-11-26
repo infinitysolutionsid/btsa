@@ -35,6 +35,7 @@
                     <h2 class="title">Apply for job</h2>
                 </div>
                 <?php $tokens = str_random(60); ?>
+
                 <form action="/candidate/proses" method="post" enctype="multipart/form-data">
                     <div class="card-body">
                         {{ csrf_field() }}
@@ -80,14 +81,16 @@
                             <div class="form-group col-md-6">
                                 <label for="">Tanggal Lahir <i class="fas fa-star-of-life"></i></label>
                                 <input type="text" name="tanggal_lahir" class="datepicker-here form-control"
-                                    data-position="right top" data-language="en" required>
+                                    data-position="right top" data-language="en" required maxlength="10"
+                                    pattern=".{10,}">
+                                <small class="form-text text-muted">Format tanggal lahir: DD/MM/YYYY</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">No. KTP <i class="fas fa-star-of-life"></i></label>
                                 <input type="text" name="NoKtp" id="" class="form-control" maxlength="16" required
                                     pattern=".{16,}">
                                 <small class="form-text text-muted">Nomor KTP harus dimasukkan karena bersifat
-                                    wajib.</small>
+                                    wajib.<br>No.KTP biasanya mempunyai 16 digit angka.</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">No. SIM</label>
@@ -171,22 +174,51 @@
                                 <label for="">Email aktif <i class="fas fa-star-of-life"></i></label>
                                 <input type="text" name="email" id="" class="form-control" required
                                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                <small class="form-text text-muted">Format email: mail@mail.com</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">No. HP yang bisa dihubungi <i class="fas fa-star-of-life"></i></label>
                                 <input type="text" name="noHp" id="" class="form-control" required pattern=".{12,}">
+                                <small class="form-text text-muted">Format nomor HP: 0812********</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">Info Lowongan dari <i class="fas fa-star-of-life"></i></label>
+                                <select name="info_lowongan" class="custom-select mr-sm-2" required id="">
+                                    <option value="Media Sosial">Media Sosial</option>
+                                    <option value="Koran/Majalah/Media Cetak lainnya">Koran/Majalah/Media Cetak lainnya
+                                    </option>
+                                    <option value="Internet/Browsing">Internet/Browsing</option>
+                                    <option value="Teman/Keluarga/Pihak lain...">Teman/Keluarga/Pihak lain...</option>
+                                    <option value="Lain Lain">Lain Lain</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">Tanggal masuk kerja</label>
+                                <input type="text" name="req_datein" class="datepicker-here form-control"
+                                    data-position="right top" data-language="en" required maxlength="10"
+                                    pattern=".{10,}">
+                                <small class="form-text text-muted">Format tanggal masuk kerja: DD/MM/YYYY</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">Gaji yang diharapkan</label>
+                                <select name="income" id="" class="custom-select mr-sm-2" required>
+                                    <option selected>Choose...</option>
+                                    <option value=">Rp.1.000.000">>Rp.1.000.000</option>
+                                    <option value=">=Rp.2.000.000">>=Rp.2.000.000</option>
+                                    <option value=">=Rp.5.000.000">>=Rp.5.000.000</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="name">Upload CV</div>
                             <div class="value">
                                 <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="file_cv" id="file">
+                                    <input class="input-file" type="file" name="file_cv" id="file" required>
                                     <label class="label--file" for="file">Choose file</label>
                                     <span class="input-file__info">No file chosen</span>
                                 </div>
                                 <div class="label--desc">Upload your CV/Resume or any other relevant file. Max file size
-                                    50
+                                    2
                                     MB
                                 </div>
                             </div>

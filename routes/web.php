@@ -20,6 +20,7 @@ Route::get('/logout', 'AuthController@logout');
 Route::post('/member/registered', 'MemberController@registered');
 Route::get('/candidate', 'candidateController@index');
 Route::post('candidate/proses', 'candidateController@proses');
+Route::get('/step2', 'candidateController@step2');
 
 
 Route::group(['middleware' => ['auth']], function () {
