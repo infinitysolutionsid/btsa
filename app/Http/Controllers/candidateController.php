@@ -56,4 +56,9 @@ class candidateController extends Controller
         $interviewer->save();
         return view('candidate.form2', ['$interviewer' => $interviewer]);
     }
+    public function managements()
+    {
+        $candidate = \app\candidateDB::all();
+        return view('candidate.managements');
+    }
 }

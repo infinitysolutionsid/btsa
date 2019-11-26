@@ -87,3 +87,6 @@ Route::group(['middleware' => ['auth', 'roleCheck:legal,administrator']], functi
     // ROUTE CREATE NEW
     Route::post('/legal/addnew', 'ItemController@addnewitem');
 });
+Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function () {
+    route::get('/candidate/managements', 'candidateController@managements');
+});
