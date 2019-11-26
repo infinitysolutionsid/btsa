@@ -12,20 +12,9 @@ class candidateController extends Controller
     }
     public function proses(Request $request)
     {
-        // $this->validate($request, [
-        //     'file' => 'required|file|image|mimes:jpeg,png,jpg|max:500',
-        // ]);
 
         $interviewer = new \App\candidateDB();
-        // Menyimpan file yang diupload ke variabel $fileex
-        $fileex = $request->file('profilephoto');
-        $nama_file = time() . "_" . $fileex->getClientOriginalName();
-        // isi dengan nama folder tempat kemana file diupload
-        $folderprofil = 'data_file';
-        $fileex->move($folderprofil, $nama_file);
-
         $interviewer->appliedposition = $request->appliedposition;
-        $interviewer->profilephoto = $request->$nama_file;
         $interviewer->nama_lengkap = $request->nama_lengkap;
         $interviewer->nama_panggilan = $request->nama_panggilan;
         $interviewer->tempat_lahir = $request->tempat_lahir;
@@ -45,7 +34,11 @@ class candidateController extends Controller
         $interviewer->noHp = $request->noHp;
         $interviewer->created_by = $request->getClientIp();
         $interviewer->updated_by = $request->getClientIp();
-
-        dd($interviewer);
+        if ($request->hasFile('profilephoto')) {
+            $request->file('profilephoto')->move('file/', $request->file('profilephoto')->getClientOriginalName());
+            $interviewer->profilephoto = $request->file('profilephoto')->getClientOriginalName();
+        }
+        $interviewer->save();
+        // dd($interviewer);
     }
 }

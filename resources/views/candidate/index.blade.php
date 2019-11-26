@@ -35,7 +35,7 @@
                     <h2 class="title">Apply for job</h2>
                 </div>
                 <?php $tokens = str_random(60); ?>
-                <form action="/candidate/proses" method="post">
+                <form action="/candidate/proses" method="post" enctype="multipart/form-data">
                     <div class="card-body">
                         {{ csrf_field() }}
                         <div class="form-row">
@@ -84,7 +84,8 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">No. KTP <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" name="NoKtp" id="" class="form-control" required pattern=".{16,}">
+                                <input type="text" name="NoKtp" id="" class="form-control" maxlength="16" required
+                                    pattern=".{16,}">
                                 <small class="form-text text-muted">Nomor KTP harus dimasukkan karena bersifat
                                     wajib.</small>
                             </div>

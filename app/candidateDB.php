@@ -28,4 +28,11 @@ class candidateDB extends Model
         'email',
         'noHp'
     ];
+    public function getAvatar()
+    {
+        if (!$this->profilephoto) {
+            return asset('file/default.jpg');
+        }
+        return asset('file/' . $this->profilephoto);
+    }
 }
