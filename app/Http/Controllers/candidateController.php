@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use \App\candidateDB;
+
 use Illuminate\Http\Request;
 
 class candidateController extends Controller

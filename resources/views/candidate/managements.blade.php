@@ -17,21 +17,38 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Vessel Name</th>
+                        <th>Nama Pelamar</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Tempat Tanggal Lahir</th>
+                        <th>Suku - Agama</th>
+                        <th>No KTP</th>
+                        <th>No SIM</th>
+                        <th>No NPWP</th>
+                        <th>No BPJS</th>
+                        <th>Golongan Darah</th>
+                        <th>Anak ke</th>
+                        <th>Alamat KTP</th>
+                        <th>Alamat Tinggal</th>
+                        <th>Status rumah</th>
+                        <th>Info Lowongan</th>
+                        <th>Tanggal masuk kerja</th>
+                        <th>Gaji yang diharapkan</th>
+                        <th>Log IP</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @if(!$vessel_item->isEmpty())
+                    @if(!$candidate->isEmpty())
                     @php $no =1; @endphp
-                    @foreach($vessel_item as $vitem)
+                    @foreach($candidate as $cnd)
                     <tr>
                         <th scope="row">{{$no++}}</th>
-                        <td>{{$vitem->vessel}}</td>
-                        <td><a href="/vessel/{{$vitem->vessel_id}}/edit"><button
+                        <td>{{$cnd->vessel}}</td>
+                        <td><a href="/vessel/{{$cnd->candidate_id}}/edit"><button
                                     class="btn btn-rounded btn-warning">Edit</button></a> <a
-                                href="/vessel/{{$vitem->vessel_id}}/delete"><button
+                                href="/vessel/{{$cnd->candidate_id}}/delete"><button
                                     class="btn btn-rounded btn-danger">Delete</button></a></td>
                     </tr>
                     @endforeach
