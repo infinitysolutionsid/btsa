@@ -56,7 +56,7 @@ class candidateController extends Controller
         }
 
         $interviewer->save();
-        return view('candidate.form2', ['$interviewer' => $interviewer]);
+        return view('candidate.form2');
     }
     public function managements()
     {
