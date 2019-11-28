@@ -89,4 +89,6 @@ Route::group(['middleware' => ['auth', 'roleCheck:legal,administrator']], functi
 });
 Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function () {
     route::get('/candidate/managements', 'candidateController@managements');
+    Route::get('/candidate/managements/{candidate_id}/view', 'candidateController@viewcandidate');
+    Route::get('/candidate/managements/{candidate_id}/delete', 'candidateController@deletecandidate');
 });

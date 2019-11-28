@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use \App\candidateDB;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class candidateController extends Controller
 {
@@ -62,5 +63,18 @@ class candidateController extends Controller
     {
         $candidate = \App\candidateDB::all();
         return view('candidate.managements', ['candidate' => $candidate]);
+    }
+    public function deletecandidate($candidate_id)
+    {
+        $data_cnd = candidateDB::find($candidate_id);
+
+        if ($data_cnd) {
+            if ($data_cnd->delete()) {
+
+                DB::statement('ALTER TABLE candidate AUTO_INCREMENT = ' . (count(candidateDB::all()) + 1) . ';');
+
+                return back()->with('sukses', 'Candidate has been successfully deleted!');
+            }
+        }
     }
 }

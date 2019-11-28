@@ -19,7 +19,6 @@
                         <th>#</th>
                         <th>Nama Pelamar</th>
                         <th>Email</th>
-                        <th>Password</th>
                         <th>Tempat Tanggal Lahir</th>
                         <th>Suku - Agama</th>
                         {{-- <th>No KTP</th>
@@ -46,16 +45,23 @@
                     <tr>
                         <th scope="row">{{$no++}}</th>
                         <td>{{$cnd->nama_lengkap}}</td>
-                        <td><a href="/vessel/{{$cnd->candidate_id}}/view"><button
+                        <td>{{$cnd->email}}</td>
+                        <td>{{$cnd->tempat_lahir}}, {{$cnd->tanggal_lahir}}</td>
+                        <td>{{$cnd->suku}} - {{$cnd->agama}}</td>
+                        <td>{{$cnd->req_datein}}</td>
+                        <td>{{$cnd->income}}</td>
+                        <td>{{$cnd->created_by}}</td>
+                        <td><a href="/candidate/managements/{{$cnd->candidate_id}}/view"><button
                                     class="btn btn-rounded btn-success"><span style="font-size: 12px;">
                                         <i class="fas fa-eye"></i>
-                                    </span></button></a> <a href="/vessel/{{$cnd->candidate_id}}/delete"><button
+                                    </span></button></a> <a
+                                href="/candidate/managements/{{$cnd->candidate_id}}/delete"><button
                                     class="btn btn-rounded btn-danger"><span style="font-size: 12px;">
                                         <i class="fas fa-trash"></i></span></button></a></td>
                     </tr>
                     @endforeach
                     @else
-                    <td colspan="7" class="text-center">No data founded!</td>
+                    <td colspan="9" class="text-center">No data founded!</td>
 
                     @endif
                 </tbody>
