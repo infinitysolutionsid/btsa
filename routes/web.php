@@ -19,7 +19,7 @@ Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 Route::post('/member/registered', 'MemberController@registered');
 Route::get('/candidate', 'candidateController@index');
-Route::post('candidate/proses', 'candidateController@proses');
+Route::post('candidate/proses/{tokens}', 'candidateController@proses');
 Route::get('/step2', 'candidateController@step2');
 
 

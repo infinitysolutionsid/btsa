@@ -35,8 +35,7 @@
                     <h2 class="title">Apply for job</h2>
                 </div>
                 <?php $tokens = str_random(60); ?>
-
-                <form action="/candidate/proses" method="post" enctype="multipart/form-data">
+                <form action="/candidate/proses/{{$tokens}}" method="post" enctype="multipart/form-data">
                     <div class="card-body">
                         {{ csrf_field() }}
                         <div class="form-row">

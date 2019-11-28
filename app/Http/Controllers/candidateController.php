@@ -60,7 +60,7 @@ class candidateController extends Controller
     }
     public function managements()
     {
-        $candidate = \app\candidateDB::all();
-        return view('candidate.managements');
+        $candidate = \App\candidateDB::all();
+        return view('candidate.managements', ['candidate' => $candidate]);
     }
 }

@@ -732,3 +732,17 @@ textarea {
 .form-check-label {
     margin-left: 10px;
 }
+
+.v2 {
+    border-bottom: 0 !important;
+}
+
+.v2 i {
+    font-size: 30px;
+}
+
+.v2 hr {
+    margin-top: 1rem;
+    width: 100%;
+    border: 0.5px solid #000;
+}

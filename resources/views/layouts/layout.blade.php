@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>BTSA LOGISTICS SYSTEM</title>
-    <meta name="title" content="starwhisper.">
+    <meta name="title" content="BTSA LOGISTICS SYSTEM">
     <meta name="language" content="English">
     <meta name="author" content="Bintang Jeremia Tobing">
 
@@ -24,6 +24,7 @@
     <!-- Standard iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="{!! url ('http://placehold.it/57.png/000/fff')!!}">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"></script>
     <script type="text/javascript"
         src="{!!url('https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js')!!}">
     </script>
