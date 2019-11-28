@@ -62,7 +62,8 @@
                     <li><a href="/member"><i class="ti-user"></i> User Managements</a></li>
                     @endif
                     @if(auth()->user()->role =='administrator'||auth()->user()->role='hrd')
-                    <li><a href="/candidate/managements"><i class="ti-user"></i> Candidate Managements</a></li>
+                    <li><a href="/candidate/managements"><i class="ti-layout-grid2-alt"></i> Candidate Managements</a>
+                    </li>
                     @endif
                     @if(in_array(auth()->user()->role,['legal','administrator']))
                     <li><a href="/legal"><i class="ti-calendar"></i> Legality Documents</a></li>
