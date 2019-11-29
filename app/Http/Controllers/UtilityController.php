@@ -103,9 +103,9 @@ class UtilityController extends Controller
             }
         }
     }
-    public function deleteloker($lokerID)
+    public function deleteloker($loker_id)
     {
-        $dataloker = loker::find($lokerID);
+        $dataloker = loker::find($loker_id);
 
         if ($dataloker) {
             if ($dataloker->delete()) {
