@@ -57,14 +57,28 @@
                                 <input type="file" name="profilephoto" class="form-control" required>
                                 <small class="form-text text-muted">Foto profil harus diatur berukuran 3x4cm dengan
                                     ukuran
-                                    dibawah 300kb</small>
+                                    dibawah 400kb</small>
                             </div>
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-4">
+                                <label for="">Upload KTP <i class="fas fa-star-of-life"></i></label>
+                                <input type="file" name="ktpfile" class="form-control" required>
+                                <small class="form-text text-muted">Foto KTP harus diatur
+                                    dengan memiliki ukuran
+                                    dibawah 400kb</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">Upload SIM <i class="fas fa-star-of-life"></i></label>
+                                <input type="file" name="simfile" class="form-control" required>
+                                <small class="form-text text-muted">Foto SIM harus diatur
+                                    dengan memiliki ukuran
+                                    dibawah 400kb</small>
+                            </div>
+                            <div class="form-group col-md-6">
                                 <label for="">Nama Lengkap <i class="fas fa-star-of-life"></i></label>
                                 <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_lengkap"
                                     required>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
                                 <label for="">Nama Panggilan</label>
                                 <input type="text" name="nama_panggilan" id="" placeholder="Nama Panggilan"
                                     class="form-control">

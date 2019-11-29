@@ -31,13 +31,15 @@ class candidateDB extends Model
         'info_lowongan',
         'income',
         'req_datein',
-        'fasilitas'
+        'fasilitas',
+        'ktpfile',
+        'simfile'
     ];
     public function getAvatar()
     {
         if (!$this->profilephoto) {
             return asset('file/default.jpg');
         }
-        return asset('file/' . $this->profilephoto);
+        return asset('file/img' . $this->profilephoto);
     }
 }

@@ -61,9 +61,10 @@
                     @if(auth()->user()->role == 'administrator')
                     <li><a href="/member"><i class="ti-user"></i> User Managements</a></li>
                     @endif
-                    @if(auth()->user()->role =='administrator'||auth()->user()->role='hrd')
+                    @if(auth()->user()->role=='hrd'||auth()->user()->role='administrator')
                     <li><a href="/candidate/managements"><i class="ti-layout-grid2-alt"></i> Candidate Managements</a>
                     </li>
+                    <li><a href="/hrd"><i class="ti-layers-alt"></i> Utility Personalia</a></li>
                     @endif
                     @if(in_array(auth()->user()->role,['legal','administrator']))
                     <li><a href="/legal"><i class="ti-calendar"></i> Legality Documents</a></li>
@@ -170,6 +171,12 @@
     {{-- <script src="{!!asset('js/lib/data-table/dataTables.buttons.min.js')!!}"></script>
         <script src="{!!asset('js/lib/data-table/dataTables.min.js')!!}"></script>
         <script src="{!!asset('js/lib/data-table/datatables-init.js')!!}"></script> --}}
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+    </script>
     <script src="{!!asset('js/lib/jquery.min.js')!!}"></script>
     <script src="{!!asset('js/lib/jquery.nanoscroller.min.js')!!}"></script>
     <!-- nano scroller -->

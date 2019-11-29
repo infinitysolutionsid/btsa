@@ -55,6 +55,14 @@ class candidateController extends Controller
             $request->file('file_cv')->move('file/doc/', $request->file('file_cv')->getClientOriginalName());
             $interviewer->filecv = $request->file('file_cv')->getClientOriginalName();
         }
+        if ($request->hasFile('ktpfile')) {
+            $request->file('ktpfile')->move('file/doc/ktp', $request->file('ktpfile')->getClientOriginalName());
+            $interviewer->ktpfile = $request->file('ktpfile')->getClientOriginalName();
+        }
+        if ($request->hasFile('simfile')) {
+            $request->file('simfile')->move('file/doc/sim', $request->file('simfile')->getClientOriginalName());
+            $interviewer->simfile = $request->file('simfile')->getClientOriginalName();
+        }
 
         $interviewer->save();
         return view('candidate.form2');

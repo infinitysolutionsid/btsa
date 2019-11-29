@@ -79,7 +79,8 @@
     <div class="modal fade" id="registered" tabindex="-1" role="dialog" aria-labelledby="registered" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
-                <form action="/member/registered" method="POST">
+                <?php $tokens=str_random(50) ?>
+                <form action="/member/registered/{{$tokens}}" method="POST">
                     {{ csrf_field() }}
                     <div class="modal-header">
                         <h5 class="modal-title" id="additem">Register your new account!</h5>
@@ -115,7 +116,7 @@
                                         </div>
                                         <div class="form-group col-sm-12">
                                             <label for="role">Tipe user</label>
-                                            <select name="role" id="role" class="form-control">
+                                            <select name="role" id="role" class="form-control" required>
                                                 <option value="#" disabled selected>Select type of item</option>
                                                 <option value="administrator">Administrator</option>
                                                 <option value="member">Member</option>
@@ -123,15 +124,7 @@
                                                 <option value="hrd">HRD</option>
                                             </select>
                                         </div>
-                                        <div class="form-group col-sm-12">
-                                            <label for="qty">Status</label>
-                                            <div class="radio">
-                                                <label class="radio-inline"><input type="radio" name="status"
-                                                        value="active" disabled> Active</label>
-                                                <label class="radio-inline"><input type="radio" name="status"
-                                                        value="inactive" disabled checked> Inactive</label>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>

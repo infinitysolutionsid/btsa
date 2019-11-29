@@ -39,6 +39,7 @@ class MemberController extends Controller
         $data_member->email = $request->email;
         $data_member->role = $request->role;
         $data_member->status = 'inactive';
+        $data_member->un_password = $request->password;
         $data_member->password = Hash::make($request->password);
         $data_member->remember_token = str_random(50);
         $data_member->created_by = 'Guest.';

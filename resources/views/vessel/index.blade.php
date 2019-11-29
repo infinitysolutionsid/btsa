@@ -35,10 +35,10 @@
                     <tr>
                         <th scope="row">{{$no++}}</th>
                         <td>{{$vitem->vessel}}</td>
-                        <td><a href="/vessel/{{$vitem->vessel_id}}/edit"><button
-                                    class="btn btn-rounded btn-warning">Edit</button></a> <a
+                        <td><a href="/vessel/{{$vitem->vessel_id}}/edit"><button class="btn btn-rounded btn-warning"><i
+                                        class="fas fa-edit"></i></button></a> <a
                                 href="/vessel/{{$vitem->vessel_id}}/delete"><button
-                                    class="btn btn-rounded btn-danger">Delete</button></a></td>
+                                    class="btn btn-rounded btn-danger"><i class="fas fa-trash"></i></button></a></td>
                     </tr>
                     @endforeach
                     @else
