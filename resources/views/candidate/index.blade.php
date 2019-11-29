@@ -42,8 +42,10 @@
                             <label for="" class="my-1 mr-2">Posisi yang dilamar</label>
                             <select name="appliedposition" id="" class="custom-select my-1 mr-sm-2">
                                 <option selected>Choose...</option>
-                                <option value="IT">IT</option>
-                                <option value="HRD">HRD</option>
+                                @foreach ($loker as $lowongan)
+                                <option value="{{$lowongan->available_position}}">{{$lowongan->available_position}}
+                                </option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-row">
@@ -87,8 +89,9 @@
                                 <label for="">Tempat Lahir <i class="fas fa-star-of-life"></i></label>
                                 <select name="tempat_lahir" id="" class="custom-select mr-sm-2" required>
                                     <option selected>Choose...</option>
-                                    <option value="Medan">Medan</option>
-                                    <option value="Jakarta">Jakarta</option>
+                                    @foreach ($kota as $city)
+                                    <option value="{{$city->city_name}}">{{$city->city_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -131,15 +134,17 @@
                             <div class="form-group col-md-6">
                                 <label for="">Suku</label>
                                 <select name="suku" class="custom-select">
-                                    <option value="Batak">Batak</option>
-                                    <option value="Melayu">Melayu</option>
+                                    @foreach ($suku as $sukuid)
+                                    <option value="{{$sukuid->nama_suku}}">{{$sukuid->nama_suku}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Agama</label>
                                 <select name="agama" class="custom-select">
-                                    <option value="Kristen">Kristen</option>
-                                    <option value="Islam">Islam</option>
+                                    @foreach ($agama as $agm)
+                                    <option value="{{$agm->religion_name}}">{{$agm->religion_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group col-md-2">
