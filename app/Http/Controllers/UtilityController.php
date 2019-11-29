@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use \App\cityDB;
+use App\loker;
+use App\religionDB;
 use App\sukuDB;
 
 class UtilityController extends Controller
@@ -85,6 +87,32 @@ class UtilityController extends Controller
                 DB::statement('ALTER TABLE sukuIndonesia AUTO_INCREMENT = ' . (count(sukuDB::all()) + 1) . ';');
 
                 return back()->with('suksessuku', 'Suku berhasil dihapus');
+            }
+        }
+    }
+    public function deleteagama($religion_id)
+    {
+        $dataagama = religionDB::find($religion_id);
+
+        if ($dataagama) {
+            if ($dataagama->delete()) {
+
+                DB::statement('ALTER TABLE religion AUTO_INCREMENT = ' . (count(religionDB::all()) + 1) . ';');
+
+                return back()->with('suksesagama', 'Agama berhasil dihapus');
+            }
+        }
+    }
+    public function deleteloker($lokerID)
+    {
+        $dataloker = loker::find($lokerID);
+
+        if ($dataloker) {
+            if ($dataloker->delete()) {
+
+                DB::statement('ALTER TABLE loker AUTO_INCREMENT = ' . (count(loker::all()) + 1) . ';');
+
+                return back()->with('suksesloker', 'Loker berhasil dihapus');
             }
         }
     }
