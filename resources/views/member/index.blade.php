@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title','Member managements')
 @section('content')
 <div class="card">
     <div class="card-title">

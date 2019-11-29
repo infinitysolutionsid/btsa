@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title','Candidate managements')
 @section('content')
 <div class="card">
     <div class="card-title">
@@ -30,10 +31,11 @@
                     @if(!$candidate->isEmpty())
                     @php $no =1; @endphp
                     @foreach($candidate as $cnd)
-                    <tr data-toggle="collapse" data-target="#{{$cnd->candidate_id}}" class="accordion-toggle"
-                        aria-controls="{{$cnd->candidate_id}}">
+                    <tr>
                         <th scope="row"><span style="color:green;" data-toggle="tooltip" data-placement="top"
-                                title="Lihat data lengkap {{$cnd->nama_lengkap}}"><i class="fas fa-eye"></i></span>
+                                title="Lihat data lengkap {{$cnd->nama_lengkap}}"><i class="fas fa-eye"
+                                    data-toggle="collapse" data-target="#{{$cnd->candidate_id}}"
+                                    class="accordion-toggle" aria-controls="{{$cnd->candidate_id}}"></i></span>
                         </th>
                         <td>{{$cnd->appliedposition}}</td>
                         <td><strong>{{$cnd->nama_lengkap}}</strong></td>

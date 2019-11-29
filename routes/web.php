@@ -91,4 +91,17 @@ Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function
     route::get('/candidate/managements', 'candidateController@managements');
     Route::get('/candidate/managements/{candidate_id}/view', 'candidateController@viewcandidate');
     Route::get('/candidate/managements/{candidate_id}/delete', 'candidateController@deletecandidate');
+    Route::get('/hrd', 'UtilityController@index');
+
+    // ROUTE TAMBAH UTILITAS HRD
+    Route::post('/utility/kota/addnew', 'UtilityController@kotaaddnew');
+    Route::post('/utility/suku/addnew', 'UtilityController@sukuaddnew');
+    Route::post('/utility/agama/addnew', 'UtilityController@agamaaddnew');
+    Route::post('/utility/lowongan/addnew', 'UtilityController@lowonganaddnew');
+
+    // ROUTE DELETE UTILITAS HRD
+    Route::get('hrd/{city_id}{tokens}/delete', 'UtilityController@deletekota');
+    Route::get('hrd/{suku_id}{tokens}/delete', 'UtilityController@deletesuku');
+    Route::get('hrd/{religion_id}{tokens}/delete', 'UtilityController@deleteagama');
+    Route::get('hrd/{loker_id}{tokens}/delete', 'UtilityController@deleteloker');
 });

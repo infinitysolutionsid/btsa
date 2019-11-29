@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>BTSA LOGISTICS SYSTEM</title>
+    <title>@yield('title') | BTSA LOGISTICS SYSTEM</title>
     <meta name="title" content="BTSA LOGISTICS SYSTEM">
     <meta name="language" content="English">
     <meta name="author" content="Bintang Jeremia Tobing">
@@ -41,7 +41,8 @@
 <link href="{!! asset('css/lib/bootstrap.min.css')!!}" rel="stylesheet">
 {{-- <link href="{!!asset('css/lib/datatable/dataTables.bootstrap.min.css')!!}" rel="stylesheet" />
         <link href="{!!asset('css/lib/datatable/buttons.bootstrap.min.css')!!}" rel="stylesheet" /> --}}
-<link rel="stylesheet" type="text/css" href="{!!url('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css')!!}">
+<link rel="stylesheet" type="text/css"
+    href="{!!url('https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css')!!}">
 
 <link href="{!! asset('css/lib/helper.css')!!}" rel="stylesheet">
 <link href="{!! asset('css/style.css')!!}" rel="stylesheet">
@@ -137,7 +138,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">Home</li>
+                                    <li class="breadcrumb-item active">@yield('title')</li>
                                 </ol>
                             </div>
                         </div>
@@ -241,7 +242,7 @@
     <script src="{!!asset('js/lib/owl-carousel/owl.carousel-init.js')!!}"></script>
     <script src="{!!asset('js/scripts.js')!!}"></script>
     <script type="text/javascript" charset="utf8"
-        src="{!!url('https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js')!!}"></script>
+        src="{!!url('https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js')!!}"></script>
     <!-- scripit init-->
 
 </body>
