@@ -12,7 +12,11 @@ class candidateController extends Controller
     public function index()
     {
         $interviewer = \App\candidateDB::all();
-        return view('candidate.index', ['interviewer' => $interviewer]);
+        $kota = \App\cityDB::all();
+        $suku = \App\sukuDB::all();
+        $agama = \App\religionDB::all();
+        $loker = \App\loker::all();
+        return view('candidate.index', ['interviewer' => $interviewer, 'kota' => $kota, 'suku' => $suku, 'agama' => $agama, 'loker' => $loker]);
     }
     public function step2()
     {
