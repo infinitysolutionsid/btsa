@@ -6,10 +6,11 @@
 <html lang="id" id="home">
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>BTSA LOGISTICS PPJK | EMKL | EMKU</title>
     <link rel="shortcut icon"
         href="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico">
-    <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
         content="BTSA Logistics adalah Expedisi, EMKL, EMKU & Custom Clearance di Indonesia. Berada di Jakarta, Medan, Surabaya, Semarang, Palembang, Pekan Baru, Bali,  Makasar dan Lombok.">
@@ -89,28 +90,29 @@
                                     <h4 class="modal-title text-center">- CHOOSE YOUR LOGIN PAGE -</h4>
                                 </div>
                                 <div class="modal-body text-center row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6" style="margin-bottom:10px;">
                                         <a href="https://btsa.co.id/IR" target="_blank"><button type="button"
-                                                class="btn btn-danger" style="width:270px; height:60px;">ISSUE
-                                                REPORT<br>
+                                                class="btn btn-danger" style="width:270px; height:60px;">BTSA Issue
+                                                Report<br>
                                                 <font class="personalonly"><i>-For Company Only-</i></font>
                                             </button></a>
                                     </div>
                                     <div class="col-sm-6">
                                         <a href="https://btsa.co.id/comingsoon.html" target="_blank"><button
                                                 type="button" class="btn btn-custom"
-                                                style="width:270px; height:60px;">DATA CUSTOMER</button></a><br><br>
+                                                style="width:270px; height:60px;">Data Customer</button></a><br><br>
                                     </div>
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-6" style="margin-bottom:10px;">
                                         <a href="https://trello.com/login?returnUrl=%2Fb%2FzCkoX57j"
                                             target="_blank"><button type="button" class="btn btn-danger"
-                                                style="width:270px; height:60px;">DOKUMEN SURAT<br>
+                                                style="width:270px; height:60px;">Dokumen Surat<br>
                                                 <font class="personalonly"><i>-For Company Only-</i></font>
                                             </button></a>
                                     </div>
-                                    <div class="col-sm-12">
-                                        <a href="/" target="_blank"><button type="button" class="btn btn-danger"
-                                                style="width:270px; height:60px;">SYS<br>
+                                    <div class="col-sm-6">
+                                        <a href="/restricted" target="_blank"><button type="button"
+                                                class="btn btn-custom" style="width:270px; height:60px;">BTSA Restricted
+                                                Area<br>
                                                 <font class="personalonly"><i>-For Company Only-</i></font>
                                             </button></a>
                                     </div>
