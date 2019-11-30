@@ -2,6 +2,70 @@
 @section('title','HRD Utility Managements')
 @section('content')
 <?php $tokens = str_random(30) ?>
+{{-- Baris baru --}}
+<div class="row">
+    {{-- Lowongan tersedia --}}
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-title">
+                <h4>Lowongan tersedia</h4>
+                <a href="#tambahlowongan">
+                    <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right"
+                        data-toggle="modal" data-target="#tambahlowongan">
+                        <span class="ti-plus"></span> Lowongan tersedia
+                    </button>
+                </a>
+            </div>
+            <div class="card-body">
+                @if (session('suksesloker'))
+                <div class="alert alert-success alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <strong>Successfull!</strong> {{session('sukses')}}
+                </div>
+                @endif
+                <div class="table-responsive">
+                    <table id="lowonganTab" class="table table-hover ">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Posisi lowongan</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @if(!$lowongan->isEmpty())
+                            @php $no =1; @endphp
+                            @foreach($lowongan as $loker)
+                            <tr>
+                                <th scope="row">{{$no++}}</th>
+                                <td>{{$loker->available_position}}</td>
+                                <td>
+                                    <a href="/hrd/{{$loker->loker_id}}/delete/deletedatalowongan"><button
+                                            class="btn btn-rounded btn-danger"><i class="fas fa-trash"></i></button></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                            @else
+                            <td colspan="7" class="text-center">No data founded!</td>
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#lowonganTab').DataTable(
+                searching: false,
+            );
+        });
+
+    </script>
+</div>
+{{-- BARIS BARU UNTUK SUKU DLL --}}
 <div class="row">
     {{-- KOTA MANAGEMENTS --}}
     <div class="col-lg-4">
@@ -161,7 +225,7 @@
                                 <th scope="row">{{$no++}}</th>
                                 <td>{{$religion->religion_name}}</td>
                                 <td>
-                                    <a href="/hrd/{{$religion->religion_id}}/delete/deletedataagama"><button
+                                    <a href="/hrd/{{$religion->religion_id}}/deletedataagama"><button
                                             class="btn btn-rounded btn-danger"><i class="fas fa-trash"></i></button></a>
                                 </td>
                             </tr>
@@ -184,69 +248,7 @@
 
     </script>
 </div>
-{{-- Baris baru --}}
-<div class="row">
-    {{-- Lowongan tersedia --}}
-    <div class="col-lg-6">
-        <div class="card">
-            <div class="card-title">
-                <h4>Lowongan tersedia</h4>
-                <a href="#tambahlowongan">
-                    <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right"
-                        data-toggle="modal" data-target="#tambahlowongan">
-                        <span class="ti-plus"></span> Lowongan tersedia
-                    </button>
-                </a>
-            </div>
-            <div class="card-body">
-                @if (session('suksesloker'))
-                <div class="alert alert-success alert-dismissible fade show">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <strong>Successfull!</strong> {{session('sukses')}}
-                </div>
-                @endif
-                <div class="table-responsive">
-                    <table id="lowonganTab" class="table table-hover ">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Posisi lowongan</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
 
-                            @if(!$lowongan->isEmpty())
-                            @php $no =1; @endphp
-                            @foreach($lowongan as $loker)
-                            <tr>
-                                <th scope="row">{{$no++}}</th>
-                                <td>{{$loker->available_position}}</td>
-                                <td>
-                                    <a href="/hrd/{{$loker->loker_id}}/delete/deletedatalowongan"><button
-                                            class="btn btn-rounded btn-danger"><i class="fas fa-trash"></i></button></a>
-                                </td>
-                            </tr>
-                            @endforeach
-                            @else
-                            <td colspan="7" class="text-center">No data founded!</td>
-                            @endif
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        $(document).ready(function () {
-            $('#lowonganTab').DataTable(
-                searching: false,
-            );
-        });
-
-    </script>
-</div>
 {{-- BARIS UNTUK MODAL TIAP TIAP MODUL --}}
 <!-- Modal tambah kota -->
 <div class="modal fade" id="tambahkota" tabindex="-1" role="dialog" aria-labelledby="tambahkota" aria-hidden="true">
