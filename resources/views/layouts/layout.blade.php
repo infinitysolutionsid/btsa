@@ -100,13 +100,8 @@
                                 <div class="drop-down dropdown-profile">
                                     <div class="dropdown-content-body">
                                         <ul>
-                                            <li><a href="#"><i class="ti-user"></i> <span>Profile</span></a></li>
-
-                                            <li><a href="#"><i class="ti-email"></i> <span>Inbox</span></a></li>
                                             <li><a href="/member/{{auth()->user()->id}}/edit"><i
                                                         class="ti-settings"></i> <span>Setting</span></a></li>
-
-                                            <li><a href="#"><i class="ti-lock"></i> <span>Lock Screen</span></a></li>
                                             <li><a href="/logout"><i class="ti-power-off"></i> <span>Logout</span></a>
                                             </li>
                                         </ul>
