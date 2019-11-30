@@ -41,11 +41,15 @@
                         <div class="form-row">
                             <label for="" class="my-1 mr-2">Posisi yang dilamar</label>
                             <select name="appliedposition" id="" class="custom-select my-1 mr-sm-2">
-                                <option selected>Choose...</option>
+                                <option selected>Pilih salah satu...</option>
+                                @if(count($loker)===1)
                                 @foreach ($loker as $lowongan)
                                 <option value="{{$lowongan->available_position}}">{{$lowongan->available_position}}
                                 </option>
                                 @endforeach
+                                @else
+                                <option disabled>Empty records</option>
+                                @endif
                             </select>
                         </div>
                         <div class="form-row">
@@ -88,10 +92,14 @@
                             <div class="form-group col-md-6">
                                 <label for="">Tempat Lahir <i class="fas fa-star-of-life"></i></label>
                                 <select name="tempat_lahir" id="" class="custom-select mr-sm-2" required>
-                                    <option selected>Choose...</option>
+                                    <option selected>Pilih salah satu...</option>
+                                    @if(count($kota)===1)
                                     @foreach ($kota as $city)
                                     <option value="{{$city->city_name}}">{{$city->city_name}}</option>
                                     @endforeach
+                                    @else
+                                    <option disabled>Empty Records...</option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -134,17 +142,25 @@
                             <div class="form-group col-md-6">
                                 <label for="">Suku</label>
                                 <select name="suku" class="custom-select">
+                                    @if(count($suku)===1)
                                     @foreach ($suku as $sukuid)
                                     <option value="{{$sukuid->nama_suku}}">{{$sukuid->nama_suku}}</option>
                                     @endforeach
+                                    @else
+                                    <option disabled>Empty Records...</option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Agama</label>
                                 <select name="agama" class="custom-select">
+                                    @if(count($agama)===1)
                                     @foreach ($agama as $agm)
                                     <option value="{{$agm->religion_name}}">{{$agm->religion_name}}</option>
                                     @endforeach
+                                    @else
+                                    <option disabled>Empty Records...</option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="form-group col-md-2">
@@ -220,7 +236,7 @@
                             <div class="form-group col-md-4">
                                 <label for="">Gaji yang diharapkan</label>
                                 <select name="income" id="" class="custom-select mr-sm-2" required>
-                                    <option selected>Choose...</option>
+                                    <option selected>Pilih salah satu...</option>
                                     <option value=">Rp.1.000.000">>Rp.1.000.000</option>
                                     <option value=">=Rp.2.000.000">>=Rp.2.000.000</option>
                                     <option value=">=Rp.5.000.000">>=Rp.5.000.000</option>

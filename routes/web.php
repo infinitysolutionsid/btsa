@@ -100,8 +100,8 @@ Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function
     Route::post('/utility/lowongan/addnew', 'UtilityController@lowonganaddnew');
 
     // ROUTE DELETE UTILITAS HRD
-    Route::get('hrd/{city_id}{tokens}/delete', 'UtilityController@deletekota');
-    Route::get('hrd/{suku_id}{tokens}/delete', 'UtilityController@deletesuku');
-    Route::get('hrd/{religion_id}{tokens}/delete', 'UtilityController@deleteagama');
-    Route::get('hrd/{loker_id}{tokens}/delete', 'UtilityController@deleteloker');
+    Route::get('hrd/{city_id}/delete/deletedatakota', 'UtilityController@deletekota');
+    Route::get('hrd/{nama_suku}/delete/deletedatasuku', 'UtilityController@deletesuku');
+    Route::get('hrd/{religion_id}/delete/deletedataagama', 'UtilityController@hapusagama');
+    Route::get('hrd/{loker_id}/delete/deletedatalowongan', 'UtilityController@deleteloker');
 });

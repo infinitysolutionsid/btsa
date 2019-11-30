@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use \App\cityDB;
-use App\loker;
-use App\religionDB;
-use App\sukuDB;
+use \App\loker;
+use \App\religionDB;
+use \App\sukuDB;
 
 class UtilityController extends Controller
 {
@@ -77,9 +77,9 @@ class UtilityController extends Controller
             }
         }
     }
-    public function deletesuku($suku_id)
+    public function deletesuku($nama_suku)
     {
-        $datasuku = sukuDB::find($suku_id);
+        $datasuku = sukuDB::find($nama_suku);
 
         if ($datasuku) {
             if ($datasuku->delete()) {
@@ -90,7 +90,7 @@ class UtilityController extends Controller
             }
         }
     }
-    public function deleteagama($religion_id)
+    public function hapusagama($religion_id)
     {
         $dataagama = religionDB::find($religion_id);
 

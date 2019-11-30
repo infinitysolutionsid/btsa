@@ -40,9 +40,8 @@
                             <tr>
                                 <th scope="row">{{$no++}}</th>
                                 <td>{{$kota->city_name}}</td>
-                                <td><a href="/hrd/{{$kota->city_id}}/edit"><button
-                                            class="btn btn-rounded btn-warning"><i class="fas fa-edit"></i></button></a>
-                                    <a href="/hrd/{{$kota->city_id}}{{$tokens}}/delete"><button
+                                <td>
+                                    <a href="/hrd/{{$kota->city_id}}/delete/deletedatakota"><button
                                             class="btn btn-rounded btn-danger"><i class="fas fa-trash"></i></button></a>
                                 </td>
                             </tr>
@@ -101,9 +100,8 @@
                             <tr>
                                 <th scope="row">{{$no++}}</th>
                                 <td>{{$sukuID->nama_suku}}</td>
-                                <td><a href="/hrd/{{$sukuID->suku_id}}/edit"><button
-                                            class="btn btn-rounded btn-warning"><i class="fas fa-edit"></i></button></a>
-                                    <a href="/hrd/{{$sukuID->suku_id}}{{$tokens}}/delete"><button
+                                <td>
+                                    <a href="/hrd/{{$sukuID->suku_id}}/delete/deletedatasuku"><button
                                             class="btn btn-rounded btn-danger"><i class="fas fa-trash"></i></button></a>
                                 </td>
                             </tr>
@@ -162,9 +160,8 @@
                             <tr>
                                 <th scope="row">{{$no++}}</th>
                                 <td>{{$religion->religion_name}}</td>
-                                <td><a href="/hrd/{{$religion->religion_id}}/edit"><button
-                                            class="btn btn-rounded btn-warning"><i class="fas fa-edit"></i></button></a>
-                                    <a href="/hrd/{{$religion->religion_id}}{{$tokens}}/delete"><button
+                                <td>
+                                    <a href="/hrd/{{$religion->religion_id}}/delete/deletedataagama"><button
                                             class="btn btn-rounded btn-danger"><i class="fas fa-trash"></i></button></a>
                                 </td>
                             </tr>
@@ -226,9 +223,8 @@
                             <tr>
                                 <th scope="row">{{$no++}}</th>
                                 <td>{{$loker->available_position}}</td>
-                                <td><a href="/hrd/{{$loker->loker_id}}/edit"><button
-                                            class="btn btn-rounded btn-warning"><i class="fas fa-edit"></i></button></a>
-                                    <a href="/hrd/{{$loker->loker_id}}{{$tokens}}/delete"><button
+                                <td>
+                                    <a href="/hrd/{{$loker->loker_id}}/delete/deletedatalowongan"><button
                                             class="btn btn-rounded btn-danger"><i class="fas fa-trash"></i></button></a>
                                 </td>
                             </tr>
