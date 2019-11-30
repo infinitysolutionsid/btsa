@@ -42,7 +42,7 @@
                             <label for="" class="my-1 mr-2">Posisi yang dilamar</label>
                             <select name="appliedposition" id="" class="custom-select my-1 mr-sm-2">
                                 <option selected>Pilih salah satu...</option>
-                                @if(count($loker)===1)
+                                @if(count($loker)>0)
                                 @foreach ($loker as $lowongan)
                                 <option value="{{$lowongan->available_position}}">{{$lowongan->available_position}}
                                 </option>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Upload SIM <i class="fas fa-star-of-life"></i></label>
-                                <input type="file" name="simfile" class="form-control" required>
+                                <input type="file" name="simfile" class="form-control">
                                 <small class="form-text text-muted">Foto SIM harus diatur
                                     dengan memiliki ukuran
                                     dibawah 400kb</small>
@@ -93,12 +93,13 @@
                                 <label for="">Tempat Lahir <i class="fas fa-star-of-life"></i></label>
                                 <select name="tempat_lahir" id="" class="custom-select mr-sm-2" required>
                                     <option selected>Pilih salah satu...</option>
-                                    @if(count($kota)===1)
+                                    @if(count($kota)>0)
                                     @foreach ($kota as $city)
-                                    <option value="{{$city->city_name}}">{{$city->city_name}}</option>
+                                    <option value="{{$city->city_name}}">{{$city->city_name}}
+                                    </option>
                                     @endforeach
                                     @else
-                                    <option disabled>Empty Records...</option>
+                                    <option disabled>Empty records</option>
                                     @endif
                                 </select>
                             </div>
@@ -142,24 +143,26 @@
                             <div class="form-group col-md-6">
                                 <label for="">Suku</label>
                                 <select name="suku" class="custom-select">
-                                    @if(count($suku)===1)
+                                    @if(count($suku)>0)
                                     @foreach ($suku as $sukuid)
-                                    <option value="{{$sukuid->nama_suku}}">{{$sukuid->nama_suku}}</option>
+                                    <option value="{{$sukuid->nama_suku}}">{{$sukuid->nama_suku}}
+                                    </option>
                                     @endforeach
                                     @else
-                                    <option disabled>Empty Records...</option>
+                                    <option disabled>Empty records</option>
                                     @endif
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Agama</label>
                                 <select name="agama" class="custom-select">
-                                    @if(count($agama)===1)
+                                    @if(count($agama)>0)
                                     @foreach ($agama as $agm)
-                                    <option value="{{$agm->religion_name}}">{{$agm->religion_name}}</option>
+                                    <option value="{{$agm->religion_name}}">{{$agm->religion_name}}
+                                    </option>
                                     @endforeach
                                     @else
-                                    <option disabled>Empty Records...</option>
+                                    <option disabled>Empty records</option>
                                     @endif
                                 </select>
                             </div>
