@@ -39,7 +39,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+{{-- <div class="row">
     <div class="col-lg-5">
         <div class="card">
             <div class="testimonial-widget-one p-17">
@@ -52,14 +52,14 @@
                                 minim veniam, quis
                                 nostrud exercitation <i class="fa fa-quote-right"></i>
                             </div>
-                            <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
-                            <div class="testimonial-author">TYRION LANNISTER</div>
-                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                            <img class="testimonial-author-img" src="{{asset('file/default.jpg')}}" alt="" />
+<div class="testimonial-author">TYRION LANNISTER</div>
+<div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> --}}
 @endsection
