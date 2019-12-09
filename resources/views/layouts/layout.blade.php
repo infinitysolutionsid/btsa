@@ -62,26 +62,33 @@
                     @if(auth()->user()->role == 'administrator')
                     <li><a href="/member"><i class="ti-user"></i> User Managements</a></li>
                     @endif
-                    @if(auth()->user()->role=='hrd'||auth()->user()->role='administrator')
-                    <li><a href="/candidate/managements"><i class="ti-layout-grid2-alt"></i> Candidate Managements</a>
+                    @if(auth()->user()->role=='hrd' && auth()->user()->role='administrator')
+                    <li><a href="/candidate/managements"><i class="ti-layout-grid2-alt"></i> Candidate</a>
                     </li>
                     <li><a href="/hrd"><i class="ti-layers-alt"></i> Utility Personalia</a></li>
                     @endif
                     <li><a class="sidebar-sub-toggle"><i class="ti-envelope"></i> Issue Reports <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
+                            @if(auth()->user()->role=='user')
                             <li><a href="/queue">Queue</a></li>
+                            @endif
+                            @if(auth()->user()->role=='it')
                             <li><a href="/itCheck">IT Checked</a></li>
+                            @endif
+                            @if(auth()->user()->role=='head')
                             <li><a href="/headCheck">Head Checked</a></li>
+                            @endif
+
                         </ul>
                     </li>
-                    @if(auth()->user()->role=='legal'||auth()->user()->role='administrator')
+                    @if(auth()->user()->role=='legal' && auth()->user()->role='administrator')
                     <li><a href="/legal"><i class="ti-calendar"></i> Legality Documents</a></li>
                     @endif
-                    @if(auth()->user()->role=='member'||auth()->user()->role='administrator')
+                    @if(auth()->user()->role=='member' && auth()->user()->role='administrator')
                     <li><a href="/jadwal"><i class="ti-calendar"></i> Jadwal Kapal Managements</a></li>
                     @endif
-                    @if(auth()->user()->role=='member'||auth()->user()->role='administrator')
+                    @if(auth()->user()->role=='member' && auth()->user()->role='administrator')
                     <li><a href="/vessel"><i class="ti-rocket"></i> Vessel Management</a></li>
                     @endif
                     <li><a href="/logout"><i class="ti-close"></i> Logout</a></li>

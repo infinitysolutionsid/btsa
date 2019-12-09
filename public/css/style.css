@@ -1436,6 +1436,10 @@ a.dt-button.active:not(.disabled) {
     border-bottom: 2pt solid #666;
 }
 
+.btn {
+    margin-bottom: 3px;
+}
+
 .invoicelist-body td,
 .invoicelist-body th {
     position: relative;

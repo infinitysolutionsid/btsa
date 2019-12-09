@@ -29,7 +29,8 @@ class issueController extends Controller
         $issueData->approve = 'unApproved';
         $issueData->tanggal = date('Y-m-d');
         $issueData->jam = date('H:i:s');
-
+        $issueData->created_by = auth()->user()->nama_lengkap;
+        $issueData->logIP = $request->getClientIp();
         $issueData->save();
         return back()->with('sukses', 'good');
     }
@@ -50,5 +51,55 @@ class issueController extends Controller
             ->orderBy('issuereport_tb.jam', 'DESC')
             ->get();
         return view('issue.headCheck', ['issueData' => $issueData]);
+    }
+    public function selesai(Request $request, $id)
+    {
+        $issueData = \App\IRModel::find($id);
+        $issueData->update($request->all());
+        $issueData->status = 'Selesai';
+        $issueData->updated_by = auth()->user()->nama_lengkap;
+        $issueData->logIP = $request->getClientIp();
+        $issueData->save();
+        return back()->with('sukses', 'Laporan gangguan anda telah diselesaikan.');
+    }
+    public function sementara(Request $request, $id)
+    {
+        $issueData = \App\IRModel::find($id);
+        $issueData->update($request->all());
+        $issueData->status = 'Belum Selesai';
+        $issueData->updated_by = auth()->user()->nama_lengkap;
+        $issueData->logIP = $request->getClientIp();
+        $issueData->save();
+        return back()->with('sukses', 'Laporan anda ditunda lagi. Yahh....! Bersabar ya..');
+    }
+    public function batal(Request $request, $id)
+    {
+        $issueData = \App\IRModel::find($id);
+        $issueData->update($request->all());
+        $issueData->status = 'Batal';
+        $issueData->updated_by = auth()->user()->nama_lengkap;
+        $issueData->logIP = $request->getClientIp();
+        $issueData->save();
+        return back()->with('sukses', 'Laporan gangguan anda telah dibatalkan karena alasan yang kuat. Hubungi IT/PU untuk mempertanyakan hal tsb. Terima kasih.');
+    }
+    public function approve(Request $request, $id)
+    {
+        $issueData = \App\IRModel::find($id);
+        $issueData->update($request->all());
+        $issueData->approve = auth()->user()->nama_lengkap;
+        $issueData->updated_by = auth()->user()->nama_lengkap;
+        $issueData->logIP = $request->getClientIp();
+        $issueData->save();
+        return back()->with('sukses', 'Terima kasih udah approve. Sekarang laporannya akan diteruskan ke pihak terkait.');
+    }
+    public function abort(Request $request, $id)
+    {
+        $issueData = \App\IRModel::find($id);
+        $issueData->update($request->all());
+        $issueData->approve = 'unApproved';
+        $issueData->updated_by = auth()->user()->nama_lengkap;
+        $issueData->logIP = $request->getClientIp();
+        $issueData->save();
+        return back()->with('sukses', 'Yahh ga diapprove ya?');
     }
 }

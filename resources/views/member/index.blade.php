@@ -97,6 +97,10 @@
                                         <input type="text" class="form-control" name="username">
                                     </div>
                                     <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" class="form-control" id="">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="email">Email</label>
                                         <input type="text" class="form-control" name="email">
                                     </div>
@@ -129,7 +133,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add new item</button>
+                    <button type="submit" class="btn btn-primary">Tambah anggota baru</button>
                 </div>
             </form>
         </div>
