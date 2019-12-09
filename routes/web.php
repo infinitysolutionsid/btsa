@@ -25,6 +25,8 @@ Route::get('/step2', 'candidateController@step2');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'DashController@index');
+    Route::get('member/{id}/edit', 'MemberController@edit');
+    Route::post('member/{id}/update', 'MemberController@update');
 });
 Route::group(['middleware' => ['auth', 'roleCheck:administrator']], function () {
     // ROUTE VIEW
@@ -104,4 +106,12 @@ Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function
     Route::get('hrd/{nama_suku}/delete/deletedatasuku', 'UtilityController@deletesuku');
     Route::get('hrd/{religion_id}/delete/deletedataagama', 'UtilityController@hapusagama');
     Route::get('hrd/{loker_id}/delete/deletedatalowongan', 'UtilityController@deleteloker');
+});
+
+Route::group(['middleware' => ['auth', 'roleCheck:head,user,it']], function () {
+    Route::get('/queue', 'issueController@index');
+    Route::post('/queue/addnew', 'issueController@addnewissue');
+
+    Route::get('/itCheck', 'issueController@itCheck');
+    Route::get('/headCheck', 'issueController@headCheck');
 });

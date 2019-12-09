@@ -102,10 +102,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="role">Tipe user</label>
-                                        <select name="role" id="role" class="form-control">
+                                        <select name="role" id="role" class="form-control custom-select">
                                             <option value="#" disabled selected>Select type of item</option>
                                             <option value="administrator">Administrator</option>
                                             <option value="member">Member</option>
+                                            <option value="legal">Legal</option>
+                                            <option value="hrd">HRD</option>
+                                            <option value="head">Head (Issue Report)</option>
+                                            <option value="it">IT (Issue Report)</option>
+                                            <option value="user">User (Issue Report)</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

@@ -67,7 +67,15 @@
                     </li>
                     <li><a href="/hrd"><i class="ti-layers-alt"></i> Utility Personalia</a></li>
                     @endif
-                    @if(in_array(auth()->user()->role,['legal','administrator']))
+                    <li><a class="sidebar-sub-toggle"><i class="ti-envelope"></i> Issue Reports <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="/queue">Queue</a></li>
+                            <li><a href="/itCheck">IT Checked</a></li>
+                            <li><a href="/headCheck">Head Checked</a></li>
+                        </ul>
+                    </li>
+                    @if(auth()->user()->role=='legal'||auth()->user()->role='administrator')
                     <li><a href="/legal"><i class="ti-calendar"></i> Legality Documents</a></li>
                     @endif
                     @if(auth()->user()->role=='member'||auth()->user()->role='administrator')

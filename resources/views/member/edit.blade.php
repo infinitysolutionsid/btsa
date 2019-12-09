@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title','Member edit managements')
 @section('content')
 <div class="card">
     <div class="card-title">
@@ -37,18 +38,24 @@
                         </div>
                         <div class="form-group">
                             <label for="role">Tipe user</label>
-                            <select name="role" id="role" class="form-control">
+                            <select name="role" id="role" class="form-control custom-select">
                                 <option value="#" disabled selected>Select type of item</option>
                                 <option value="administrator" @if($data_member->role=='administrator') selected
                                     @endif>Administrator</option>
                                 <option value="member" @if($data_member->role=='member') selected @endif>Member</option>
                                 <option value="legal" @if($data_member->role=='legal') selected @endif>Legal</option>
                                 <option value="hrd" @if($data_member->role=='hrd') selected @endif>HRD</option>
+                                <option value="head" @if($data_member->role=='head') selected @endif>Head (Issue Report)
+                                </option>
+                                <option value="it" @if($data_member->role=='it') selected @endif>IT (Issue Report)
+                                </option>
+                                <option value="user" @if($data_member->role=='user') selected @endif>User (Issue Report)
+                                </option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="role">Status</label>
-                            <select name="status" id="status" class="form-control">
+                            <select name="status" id="status" class="form-control custom-select">
                                 <option value="active" @if($data_member->status=='active') selected @endif>Active
                                 </option>
                                 <option value="inactive" @if($data_member->status=='inactive') selected @endif>Inactive
@@ -58,7 +65,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Update Member Data</button>
                 </div>
         </form>
