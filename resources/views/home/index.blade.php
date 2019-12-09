@@ -74,13 +74,20 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#aboutus">SIAPA KAMI?</a></li>
-                    <li><a href="#visimisi">VISI & MISI</a></li>
-                    <li><a href="#values">NILAI KAMI</a></li>
-                    <li><a href="#services">JASA KAMI</a></li>
-                    <li><a href="#why">MENGAPA KAMI?</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">TENTANG KAMI <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#aboutus">SIAPA KAMI?</a></li>
+                            <li><a href="#visimisi">VISI & MISI</a></li>
+                            <li><a href="#values">NILAI KAMI</a></li>
+                            <li><a href="#services">JASA KAMI</a></li>
+                            <li><a href="#why">MENGAPA KAMI?</a></li>
+                            <li><a href="#contact">KANTOR KAMI</a></li>
+                        </ul>
+                    </li>
                     <li><a href="https://btsa.co.id/gallery.html" target="_blank">GALERI</a></li>
-                    <li><a href="#contact">KANTOR KAMI</a></li>
+                    <li><a href="/candidate" target="_blank">APPLY JOB</a></li>
                     <li class="login"><a href="#" id="myBtnLogin" style="color:#fff !important"><span
                                 class="glyphicon glyphicon-user"></span> LOGIN</a></li>
                     <div class="modal fade" id="myModalLogin" role="dialog">
