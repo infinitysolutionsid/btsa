@@ -33,8 +33,8 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" value="{{$data_member->password}}"
-                                name="password" readonly>
+                            <input type="password" class="form-control" value="{{$data_member->un_password}}"
+                                name="password" id="password">
                         </div>
                         <div class="form-group">
                             <label for="role">Tipe user</label>

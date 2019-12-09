@@ -70,7 +70,8 @@ class MemberController extends Controller
     {
         $data_member = \App\MemberModel::find($id);
         $data_member->update($request->all());
-        $data_member->password = $request->password;
+        $data_member->un_password = $request->password;
+        $data_member->password = Hash::make($request->password);
         $data_member->remember_token = str_random(50);
         $data_member->updated_by = auth()->user()->nama_lengkap;
         $data_member->created_by = auth()->user()->nama_lengkap;
