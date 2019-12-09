@@ -98,8 +98,8 @@
                                 </div>
                                 <div class="modal-body text-center row">
                                     <div class="col-sm-6" style="margin-bottom:10px;">
-                                        <a href="https://btsa.co.id/IR" target="_blank"><button type="button"
-                                                class="btn btn-danger" style="width:270px; height:60px;">BTSA Issue
+                                        <a href="/queue" target="_blank"><button type="button" class="btn btn-danger"
+                                                style="width:270px; height:60px;">BTSA Issue
                                                 Report<br>
                                                 <font class="personalonly"><i>-For Company Only-</i></font>
                                             </button></a>
