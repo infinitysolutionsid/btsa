@@ -26,6 +26,7 @@
                     <tr>
                         <th>#</th>
                         <th>Pelapor</th>
+                        <th>Tanggal pelapor</th>
                         <th>Antrian No.</th>
                         <th>Kendala</th>
                         <th>Status</th>
@@ -41,7 +42,8 @@
                     <tr>
                         <th scope="row">{{$no++}}</th>
                         <td>{{$dt_issue->nama_lengkap}}</td>
-                        <td><span class="badge badge-warning">{{$dt_issue->id}}</span></td>
+                        <td><span class="badge badge-success">{{$dt_issue->tanggal}}</span> {{$dt_issue->jam}}</td>
+                        <td><span class="badge badge-primary">{{$dt_issue->id}}</span></td>
                         <td>{{$dt_issue->kendala}}</td>
                         <td class="text-center">
                             @if($dt_issue->status=='Selesai')
