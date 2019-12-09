@@ -5,6 +5,15 @@
     <title>BTSA LOGISTICS | Restricted Area System</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="System BTSA Logistics yang memiliki sistem Issue Reports Managements | Applicants Candidate Managements | Legality Documents | Jadwal Kapal
+        Managements | Vessel Managements didalamnya.">
+    <meta name="keywords"
+        content="PPJK, EMKL, Expedisi, Export-Import, Custom Clearance, BTSA, BTSA LOGISTICS, Ekspedisi, Jasa Ekspedisi, applicants, job, issuereport, vessel">
+    <meta name="author" content="Bintang Cato Jeremia L Tobing">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link expr:href='data:blog.url' hreflang='x-default' rel='alternate' />
+    <meta content='Indonesia' name='geo.placename' />
+    <meta content='id' name='geo.country' />
     <!--===============================================================================================-->
     <link rel="shortcut icon"
         href="{!! url('https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico')!!}">
