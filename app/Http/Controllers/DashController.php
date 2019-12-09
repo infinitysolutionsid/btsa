@@ -10,6 +10,11 @@ class DashController extends Controller
 {
     public function index()
     {
+        $issueData = DB::table('issuereport_tb')
+            ->select('issuereport_tb.*')
+            ->orderBy('issuereport_tb.tanggal', 'DESC')
+            ->orderBy('issuereport_tb.jam', 'DESC')
+            ->get();
         $data_member = DB::table('users')
             ->select('users.*')
             ->get();
@@ -19,6 +24,21 @@ class DashController extends Controller
         $vessel = DB::table('vessel')
             ->select('vessel.*')
             ->get();
-        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel]);
+        $irtotal = DB::table('issuereport_tb')
+            ->select('issuereport_tb.*')
+            ->get();
+        $irtotalselesai = DB::table('issuereport_tb')
+            ->where('issuereport_tb.status', '=', 'Selesai')
+            ->select('issuereport_tb.*')
+            ->get();
+        $irtotalbselesai = DB::table('issuereport_tb')
+            ->where('issuereport_tb.status', '=', 'Belum Selesai')
+            ->select('issuereport_tb.*')
+            ->get();
+        $irtotalbatal = DB::table('issuereport_tb')
+            ->where('issuereport_tb.status', '=', 'Batal')
+            ->select('issuereport_tb.*')
+            ->get();
+        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData]);
     }
 }

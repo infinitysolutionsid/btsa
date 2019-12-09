@@ -10,4 +10,11 @@ class IRModel extends Model
     protected $fillable = [
         'nama_lengkap', 'tanggal', 'jam', 'kendala', 'tujuan', 'status', 'logIP', 'created_by', 'updated_by',
     ];
+    public function getAvatar()
+    {
+        if (!$this->profilephoto) {
+            return asset('file/default.jpg');
+        }
+        return asset('file/img' . $this->profilephoto);
+    }
 }

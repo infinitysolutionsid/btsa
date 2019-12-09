@@ -1,3 +1,5 @@
+@inject('IRModel', '\App\IRModel')
+
 <!DOCTYPE html>
 <html lang="en">
 
