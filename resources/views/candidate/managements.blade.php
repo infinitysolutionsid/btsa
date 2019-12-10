@@ -19,6 +19,7 @@
                     <tr>
                         <th></th>
                         <th>Posisi</th>
+                        <th>Tanggal Melamar</th>
                         <th>Nama Pelamar</th>
                         <th>Email</th>
                         <th>Tempat Tanggal Lahir</th>
@@ -38,6 +39,7 @@
                                     class="accordion-toggle" aria-controls="{{$cnd->candidate_id}}"></i></span>
                         </th>
                         <td>{{$cnd->appliedposition}}</td>
+                        <td>{{$cnd->created_at}}</td>
                         <td><strong>{{$cnd->nama_lengkap}}</strong></td>
                         <td>{{$cnd->email}}</td>
                         <td>{{$cnd->tempat_lahir}}, {{$cnd->tanggal_lahir}}</td>

@@ -73,7 +73,10 @@ class candidateController extends Controller
     }
     public function managements()
     {
-        $candidate = \App\candidateDB::all();
+        $candidate = DB::table('candidate')
+            ->select('candidate.*')
+            ->orderBy('candidate.created_at', 'DESC')
+            ->get();
         return view('candidate.managements', ['candidate' => $candidate]);
     }
     public function deletecandidate($candidate_id)
