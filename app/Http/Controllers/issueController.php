@@ -45,6 +45,16 @@ class issueController extends Controller
             ->get();
         return view('issue.itCheck', ['issueData' => $issueData]);
     }
+    public function itSolved()
+    {
+        $issueData = DB::table('issuereport_tb')
+            ->select('issuereport_tb.*')
+            ->orderBy('issuereport_tb.tanggal', 'DESC')
+            ->orderBy('issuereport_tb.jam', 'DESC')
+            ->where('issuereport_tb.status', '=', 'Selesai')
+            ->get();
+        return view('issue.itSolved', ['issueData' => $issueData]);
+    }
     public function headCheck()
     {
         $issueData = DB::table('issuereport_tb')

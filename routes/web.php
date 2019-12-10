@@ -114,6 +114,7 @@ Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator']],
 
     Route::get('/itCheck', 'issueController@itCheck');
     Route::get('/headCheck', 'issueController@headCheck');
+    Route::get('/itSolved', 'issueController@itSolved');
 
     Route::post('/itCheck/selesai/{id}', 'issueController@selesai');
     Route::post('/itCheck/sementara/{id}', 'issueController@sementara');

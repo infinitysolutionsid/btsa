@@ -82,6 +82,7 @@
                             @endif
                             @if(auth()->user()->role=='it' || auth()->user()->role=='administrator')
                             <li><a href="/itCheck">IT Checked</a></li>
+                            <li><a href="/itSolved">IT Solved IR</a></li>
                             @endif
                             @if(auth()->user()->role=='head' || auth()->user()->role=='administrator')
                             <li><a href="/headCheck">Head Checked</a></li>
