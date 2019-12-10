@@ -94,7 +94,7 @@
                 <hr>
             </div>
             <div class="recent-comment">
-                @foreach ($issueData->take(3) as $data)
+                @foreach ($issueData->take(4) as $data)
                 <div class="media">
                     <div class="media-left">
                         <a href="#"><img class="media-object" src="{{$IRModel->getAvatar()}}" alt="..."></a>
@@ -104,13 +104,14 @@
                         <p>{{$data->kendala}} </p>
                         <div class="comment-action">
                             <div class="badge badge-success">{{$data->id}}</div>
+                            <div class="badge badge-warning">{{$data->approve}}</div>
                             {{-- <span class="m-l-10">
                                 <a href="#"><i class="ti-check color-success"></i></a>
                                 <a href="#"><i class="ti-close color-danger"></i></a>
                                 <a href="#"><i class="fa fa-reply color-primary"></i></a>
                             </span> --}}
                         </div>
-                        <p class="comment-date">{{$data->tanggal}}</p>
+                        <p class="comment-date">{{$data->tanggal}} {{$data->jam}}</p>
                     </div>
                 </div>
                 @endforeach
