@@ -259,6 +259,7 @@
     <script src="{!!asset('js/lib/owl-carousel/owl.carousel.min.js')!!}"></script>
     <script src="{!!asset('js/lib/owl-carousel/owl.carousel-init.js')!!}"></script>
     <script src="{!!asset('js/scripts.js')!!}"></script>
+
     <script type="text/javascript" charset="utf8"
         src="{!!url('https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js')!!}"></script>
     <!-- scripit init-->

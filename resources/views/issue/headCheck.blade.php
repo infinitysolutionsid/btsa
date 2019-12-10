@@ -83,7 +83,9 @@
 </div>
 <script>
     $(document).ready(function () {
-        $('#memberTables').DataTable();
+        $('#memberTables').DataTable({
+            scrollY: 300,
+        });
     });
 
 </script>
