@@ -31,6 +31,7 @@
                         <th>Kendala</th>
                         <th>Status</th>
                         <th>Checked by</th>
+                        <th>Solved by</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +58,7 @@
                             @endif
                         </td>
                         <td>{{$dt_issue->approve}}</td>
+                        <td>{{$dt_issue->updated_by}}</td>
                     </tr>
                     @endforeach
                     @else

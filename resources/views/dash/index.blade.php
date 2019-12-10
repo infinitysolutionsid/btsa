@@ -105,11 +105,13 @@
                         <div class="comment-action">
                             <div class="badge badge-success">{{$data->id}}</div>
                             <div class="badge badge-warning">{{$data->approve}}</div>
-                            {{-- <span class="m-l-10">
-                                <a href="#"><i class="ti-check color-success"></i></a>
-                                <a href="#"><i class="ti-close color-danger"></i></a>
-                                <a href="#"><i class="fa fa-reply color-primary"></i></a>
-                            </span> --}}
+                            @if($data->status=='Selesai')
+                            <div class="badge badge-primary">{{$data->status}}</div>
+                            @elseif($data->status=='Belum Selesai' && $data->approve=='unApproved')
+                            <div class="badge badge-danger">Mohon minta untuk diapprove atasan.</div>
+                            @else
+                            <div class="badge badge-danger">Belum Selesai</div>
+                            @endif
                         </div>
                         <p class="comment-date">{{$data->tanggal}} {{$data->jam}}</p>
                     </div>
