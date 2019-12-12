@@ -96,7 +96,7 @@
                 </tbody>
             </table>
             {{$candidate->links()}}
-            Showing {{$candidate->currentPage()}} to {{$candidate->lastPage()}} of {{$candidate->total()}} entries
+            Showing {{$candidate->currentPage()}} to {{$candidate->perPage()}} of {{$candidate->total()}} entries
         </div>
     </div>
 </div>
