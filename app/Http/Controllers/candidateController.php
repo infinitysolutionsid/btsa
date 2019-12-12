@@ -6,6 +6,7 @@ use \App\candidateDB;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\Support\Jsonable;
 
 class candidateController extends Controller
 {
@@ -76,7 +77,7 @@ class candidateController extends Controller
         $candidate = DB::table('candidate')
             ->select('candidate.*')
             ->orderBy('candidate.created_at', 'DESC')
-            ->get();
+            ->paginate(10);
         return view('candidate.managements', ['candidate' => $candidate]);
     }
     public function deletecandidate($candidate_id)

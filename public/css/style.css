@@ -1446,6 +1446,10 @@ a.dt-button.active:not(.disabled) {
     padding: 1rem;
 }
 
+.pagination {
+    float: right;
+}
+
 .invoicelist-body tr:nth-child(even) {
     background: #eef5f9;
 }

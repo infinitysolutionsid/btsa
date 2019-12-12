@@ -95,6 +95,8 @@
                     @endif
                 </tbody>
             </table>
+            {{$candidate->links()}}
+            Showing {{$candidate->currentPage()}} to {{$candidate->lastPage()}} of {{$candidate->total()}} entries
         </div>
     </div>
 </div>
