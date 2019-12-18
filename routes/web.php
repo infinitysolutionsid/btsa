@@ -112,16 +112,21 @@ Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator']],
     Route::get('/queue', 'issueController@index');
     Route::get('/quote-request', 'QuoteController@index');
     Route::get('/quote-published', 'QuoteController@published');
+    Route::post('/quote/addnew', 'QuoteController@addnew');
     Route::post('/queue/addnew', 'issueController@addnewissue');
 
     Route::get('/itCheck', 'issueController@itCheck');
     Route::get('/headCheck', 'issueController@headCheck');
     Route::get('/itSolved', 'issueController@itSolved');
+    Route::get('/quote/selesai/{quote_id}', 'QuoteController@formselesai');
 
     Route::post('/itCheck/selesai/{id}', 'issueController@selesai');
+    Route::post('/quote/{quote_id}/update', 'QuoteController@formupdate');
     Route::post('/itCheck/sementara/{id}', 'issueController@sementara');
     Route::post('/itCheck/batal/{id}', 'issueController@batal');
 
     Route::post('/headCheck/approve/{id}', 'issueController@approve');
     Route::post('/headCheck/abort/{id}', 'issueController@abort');
+
+    Route::get('/quote/{quote_id}/delete', 'QuoteController@deletequote');
 });

@@ -12,6 +12,7 @@ class QuoteDB extends Model
         'quotes_name',
         'status',
         'link_preview',
+        'quotes_id',
         'logIP',
         'created_by',
         'updated_by',
