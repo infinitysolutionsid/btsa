@@ -74,6 +74,17 @@
                     </li>
                     <li><a href="/hrd"><i class="ti-layers-alt"></i> Utility Personalia</a></li>
                     @endif
+                    <li><a class="sidebar-sub-toggle"><i class="ti-shine"></i> Quote Reports<span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            @if(auth()->user()->role=='user' || auth()->user()->role=='administrator')
+                            <li><a href="/quote-request">Quote request</a></li>
+                            @endif
+                            @if(auth()->user()->role=='it' || auth()->user()->role=='administrator')
+                            <li><a href="/quote-published">Quote published</a></li>
+                            @endif
+                        </ul>
+                    </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-envelope"></i> Issue Reports <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>

@@ -110,6 +110,8 @@ Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function
 
 Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator']], function () {
     Route::get('/queue', 'issueController@index');
+    Route::get('/quote-request', 'QuoteController@index');
+    Route::get('/quote-published', 'QuoteController@published');
     Route::post('/queue/addnew', 'issueController@addnewissue');
 
     Route::get('/itCheck', 'issueController@itCheck');
