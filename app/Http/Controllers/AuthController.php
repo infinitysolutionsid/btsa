@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-
+use DateTime;
 
 class AuthController extends Controller
 {
@@ -24,7 +24,12 @@ class AuthController extends Controller
     public function postlogin(Request $request)
     {
         $request->merge(['status' => 'active']);
+
         if (Auth::attempt($request->only('username', 'password', 'status'))) {
+            $user = \App\MemberModel::find(auth()->user()->id);
+            $user->logIP = $request->getClientIp();
+            $user->last_login = new \DateTime('NOW');
+            $user->save();
             return redirect('/dashboard')->with('sukses', 'Login in...');
         }
         return redirect('/restricted')->with('gagal', 'Auth authorization failed or check your username and password!');
@@ -45,6 +50,9 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
+        $user = \App\MemberModel::find(auth()->user()->id);
+        $user->last_logout = new \DateTime('NOW');
+        $user->save();
         return redirect('/restricted');
     }
 }
