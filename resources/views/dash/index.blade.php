@@ -41,7 +41,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-2">
         <div class="card">
             <div class="stat-widget-two">
                 <div class="stat-content">
@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-2">
         <div class="card">
             <div class="stat-widget-two">
                 <div class="stat-content">
@@ -74,13 +74,24 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-2">
         <div class="card">
             <div class="stat-widget-two">
                 <div class="stat-content">
                     <?php $totalbatal = $irtotalbatal->count() ?>
                     <div class="stat-text">Total IR Batal </div>
                     <div class="stat-digit"> {{$totalbatal}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="stat-widget-two">
+                <div class="stat-content">
+                    <?php $quotecount = $quote->count() ?>
+                    <div class="stat-text">Total Quote Terbit </div>
+                    <div class="stat-digit"> {{$quotecount}}</div>
                 </div>
             </div>
         </div>
@@ -141,9 +152,17 @@
                         </div>
                     </div>
                     @endforeach
+                    @if($quote->count() < 1) <div class="item">
+                        <div class="testimonial-content">
+                            <div class="testimonial-text">
+                                <i class="fa fa-quote-left"></i> No quote found <i class="fa fa-quote-right"></i>
+                            </div>
+                        </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
