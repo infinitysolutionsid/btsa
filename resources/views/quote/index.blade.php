@@ -60,9 +60,15 @@
                         <td>{{$dt_quote->created_by}}</td>
                         <td>{{$dt_quote->quotes_name}}</td>
                         <td>{{$dt_quote->quotes_id}}</td>
-                        <td><a href="{{$dt_quote->link_preview}}" target="_blank"><button class="btn btn-info btn-sm"><i
+                        <td>
+                            @if($dt_quote->link_preview!='#')
+                            <a href="{{$dt_quote->link_preview}}" target="_blank"><button class="btn btn-info btn-sm"><i
                                         class="fab fa-instagram"></i>
-                                    Instagram</button></a></td>
+                                    Instagram</button></a>
+                            @else
+                            <button class="btn btn-dark btn-sm"><i class="fab fa-instagram"></i>
+                                Not available</button>
+                            @endif</td>
                         <td class="text-center">
                             @if($dt_quote->status=='Selesai')
                             <span style="font-size: 1rem; color: green;"><i class="fas fa-check-circle"></i></span>

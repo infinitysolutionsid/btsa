@@ -147,7 +147,8 @@
                             <img class="testimonial-author-img" src="{{$IRModel->getAvatar()}}" alt="" />
                             <div class="testimonial-author">{{$quoteitem->created_by}}</div>
                             <div class="testimonial-author-position">@if($quoteitem->status=='Selesai') Quote ini telah
-                                terbit - <a href="{{$quoteitem->link_preview}}"><i class="fab fa-instagram"></i></a>
+                                terbit - <a href="{{$quoteitem->link_preview}}" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
                                 @endif</div>
                         </div>
                     </div>
