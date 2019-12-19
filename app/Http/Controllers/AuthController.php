@@ -50,9 +50,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        $user = \App\MemberModel::find(auth()->user()->id);
-        $user->last_logout = new \DateTime('NOW');
-        $user->save();
         return redirect('/restricted');
     }
 }
