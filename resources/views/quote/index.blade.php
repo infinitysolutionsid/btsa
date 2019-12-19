@@ -88,7 +88,7 @@
                     </tr>
                     @endforeach
                     @else
-                    <td colspan="7" class="text-center">No data founded!</td>
+                    <td colspan="8" class="text-center">No data founded!</td>
                     @endif
                 </tbody>
             </table>

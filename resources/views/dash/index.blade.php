@@ -3,6 +3,21 @@
 @section('title','Home')
 @section('content')
 <div class="row">
+    <div class="container-fluid">
+
+        <div class="col-lg-12 text-center quoterow">
+            @foreach ($quote as $item)
+            <a href="{{$item->link_preview}}">
+                <h5><i class="fa fa-quote-left"></i> {{$item->quotes_name}} <i class="fa fa-quote-right"></i></h5>
+                <p>- {{$item->created_by}} -</p>
+            </a>
+            @endforeach
+            @if($quote->count()<1) <p><i>- No quotes found -</i></p>
+                @endif
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-lg-4">
         <div class="card">
             <?php $datamember = $data_member->count() ?>
@@ -98,7 +113,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-7">
+    <div class="col-lg-6">
         <div class="card">
             <div class="card-title">
                 <h4><strong><i class="ti-ticket"></i> New Request Ticket IR</strong></h4>
@@ -132,7 +147,7 @@
         </div>
         <!-- /# card -->
     </div>
-    <div class="col-lg-5">
+    {{-- <div class="col-lg-5">
         <div class="card">
             <div class="testimonial-widget-one p-17">
                 <div class="testimonial-widget-one owl-carousel owl-theme">
@@ -141,29 +156,56 @@
                         <div class="testimonial-content">
                             <div class="testimonial-text">
                                 <i class="fa fa-quote-left"></i> {{$quoteitem->quotes_name}} <br>Terjemahan Indonesia:
-                                <br>
-                                {{$quoteitem->quotes_id}} <i class="fa fa-quote-right"></i>
-                            </div>
-                            <img class="testimonial-author-img" src="{{$IRModel->getAvatar()}}" alt="" />
-                            <div class="testimonial-author">{{$quoteitem->created_by}}</div>
-                            <div class="testimonial-author-position">@if($quoteitem->status=='Selesai') Quote ini telah
-                                terbit - <a href="{{$quoteitem->link_preview}}" target="_blank"><i
-                                        class="fab fa-instagram"></i></a>
-                                @endif</div>
-                        </div>
-                    </div>
-                    @endforeach
-                    @if($quote->count() < 1) <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonial-text">
-                                <i class="fa fa-quote-left"></i> No quote found <i class="fa fa-quote-right"></i>
-                            </div>
-                        </div>
-                </div>
-                @endif
-            </div>
+    <br>
+    {{$quoteitem->quotes_id}} <i class="fa fa-quote-right"></i>
+</div>
+<img class="testimonial-author-img" src="{{$IRModel->getAvatar()}}" alt="" />
+<div class="testimonial-author">{{$quoteitem->created_by}}</div>
+<div class="testimonial-author-position">@if($quoteitem->status=='Selesai') Quote ini telah
+    terbit - <a href="{{$quoteitem->link_preview}}" target="_blank"><i class="fab fa-instagram"></i></a>
+    @endif</div>
+</div>
+</div>
+@endforeach
+@if($quote->count() < 1) <div class="item">
+    <div class="testimonial-content">
+        <div class="testimonial-text">
+            <i class="fa fa-quote-left"></i> No quote found <i class="fa fa-quote-right"></i>
         </div>
     </div>
-</div>
-</div>
-@endsection
+    </div>
+    @endif
+    </div>
+    </div>
+    </div> --}}
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-title">
+                <h4><strong><i class="ti-ticket"></i> New Request Quote</strong></h4>
+                <hr>
+            </div>
+            <div class="recent-comment">
+                @foreach ($quotedash->take(4) as $data)
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#"><img class="media-object" src="{{$IRModel->getAvatar()}}" alt="..."></a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{$data->created_by}}</h4>
+                        <p>{{$data->quotes_name}} </p>
+                        <div class="comment-action">
+                            <div class="badge badge-warning">{{$data->updated_by}}</div>
+                        </div>
+                        <p class="comment-date">{{$data->created_at}}</p>
+                    </div>
+                </div>
+                @endforeach
+                @if($quotedash->count()<1) <div class="media">
+                    <p>No request quote data</p>
+            </div>
+            @endif
+        </div>
+    </div>
+    </div>
+    </div>
+    @endsection

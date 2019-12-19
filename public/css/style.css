@@ -5377,3 +5377,11 @@ only screen and (min-resolution: 2dppx) {
         display: inline-block !important;
     }
 }
+
+.quoterow {
+    background-color: white;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    padding-top: 2rem;
+    cursor: pointer;
+}
