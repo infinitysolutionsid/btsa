@@ -33,7 +33,7 @@ class QuoteController extends Controller
         $quote->created_by = auth()->user()->nama_lengkap;
         $quote->status = 'loading';
         $quote->quotes_id  = $request->quotes_id;
-        $quote->link_preview = 'not available';
+        $quote->link_preview = '#';
         $quote->updated_by = 'Belum dicek';
         $quote->logIP = $request->getClientIp();
         $quote->save();
@@ -67,6 +67,6 @@ class QuoteController extends Controller
         $data_quote->status = 'Selesai';
         $data_quote->save();
 
-        return view('quote.published', ['data_quote' => $data_quote])->with('selesai', 'good');
+        return back()->with('selesai', 'good');
     }
 }

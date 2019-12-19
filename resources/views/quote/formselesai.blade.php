@@ -35,7 +35,8 @@
                         </div>
                         <div class="form-group">
                             <label for="link_preview">Link terbit</label>
-                            <input type="text" name="link_preview" class="form-control" value="">
+                            <input type="text" name="link_preview" class="form-control"
+                                value="{{$data_quote->link_preview}}">
                         </div>
                     </div>
                 </div>

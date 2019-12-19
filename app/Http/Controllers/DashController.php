@@ -39,6 +39,11 @@ class DashController extends Controller
             ->where('issuereport_tb.status', '=', 'Batal')
             ->select('issuereport_tb.*')
             ->get();
-        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData]);
+        $quote = DB::table('quote')
+            ->where('quote.status', '=', 'Selesai')
+            ->select('quote.*')
+            ->orderBy('quote.updated_at', 'DESC')
+            ->get();
+        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData, 'quote' => $quote]);
     }
 }

@@ -125,36 +125,22 @@
         <div class="card">
             <div class="testimonial-widget-one p-17">
                 <div class="testimonial-widget-one owl-carousel owl-theme">
+                    @foreach ($quote->take(5) as $quoteitem)
                     <div class="item">
                         <div class="testimonial-content">
                             <div class="testimonial-text">
-                                <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur
-                                adipisicing
-                                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                ad
-                                minim veniam, quis
-                                nostrud exercitation <i class="fa fa-quote-right"></i>
+                                <i class="fa fa-quote-left"></i> {{$quoteitem->quotes_name}} <br>Terjemahan Indonesia:
+                                <br>
+                                {{$quoteitem->quotes_id}} <i class="fa fa-quote-right"></i>
                             </div>
                             <img class="testimonial-author-img" src="{{$IRModel->getAvatar()}}" alt="" />
-                            <div class="testimonial-author">TYRION LANNISTER</div>
-                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                            <div class="testimonial-author">{{$quoteitem->created_by}}</div>
+                            <div class="testimonial-author-position">@if($quoteitem->status=='Selesai') Quote ini telah
+                                terbit - <a href="{{$quoteitem->link_preview}}"><i class="fab fa-instagram"></i></a>
+                                @endif</div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonial-text">
-                                <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur
-                                adipisicing
-                                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                ad
-                                minim veniam, quis
-                                nostrud exercitation <i class="fa fa-quote-right"></i>
-                            </div>
-                            <img class="testimonial-author-img" src="{{$IRModel->getAvatar()}}" alt="" />
-                            <div class="testimonial-author">TYRION LANNISTER</div>
-                            <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
