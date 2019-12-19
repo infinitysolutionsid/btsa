@@ -5,7 +5,16 @@
     <div class="card-title">
         <h4>Candidate Managements</h4>
     </div>
+
     <div class="card-body">
+        <div class="form-group">
+            <a href="/candidate/managements" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top"
+                title="Reset Filter"><i class="fas fa-undo"></i></a>
+            @foreach ($filter_candidate as $filter)
+            <a href="/candidate/managements/?appliedposition={{$filter->available_position}}"
+                class="btn btn-primary btn-sm">{{$filter->available_position}}</a>
+            @endforeach
+        </div>
         @if (session('sukses'))
         <div class="alert alert-success alert-dismissible fade show">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span

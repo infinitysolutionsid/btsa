@@ -74,11 +74,26 @@ class candidateController extends Controller
     }
     public function managements()
     {
-        $candidate = DB::table('candidate')
-            ->select('candidate.*')
-            ->orderBy('candidate.created_at', 'DESC')
-            ->paginate(10);
-        return view('candidate.managements', ['candidate' => $candidate]);
+        // if (request()->has('available_position')) {
+        //     $candidate = \App\loker::where('available_position', request('available_position'))->paginate(10);
+        // } else {
+        //     $candidate = DB::table('candidate')
+        //         ->select('candidate.*')
+        //         ->orderBy('candidate.created_at', 'DESC')
+        //         ->paginate(10);
+        // }
+        if (request()->has('appliedposition')) {
+            $candidate = \App\candidateDB::where('appliedposition', request('appliedposition'))->paginate(10)->appends('appliedposition', request('appliedposition'));
+        } else {
+            $candidate = DB::table('candidate')
+                ->select('candidate.*')
+                ->orderBy('candidate.created_at', 'DESC')
+                ->paginate(10);
+        }
+        $filter_candidate = DB::table('loker')
+            ->select('loker.*')
+            ->get();
+        return view('candidate.managements', ['candidate' => $candidate, 'filter_candidate' => $filter_candidate]);
     }
     public function deletecandidate($candidate_id)
     {
