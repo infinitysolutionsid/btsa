@@ -29,6 +29,7 @@
                         <th>Email</th>
                         <th>Role</th>
                         <th>Status</th>
+                        <th>Last login info</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -48,6 +49,14 @@
                             <span style="font-size: 1rem; color: green;"><i class="fas fa-check-circle"></i></span>
                             @else
                             <span style="font-size: 1rem; color: red;"><i class="fas fa-times-circle"></i></span>
+                            @endif
+                        </td>
+                        <td class="text-left">
+                            @if($dt_member->last_login=='')
+                            <span style="font-size:1rem; color: red;"><i class="fas fa-exclamation-circle"></i> </span>
+                            Never login
+                            @else
+                            {{$dt_member->last_login}}
                             @endif
                         </td>
                         <td><a href="/member/{{$dt_member->id}}/edit"><button class="btn btn-rounded btn-warning"><i
