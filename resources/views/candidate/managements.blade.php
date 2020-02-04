@@ -33,7 +33,7 @@
                         <th>Email</th>
                         <th>Tempat Tanggal Lahir</th>
                         <th>Tanggal masuk kerja</th>
-                        <th>Action</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,14 +48,26 @@
                                     class="accordion-toggle" aria-controls="{{$cnd->candidate_id}}"></i></span>
                         </th>
                         <td>{{$cnd->appliedposition}}</td>
-                        <td>{{$cnd->created_at}}</td>
+                        <td>{{date('d M', strtotime($cnd->created_at))}}</td>
                         <td><strong>{{$cnd->nama_lengkap}}</strong></td>
                         <td>{{$cnd->email}}</td>
                         <td>{{$cnd->tempat_lahir}}, {{$cnd->tanggal_lahir}}</td>
                         <td>{{$cnd->req_datein}}</td>
-                        <td><a href="/candidate/managements/{{$cnd->candidate_id}}/delete"><button
-                                    class="btn btn-rounded btn-danger"><span style="font-size: 12px;">
-                                        <i class="fas fa-trash"></i></span></button></a></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-danger" title="Hapus data pelamar"><a
+                                        href="/candidate/managements/{{$cnd->candidate_id}}/delete">
+                                        <span style="color:white;"><i class="fas fa-trash"></i></span></a></button>
+                                @if($cnd->statusinterview!='interviewed')
+                                <button type="button" class="btn btn-success"
+                                    title="Tandai sebagai yang sudah datang interview"><a
+                                        href="/candidate/managements/{{$cnd->candidate_id}}/updateinterview">
+                                        <span style="color:white;"><i class="fas fa-check"></i></span></a></button>
+                                @else
+
+                                @endif
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="7" class="hiddenRow text-left">

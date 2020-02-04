@@ -93,6 +93,7 @@ Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function
     route::get('/candidate/managements', 'candidateController@managements');
     Route::get('/candidate/managements/{candidate_id}/view', 'candidateController@viewcandidate');
     Route::get('/candidate/managements/{candidate_id}/delete', 'candidateController@deletecandidate');
+    Route::get('/candidate/managements/{candidate_id}/updateinterview', 'candidateController@updatecandidate');
     Route::get('/hrd', 'UtilityController@index');
 
     // ROUTE TAMBAH UTILITAS HRD

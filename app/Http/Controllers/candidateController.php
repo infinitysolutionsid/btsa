@@ -108,4 +108,12 @@ class candidateController extends Controller
             }
         }
     }
+    public function updatecandidate($candidate_id)
+    {
+        $cnd = \App\candidateDB::find($candidate_id);
+        $cnd->statusinterview = 'interviewed';
+        $cnd->save();
+
+        return back()->with('sukses', 'Candidate sudah diupdate ke status sudah datang interview.');
+    }
 }

@@ -33,7 +33,8 @@ class candidateDB extends Model
         'req_datein',
         'fasilitas',
         'ktpfile',
-        'simfile'
+        'simfile',
+        'statusinterview'
     ];
     public function getAvatar()
     {
