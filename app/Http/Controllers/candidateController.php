@@ -95,6 +95,22 @@ class candidateController extends Controller
             ->get();
         return view('candidate.managements', ['candidate' => $candidate, 'filter_candidate' => $filter_candidate]);
     }
+    public function interviewed()
+    {
+        if (request()->has('appliedposition')) {
+            $candidate = \App\candidateDB::where('appliedposition', request('appliedposition'))->paginate(10)->appends('appliedposition', request('appliedposition'));
+        } else {
+            $candidate = DB::table('candidate')
+                ->where('candidate.statusinterview', '=', 'interviewed')
+                ->select('candidate.*')
+                ->orderBy('candidate.created_at', 'DESC')
+                ->paginate(10);
+        }
+        $filter_candidate = DB::table('loker')
+            ->select('loker.*')
+            ->get();
+        return view('candidate.interviewed', ['candidate' => $candidate, 'filter_candidate' => $filter_candidate]);
+    }
     public function deletecandidate($candidate_id)
     {
         $data_cnd = candidateDB::find($candidate_id);

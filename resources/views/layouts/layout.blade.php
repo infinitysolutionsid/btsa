@@ -63,14 +63,27 @@
                     <li class="label">Management</li>
                     @if(auth()->user()->role == 'administrator')
                     <li><a href="/member"><i class="ti-user"></i> User Managements</a></li>
-                    <li><a href="/candidate/managements"><i class="ti-layout-grid2-alt"></i> Candidate</a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2-alt"></i> Candidate<span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="/candidate/managements">Daftar pelamar</a>
+                            </li>
+                            <li><a href="/candidate/interviewed">Pelamar yang interview</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/hrd"><i class="ti-layers-alt"></i> Utility Personalia</a></li>
                     <li><a href="/legal"><i class="ti-calendar"></i> Legality Documents</a></li>
                     <li><a href="/jadwal"><i class="ti-calendar"></i> Jadwal Kapal Managements</a></li>
                     <li><a href="/vessel"><i class="ti-rocket"></i> Vessel Management</a></li>
                     @endif
                     @if(auth()->user()->role=='hrd')
-                    <li><a href="/candidate/managements"><i class="ti-layout-grid2-alt"></i> Candidate</a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2-alt"></i> Candidate<span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="/candidate/managements">Daftar pelamar</a>
+                            </li>
+                            <li><a href="/candidate/interviewed">Pelamar yang interview</a></li>
+                        </ul>
                     </li>
                     <li><a href="/hrd"><i class="ti-layers-alt"></i> Utility Personalia</a></li>
                     @endif
