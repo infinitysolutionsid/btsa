@@ -58,8 +58,8 @@
                     <tr>
                         <th scope="row">{{$no++}}</th>
                         <td>{{$dt_quote->created_by}}</td>
-                        <td>{{$dt_quote->quotes_name}}</td>
-                        <td>{{$dt_quote->quotes_id}}</td>
+                        <td>{!!$dt_quote->quotes_name!!}</td>
+                        <td>{!!$dt_quote->quotes_id!!}</td>
                         <td>
                             @if($dt_quote->link_preview!='#')
                             <a href="{{$dt_quote->link_preview}}" target="_blank"><button class="btn btn-info btn-sm"><i

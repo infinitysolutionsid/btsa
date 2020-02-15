@@ -42,8 +42,9 @@ class DashController extends Controller
         $quote = DB::table('quote')
             ->where('quote.status', '=', 'Selesai')
             ->select('quote.*')
+            ->limit(1)
             ->inRandomOrder()
-            ->get(1);
+            ->get();
         $quotedash = DB::table('quote')
             ->where('quote.status', '=', 'loading')
             ->select('quote.*')

@@ -52,8 +52,8 @@
                     <tr>
                         <th scope="row">{{$no++}}</th>
                         <td>{{$dt_quote->created_by}}</td>
-                        <td>{{$dt_quote->quotes_name}}</td>
-                        <td>{{$dt_quote->quotes_id}}</td>
+                        <td>{!!$dt_quote->quotes_name!!}</td>
+                        <td>{!!$dt_quote->quotes_id!!}</td>
                         <td>{{$dt_quote->link_preview}}</td>
                         <td class="text-center">
                             @if($dt_quote->status=='Selesai')

@@ -49,7 +49,7 @@
                         <td>{{$dt_issue->nama_lengkap}}</td>
                         <td><span class="badge badge-warning">{{$dt_issue->id}}</span></td>
                         <td><span class="badge badge-primary">{{$dt_issue->tujuan}}</span></td>
-                        <td>{{$dt_issue->kendala}}</td>
+                        <td>{!!strip_tags($dt_issue->kendala)!!}</td>
                         <td class="text-center">
                             @if($dt_issue->status=='Selesai')
                             <span style="font-size: 1rem; color: green;"><i class="fas fa-check-circle"></i></span>

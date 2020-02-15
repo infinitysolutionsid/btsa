@@ -44,7 +44,7 @@
                         <td>{{$dt_issue->nama_lengkap}}</td>
                         <td><span class="badge badge-success">{{$dt_issue->tanggal}}</span> {{$dt_issue->jam}}</td>
                         <td><span class="badge badge-primary">{{$dt_issue->id}}</span></td>
-                        <td>{{$dt_issue->kendala}}</td>
+                        <td>{!!strip_tags($dt_issue->kendala)!!}</td>
                         <td class="text-center">
                             @if($dt_issue->status=='Selesai')
                             <span style="font-size: 1rem; color: green;" title="Telah Selesai." data-toggle="tooltip"

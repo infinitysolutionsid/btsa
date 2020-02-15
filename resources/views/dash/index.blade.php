@@ -127,7 +127,7 @@
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">{{$data->nama_lengkap}}</h4>
-                        <p>{{$data->kendala}} </p>
+                        <p>{!!$data->kendala!!} </p>
                         <div class="comment-action">
                             <div class="badge badge-success">{{$data->id}}</div>
                             <div class="badge badge-warning">{{$data->approve}}</div>
@@ -192,7 +192,7 @@
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">{{$data->created_by}}</h4>
-                        <p>{{$data->quotes_name}} </p>
+                        <p>{!!$data->quotes_name!!} </p>
                         <div class="comment-action">
                             <div class="badge badge-warning">{{$data->updated_by}}</div>
                         </div>
