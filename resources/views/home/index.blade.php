@@ -7,6 +7,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
     <title>BTSA LOGISTICS PPJK | EMKL | EMKU</title>
     <link rel="shortcut icon"
         href="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico">
@@ -29,7 +30,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://res.cloudinary.com/btsa-co-id/raw/upload/v1553436777/style.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -49,7 +50,7 @@
             <div class="modal-content">
                 <div class="modal-body" style="padding:0; background-color:#fff;">
                     <img class="img-full img-responsive"
-                        src="https://res.cloudinary.com/blogbtsa/image/upload/v1563412577/BTSA/popup.jpg"
+                        src="https://res.cloudinary.com/btsa-co-id/image/upload/v1581902157/popupimg/popup.jpg"
                         style="height:100%; width:100%;">
                 </div>
             </div>
@@ -161,11 +162,11 @@
                 <div class="modal-body">
                     <div class="col-md text-center">
                         <a
-                            href="https://res.cloudinary.com/btsa-co-id/image/upload/v1571112126/file/CompanyProfileBTSA2019-IND_UPDATED15OCT2019_-min.pdf"><button
+                            href="https://res.cloudinary.com/btsa-co-id/image/upload/v1581902586/file/CompanyProfileBTSA2019-IND_UPDATED15OCT2019_-min.pdf"><button
                                 class="btn btn-primary btn-md" type="button" aria-haspopup="true"
                                 aria-expanded="false">Bahasa Indonesia</button></a>
                         <a
-                            href="https://res.cloudinary.com/btsa-co-id/image/upload/v1571367825/file/CompanyProfileBTSA2019-ENG_UPDATED15OCT2019_-min.pdf"><button
+                            href="https://res.cloudinary.com/btsa-co-id/image/upload/v1581902586/file/CompanyProfileBTSA2019-ENG_UPDATED15OCT2019_-min.pdf"><button
                                 class="btn btn-primary btn-md" type="button" aria-haspopup="true"
                                 aria-expanded="false">Bahasa Inggris</button></a>
                     </div>
@@ -1472,45 +1473,51 @@
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2><strong>NILAI NILAI KAMI</strong></h2>
+                    <h2><strong>BUDAYA PERUSAHAAN</strong></h2>
                     <hr style="width: 100px; height: 3px; border:0; background-color: #282662">
                 </div>
             </div><br>
             <div class="row slideanim">
-                <div class="col-sm-6">
-                    <span class="glyphicon glyphicon-screenshot logo-values" style="color: #282662;"></span>
-                    <h4 style="color: #212121;"><strong>KOMPETEN</strong></h4>
-                    <p>1. Memiliki keahlian di bidang masing-masing<br>
-                        2. Memiliki kemampuan untuk bekerja keras dan bekerja cerdas</p>
+                <div class="col-sm-4">
+                    <span style="color: #282662; font-size: 4rem;"><i class="fab fa-sketch"></i></span>
+                    <h4 style="color: #212121;"><strong>Integrity</strong></h4>
+                    <p>Memiliki sikap kejujuran, terbuka, bertanggung jawab dan dapat dipercaya dalam melayani pelanggan
+                        internal dan eksternal.</p>
                 </div>
-                <div class="col-sm-6">
-                    <span class="glyphicon glyphicon-leaf logo-values" style="color: #282662;"></span>
-                    <h4 style="color: #212121;"><strong>RESPONSIF</strong></h4>
-                    <p>1. Tanggap terhadap situasi dan kondisi bisnis<br>
-                        2. Peduli terhadap gejala masalah untuk pencegahan<br>
-                        3. Tanggap terhadap peluang bisnis</p>
+                <div class="col-sm-4">
+                    <span style="color: #282662; font-size: 4rem;"><i class="fab fa-algolia"></i></span>
+                    <h4 style="color: #212121;"><strong>Be Proactive</strong></h4>
+                    <p>Tanggap dan inisiatif dalam menghadapi situasi internal dan eksternal untuk mencapai hal-hal yang
+                        lebih baik bagi perusahaan, karyawan dan pelanggan.</p>
+                </div>
+                <div class="col-sm-4">
+                    <span style="color: #282662; font-size: 4rem;"><i class="far fa-handshake"></i></span>
+                    <h4 style="color: #212121;"><strong>Service</strong></h4>
+                    <p>Memberikan pelayanan prima kepada pelanggan internal dan eksternal perusahaan</p>
                 </div>
             </div><br>
             <div class="row slideanim">
-                <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-star logo-values" style="color: #282662;"></span>
-                    <h4 style="color: #212121;"><strong>INTEGRITAS<br>(Trustworthiness, Responsibility)</strong></h4>
-                    <p>1. Bersikap jujur dan terbuka<br>terhadap pelanggan internal dan eksternal<br>
-                        2. Bertanggung jawab terhadap tindakan diri sendiri<br>
-                        3. Tunjukkan hasil, bukan mencari alasan</p>
+                <div class="col-sm-3">
+                    <span style="color: #282662; font-size: 4rem;"><i class="fas fa-crown"></i></span>
+                    <h4 style="color: #212121;"><strong>Loyality</strong></h4>
+                    <p>Loyal dan setia terhadap perusahaan, karyawan dan pelanggan utama.</p>
                 </div>
-                <div class="col-sm-4">
-                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541644295/jscsstxtfiledll/img/services100.png"
-                        style="width:55px; height:55px;">
-                    <h4 style="color: #212121;"><strong>SERVICE ORIENTED</strong></h4>
-                    <p>1. Berpedoman pada pelayanan prima untuk memenuhi kebutuhan dan keinginan pelanggan<br>
-                        2. Memiliki semangat melayani pelanggan internal dan<br>pelanggan eksternal</p>
+                <div class="col-sm-3">
+                    <span style="color: #282662; font-size: 4rem;"><i class="fas fa-users"></i></span>
+                    <h4 style="color: #212121;"><strong>Team Work</strong></h4>
+                    <p>Saling bekerja sama, menghormati, menghargai sesama rekan kerja dan pelanggan untuk mencapai
+                        tujuan dan visi perusahaan.</p>
                 </div>
-                <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-asterisk logo-values" style="color: #282662;"></span>
-                    <h4 style="color: #212121;"><strong>TEAMWORK</strong></h4>
-                    <p>1. Memiliki sikap positif<br>2. Memiliki kemampuan untuk menjalankan tugas<br>
-                        3. Saling menghormati dan menghargai sesama anggota tim untuk mencapai keberhasilan bersama</p>
+                <div class="col-sm-3">
+                    <span style="color: #282662; font-size: 4rem;"><i class="fas fa-eye"></i></span>
+                    <h4 style="color: #212121;"><strong>Visioner</strong></h4>
+                    <p>Memiliki pandangan atau visi kedepan serta mampu membuat rencana untuk mewujudkannya.</p>
+                </div>
+                <div class="col-sm-3">
+                    <span style="color: #282662; font-size: 4rem;"><i class="fas fa-star"></i></span>
+                    <h4 style="color: #212121;"><strong>Awareness</strong></h4>
+                    <p>Menyadari dan selalu bertindak positif serta bertanggung jawab untuk membuat lingkungan internal
+                        dan eksternal menjadi lebih baik.</p>
                 </div>
             </div>
         </div>
