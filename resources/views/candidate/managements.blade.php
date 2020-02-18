@@ -92,17 +92,21 @@
                                         <td>
 
                                             <strong>Info kontak</strong> |
-                                            <img src="{{asset('file/img/'.$cnd->profilephoto)}}" class="imgcandidate">
+                                            <img src="{{asset('file/img/'.$cnd->nama_lengkap.'/'.$cnd->profilephoto)}}"
+                                                class="imgcandidate">
                                             <br>Email aktif: <a href="mailto:{{$cnd->email}}">{{$cnd->email}}</a>
                                             <br>Nomor telepon aktif: <a href="tel:{{$cnd->noHp}}">{{$cnd->noHp}}</a>
                                             <br>Download dokumen pendukung pelamar dibawah ini:
                                             <br>
-                                            <a href="{{asset('file/doc/ktp/'.$cnd->ktpfile)}}" download title="KTP"
-                                                target="_blank"><i class="fas fa-id-card fa-2x"></i></a>
-                                            <a href="{{asset('file/doc/sim/'.$cnd->simfile)}}" download title="SIM"
-                                                target="_blank"><i class="fas fa-address-card fa-2x"></i></a>
-                                            <a href="{{asset('file/doc/'.$cnd->filecv)}}" title="CV" download
-                                                target="_blank"><i class="fas fa-file-alt fa-2x"></i></a>
+                                            <a href="{{asset('file/doc/ktp/'.$cnd->nama_lengkap.'/'.$cnd->ktpfile)}}"
+                                                download title="KTP" target="_blank"><i
+                                                    class="fas fa-id-card fa-2x"></i></a>
+                                            <a href="{{asset('file/doc/sim/'.$cnd->nama_lengkap.'/'.$cnd->simfile)}}"
+                                                download title="SIM" target="_blank"><i
+                                                    class="fas fa-address-card fa-2x"></i></a>
+                                            <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/'.$cnd->filecv)}}"
+                                                title="CV" download target="_blank"><i
+                                                    class="fas fa-file-alt fa-2x"></i></a>
                                         </td>
                                     </thead>
                                 </table>
