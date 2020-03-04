@@ -50,7 +50,7 @@
             <div class="modal-content">
                 <div class="modal-body" style="padding:0; background-color:#fff;">
                     <img class="img-full img-responsive"
-                        src="https://res.cloudinary.com/btsa-co-id/image/upload/v1581902157/popupimg/popup.jpg"
+                        src="https://res.cloudinary.com/btsa-co-id/image/upload/v1582945809/jscsstxtfiledll/img/Peta_BTSA_28Feb2020.jpg"
                         style="height:100%; width:100%;">
                 </div>
             </div>
@@ -162,11 +162,11 @@
                 <div class="modal-body">
                     <div class="col-md text-center">
                         <a
-                            href="https://res.cloudinary.com/btsa-co-id/image/upload/v1581902586/file/CompanyProfileBTSA2019-IND_UPDATED15OCT2019_-min.pdf"><button
+                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1583202940/CompanyProfile/Company_Profile_BTSA_2020_-_IND.pdf"><button
                                 class="btn btn-primary btn-md" type="button" aria-haspopup="true"
                                 aria-expanded="false">Bahasa Indonesia</button></a>
                         <a
-                            href="https://res.cloudinary.com/btsa-co-id/image/upload/v1581902586/file/CompanyProfileBTSA2019-ENG_UPDATED15OCT2019_-min.pdf"><button
+                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1583202939/CompanyProfile/Company_Profile_BTSA_2020_-_ENG.pdf"><button
                                 class="btn btn-primary btn-md" type="button" aria-haspopup="true"
                                 aria-expanded="false">Bahasa Inggris</button></a>
                     </div>
@@ -1542,8 +1542,8 @@
                 </div>
             </div><br>
             <div class="row slideanim">
-                <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-globe logo-offer"></span>
+                <div class="col-sm-3">
+                    <span style="font-size:3rem;"><i class="fas fa-globe-asia"></i></span>
                     <h4><strong>DOMESTIC</strong></h4>
                     <p>Kami menyediakan jasa pengiriman via laut ke seluruh wilayah di Indonesia meliputi :<br>
                         <p>1. EMKL (Ekspedisi Muatan Kapal Laut)<br>
@@ -1554,8 +1554,8 @@
                         </p>
                     </p>
                 </div>
-                <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-resize-full logo-offer"></span>
+                <div class="col-sm-3">
+                    <span style="font-size:3rem;"><i class="fas fa-expand-arrows-alt"></i></span>
                     <h4><strong>EXPORT</strong></h4>
                     <p>Kami hadir di pelabuhan / bandara :<br>
                         <p>
@@ -1571,8 +1571,8 @@
                         </p>
                     </p>
                 </div>
-                <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-resize-small logo-offer"></span>
+                <div class="col-sm-3">
+                    <span style="font-size:3rem;"><i class="fas fa-file-import"></i></span>
                     <h4><strong>IMPORT</strong></h4>
                     <p>Kami hadir di pelabuhan / bandara :<br>
                         <p>
@@ -1588,10 +1588,8 @@
                         </p>
                     </p>
                 </div>
-            </div><br><br>
-            <div class="row slideanim">
-                <div class="col-sm-6">
-                    <span class="glyphicon glyphicon-road logo-offer"></span>
+                <div class="col-sm-3">
+                    <span style="font-size:3rem;"><i class="fas fa-truck-loading"></i></span>
                     <h4><strong>TRUCKING</strong></h4>
                     <p>Kami menyediakan jasa trucking yang meliputi :
                         <p>
@@ -1601,9 +1599,11 @@
                             4. Mobil Box roda 4/6<br>
                         </p>
                     </p>
-                </div><br>
-                <div class="col-sm-6">
-                    <span class="glyphicon glyphicon-plane logo-offer"></span>
+                </div>
+            </div><br><br>
+            <div class="row slideanim">
+                <div class="col-sm-3">
+                    <span style="font-size:3rem;"><i class="fas fa-plane-departure"></i></span>
                     <h4><strong>PENGIRIMAN VIA UDARA</strong></h4>
                     <p>Kami menyediakan jasa pengiriman via udara meliputi :<br>
                         <p>
@@ -1611,6 +1611,32 @@
                             2. Airport to airport service<br>
                             3. Custom Clearance in Airport<br>
                         </p>
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <span style="font-size:3rem;"><i class="fas fa-dolly-flatbed"></i></span>
+                    <h4><strong>PROYEK KARGO</strong></h4>
+                    <p>Kami menyediakan jasa proyek kargo :<br>
+                        <p>
+                            1. Custom Clearance<br>
+                            2. Heavy Equipment<br>
+                            3. Moving over size cargo<br>
+                            4. Carter LCT<br>
+                            5. Carter Shipment.
+                        </p>
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <span style="font-size:3rem;"><i class="fas fa-warehouse"></i></span>
+                    <h4><strong>WAREHOUSE HANDLING</strong></h4>
+                    <p>Kami hadir di Medan & Palembang
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <span style="font-size:3rem;"><i class="fas fa-people-carry"></i></span>
+                    <h4><strong>DISTRIBUTION HANDLING</strong></h4>
+                    <p>Kami hadir di seluruh pulau Sumatera
+
                     </p>
                 </div>
             </div>
