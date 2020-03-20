@@ -115,7 +115,8 @@
                                         <label for="kepada">Tujuan IR</label>
                                         <select name="tujuan" id="tujuan" class="form-control custom-select">
                                             <option value="IT">IT</option>
-                                            <option value="PU">PU</option>
+                                            <option value="Bagian Umum">Bagian Umum</option>
+<option value="HRD">HRD</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
