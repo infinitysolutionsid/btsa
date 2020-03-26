@@ -51,7 +51,6 @@ class candidateController extends Controller
         $interviewer->info_lowongan = $request->info_lowongan;
         $interviewer->req_datein = $request->req_datein;
         $interviewer->income = $request->income;
-
         if ($request->hasFile('profilephoto')) {
             $request->file('profilephoto')->move('file/img/' . $request->nama_lengkap, $request->file('profilephoto')->getClientOriginalName());
             $interviewer->profilephoto = $request->file('profilephoto')->getClientOriginalName();

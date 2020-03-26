@@ -98,10 +98,10 @@
                                             <br>Nomor telepon aktif: <a href="tel:{{$cnd->noHp}}">{{$cnd->noHp}}</a>
                                             <br>Download dokumen pendukung pelamar dibawah ini:
                                             <br>
-                                            <a href="{{asset('file/doc/ktp/'.$cnd->nama_lengkap.'/'.$cnd->ktpfile)}}"
+                                            <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/ktp/'.$cnd->ktpfile)}}"
                                                 download title="KTP" target="_blank"><i
                                                     class="fas fa-id-card fa-2x"></i></a>
-                                            <a href="{{asset('file/doc/sim/'.$cnd->nama_lengkap.'/'.$cnd->simfile)}}"
+                                            <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/sim/'.$cnd->simfile)}}"
                                                 download title="SIM" target="_blank"><i
                                                     class="fas fa-address-card fa-2x"></i></a>
                                             <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/'.$cnd->filecv)}}"
