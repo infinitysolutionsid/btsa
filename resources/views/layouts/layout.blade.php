@@ -96,7 +96,8 @@
                             @if(auth()->user()->role=='head' || auth()->user()->role=='administrator')
                             <li><a href="/quote-request">Quote request</a></li>
                             @endif
-                            @if(auth()->user()->role=='it' || auth()->user()->role=='administrator')
+                            @if(auth()->user()->role=='it' || auth()->user()->role=='administrator' ||
+                            auth()->user()->role=='umum')
                             <li><a href="/quote-published">Quote published</a></li>
                             @endif
                         </ul>
@@ -107,9 +108,10 @@
                             @if(auth()->user()->role=='user' || auth()->user()->role=='administrator')
                             <li><a href="/queue">Queue</a></li>
                             @endif
-                            @if(auth()->user()->role=='it' || auth()->user()->role=='administrator')
-                            <li><a href="/itCheck">IT Checked</a></li>
-                            <li><a href="/itSolved">IT Solved IR</a></li>
+                            @if(auth()->user()->role=='it' || auth()->user()->role=='administrator' ||
+                            auth()->user()->role=='umum')
+                            <li><a href="/itCheck">IT & PU Checked</a></li>
+                            <li><a href="/itSolved">IT & PU Solved IR</a></li>
                             @endif
                             @if(auth()->user()->role=='head' || auth()->user()->role=='administrator')
                             <li><a href="/headCheck">Head Checked</a></li>

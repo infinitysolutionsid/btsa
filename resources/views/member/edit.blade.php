@@ -48,6 +48,8 @@
                             </option>
                             <option value="it" @if($data_member->role=='it') selected @endif>IT (Issue Report)
                             </option>
+                            <option value="umum" @if($data_member->role=='umum') selected @endif>Umum (Issue Report)
+                            </option>
                             <option value="user" @if($data_member->role=='user') selected @endif>User (Issue Report)
                             </option>
                         </select>

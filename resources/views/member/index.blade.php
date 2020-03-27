@@ -123,6 +123,7 @@
                                             <option value="hrd">HRD</option>
                                             <option value="head">Head (Issue Report)</option>
                                             <option value="it">IT (Issue Report)</option>
+                                            <option value="umum">Umum (Issue Report)</option>
                                             <option value="user">User (Issue Report)</option>
                                         </select>
                                     </div>

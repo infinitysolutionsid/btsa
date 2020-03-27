@@ -8,7 +8,7 @@
         <div class="col-lg-12 text-center quoterow">
             @foreach ($quote as $item)
             <a href="{{$item->link_preview}}">
-                <h5><i class="fa fa-quote-left"></i> {{$item->quotes_name}} <i class="fa fa-quote-right"></i></h5>
+                <h5><i class="fa fa-quote-left"></i> {!!$item->quotes_name!!} <i class="fa fa-quote-right"></i></h5>
                 <p>- {{$item->created_by}} -</p>
             </a>
             @endforeach
