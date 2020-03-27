@@ -116,7 +116,8 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-title">
-                <h4><strong><i class="ti-ticket"></i> New Request Ticket IR</strong></h4>
+                <h4><strong><i class="ti-ticket"></i> New Request Ticket IR</strong> @foreach($issueData as
+                    $data)<span class="">-> {{$data->tujuan}}</span>@endforeach</h4>
                 <hr>
             </div>
             <div class="recent-comment">

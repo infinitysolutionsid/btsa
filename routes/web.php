@@ -110,7 +110,7 @@ Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function
     Route::get('hrd/{loker_id}/delete/deletedatalowongan', 'UtilityController@deleteloker');
 });
 
-Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator']], function () {
+Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator,umum']], function () {
     Route::get('/queue', 'issueController@index');
     Route::get('/quote-request', 'QuoteController@index');
     Route::get('/quote-published', 'QuoteController@published');

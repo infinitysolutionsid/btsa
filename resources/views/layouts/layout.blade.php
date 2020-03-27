@@ -174,7 +174,8 @@
                         <div class="page-header">
                             <div class="page-title">
                                 <h1>Hello <strong>{{auth()->user()->nama_lengkap}}</strong>,</h1>
-                                <p class="text-muted">Your current role is <strong>{{auth()->user()->role}}.</strong>
+                                <p class="text-muted">Permission role status is
+                                    <strong>{{auth()->user()->role}}.</strong>
                                 </p>
                             </div>
                         </div>

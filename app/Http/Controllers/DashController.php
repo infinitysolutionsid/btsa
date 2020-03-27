@@ -14,6 +14,7 @@ class DashController extends Controller
             ->select('issuereport_tb.*')
             ->orderBy('issuereport_tb.tanggal', 'DESC')
             ->orderBy('issuereport_tb.jam', 'DESC')
+            ->where('issuereport_tb.tujuan', '=', auth()->user()->role)
             ->get();
         $data_member = DB::table('users')
             ->select('users.*')

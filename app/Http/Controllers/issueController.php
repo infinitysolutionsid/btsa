@@ -42,6 +42,7 @@ class issueController extends Controller
             ->orderBy('issuereport_tb.jam', 'DESC')
             ->where('issuereport_tb.status', '=', 'Belum Selesai')
             ->where('issuereport_tb.approve', '!=', 'unApproved')
+            ->where('issuereport_tb.tujuan', '=', auth()->user()->role)
             ->get();
         return view('issue.itCheck', ['issueData' => $issueData]);
     }
@@ -52,6 +53,7 @@ class issueController extends Controller
             ->orderBy('issuereport_tb.tanggal', 'DESC')
             ->orderBy('issuereport_tb.jam', 'DESC')
             ->where('issuereport_tb.status', '=', 'Selesai')
+            ->where('issuereport_tb.tujuan', '=', auth()->user()->role)
             ->get();
         return view('issue.itSolved', ['issueData' => $issueData]);
     }

@@ -121,9 +121,9 @@
                                     <div class="form-group">
                                         <label for="kepada">Tujuan IR</label>
                                         <select name="tujuan" id="tujuan" class="form-control custom-select">
-                                            <option value="IT">IT</option>
-                                            <option value="Umum">Umum</option>
-<option value="HRD">HRD</option>
+                                            <option value="it">IT</option>
+                                            <option value="umum">Umum</option>
+                                            <option value="hrd">HRD</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
