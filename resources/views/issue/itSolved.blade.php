@@ -74,7 +74,7 @@
 <script>
     $(document).ready(function () {
         $('#memberTables').DataTable({
-            scrollY: 300,
+            scrollY: 600,
         });
     });
 
