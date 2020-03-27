@@ -3,7 +3,9 @@
 @section('content')
 <div class="card">
     <div class="card-title">
-        <h4>IT Solved Issues</h4>
+        <h4>Tugas @if(auth()->user()->role=='it')<b>Bagian IT</b> @elseif(auth()->
+            user()->role=='umum')<b>Bagian Umum</b> @elseif(auth()->user()->role=='hrd')<b>Bagian HRD</b> @else
+            @endif yang telah selesai</h4>
         <a href="#addIR">
             <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right" data-toggle="modal"
                 data-target="#addIR">
@@ -104,7 +106,7 @@
                                         <select name="tujuan" id="tujuan" class="form-control custom-select">
                                             <option value="IT">IT</option>
                                             <option value="Umum">Umum</option>
-<option value="HRD">HRD</option>
+                                            <option value="HRD">HRD</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

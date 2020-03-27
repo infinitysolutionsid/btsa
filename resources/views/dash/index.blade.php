@@ -116,8 +116,11 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-title">
-                <h4><strong><i class="ti-ticket"></i> New Request Ticket IR</strong> @foreach($issueData as
-                    $data)<span class="">-> {{$data->tujuan}}</span>@endforeach</h4>
+                <h4><strong><i class="ti-ticket"></i> New Request Ticket IR</strong> @foreach($issueData->take(1) as
+                    $data)&nbsp;<span><i class="fas fa-angle-double-right"></i></<span> @if($data->tujuan ==
+                        'umum')Bagian Umum
+                        @elseif($data->tujuan=='it')Bagian
+                        IT @elseif($data->tujuan=='hrd')Bagian HRD @else @endif @endforeach</h4>
                 <hr>
             </div>
             <div class="recent-comment">

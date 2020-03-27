@@ -3,8 +3,9 @@
 @section('content')
 <div class="card">
     <div class="card-title">
-        <h4>IT/PU Checked</h4>
-        <a href="#addIR">
+        <h4>Periksa tugas @if(auth()->user()->role=='it')<b>Bagian IT</b> @elseif(auth()->
+            user()->role=='umum')<b>Bagian Umum</b> @elseif(auth()->user()->role=='hrd')<b>Bagian HRD</b> @else
+            @endif</h4> <a href="#addIR">
             <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right" data-toggle="modal"
                 data-target="#addIR">
                 <span class="ti-plus"></span> Request new IR
@@ -26,11 +27,11 @@
                     <tr>
                         <th>#</th>
                         <th>Pelapor</th>
-                        <th>Tanggal pelapor</th>
-                        <th>Antrian No.</th>
+                        <th>Tanggal</th>
+                        <th>Tiket no.</th>
                         <th>Kendala</th>
                         <th>Status</th>
-                        <th>Checked by</th>
+                        <th>Approved by</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -61,20 +62,23 @@
                         <td>
                             <form action="/itCheck/selesai/{{$dt_issue->id}}" method="post">
                                 {{ csrf_field() }}
-                                <button type="submit" class="btn btn-primary btn-outline">
-                                    Selesai
+                                <button type="submit" class="btn btn-success btn-outline" data-toggle="tooltip"
+                                    data-placement="left" title="Selesaikan!">
+                                    <span><i class="far fa-check-circle"></i></span>
                                 </button>
                             </form>
                             <form action="/itCheck/sementara/{{$dt_issue->id}}" method="post">
                                 {{ csrf_field() }}
-                                <button type="submit" class="btn btn-warning btn-outline">
-                                    Tunda
+                                <button type="submit" class="btn btn-warning btn-outline" data-toggle="tooltip"
+                                    data-placement="left" title="Tunda dulu deh.">
+                                    <span><i class="far fa-pause-circle"></i></span>
                                 </button>
                             </form>
                             <form action="/itCheck/batal/{{$dt_issue->id}}" method="post">
                                 {{ csrf_field() }}
-                                <button type="submit" class="btn btn-danger btn-outline">
-                                    Batal
+                                <button type="submit" class="btn btn-danger btn-outline" data-toggle="tooltip"
+                                    data-placement="left" title="Batalkan!">
+                                    <span><i class="far fa-times-circle"></i></span>
                                 </button>
                             </form>
                         </td>
@@ -91,7 +95,7 @@
 <script>
     $(document).ready(function () {
         $('#memberTables').DataTable({
-            scrollY: 300,
+            scrollY: 600,
         });
     });
 

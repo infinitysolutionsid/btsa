@@ -10,12 +10,19 @@ class DashController extends Controller
 {
     public function index()
     {
-        $issueData = DB::table('issuereport_tb')
-            ->select('issuereport_tb.*')
-            ->orderBy('issuereport_tb.tanggal', 'DESC')
-            ->orderBy('issuereport_tb.jam', 'DESC')
-            ->where('issuereport_tb.tujuan', '=', auth()->user()->role)
-            ->get();
+        if (auth()->user()->role != ['hrd', 'umum', 'it'])
+            $issueData = DB::table('issuereport_tb')
+                ->select('issuereport_tb.*')
+                ->orderBy('issuereport_tb.tanggal', 'DESC')
+                ->orderBy('issuereport_tb.jam', 'DESC')
+                ->get();
+        else
+            $issueData = DB::table('issuereport_tb')
+                ->select('issuereport_tb.*')
+                ->orderBy('issuereport_tb.tanggal', 'DESC')
+                ->orderBy('issuereport_tb.jam', 'DESC')
+                ->where('issuereport_tb.tujuan', '=', auth()->user()->role)
+                ->get();
         $data_member = DB::table('users')
             ->select('users.*')
             ->get();
