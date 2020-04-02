@@ -40,9 +40,21 @@
     </script>
     <script src="https://res.cloudinary.com/btsa-co-id/raw/upload/v1541554459/jscsstxtfiledll/js/script.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {{-- facebook open graphs --}}
+    <meta property="fb:admins" content="1282698325202260">
+    <meta property="og:site_name" content="BTSA LOGISTICS PPJK | EMKL | EMKU" />
+    <meta property="og:url" content="{{Request::url()}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@yield('title')" />
+    <meta property="og:description" content="@yield('metadesc')" />
+    <meta property="og:image"
+        content="{!!url('https://res.cloudinary.com/btsa-co-id/image/upload/v1585810115/popupimg/ogimage.jpg')!!}">
+
 </head>
 
 <body id="mypage" data-spy="scroll" data-target=".navbar" data-offset="90">
+
 
     <!-- Auto PopUp -->
     <div class="modal fade" id="global-modal" role="dialog">
