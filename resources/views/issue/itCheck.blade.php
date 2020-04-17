@@ -60,13 +60,14 @@
                         </td>
                         <td>{{$dt_issue->approve}}</td>
                         <td>
-                            <form action="/itCheck/selesai/{{$dt_issue->id}}" method="post">
-                                {{ csrf_field() }}
+
+                            <span data-toggle="modal" data-target="#modalSolusi{{$dt_issue->id}}">
                                 <button type="submit" class="btn btn-success btn-outline" data-toggle="tooltip"
                                     data-placement="left" title="Selesaikan!">
                                     <span><i class="far fa-check-circle"></i></span>
                                 </button>
-                            </form>
+                            </span>
+                            {{-- </form> --}}
                             <form action="/itCheck/sementara/{{$dt_issue->id}}" method="post">
                                 {{ csrf_field() }}
                                 <button type="submit" class="btn btn-warning btn-outline" data-toggle="tooltip"
@@ -83,6 +84,40 @@
                             </form>
                         </td>
                     </tr>
+                    {{-- modal solusi --}}
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalSolusi{{$dt_issue->id}}" tabindex="-1" role="dialog"
+                        aria-labelledby="modalSolusi{{$dt_issue->id}}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <form action="/itCheck/selesai/{{$dt_issue->id}}" method="post">
+                                    {{ csrf_field() }}
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalSolusi{{$dt_issue->id}}">Masalah Antrian
+                                            #{{$dt_issue->id}} sudah
+                                            selesai?
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p style="color:#141414;">Pelapor: <b>{{$dt_issue->nama_lengkap}}</b> | Yang
+                                            Menyetujui:
+                                            <b>{{$dt_issue->approve}}</b> |
+                                            Terselesaikan oleh <b>{{auth()->user()->nama_lengkap}}</b>
+                                        </p>
+                                        <textarea name="solusi" id="" cols="30" rows="10"
+                                            placeholder="Ceritakan bagaimana cara kamu menyelesaikannya!"
+                                            required></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success">Finish This Issue</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
                     @else
                     <td colspan="7" class="text-center">No data founded!</td>
@@ -92,6 +127,7 @@
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function () {
         $('#memberTables').DataTable({

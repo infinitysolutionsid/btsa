@@ -71,7 +71,10 @@ class issueController extends Controller
     {
         $issueData = \App\IRModel::find($id);
         $issueData->update($request->all());
+        $issueData->solusi = $request->solusi;
         $issueData->status = 'Selesai';
+        $issueData->tanggal = date('Y-m-d');
+        $issueData->jam = date('H:i:s');
         $issueData->updated_by = auth()->user()->nama_lengkap;
         $issueData->logIP = $request->getClientIp();
         $issueData->save();

@@ -27,11 +27,10 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Pelapor</th>
-                        <th>Tanggal pelapor</th>
-                        <th>Antrian No.</th>
+
+                        <th>Tanggal selesai</th>
+                        <th>Notes</th>
                         <th>Kendala</th>
-                        <th>Status</th>
                         <th>Checked by</th>
                         <th>Solved by</th>
                     </tr>
@@ -43,25 +42,48 @@
                     @foreach($issueData as $dt_issue)
                     <tr>
                         <th scope="row">{{$no++}}</th>
-                        <td>{{$dt_issue->nama_lengkap}}</td>
-                        <td><span class="badge badge-success">{{$dt_issue->tanggal}}</span> {{$dt_issue->jam}}</td>
-                        <td><span class="badge badge-primary">{{$dt_issue->id}}</span></td>
-                        <td>{!!strip_tags($dt_issue->kendala)!!}</td>
-                        <td class="text-center">
-                            @if($dt_issue->status=='Selesai')
-                            <span style="font-size: 1rem; color: green;" title="Telah Selesai." data-toggle="tooltip"
-                                data-placement="top"><i class="fas fa-check-circle"></i></span>
-                            @elseif($dt_issue->status=='Belum Selesai')
-                            <span style="font-size: 1rem; color: #e18a19;" title="Belum selesai! Kapan dikerjai?"
-                                data-toggle="tooltip" data-placement="top"><i class="fas fa-pause-circle"></i></span>
-                            @else
-                            <span style="font-size: 1rem; color: red;" title="Udah dibatalin." data-toggle="tooltip"
-                                data-placement="top"><i class="fas fa-times-circle"></i></span>
-                            @endif
-                        </td>
+
+                        <td><span class="badge badge-success">{{$dt_issue->tanggal}}</span></td>
+                        <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                data-target="#detailsissue{{$dt_issue->id}}">
+                                <span><i class="fas fa-info-circle"></i> See details</span>
+                            </button></td>
+                        <td>{!!strip_tags(str_limit($dt_issue->kendala, $limit=50))!!}</td>
                         <td>{{$dt_issue->approve}}</td>
-                        <td>{{$dt_issue->updated_by}}</td>
+                        <td style="text-align:left;">{{$dt_issue->updated_by}}</td>
                     </tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="detailsissue{{$dt_issue->id}}" tabindex="-1" role="dialog"
+                        aria-labelledby="#detailsissue{{$dt_issue->id}}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="#detailsissue{{$dt_issue->id}}">Issue Detail
+                                        <b>#{{$dt_issue->id}}</b></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div>
+                                        <p>
+                                            Nama pelapor: {{$dt_issue->nama_lengkap}}<br>
+                                            Waktu selesai: {{$dt_issue->tanggal}} {{$dt_issue->jam}}<br>
+                                            Kendala:<br>
+                                            {!!$dt_issue->kendala!!}
+                                        </p>
+                                        <hr>
+                                        <h4>Your solutions:</h4>
+                                        <p>{!!$dt_issue->solusi!!}</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
                     @else
                     <td colspan="7" class="text-center">No data founded!</td>
