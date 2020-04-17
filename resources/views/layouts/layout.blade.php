@@ -76,6 +76,15 @@
                     <li><a href="/jadwal"><i class="ti-calendar"></i> Jadwal Kapal Managements</a></li>
                     <li><a href="/vessel"><i class="ti-rocket"></i> Vessel Management</a></li>
                     @endif
+                    @if(auth()->user()->role == 'head')
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2-alt"></i> Candidate<span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="/candidate/managements">Daftar pelamar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    @endif
                     @if(auth()->user()->role=='hrd')
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2-alt"></i> Candidate<span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>

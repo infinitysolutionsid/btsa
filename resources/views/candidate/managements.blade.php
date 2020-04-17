@@ -55,10 +55,11 @@
                         <td>{{$cnd->req_datein}}</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
+                                @if($cnd->statusinterview!='interviewed' && auth()->user()->role != 'head'))
                                 <button type="button" class="btn btn-danger" title="Hapus data pelamar"><a
                                         href="/candidate/managements/{{$cnd->candidate_id}}/delete">
                                         <span style="color:white;"><i class="fas fa-trash"></i></span></a></button>
-                                @if($cnd->statusinterview!='interviewed')
+
                                 <button type="button" class="btn btn-success"
                                     title="Tandai sebagai yang sudah datang interview"><a
                                         href="/candidate/managements/{{$cnd->candidate_id}}/updateinterview">

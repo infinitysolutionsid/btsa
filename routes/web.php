@@ -109,6 +109,12 @@ Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function
     Route::get('hrd/{religion_id}/delete/deletedataagama', 'UtilityController@hapusagama');
     Route::get('hrd/{loker_id}/delete/deletedatalowongan', 'UtilityController@deleteloker');
 });
+Route::group(['middleware' => ['auth', 'roleCheck:head']], function () {
+    route::get('/candidate/managements', 'candidateController@managements');
+    Route::get('/candidate/managements/{candidate_id}/view', 'candidateController@viewcandidate');
+    Route::get('/candidate/managements/{candidate_id}/delete', 'candidateController@deletecandidate');
+    Route::get('/candidate/managements/{candidate_id}/updateinterview', 'candidateController@updatecandidate');
+});
 
 Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator,umum']], function () {
     Route::get('/queue', 'issueController@index');
