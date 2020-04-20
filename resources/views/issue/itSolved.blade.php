@@ -48,45 +48,10 @@
                                 data-target="#detailsissue{{$dt_issue->id}}">
                                 <span><i class="fas fa-info-circle"></i> See details</span>
                             </button></td>
-                        <td>{!!strip_tags(str_limit($dt_issue->kendala, $limit=50))!!}</td>
+                        <td>{!!strip_tags(str_limit($dt_issue->kendala, $limit=100))!!}</td>
                         <td>{{$dt_issue->approve}}</td>
                         <td style="text-align:left;">{{$dt_issue->updated_by}}</td>
-                    </tr>
-                    <!-- Modal -->
-                    <div class="modal fade" id="detailsissue{{$dt_issue->id}}" tabindex="-1" role="dialog"
-                        aria-labelledby="#detailsissue{{$dt_issue->id}}" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="#detailsissue{{$dt_issue->id}}">Issue Detail
-                                        <b>#{{$dt_issue->id}}</b></h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div>
-                                        <p>
-                                            Nama pelapor: {{$dt_issue->nama_lengkap}}<br>
-                                            Waktu selesai: {{$dt_issue->tanggal}} {{$dt_issue->jam}}<br>
-                                            Kendala:<br>
-                                            {!!$dt_issue->kendala!!}
-                                        </p>
-                                        <hr>
-                                        <h4>Your solutions:</h4>
-                                        <p>{!!$dt_issue->solusi!!}</p>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                    @else
-                    <td colspan="7" class="text-center">No data founded!</td>
+                    </tr> @endforeach @else <td colspan="7" class="text-center">No data founded!</td>
                     @endif
                 </tbody>
             </table>
@@ -101,6 +66,42 @@
     });
 
 </script>
+
+<!-- Modal -->
+@foreach($issueData as $dt_issue)
+<div class="modal fade" id="detailsissue{{$dt_issue->id}}" tabindex="-1" role="dialog"
+    aria-labelledby="#detailsissue{{$dt_issue->id}}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="#detailsissue{{$dt_issue->id}}">Issue Detail
+                    <b>#{{$dt_issue->id}}</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <p>
+                        Nama pelapor: {{$dt_issue->nama_lengkap}}<br>
+                        Waktu selesai: {{$dt_issue->tanggal}} {{$dt_issue->jam}}<br>
+                        Kendala:<br>
+                        {!!$dt_issue->kendala!!}
+                    </p>
+                    <hr>
+                    <h4>Your solutions:</h4>
+                    <p>{!!$dt_issue->solusi!!}</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+
 <!-- Modal -->
 <div class="modal fade" id="addIR" tabindex="-1" role="dialog" aria-labelledby="addIR" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

@@ -32,6 +32,12 @@
     </script>
     <link rel="stylesheet"
         href="{!!url('https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css')!!}" />
+    <style>
+        .tab {
+            margin-left: 40px;
+        }
+
+    </style>
 </head>
 <!-- Styles -->
 <link href="{!! asset('css/lib/weather-icons.css')!!}" rel="stylesheet" />
@@ -243,7 +249,6 @@
     <!-- sidebar -->
     <script src="{!!asset('js/lib/bootstrap.min.js')!!}"></script>
 
-    <!-- bootstrap -->
 
     <script src="{!!asset('js/lib/circle-progress/circle-progress.min.js')!!}"></script>
     <script src="{!!asset('js/lib/circle-progress/circle-progress-init.js')!!}"></script>
