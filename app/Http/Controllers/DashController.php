@@ -53,11 +53,15 @@ class DashController extends Controller
             ->limit(1)
             ->inRandomOrder()
             ->get();
+        $quoteds = DB::table('quote')
+            ->where('quote.status', '=', 'Selesai')
+            ->select('quote.*')
+            ->get();
         $quotedash = DB::table('quote')
             ->where('quote.status', '=', 'loading')
             ->select('quote.*')
             ->orderByRaw('quote.updated_at', 'DESC')
             ->get();
-        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData, 'quote' => $quote, 'quotedash' => $quotedash]);
+        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData, 'quote' => $quote, 'quotedash' => $quotedash, 'quoteds' => $quoteds]);
     }
 }

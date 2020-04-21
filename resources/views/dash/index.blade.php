@@ -104,7 +104,7 @@
         <div class="card">
             <div class="stat-widget-two">
                 <div class="stat-content">
-                    <?php $quotecount = $quote->count() ?>
+                    <?php $quotecount = $quoteds->count() ?>
                     <div class="stat-text">Total Quote Terbit </div>
                     <div class="stat-digit"> {{$quotecount}}</div>
                 </div>
