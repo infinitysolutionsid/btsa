@@ -121,9 +121,18 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="nama_lengkap">Nama Lengkap</label>
-                                        <input type="text" class="form-control" name="nama_lengkap"
-                                            value="{{auth()->user()->nama_lengkap}}" readonly>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="nama_lengkap">Nama Lengkap</label>
+                                                <input type="text" class="form-control" name="nama_lengkap"
+                                                    value="{{auth()->user()->nama_lengkap}}" readonly>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="quotes_by">Quotes By</label>
+                                                <input type="text" name="quotes_by" class="form-control" required
+                                                    autofocus>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="role">Quote:</label>

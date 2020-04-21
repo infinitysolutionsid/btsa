@@ -35,10 +35,11 @@ class QuoteController extends Controller
         $quote->quotes_id  = $request->quotes_id;
         $quote->link_preview = '#';
         $quote->updated_by = 'Belum dicek';
+        $quote->quotes_by = $request->quotes_by;
         $quote->logIP = $request->getClientIp();
         $quote->save();
 
-        return back()->with('sukses', 'good');
+        return back()->with('sukses', 'Kamu berhasil request update quotes!');
     }
     public function deletequote($quote_id)
     {
@@ -67,6 +68,6 @@ class QuoteController extends Controller
         $data_quote->status = 'Selesai';
         $data_quote->save();
 
-        return back()->with('selesai', 'good');
+        return redirect('/quote-published')->with('selesai', 'Quote berhasil diupdate!');
     }
 }

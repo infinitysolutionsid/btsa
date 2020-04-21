@@ -16,5 +16,6 @@ class QuoteDB extends Model
         'logIP',
         'created_by',
         'updated_by',
+        'quotes_by',
     ];
 }

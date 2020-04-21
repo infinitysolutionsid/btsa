@@ -7,7 +7,7 @@
         <a href="#requestQuote">
             <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right" data-toggle="modal"
                 data-target="#requestQuote">
-                <span class="ti-plus"></span> Request new IR
+                <span class="ti-plus"></span> Request new quote
             </button>
         </a>
     </div>
@@ -31,7 +31,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                     aria-hidden="true">&times;</span></button>
             <strong>Successfull!</strong><br>
-            <small>Kamu berhasil update quote yang telah direquest.</small>
+            <small>{{session('selesai')}}</small>
         </div>
         @endif
         <div class="table-responsive">
@@ -51,7 +51,7 @@
                     @foreach($data_quote as $dt_quote)
                     <tr>
                         <th scope="row">{{$no++}}</th>
-                        <td>{{$dt_quote->created_by}}</td>
+                        <td>{{$dt_quote->quotes_by}}</td>
                         <td>{!!$dt_quote->quotes_name!!}</td>
                         <td>{!!$dt_quote->quotes_id!!}</td>
                         <td>{{$dt_quote->link_preview}}</td>
@@ -117,9 +117,18 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="nama_lengkap">Nama Lengkap</label>
-                                        <input type="text" class="form-control" name="nama_lengkap"
-                                            value="{{auth()->user()->nama_lengkap}}" readonly>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="nama_lengkap">Nama Lengkap</label>
+                                                <input type="text" class="form-control" name="nama_lengkap"
+                                                    value="{{auth()->user()->nama_lengkap}}" readonly>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="quotes_by">Quotes By</label>
+                                                <input type="text" name="quotes_by" class="form-control" required
+                                                    autofocus>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="role">Quote:</label>
