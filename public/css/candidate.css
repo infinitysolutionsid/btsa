@@ -746,3 +746,8 @@ textarea {
     width: 100%;
     border: 0.5px solid #000;
 }
+
+.form-group svg {
+    width: 7px !important;
+    color: red;
+}

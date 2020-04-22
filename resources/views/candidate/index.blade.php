@@ -40,8 +40,8 @@
                         {{ csrf_field() }}
                         <div class="form-row">
                             <label for="" class="my-1 mr-2">Posisi yang dilamar</label>
-                            <select name="appliedposition" id="" class="custom-select my-1 mr-sm-2">
-                                <option selected disabled>Pilih salah satu...</option>
+                            <select name="appliedposition" id="" class="custom-select my-1 mr-sm-2" required>
+                                <option disabled>Pilih salah satu...</option>
                                 @if(count($loker)>0)
                                 @foreach ($loker as $lowongan)
                                 <option value="{{$lowongan->available_position}}">{{$lowongan->available_position}}
