@@ -135,7 +135,7 @@
                             <div class="form-group col-md-3">
                                 <label for="">No. BPJS Kesehatan</label>
                                 <input type="text" name="NoBpjs" id="" class="form-control">
-                                <small class="form-text text-muted">Masukkan nomor NPWP kamu jika kamu memilikinya /
+                                <small class="form-text text-muted">Masukkan nomor BPJS kamu jika kamu memilikinya /
                                     dalam
                                     sedang
                                     diperlukan.</small>
@@ -200,11 +200,11 @@
                             <div class="form-group col-md-2">
                                 <label for="">Status Rumah <i class="fas fa-star-of-life"></i></label>
                                 <select name="statusrumah" class="custom-select mr-sm-2" required>
-                                    <option value="kontrak">Kontrak</option>
-                                    <option value="MilikKeluarga">Milik Keluarga</option>
-                                    <option value="MilikSendiri">Milik Sendiri</option>
-                                    <option value="kos">Kos</option>
-                                    <option value="menumpang">Menumpang</option>
+                                    <option value="Kontrak">Kontrak</option>
+                                    <option value="Milik Keluarga">Milik Keluarga</option>
+                                    <option value="Milik Sendiri">Milik Sendiri</option>
+                                    <option value="Kos">Kos</option>
+                                    <option value="Menumpang">Menumpang</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -239,7 +239,7 @@
                             <div class="form-group col-md-4">
                                 <label for="">Gaji yang diharapkan</label>
                                 <select name="income" id="" class="custom-select mr-sm-2" required>
-                                    <option selected>Pilih salah satu...</option>
+                                    <option disabled>Pilih salah satu...</option>
                                     <option value=">Rp.1.000.000">>Rp.1.000.000</option>
                                     <option value=">=Rp.2.000.000">>=Rp.2.000.000</option>
                                     <option value=">=Rp.5.000.000">>=Rp.5.000.000</option>

@@ -82,12 +82,13 @@ class candidateController extends Controller
         //         ->paginate(10);
         // }
         if (request()->has('appliedposition')) {
-            $candidate = \App\candidateDB::where('appliedposition', request('appliedposition'))->paginate(100)->appends('appliedposition', request('appliedposition'));
+            $candidate = \App\candidateDB::where('appliedposition', request('appliedposition'))->paginate(200)->appends('appliedposition', request('appliedposition'));
         } else {
             $candidate = DB::table('candidate')
                 ->select('candidate.*')
+                // ->where('candidate.appliedposition', '!=', '')
                 ->orderBy('candidate.created_at', 'DESC')
-                ->paginate(500);
+                ->paginate(1000);
         }
         $filter_candidate = DB::table('loker')
             ->select('loker.*')
