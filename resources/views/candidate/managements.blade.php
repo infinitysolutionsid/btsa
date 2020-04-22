@@ -93,7 +93,8 @@
                                                     NIK : {{$cnd->NoKtp}}<br>
                                                     Tempat lahir : {{$cnd->tempat_lahir}}<br>
                                                     Tanggal Lahir : {{$cnd->tanggal_lahir}}<br>
-                                                    Alamat : {{$cnd->alamatTinggal}}<br>
+                                                    Alamat KTP : {{$cnd->alamatKtp}}<br>
+                                                    Alamat Tempat Tinggal Saat Ini : {{$cnd->alamatTinggal}}<br>
                                                     Status Tempat Tinggal : {{$cnd->statusrumah}}<br>
                                                     Suku : {{$cnd->suku}}<br>
                                                     Agama : {{$cnd->agama}}<br>

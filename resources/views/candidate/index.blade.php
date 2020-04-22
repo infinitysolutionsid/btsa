@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-row">
                             <div class="headerbio">
-                                <h1>1. Biodata Staff</h1>
+                                <h1>Biodata Staff</h1>
                             </div>
                         </div>
                         <div class="form-row">
