@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Main CSS/JS-->
-    <script src="{!!asset('js/datepicker/datepicker.js')!!}"></script>
-    <script src="{!!asset('js/datepicker/datepicker.en.js')!!}"></script>
     <link href="{!!asset('css/candidate.css')!!}" rel="stylesheet">
 
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
 <body>
@@ -103,12 +103,19 @@
                                     @endif
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="">Tanggal Lahir <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" name="tanggal_lahir" class="datepicker-here form-control"
-                                    data-position="right top" data-language="en" required maxlength="10"
-                                    pattern=".{10,}">
+                                <input type="text" id="datepicker" name="tanggal_lahir" class=" form-control"
+                                    data-position="right top" required maxlength="10" pattern=".{10,}">
+
                                 <small class="form-text text-muted">Format tanggal lahir: DD/MM/YYYY</small>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="">Gender: <i class="fas fa-star-of-life"></i></label>
+                                <select name="gender" class="custom-select mr-sm-2" required>
+                                    <option value="Pria">Pria</option>
+                                    <option value="Wanita">Wanita</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">No. KTP <i class="fas fa-star-of-life"></i></label>
@@ -140,9 +147,9 @@
                                     sedang
                                     diperlukan.</small>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="">Suku</label>
-                                <select name="suku" class="custom-select">
+                            <div class="form-group col-md-3">
+                                <label for="">Suku <i class="fas fa-star-of-life"></i></label>
+                                <select name="suku" class="custom-select" required>
                                     @if(count($suku)>0)
                                     @foreach ($suku as $sukuid)
                                     <option value="{{$sukuid->nama_suku}}">{{$sukuid->nama_suku}}
@@ -151,6 +158,15 @@
                                     @else
                                     <option disabled>Empty records</option>
                                     @endif
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">Pendidikan Terakhir <i class="fas fa-star-of-life"></i></label>
+                                <select name="pendidikan" class="custom-select mr-sm-2" required>
+                                    <option value="SMA/SMK">SMA/SMK</option>
+                                    <option value="S1">S1</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S3">S3</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
@@ -186,7 +202,110 @@
                                     <option value="6">6</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-2">
+                                <label for="">Domisili: <i class="fas fa-star-of-life"></i></label>
+                                <select name="kota_domisili" id="" class="custom-select mr-sm-2" required>
+                                    <option value="Banda Aceh">Banda Aceh</option>
+                                    <option value="Langsa">Langsa</option>
+                                    <option value="Lhokseumawe">Lhokseumawe</option>
+                                    <option value="Meulaboh">Meulaboh</option>
+                                    <option value="Sabang">Sabang</option>
+                                    <option value="Subulussalam">Subulussalam</option>
+                                    <option value="Denpasar">Denpasar</option>
+                                    <option value="Pangkalpinang">Pangkalpinang</option>
+                                    <option value="Cilegon">Cilegon</option>
+                                    <option value="Serang">Serang</option>
+                                    <option value="Tangerang Selatan">Tangerang Selatan</option>
+                                    <option value="Tangerang">Tangerang</option>
+                                    <option value="Bengkulu">Bengkulu</option>
+                                    <option value="Gorontalo">Gorontalo</option>
+                                    <option value="Jakarta Barat">Jakarta Barat</option>
+                                    <option value="Jakarta Pusat">Jakarta Pusat</option>
+                                    <option value="Jakarta Selatan">Jakarta Selatan</option>
+                                    <option value="Jakarta Timur">Jakarta Timur</option>
+                                    <option value="Jakarta Utara">Jakarta Utara</option>
+                                    <option value="Sungai Penuh">Sungai Penuh</option>
+                                    <option value="Jambi">Jambi</option>
+                                    <option value="Bandung">Bandung</option>
+                                    <option value="Bekasi">Bekasi</option>
+                                    <option value="Bogor">Bogor</option>
+                                    <option value="Cimahi">Cimahi</option>
+                                    <option value="Cirebon">Cirebon</option>
+                                    <option value="Depok">Depok</option>
+                                    <option value="Sukabumi">Sukabumi</option>
+                                    <option value="Tasikmalaya">Tasikmalaya</option>
+                                    <option value="Banjar">Banjar</option>
+                                    <option value="Magelang">Magelang</option>
+                                    <option value="Pekalongan">Pekalongan</option>
+                                    <option value="Purwokerto">Purwokerto</option>
+                                    <option value="Salatiga">Salatiga</option>
+                                    <option value="Semarang">Semarang</option>
+                                    <option value="Surakarta">Surakarta</option>
+                                    <option value="Tegal">Tegal</option>
+                                    <option value="Batu">Batu</option>
+                                    <option value="Blitar">Blitar</option>
+                                    <option value="Kediri">Kediri</option>
+                                    <option value="Madiun">Madiun</option>
+                                    <option value="Malang">Malang</option>
+                                    <option value="Mojokerto">Mojokerto</option>
+                                    <option value="Pasuruan">Pasuruan</option>
+                                    <option value="Probolinggo">Probolinggo</option>
+                                    <option value="Surabaya">Surabaya</option>
+                                    <option value="Pontianak">Pontianak</option>
+                                    <option value="Singkawang">Singkawang</option>
+                                    <option value="Banjarbaru">Banjarbaru</option>
+                                    <option value="Banjarmasin">Banjarmasin</option>
+                                    <option value="Palangkaraya">Palangkaraya</option>
+                                    <option value="Balikpapan">Balikpapan</option>
+                                    <option value="Bontang">Bontang</option>
+                                    <option value="Samarinda">Samarinda</option>
+                                    <option value="Tarakan">Tarakan</option>
+                                    <option value="Batam">Batam</option>
+                                    <option value="Tanjungpinang">Tanjungpinang</option>
+                                    <option value="Bandar Lampung">Bandar Lampung</option>
+                                    <option value="Metro">Metro</option>
+                                    <option value="Ternate">Ternate</option>
+                                    <option value="Tidore Kepulauan">Tidore Kepulauan</option>
+                                    <option value="Ambon">Ambon</option>
+                                    <option value="Tual">Tual</option>
+                                    <option value="Bima">Bima</option>
+                                    <option value="Mataram">Mataram</option>
+                                    <option value="Kupang">Kupang</option>
+                                    <option value="Sorong">Sorong</option>
+                                    <option value="Jayapura">Jayapura</option>
+                                    <option value="Dumai">Dumai</option>
+                                    <option value="Pekanbaru">Pekanbaru</option>
+                                    <option value="Makassar">Makassar</option>
+                                    <option value="Palopo">Palopo</option>
+                                    <option value="Parepare">Parepare</option>
+                                    <option value="Palu">Palu</option>
+                                    <option value="Bau-Bau">Bau-Bau</option>
+                                    <option value="Kendari">Kendari</option>
+                                    <option value="Bitung">Bitung</option>
+                                    <option value="Kotamobagu">Kotamobagu</option>
+                                    <option value="Manado">Manado</option>
+                                    <option value="Tomohon">Tomohon</option>
+                                    <option value="Bukittinggi">Bukitinggi</option>
+                                    <option value="Padang">Padang</option>
+                                    <option value="Padangpanjang">Padangpanjang</option>
+                                    <option value="Pariaman">Pariaman</option>
+                                    <option value="Payahkumbuh">Payahkumbuh</option>
+                                    <option value="Sawahlunto">Sawahlunto</option>
+                                    <option value="Solok">Solok</option>
+                                    <option value="Lubuklinggau">Lubuklinggau</option>
+                                    <option value="Pagaralam">Pagaralam</option>
+                                    <option value="Prabumulih">Prabumulih</option>
+                                    <option value="Binjai">Binjai</option>
+                                    <option value="Medan">Medan</option>
+                                    <option value="Padang Sidempuan">Padang Sidempuan</option>
+                                    <option value="Pematang Siantar">Pematang Siantar</option>
+                                    <option value="Sibolga">Sibolga</option>
+                                    <option value="Tanjungbalai">Tanjungbalai</option>
+                                    <option value="Tebingtinggi">Tebingtinggi</option>
+                                    <option value="Yogyakarta">Yogyakarta</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
                                 <label for="">Alamat KTP <i class="fas fa-star-of-life"></i></label>
                                 <input type="text" name="alamatKtp" class="form-control" required>
                                 <small class="form-text text-muted">Alamat yang diisi harus sesuai dengan alamat yang
@@ -231,9 +350,8 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Tanggal masuk kerja</label>
-                                <input type="text" name="req_datein" class="datepicker-here form-control"
-                                    data-position="right top" data-language="en" required maxlength="10"
-                                    pattern=".{10,}">
+                                <input type="text" name="req_datein" class="form-control" data-position="right top"
+                                    required maxlength="10" pattern=".{10,}">
                                 <small class="form-text text-muted">Format tanggal masuk kerja: DD/MM/YYYY</small>
                             </div>
                             <div class="form-group col-md-4">
@@ -282,7 +400,34 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <!-- Main JS-->
-    <script src="{!!asset('js/candidate.js')!!}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('input[name="tanggal_lahir"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxYear: parseInt(moment().format('YYYY'), 10)
+            }, function (start, end, label) {
+                var years = moment().diff(start, 'years');
+                alert("Kamu berumur " + years + " saat ini!");
+            });
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('input[name="req_datein"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxYear: parseInt(moment().format('YYYY'), 10)
+            }, function (start, end, label) {});
+        });
+
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     {{-- <script>
       // Initialization
       $('#datepicker-here').datepicker({

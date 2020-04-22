@@ -31,6 +31,9 @@
                         <th>Nama Pelamar</th>
                         <th style="display:none;">Suku</th>
                         <th style="display:none;">Agama</th>
+                        <th style="">Pendidikan</th>
+                        <th style="display:none;">Kelamin</th>
+                        <th style="display:none;">Kota Domisili</th>
                         <th>Tempat Tanggal Lahir</th>
                         <th>Details</th>
                         <th>Action</th>
@@ -46,6 +49,9 @@
                         <td><strong>{{$cnd->nama_lengkap}}</strong></td>
                         <td style="display:none">{{$cnd->suku}}</td>
                         <td style="display:none">{{$cnd->agama}}</td>
+                        <td style="">{{$cnd->pendidikan}}</td>
+                        <td style="display:none">{{$cnd->kelamin}}</td>
+                        <td style="display:none">{{$cnd->kota_domisili}}</td>
                         <td>{{$cnd->tempat_lahir}}, {{$cnd->tanggal_lahir}}</td>
                         <td><span data-toggle="modal" data-target="#detailpelamar{{$cnd->candidate_id}}">
                                 <button type="button" class="btn btn-info btn-sm" title="Detail data pelamar"

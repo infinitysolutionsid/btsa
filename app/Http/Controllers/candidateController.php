@@ -7,6 +7,7 @@ use \App\candidateDB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Support\Jsonable;
+use Carbon\Carbon;
 
 class candidateController extends Controller
 {
@@ -37,6 +38,9 @@ class candidateController extends Controller
         $interviewer->NoSim = $request->NoSim;
         $interviewer->NoNpwp = $request->NoNpwp;
         $interviewer->NoBpjs = $request->NoBpjs;
+        $interviewer->pendidikan = $request->pendidikan;
+        $interviewer->kota_domisili = $request->kota_domisili;
+        $interviewer->kelamin = $request->gender;
         $interviewer->suku = $request->suku;
         $interviewer->agama = $request->agama;
         $interviewer->golongandarah = $request->golongandarah;
