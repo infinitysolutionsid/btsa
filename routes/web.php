@@ -116,7 +116,7 @@ Route::group(['middleware' => ['auth', 'roleCheck:head,hrd,administrator']], fun
     Route::get('/candidate/managements/{candidate_id}/updateinterview', 'candidateController@updatecandidate');
 });
 
-Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator,umum']], function () {
+Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator,umum,hrd']], function () {
     Route::get('/queue', 'issueController@index');
     Route::get('/quote-request', 'QuoteController@index');
     Route::get('/quote-published', 'QuoteController@published')->name('quotepublish');

@@ -124,7 +124,8 @@
                             <li><a href="/queue">Queue</a></li>
                             @endif
                             @if(auth()->user()->role=='it' || auth()->user()->role=='administrator' ||
-                            auth()->user()->role=='umum')
+                            auth()->user()->role=='umum'|| auth()->user()->role=='administrator' ||
+                            auth()->user()->role=='hrd')
                             <li><a href="/itCheck">IT & PU Checked</a></li>
                             <li><a href="/itSolved">IT & PU Solved IR</a></li>
                             @endif
