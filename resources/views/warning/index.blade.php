@@ -36,10 +36,33 @@
                     <tr>
                         <td>{{$item->from}}</td>
                         <td>{{$item->employee}}</td>
-                        <td><button type="button" class="btn btn-primary btn-sm" data-target="">See details</button>
+                        <td><button type="button" class="btn btn-primary btn-sm"
+                                data-target="#detailwarning{{$item->id}}" data-toggle="modal">See details</button>
                         </td>
                         <td>Setujui</td>
                     </tr>
+                    <!-- Modal Details -->
+                    <div class="modal fade" id="detailwarning{{$item->id}}" tabindex="-1" role="dialog"
+                        aria-labelledby="detailwarning{{$item->id}}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="detailwarning{{$item->id}}">Surat {{$item->type}} ke
+                                        {{$item->employee}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
                     @else
                     <td colspan="7" class="text-center">No data founded!</td>
