@@ -59,6 +59,13 @@ Route::group(['middleware' => ['auth', 'roleCheck:administrator']], function () 
     Route::get('member/{member_id}/delete', 'MemberController@delete');
     Route::get('vessel/{vessel_id}/delete', 'VesselController@delete');
 });
+Route::group(['middleware' => ['auth', 'roleCheck:administrator,it']], function () {
+    Route::get('/member', 'MemberController@index');
+    Route::post('/member/addnew', 'MemberController@addnewmember');
+    Route::get('member/{member_id}/edit', 'MemberController@edit');
+    Route::post('member/{member_id}/update', 'MemberController@update');
+    Route::get('member/{member_id}/delete', 'MemberController@delete');
+});
 // MEMBER JADWAL KAPAL & VESSEL AUTHORITY
 Route::group(['middleware' => ['auth', 'roleCheck:member,administrator']], function () {
     // ROUTE VIEW
@@ -137,4 +144,10 @@ Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator,umu
     Route::post('/headCheck/abort/{id}', 'issueController@abort');
 
     Route::get('/quote/{quote_id}/delete', 'QuoteController@deletequote');
+});
+
+// Route For Warning Letter
+Route::group(['middleware' => ['auth', 'roleCheck:head,it,administrator,hrd']], function () {
+    Route::get('/warning-notice', 'WarningController@index');
+    Route::post('/notice/addnew', 'WarningController@requestnew');
 });

@@ -120,14 +120,15 @@
                                                     Telepon : <a href="tel:{{$cnd->noHp}}">{{$cnd->noHp}}</a>
                                                 </p>
                                                 <h4>Dokumen tambahan</h4>
-                                                <a
-                                                    href="{{asset('file/doc/'.$cnd->nama_lengkap.'/ktp/'.$cnd->ktpfile)}}"><button
-                                                        class="btn btn-secondary btn-sm" type="button">KTP</button></a>
-                                                <a
-                                                    href="{{asset('file/doc/'.$cnd->nama_lengkap.'/sim/'.$cnd->simfile)}}"><button
-                                                        class="btn btn-secondary btn-sm" type="button">SIM</button></a>
-                                                <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/'.$cnd->filecv)}}"><button
-                                                        class="btn btn-secondary btn-sm" type="button">Curriculum
+                                                <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/ktp/'.$cnd->ktpfile)}}"
+                                                    target="_blank"><button class="btn btn-secondary btn-sm"
+                                                        type="button">KTP</button></a>
+                                                <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/sim/'.$cnd->simfile)}}"
+                                                    target="_blank"><button class="btn btn-secondary btn-sm"
+                                                        type="button">SIM</button></a>
+                                                <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/'.$cnd->filecv)}}"
+                                                    target="_blank"><button class="btn btn-secondary btn-sm"
+                                                        type="button">Curriculum
                                                         Vitae</button></a>
                                             </div>
                                             <div class="col-lg-2 text-right">

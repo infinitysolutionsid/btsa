@@ -23,8 +23,11 @@ class MemberController extends Controller
         $data_member->username = $request->username;
         $data_member->email = $request->email;
         $data_member->role = $request->role;
-        $data_member->status = 'inactive';
+        $data_member->status = 'active';
         $data_member->un_password = $request->password;
+        $data_member->jabatan = $request->jabatan;
+        $data_member->divisi = $request->divisi;
+        $data_member->kantor = $request->kantor;
         $data_member->password = Hash::make($request->password);
         $data_member->remember_token = str_random(50);
         $data_member->created_by = auth()->user()->nama_lengkap;
@@ -73,6 +76,9 @@ class MemberController extends Controller
         $data_member->un_password = $request->password;
         $data_member->password = Hash::make($request->password);
         $data_member->remember_token = str_random(50);
+        $data_member->jabatan = $request->jabatan;
+        $data_member->divisi = $request->divisi;
+        $data_member->kantor = $request->kantor;
         $data_member->updated_by = auth()->user()->nama_lengkap;
         $data_member->created_by = auth()->user()->nama_lengkap;
         $data_member->save();
