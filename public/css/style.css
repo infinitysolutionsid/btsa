@@ -5385,3 +5385,14 @@ only screen and (min-resolution: 2dppx) {
     padding-top: 2rem;
     cursor: pointer;
 }
+
+.badgenotif {
+    font-weight: 600;
+    background-color: #dc3545;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    padding-left: 7.5px;
+    margin-left: 35px;
+}

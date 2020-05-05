@@ -95,8 +95,8 @@
                     </li>
                     @endif
                     @if(auth()->user()->role=='admin' || auth()->user()->role=='head' || auth()->user()->role='it')
-                    <li><a class="sidebar-sub-toggle"><i class="ti-email"></i> Warning Notice<span
-                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-email"></i> Warning Notice <span
+                                class="badgenotif">5</span><span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="/warning-notice">Request Notice</a>
                             </li>
