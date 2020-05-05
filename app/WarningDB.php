@@ -17,5 +17,6 @@ class WarningDB extends Model
         'created_by',
         'updated_by',
         'type',
+        'confirmed_by',
     ];
 }

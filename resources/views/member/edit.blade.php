@@ -81,8 +81,12 @@
                             <div class="col-3">
                                 <div class="form-group">
                                     <label for="">Jabatan</label>
-                                    <input type="text" name="jabatan" class="form-control"
-                                        value="{{$data_member->jabatan}}">
+                                    <select name="jabatan" id="" class="form-control custom-select">
+                                        <option value="staff">Staff</option>
+                                        <option value="senior staff">Senior Staff</option>
+                                        <option value="spv">Supervisor</option>
+                                        <option value="manager">Manager</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-3">

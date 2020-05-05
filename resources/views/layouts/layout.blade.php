@@ -103,7 +103,6 @@
 
                         </ul>
                     </li>
-                    </li>
                     @endif
                     @if(auth()->user()->role=='hrd')
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2-alt"></i> Candidate<span
@@ -258,6 +257,12 @@
 
     </script>
     <script src="{!!asset('js/lib/jquery.min.js')!!}"></script>
+    <script type="text/javascript">
+        function warningnotice_approve() {
+            document.getElementById("approve_btnwarningnotice").submit();
+        }
+
+    </script>
     <script src="{!!asset('js/lib/jquery.nanoscroller.min.js')!!}"></script>
     <!-- nano scroller -->
     <script src="{!!asset('js/lib/menubar/sidebar.js')!!}"></script>
@@ -345,6 +350,7 @@
         })
 
     </script>
+
 
 </body>
 

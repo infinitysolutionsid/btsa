@@ -98,6 +98,7 @@
                                         <p>
                                             Nama lengkap: {{$dt_member->nama_lengkap}}<br>
                                             Email: {{$dt_member->email}}<br>
+                                            Jabatan: {{$dt_member->jabatan}}<br>
                                             Akun ini dibuat pada: {{$dt_member->created_at}}<br>
                                         </p>
                                     </div>

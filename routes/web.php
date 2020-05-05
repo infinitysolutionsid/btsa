@@ -150,4 +150,6 @@ Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator,umu
 Route::group(['middleware' => ['auth', 'roleCheck:head,it,administrator,hrd']], function () {
     Route::get('/warning-notice', 'WarningController@index');
     Route::post('/notice/addnew', 'WarningController@requestnew');
+    Route::post('/approve-warning-notice/{id}', 'WarningController@approve');
+    Route::post('/checked-by-hrd/{id}', 'WarningController@confirmed');
 });
