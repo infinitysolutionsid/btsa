@@ -62,6 +62,9 @@ class DashController extends Controller
             ->select('quote.*')
             ->orderByRaw('quote.updated_at', 'DESC')
             ->get();
-        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData, 'quote' => $quote, 'quotedash' => $quotedash, 'quoteds' => $quoteds]);
+        $warningget = DB::table('warningdb')
+            ->where('warningdb.approved_by', '=', 'unapproved')
+            ->get();
+        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData, 'quote' => $quote, 'quotedash' => $quotedash, 'quoteds' => $quoteds, 'warningget' => $warningget]);
     }
 }

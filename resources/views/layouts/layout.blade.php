@@ -1,4 +1,5 @@
 @inject('IRModel', '\App\IRModel')
+@inject('WarningModel','\App\WarningDB')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,7 +97,8 @@
                     @endif
                     @if(auth()->user()->role=='admin' || auth()->user()->role=='head' || auth()->user()->role='it')
                     <li><a class="sidebar-sub-toggle"><i class="ti-email"></i> Warning Notice <span
-                                class="badgenotif">5</span><span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                                class="badgenotif">@if($WarningModel->count()>1){{$WarningModel->count()}} @else
+                                @endif</span><span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="/warning-notice">Request Notice</a>
                             </li>
