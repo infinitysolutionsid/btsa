@@ -101,7 +101,8 @@ Route::group(['middleware' => ['auth', 'roleCheck:hrd,administrator']], function
     Route::get('/candidate/interviewed', 'candidateController@interviewed');
     Route::get('/candidate/managements/{candidate_id}/view', 'candidateController@viewcandidate');
     Route::get('/candidate/managements/{candidate_id}/delete', 'candidateController@deletecandidate');
-    Route::get('/candidate/managements/{candidate_id}/updateinterview', 'candidateController@updatecandidate');
+    Route::post('/candidate/managements/{candidate_id}/updateinterview', 'candidateController@updatecandidate');
+    Route::post('/candidate/managements/search', 'candidateController@search');
     Route::get('/hrd', 'UtilityController@index');
 
     // ROUTE TAMBAH UTILITAS HRD
@@ -121,6 +122,7 @@ Route::group(['middleware' => ['auth', 'roleCheck:head,hrd,administrator']], fun
     Route::get('/candidate/managements/{candidate_id}/view', 'candidateController@viewcandidate');
     Route::get('/candidate/managements/{candidate_id}/delete', 'candidateController@deletecandidate');
     Route::get('/candidate/managements/{candidate_id}/updateinterview', 'candidateController@updatecandidate');
+    Route::post('/candidate/managements/search', 'candidateController@search');
 });
 
 Route::group(['middleware' => ['auth', 'roleCheck:head,user,it,administrator,umum,hrd']], function () {

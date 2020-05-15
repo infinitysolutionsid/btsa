@@ -1825,8 +1825,9 @@
                                 title="Learn about us on Wiki">
                                 <i class="fab fa-wikipedia-w fa-2x" title="Add us on Facebook"
                                     style="color: #fff"></i></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCxwory52I5zlEF5I5zv9STQ" data-toggle="tooltip"
-                                target="_blank" class="myTooltip" data-placement="bottom" title="Watch us on Youtube">
+                        <li><a href="http://www.youtube.com/c/BTSALogisticsYourReliableLogisticsPartner"
+                                data-toggle="tooltip" target="_blank" class="myTooltip" data-placement="bottom"
+                                title="Watch us on Youtube">
                                 <i class="fab fa-youtube fa-2x" title="Add us on Facebook" style="color: #fff"></i></a>
                         </li>
                     </ul>

@@ -31,6 +31,7 @@
     </script>
     <link rel="stylesheet"
         href="{!!url('https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css')!!}" />
+    <link rel="stylesheet" href="{!!asset('css/index.css')!!}">
     <style>
         .tab {
             margin-left: 40px;
@@ -56,7 +57,11 @@
 </head>
 
 <body>
-
+    <?php
+        date_default_timezone_set("Asia/Jakarta");
+        $timeNow = date('H:i');
+        $Hour = date('H');
+    ?>
     @include('layouts.sidebar')
     <!-- /# sidebar -->
     @include('layouts.header')
@@ -67,9 +72,12 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Hello <strong>{{auth()->user()->nama_lengkap}}</strong>,</h1>
-                                <p class="text-muted">Permission role status is
-                                    <strong>{{auth()->user()->role}}.</strong>
+                                <h1>@if(($Hour >= 01) && ($Hour<=11)) {{'Selamat pagi'}} @elseif(($Hour>=11) && ($Hour
+                                        <=15)) {{'Selamat siang'}} @elseif(($Hour>=15)&& ($Hour<=18)) {{'Selamat sore'}}
+                                                @else{{'Selamat malam'}} @endif <strong>
+                                                {{Auth::user()->nama_lengkap}}.</strong></h1>
+                                <p class="text-muted">Jabatan anda adalah
+                                    {{Auth::user()->jabatan}}, {{Auth::user()->role}}
                                 </p>
                             </div>
                         </div>

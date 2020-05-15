@@ -1,104 +1,18 @@
 @extends('layouts.layout')
-@section('title','Candidate managements')
+@section('title','Candidate managements results')
 @section('content')
 <div class="card">
     <div class="card-title">
-        <h4>Candidate Managements</h4>
+        <h4>Candidate Final Results</h4><br>
+        <small>Hasil pencarian berdasarkan posisi <b>{{$position}}</b>, dengan berstatus pendidikan
+            <b>{{$pendidikan}}</b> beragama <b>{{$agama}}</b>, bersuku <b>{{$suku}}</b> dan berjenis kelamin
+            <b>{{$gender}}</b>. <a href="/candidate/managements" class="btn btn-success btn-rounded btn-sm">Reset
+                filter</a>
+        </small>
+        <hr>
     </div>
 
     <div class="card-body">
-        <form action="/candidate/managements/search" method="post">
-            {{ csrf_field() }}
-            <div class="advancedfilter">
-                <div class="form-row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="">Posisi Jabatan</label>
-                            <select name="position" class="form-control custom-select">
-                                <option disabled>Pilih salah satu...</option>
-                                @if(count($filter_candidate)>0)
-                                @foreach ($filter_candidate as $lowongan)
-                                <option value="{{$lowongan->available_position}}">{{$lowongan->available_position}}
-                                </option>
-                                @endforeach
-                                @else
-                                <option disabled>Empty records</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="">Pendidikan</label>
-                            <select name="pendidikan" class="form-control custom-select">
-                                <option value="SMA/SMK">SMA/SMK</option>
-                                <option value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <label for="">Gender</label>
-                            <select name="gender" class="form-control custom-select">
-                                <option value="Pria">Pria</option>
-                                <option value="Wanita">Wanita</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="">Agama</label>
-                            <select name="agama" class="form-control custom-select">
-                                @if(count($agama)>0)
-                                @foreach ($agama as $agm)
-                                <option value="{{$agm->religion_name}}">{{$agm->religion_name}}
-                                </option>
-                                @endforeach
-                                @else
-                                <option disabled>Empty records</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="">Suku</label>
-                            <select name="suku" class="form-control custom-select">
-                                @if(count($suku)>0)
-                                @foreach ($suku as $sukuid)
-                                <option value="{{$sukuid->nama_suku}}">{{$sukuid->nama_suku}}
-                                </option>
-                                @endforeach
-                                @else
-                                <option disabled>Empty records</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-
-                    {{-- <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="">Usia</label>
-                            <select name="position" class="form-control custom-select">
-                                <option value="Staff Personalia">Staff Personalia</option>
-                                <option value="Staff Accounting">Staff Accounting</option>
-                            </select>
-                        </div>
-                    </div> --}}
-                </div>
-                <div class="form-row text-right">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-sm btn-block"><i class="fas fa-filter"></i>
-                                Filter</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-
         @if (session('sukses'))
         <div class="alert alert-success alert-dismissible fade show">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span

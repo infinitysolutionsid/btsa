@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Support\Jsonable;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+
+use App\religionDB;
+use App\sukuDB;
+use App\loker;
 
 class candidateController extends Controller
 {
@@ -77,14 +82,6 @@ class candidateController extends Controller
     }
     public function managements()
     {
-        // if (request()->has('available_position')) {
-        //     $candidate = \App\loker::where('available_position', request('available_position'))->paginate(10);
-        // } else {
-        //     $candidate = DB::table('candidate')
-        //         ->select('candidate.*')
-        //         ->orderBy('candidate.created_at', 'DESC')
-        //         ->paginate(10);
-        // }
         if (request()->has('appliedposition')) {
             $candidate = \App\candidateDB::where('appliedposition', request('appliedposition'))->paginate(200)->appends('appliedposition', request('appliedposition'));
         } else {
@@ -95,9 +92,55 @@ class candidateController extends Controller
                 ->paginate(1000);
         }
         $filter_candidate = DB::table('loker')
-            ->select('loker.*')
+            ->select('loker.available_position')
             ->get();
-        return view('candidate.managements', ['candidate' => $candidate, 'filter_candidate' => $filter_candidate]);
+        $agama = DB::table('religion')
+            ->select('religion.religion_name')
+            ->get();
+        $suku = DB::table('sukuIndonesia')
+            ->select('sukuIndonesia.nama_suku')
+            ->get();
+        return view('candidate.managements', ['candidate' => $candidate, 'filter_candidate' => $filter_candidate, 'agama' => $agama, 'suku' => $suku]);
+    }
+    public function search(Request $request, candidateDB $candidatedb)
+    {
+
+        $position = $request->position;
+        $pendidikan = $request->pendidikan;
+        $gender = $request->gender;
+        $agama = $request->agama;
+        $suku = $request->suku;
+
+        // search for candidate position
+        if ($request->has('position')) {
+            if ($request->has('pendidikan')) {
+                $candidate = $candidatedb->where('appliedposition', $request->input('position'))
+                    ->where('pendidikan', $request->input('pendidikan'))
+                    ->get();
+            }
+            // search for gender
+            if ($request->has('gender')) {
+                $candidate = $candidatedb->where('appliedposition', $request->input('position'))
+                    ->where('kelamin', $request->input('gender'))
+                    ->get();
+            }
+            // search for agama
+            if ($request->has('agama')) {
+                $candidate = $candidatedb->where('appliedposition', $request->input('position'))
+                    ->where('agama', $request->input('agama'))
+                    ->get();
+            }
+            // search for suku
+            if ($request->has('suku')) {
+                $candidate = $candidatedb->where('appliedposition', $request->input('position'))
+                    ->where('suku', $request->input('suku'))
+                    ->get();
+            }
+            $candidate = $candidatedb->where('appliedposition', $request->input('position'))->get();
+        }
+        return view('candidate.results', ['candidate' => $candidate, 'position' => $position, 'pendidikan' => $pendidikan, 'gender' => $gender, 'agama' => $agama, 'suku' => $suku]);
+        // var_dump($candidate);
+        // die();
     }
     public function interviewed()
     {
@@ -134,6 +177,6 @@ class candidateController extends Controller
         $cnd->statusinterview = 'interviewed';
         $cnd->save();
 
-        return back()->with('sukses', 'Candidate sudah diupdate ke status sudah datang interview.');
+        return redirect('/candidate/managements')->with('sukses', 'Candidate sudah diupdate ke status sudah datang interview.');
     }
 }

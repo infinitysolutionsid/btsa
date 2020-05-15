@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\itemModel;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class DashController extends Controller
 {
@@ -66,5 +67,7 @@ class DashController extends Controller
             ->where('warningdb.approved_by', '=', 'unapproved')
             ->get();
         return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData, 'quote' => $quote, 'quotedash' => $quotedash, 'quoteds' => $quoteds, 'warningget' => $warningget]);
+        // dd(Auth::user());
+        // print_r(Auth::user());
     }
 }
