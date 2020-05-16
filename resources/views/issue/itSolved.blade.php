@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @section('title','IT Solved Issue')
+@inject('IRModel', '\App\IRModel')
 @section('content')
 <div class="card">
     <div class="card-title">
@@ -27,12 +28,10 @@
                 <thead>
                     <tr>
                         <th>#</th>
-
                         <th>Tanggal selesai</th>
                         <th>Notes</th>
                         <th>Kendala</th>
-                        <th>Checked by</th>
-                        <th>Solved by</th>
+                        <th style="text-align: right;">Solved by</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,8 +48,8 @@
                                 <span><i class="fas fa-info-circle"></i> See details</span>
                             </button></td>
                         <td>{!!strip_tags(str_limit($dt_issue->kendala, $limit=100))!!}</td>
-                        <td>{{$dt_issue->approve}}</td>
-                        <td style="text-align:left;">{{$dt_issue->updated_by}}</td>
+                        <td style="text-align:right;"><img class="media-object" src="{{$IRModel->getAvatar()}}">
+                            {{$dt_issue->updated_by}}</td>
                     </tr> @endforeach @else <td colspan="7" class="text-center">No data founded!</td>
                     @endif
                 </tbody>
