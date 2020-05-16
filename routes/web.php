@@ -10,6 +10,23 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// CLEAR AND OPTIMIZE
+Route::get('/clear-cache', function () {
+    $exitCode = Artisan::call('cache:clear');
+    return redirect('/');
+});
+Route::get('/config-cache', function () {
+    $exitCode = Artisan::call('config:cache');
+    return redirect('/');
+});
+Route::get('/optimize-clear', function () {
+    $exitCode = Artisan::call('optimize:clear');
+    return redirect('/');
+});
+Route::get('/clear-view', function () {
+    $exitCode = Artisan::call('view:clear');
+    return redirect('/');
+});
 
 Route::get('/', 'DashboardController@index');
 Route::post('/send', 'DashboardController@sendEmail');

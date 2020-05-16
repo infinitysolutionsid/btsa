@@ -36,7 +36,7 @@
                             <div class="drop-down">
                                 <div class="dropdown-content-heading">
                                     <span class="text-left">2 New Messages</span>
-                                    <a href="email.html"><i class="ti-pencil-alt pull-right"></i></a>
+                                    <a href="#"><i class="ti-pencil-alt pull-right"></i></a>
                                 </div>
                                 <div class="dropdown-content-body">
                                     <ul>
