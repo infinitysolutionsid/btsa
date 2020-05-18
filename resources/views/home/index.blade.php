@@ -2,6 +2,7 @@
 <!--STARPROJECTX-->
 <!--Created by Bintang Cato Jeremia Tobing on 23/04/19.-->
 <!--Copyright © 2019 Bintang Cato Jeremia Tobing. All rights reserved.-->
+@inject('IRModel', '\App\IRModel')
 <!DOCTYPE html>
 <html lang="id" id="home">
 
@@ -33,6 +34,7 @@
     <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://res.cloudinary.com/btsa-co-id/raw/upload/v1553436777/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129070772-1"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -89,7 +91,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">TENTANG KAMI <span class="caret"></span></a>
+                            aria-expanded="false">Tentang Kami <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#aboutus">SIAPA KAMI?</a></li>
                             <li><a href="#visimisi">VISI & MISI</a></li>
@@ -99,8 +101,18 @@
                             <li><a href="#contact">KANTOR KAMI</a></li>
                         </ul>
                     </li>
-                    <li><a href="https://btsa.co.id/gallery.html" target="_blank">GALERI</a></li>
-                    <li><a href="/candidate" target="_blank">APPLY JOB</a></li>
+                    <li><a href="https://btsa.co.id/gallery.html" target="_blank">Galeri</a></li>
+                    <li><a href="/candidate" target="_blank">Karir</a></li>
+                    @if(auth()->check())
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            aria-haspopup="true"><span><img class="media-object" src="{{$IRModel->getAvatar()}}"></span>
+                            {{auth()->user()->nama_lengkap}}</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                            <li><a href="/logout"><i class="fas fa-times"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    @else
                     <li class="login"><a href="#" id="myBtnLogin" style="color:#fff !important"><span
                                 class="glyphicon glyphicon-user"></span> LOGIN</a></li>
                     <div class="modal fade" id="myModalLogin" role="dialog">
@@ -111,7 +123,7 @@
                                 </div>
                                 <div class="modal-body text-center row">
                                     <div class="col-sm-6" style="margin-bottom:10px;">
-                                        <a href="/queue" target="_blank"><button type="button" class="btn btn-danger"
+                                        <a href="/queue"><button type="button" class="btn btn-danger"
                                                 style="width:270px; height:60px;">BTSA Issue
                                                 Report<br>
                                                 <font class="personalonly"><i>-For Company Only-</i></font>
@@ -130,8 +142,8 @@
                                             </button></a>
                                     </div>
                                     <div class="col-sm-6">
-                                        <a href="/restricted" target="_blank"><button type="button"
-                                                class="btn btn-custom" style="width:270px; height:60px;">BTSA Restricted
+                                        <a href="/restricted"><button type="button" class="btn btn-custom"
+                                                style="width:270px; height:60px;">BTSA Restricted
                                                 Area<br>
                                                 <font class="personalonly"><i>-For Company Only-</i></font>
                                             </button></a>
@@ -140,6 +152,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </ul>
             </div>
         </div>

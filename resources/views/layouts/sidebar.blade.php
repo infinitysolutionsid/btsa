@@ -8,7 +8,7 @@ $quote = DB::table('quote')->where('quote.status','=','loading')->get();
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
     <div class="nano">
         <div class="nano-content">
-            <div class="logo"><a href="/dashboard"><span>BTSA LOGISTICS</span></a></div>
+            <div class="logo"><a href="/" target="_blank"><span>BTSA LOGISTICS</span></a></div>
             <ul>
                 <li class="label">Main Focus</li>
                 <li><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>

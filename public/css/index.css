@@ -12,3 +12,9 @@
     width: 30px;
     border-radius: 50%;
 }
+
+.navbar-nav .media-object {
+    width: 23px;
+    border-radius: 50%;
+    display: inline-block;
+}
