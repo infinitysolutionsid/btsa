@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@inject('IRModel', '\App\IRModel')
+@inject('Member','\App\MemberModel')
 @section('title','Home')
 @section('content')
 <div class="row">
@@ -127,7 +127,7 @@
                 @foreach ($issueData->take(4) as $data)
                 <div class="media">
                     <div class="media-left">
-                        <a href="#"><img class="media-object" src="{{$IRModel->getAvatar()}}" alt="..."></a>
+                        <a href="#"><img class="media-object" src="{{$Member->getAvatar()}}" alt="..."></a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">{{$data->nama_lengkap}}</h4>
@@ -163,7 +163,7 @@
     <br>
     {{$quoteitem->quotes_id}} <i class="fa fa-quote-right"></i>
 </div>
-<img class="testimonial-author-img" src="{{$IRModel->getAvatar()}}" alt="" />
+<img class="testimonial-author-img" src="{{$Member->getAvatar()}}" alt="" />
 <div class="testimonial-author">{{$quoteitem->created_by}}</div>
 <div class="testimonial-author-position">@if($quoteitem->status=='Selesai') Quote ini telah
     terbit - <a href="{{$quoteitem->link_preview}}" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -192,7 +192,7 @@
                 @foreach ($quotedash->take(4) as $data)
                 <div class="media">
                     <div class="media-left">
-                        <a href="#"><img class="media-object" src="{{$IRModel->getAvatar()}}" alt="..."></a>
+                        <a href="#"><img class="media-object" src="{{$Member->getAvatar()}}" alt="..."></a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">{{$data->created_by}}</h4>

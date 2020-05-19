@@ -2,7 +2,7 @@
 <!--STARPROJECTX-->
 <!--Created by Bintang Cato Jeremia Tobing on 23/04/19.-->
 <!--Copyright © 2019 Bintang Cato Jeremia Tobing. All rights reserved.-->
-@inject('IRModel', '\App\IRModel')
+@inject('Member','\App\MemberModel')
 <!DOCTYPE html>
 <html lang="id" id="home">
 
@@ -105,7 +105,7 @@
                     <li><a href="/candidate" target="_blank">Karir</a></li>
                     @if(auth()->check())
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true"><span><img class="media-object" src="{{$IRModel->getAvatar()}}"></span>
+                            aria-haspopup="true"><span><img class="media-object" src="{{$Member->getAvatar()}}"></span>
                             {{auth()->user()->nama_lengkap}}</a>
                         <ul class="dropdown-menu">
                             <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>

@@ -1,4 +1,4 @@
-@inject('IRModel', '\App\IRModel')
+@inject('Member','\App\MemberModel')
 @inject('WarningModel','\App\WarningDB')
 <!DOCTYPE html>
 <html lang="en">

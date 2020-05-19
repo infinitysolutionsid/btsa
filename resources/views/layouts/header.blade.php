@@ -53,7 +53,7 @@
                                             </a>
                                         </li>
                                         <li class="text-center">
-                                            <a href="#" class="more-link">See All</a>
+                                            <a href="/direct-messages" class="more-link">Lihat semua pesan</a>
                                         </li>
                                     </ul>
                                 </div>
