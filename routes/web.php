@@ -45,6 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('member/{id}/edit', 'MemberController@edit');
     Route::post('member/{id}/update', 'MemberController@update');
 
+    // PESAN
     Route::get('/direct-messages', 'MessagesController@index');
 });
 Route::group(['middleware' => ['auth', 'roleCheck:administrator']], function () {

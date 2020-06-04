@@ -85,9 +85,9 @@
                                     required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="">Nama Panggilan</label>
+                                <label for="">Nama Panggilan <i class="fas fa-star-of-life"></i></label>
                                 <input type="text" name="nama_panggilan" id="" placeholder="Nama Panggilan"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Tempat Lahir <i class="fas fa-star-of-life"></i></label>

@@ -18,3 +18,46 @@
     border-radius: 50%;
     display: inline-block;
 }
+
+.user-active-scroll .user {
+    margin: 1rem 0;
+    padding: .5rem .5rem;
+}
+
+.user-active-scroll .user:hover {
+    background-color: #eff5f9;
+    cursor: pointer;
+}
+
+.user .media-body {
+    margin-left: 1.1rem;
+}
+
+.user .media-body small {
+    font-size: .85rem;
+    font-weight: 100;
+}
+
+.user .media-body p {
+    margin-bottom: 0 !important;
+    color: #111;
+    font-size: 1rem;
+}
+
+.user-active-scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 400px;
+}
+
+.user-active-scroll .img-useractive {
+    width: 55px;
+    border-radius: 50%;
+}
+
+.user-active-scroll #verified .btn-primary {
+    max-width: 8px;
+    color: #fff;
+    margin-left: -20px;
+
+}
