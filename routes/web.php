@@ -27,6 +27,16 @@ Route::get('/clear-view', function () {
     $exitCode = Artisan::call('view:clear');
     return redirect('/');
 });
+Route::get('/newissue', function () {
+    return view('emails.sites.newIssue');
+});
+// TEST EMAIL COMMENT
+// Route::get('/kirimemail', function () {
+//     \Mail::raw('Hallo Bintang', function ($message) {
+//         $message->to('bintang.infinitysolutions@gmail.com', 'Bintang Tobing');
+//         $message->subject('Laravel Mail Test Raw');
+//     });
+// });
 
 Route::get('/', 'DashboardController@index');
 Route::post('/send', 'DashboardController@sendEmail');

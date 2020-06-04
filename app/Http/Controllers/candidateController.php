@@ -89,7 +89,7 @@ class candidateController extends Controller
                 ->select('candidate.*')
                 // ->where('candidate.appliedposition', '!=', '')
                 ->orderBy('candidate.created_at', 'DESC')
-                ->paginate(1000);
+                ->paginate(3500);
         }
         $filter_candidate = DB::table('loker')
             ->select('loker.available_position')

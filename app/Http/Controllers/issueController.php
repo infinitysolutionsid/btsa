@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+use \App\IRModel;
+use App\Mail\successMakeNewIssue;
 
 class issueController extends Controller
 {
@@ -32,7 +34,18 @@ class issueController extends Controller
         $issueData->created_by = auth()->user()->nama_lengkap;
         $issueData->logIP = $request->getClientIp();
         $issueData->save();
-        return back()->with('sukses', 'good');
+        // SEND EMAIL
+        // \Mail::raw('New Ticket Submited #' . $issueData->id, function ($message) use ($issueData) {
+        //     $message->to('support@btsa.co.id', 'BTSA Logistics Care.');
+        //     $message->subject('[Ticket#' . $issueData->id . '] Important: Issue report have been made to our IR Portal.');
+        // });
+        // \Mail::raw('Halo divisi ' . $request->tujuan . ',\r\n Kita menerima laporan isu di program atau sistem kita. Yang melapor adalah user \r\n ' . $request->nama_lengkap . '\r\n Mohon dibantu untuk laporan #' . $issueData->id . ' yang berisi \r\n' . $request->kendala . '\r\n Terima kasih atas perhatiannya ya. \r\n Original Complain from "' . $request->nama_lengkap . '"', function ($message) use ($issueData) {
+        //     $message->to('john@johndoe.com', 'John Doe');
+        //     $message->subject('[Ticket#' . $issueData->id . '] Important: Issue report have been made to our IR Portal.');
+        // });
+
+        \Mail::to('support@btsa.co.id')->send(new successMakeNewIssue($issueData));
+        return back()->with('sukses', 'Tiket IR kamu berhasil dibuat. Tunggu respon dari pihak ' . $request->tujuan . ' ya. Terima kasih.');
     }
     public function itCheck()
     {
@@ -78,6 +91,8 @@ class issueController extends Controller
         $issueData->updated_by = auth()->user()->nama_lengkap;
         $issueData->logIP = $request->getClientIp();
         $issueData->save();
+
+
         return back()->with('sukses', 'Laporan gangguan anda telah diselesaikan.');
     }
     public function sementara(Request $request, $id)
