@@ -158,7 +158,7 @@
                                                             mengenai laporan
                                                             ini: <br><br>
                                                             {{$issueData->nama_lengkap}}<br><br>
-                                                            Mohon untuk dilihat dan ditindaklanjuti laporan
+                                                            Mohon ditindak lanjuti laporan dengan nomor antrian
                                                             #{{$issueData->id}} yang
                                                             berisi mengenai:
                                                             <br>
