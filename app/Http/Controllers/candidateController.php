@@ -88,8 +88,8 @@ class candidateController extends Controller
             $candidate = DB::table('candidate')
                 ->select('candidate.*')
                 // ->where('candidate.appliedposition', '!=', '')
-                ->orderBy('candidate.created_at', 'DESC')
-                ->paginate(3500);
+
+                ->paginate(500);
         }
         $filter_candidate = DB::table('loker')
             ->select('loker.available_position')

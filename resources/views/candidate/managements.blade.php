@@ -257,7 +257,11 @@
 </div>
 <script>
     $(document).ready(function () {
-        $('#veseltab').DataTable();
+        $('#veseltab').DataTable({
+            "order": [
+                [4, 'desc'],
+            ]
+        });
     });
 
 </script>

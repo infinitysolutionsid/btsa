@@ -154,10 +154,11 @@
                                                         <span style="">Kami telah menerima laporan issue
                                                             mengenai
                                                             sistem/program/jaringan sistem
-                                                            perusahaan. Yang melapor
+                                                            perusahaan.<br>Yang melapor
                                                             mengenai laporan
                                                             ini: <br><br>
-                                                            {{$issueData->nama_lengkap}}<br><br>
+                                                            {{$issueData->nama_lengkap}}<br>
+                                                            Dan yang sudah menyetujui laporan ini:<br>
                                                             Mohon ditindak lanjuti laporan dengan nomor antrian
                                                             #{{$issueData->id}} yang
                                                             berisi mengenai:
