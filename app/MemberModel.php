@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cache;
 
 class MemberModel extends Model
 {
@@ -15,5 +16,9 @@ class MemberModel extends Model
             return asset('file/' . $this->profilephoto);
         }
         return asset('file/default.jpg');
+    }
+    public function isOnline()
+    {
+        return Cache::has('user-is-online-' . $this->id);
     }
 }

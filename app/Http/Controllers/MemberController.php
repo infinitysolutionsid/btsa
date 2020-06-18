@@ -17,6 +17,11 @@ class MemberController extends Controller
             ->get();
         return view('member.index', ['data_member' => $data_member]);
     }
+    public function online()
+    {
+        $users = MemberModel::orderBy('nama_lengkap', 'ASC')->get();
+        return view('member.online', ['users' => $users]);
+    }
     public function view($username)
     {
         $member = MemberModel::find($username);

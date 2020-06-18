@@ -1,3 +1,16 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 30px;
+    border: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #343957;
+}
+
 .photoprofileimg {
     object-fit: cover;
     width: 100px;
@@ -10,5 +23,32 @@
     object-fit: cover;
     width: 35px;
     height: 35px;
+    border-radius: 50%;
+}
+
+/* messages style */
+.scroll-user-active .row {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: .25rem;
+    margin: .1rem .1rem;
+}
+
+.scroll-user-active .row:hover {
+    cursor: pointer;
+    background-color: rgba(206, 212, 218, 0.15);
+    transition: .35s ease-in-out;
+}
+
+.scroll-user-active {
+    overflow-y: scroll;
+    overflow-x: none;
+    height: 500px;
+}
+
+.user img {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
