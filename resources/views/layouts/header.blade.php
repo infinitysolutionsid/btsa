@@ -59,8 +59,12 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="header-icon dib"><span class="user-avatar">{{auth()->user()->nama_lengkap}} <i
-                                    class="ti-angle-down f-s-10"></i></span>
+                        @inject('avatar','App\Membermodel')
+                        <li class="header-icon dib"><span class="user-avatar">{{auth()->user()->nama_lengkap}}
+                                <span><img class="photoprofileimg-header"
+                                        src="{{asset('file/'.auth()->user()->profilephoto)}}"
+                                        alt="display picture {{auth()->user()->nama_lengkap}}"></span>
+                                <i class="ti-angle-down f-s-10"></i></span>
                             <div class="drop-down dropdown-profile">
                                 <div class="dropdown-content-heading">
                                     <span class="text-left">{{auth()->user()->nama_lengkap}}</span>

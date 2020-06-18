@@ -12,9 +12,8 @@ class MemberModel extends Model
     public function getAvatar()
     {
         if (!$this->profilephoto) {
-            return asset('file/default.jpg');
-            // return asset('media/profilephoto/' . $this->nama_lengkap . '/' . $this->profilephoto);
+            return asset('file/' . $this->profilephoto);
         }
-        return asset('media/profilephoto/' . $this->nama_lengkap . '/' . $this->profilephoto);
+        return asset('file/default.jpg');
     }
 }

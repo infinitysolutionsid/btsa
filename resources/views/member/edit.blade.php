@@ -35,13 +35,10 @@
                     <div class="col-md-12">
                         <div class="form-row">
                             <div class="col-12">
-                                <img class="photoprofileimg"
-                                    src="{{asset('media/profilephoto/'.$data_member->nama_lengkap.'/'.$data_member->profilephoto)}}"
-                                    alt="">
+                                <img class="photoprofileimg" src="{{asset('file/'.$data_member->profilephoto)}}" alt="">
                                 <div class="form-group">
                                     <label for="">Foto profil</label><span style="color:red;"> *</span>
-                                    <input type="file" class="form-control" name="profilephoto" placeholder="Hai"
-                                        required>
+                                    <input type="file" class="form-control" name="profilephoto" placeholder="Hai">
                                     <small class="text-muted">Max upload image size is 2MB</small>
                                 </div>
                             </div>

@@ -105,7 +105,8 @@
                     <li><a href="/candidate" target="_blank">Karir</a></li>
                     @if(auth()->check())
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true"><span><img class="media-object" src="{{$Member->getAvatar()}}"></span>
+                            aria-haspopup="true"><span><img class="media-object"
+                                    src="{{asset('file/'.auth()->user()->profilephoto)}}"></span>
                             {{auth()->user()->nama_lengkap}}</a>
                         <ul class="dropdown-menu">
                             <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>

@@ -28,6 +28,7 @@ class MemberController extends Controller
         $data_member->un_password = $request->password;
         $data_member->jabatan = $request->jabatan;
         $data_member->divisi = $request->divisi;
+        $data_member->profilephoto = 'default.jpg';
         $data_member->kantor = $request->kantor;
         $data_member->password = Hash::make($request->password);
         $data_member->remember_token = str_random(50);
@@ -88,8 +89,10 @@ class MemberController extends Controller
         $data_member->facebook = $request->facebook;
         $data_member->instagram = $request->instagram;
         if ($request->hasFile('profilephoto')) {
-            $request->file('profilephoto')->move('media/profilephoto/' . $data_member->nama_lengkap . '/', $request->file('profilephoto')->getClientOriginalName());
-            $data_member->profilephoto = $request->file('profilephoto')->getClientOriginalName();
+            $avatar = $request->file('profilephoto');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            $request->file('profilephoto')->move('file/', $filename);
+            $data_member->profilephoto = $filename;
         }
         $data_member->updated_by = auth()->user()->nama_lengkap;
         $data_member->created_by = auth()->user()->nama_lengkap;

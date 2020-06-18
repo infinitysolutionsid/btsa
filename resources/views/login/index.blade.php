@@ -41,7 +41,8 @@
 <body>
     <div class="limiter">
         <div class="container-login100"
-            style="background-image: url(https://res.cloudinary.com/btsa-co-id/image/upload/v1541503541/jscsstxtfiledll/img/jumbotroncity1.jpg);">
+            style="background-image:
+            url(https://res.cloudinary.com/btsa-co-id/image/upload/v1592464073/jscsstxtfiledll/img/background-city-1.jpg);">
             <div class="wrap-login100 p-t-30 p-b-50">
                 <span class="login100-form-title p-b-41">
                     Account Login
@@ -71,9 +72,9 @@
                         <button type="submit" class="login100-form-btn mr-2">
                             Login
                         </button>
-                        <a href="/" class="login100-form-btn"><i class="fas fa-home mr-1"></i> Home</a>
-                        <p class="text-muted mt-2">Not registered yet? <a href="#registered" data-toggle="modal"
-                                data-target="#registered">Create an account to sign in</a></p>
+                        {{-- <a href="/" class="login100-form-btn"><i class="fas fa-home mr-1"></i> Home</a> --}}
+                        {{-- <p class="text-muted mt-2">Not registered yet? <a href="#registered" data-toggle="modal"
+                                data-target="#registered">Create an account to sign in</a></p> --}}
                     </div>
 
 

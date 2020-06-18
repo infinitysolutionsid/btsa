@@ -59,8 +59,9 @@ class DashController extends Controller
             ->select('quote.*')
             ->get();
         $quotedash = DB::table('quote')
+            ->join('users', 'quote.created_by', '=', 'users.nama_lengkap')
             ->where('quote.status', '=', 'loading')
-            ->select('quote.*')
+            ->select('quote.*', 'users.profilephoto')
             ->orderByRaw('quote.updated_at', 'DESC')
             ->get();
         $warningget = DB::table('warningdb')

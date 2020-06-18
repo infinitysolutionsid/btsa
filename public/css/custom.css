@@ -5,3 +5,10 @@
     margin: .5rem 1rem;
     border-radius: 50%;
 }
+
+.photoprofileimg-header {
+    object-fit: cover;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
