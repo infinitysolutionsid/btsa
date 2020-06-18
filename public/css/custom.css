@@ -1,0 +1,7 @@
+.photoprofileimg {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    margin: .5rem 1rem;
+    border-radius: 50%;
+}

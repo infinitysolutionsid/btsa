@@ -1,62 +1,43 @@
 @extends('layouts.layout')
-@inject('Member','\App\MemberModel')
 @section('title','Home')
 @section('content')
+<?php $datamember = $data_member->count();
+$legalcount = $data_legal->count();
+$vesselcount = $vessel->count();
+?>
 <div class="row">
     <div class="container-fluid">
-
-        <div class="col-lg-12 text-center quoterow">
+        <div class="col-lg-12 text-left">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong><span><i class="fas fa-info-circle"></i></span> Pesan Penting!</strong><br> Halo
+                {{auth()->user()->nama_lengkap}}, berhubungan nya dengan terus adanya peningkatan website dan keamanan
+                website, diharapkan semua pengguna Issue Report BTSA Logistics untuk melakukan <b>update data pada
+                    Profile
+                    pojok kanan atas</b> lalu tekan <b>Setting</b>, dan <b>isi email di kolom yang tersedia</b>. Dan
+                juga isi
+                data
+                yang belum
+                dilengkapi. Jika tidak mengerti, harap untuk menghubungi pihak IT. Terima kasih! <br><br> Salam hormat,
+                <br>Bintang Tobing <br>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        {{-- <div class="col-lg-12 text-center quoterow">
             @foreach ($quote as $item)
             <a href="{{$item->link_preview}}">
-                <h5><i class="fa fa-quote-left"></i> {!!$item->quotes_name!!} <i class="fa fa-quote-right"></i></h5>
-                <p>- {{$item->created_by}} -</p>
-            </a>
-            @endforeach
-            @if($quote->count()<1) <p><i>- No quotes found -</i></p>
-                @endif
-        </div>
-    </div>
+        <h5><i class="fa fa-quote-left"></i> {!!$item->quotes_name!!} <i class="fa fa-quote-right"></i></h5>
+        <p>- {{$item->created_by}} -</p>
+        </a>
+        @endforeach
+        @if($quote->count()<1) <p><i>- No quotes found -</i></p>
+            @endif
+    </div> --}}
+</div>
 </div>
 <div class="row">
-    <div class="col-lg-4">
-        <div class="card">
-            <?php $datamember = $data_member->count() ?>
-            <div class="stat-widget-one">
-                <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
-                <div class="stat-content dib">
-                    <div class="stat-text">Total Member Terdaftar</div>
-                    <div class="stat-digit">{{$datamember}} pengguna</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="card">
-            <?php $legalcount = $data_legal->count() ?>
-            <div class="stat-widget-one">
-                <div class="stat-icon dib"><i class="ti-bookmark-alt color-primary border-primary"></i></div>
-                <div class="stat-content dib">
-                    <div class="stat-text">Total Dokumen Terupload</div>
-                    <div class="stat-digit">{{$legalcount}} dokumen</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="card">
-            <?php $vesselcount = $vessel->count() ?>
-            <div class="stat-widget-one">
-                <div class="stat-icon dib"><i class="ti-layout-menu-v color-danger border-danger"></i></div>
-                <div class="stat-content dib">
-                    <div class="stat-text">Total Vessel Terdaftar</div>
-                    <div class="stat-digit">{{$vesselcount}} vessel</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-2">
+    <div class="col-lg-3">
         <div class="card">
             <div class="stat-widget-two">
                 <div class="stat-content">
@@ -67,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-2">
+    <div class="col-lg-3">
         <div class="card">
             <div class="stat-widget-two">
                 <div class="stat-content">
@@ -85,17 +66,6 @@
                     <?php $totalbelumselesai = $irtotalbselesai->count() ?>
                     <div class="stat-text">Total IR Belum Selesai </div>
                     <div class="stat-digit"> {{$totalbelumselesai}}</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2">
-        <div class="card">
-            <div class="stat-widget-two">
-                <div class="stat-content">
-                    <?php $totalbatal = $irtotalbatal->count() ?>
-                    <div class="stat-text">Total IR Batal </div>
-                    <div class="stat-digit"> {{$totalbatal}}</div>
                 </div>
             </div>
         </div>
@@ -127,7 +97,9 @@
                 @foreach ($issueData->take(4) as $data)
                 <div class="media">
                     <div class="media-left">
-                        <a href="#"><img class="media-object" src="{{$Member->getAvatar()}}" alt="..."></a>
+                        @inject('aavatar','App\MemberModel')
+                        <a href="#"><img class="media-object"
+                                src="media/profilephoto/{{$data->nama_lengkap}}/{{$data->profilephoto}}" alt=""></a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">{{$data->nama_lengkap}}</h4>
@@ -192,7 +164,10 @@
                 @foreach ($quotedash->take(4) as $data)
                 <div class="media">
                     <div class="media-left">
-                        <a href="#"><img class="media-object" src="{{$Member->getAvatar()}}" alt="..."></a>
+                        <a href="#">
+                            @inject('avatar','App\MemberModel')
+                            <img class="media-object" src="{{$avatar->getAvatar()}}" alt="">
+                        </a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">{{$data->created_by}}</h4>

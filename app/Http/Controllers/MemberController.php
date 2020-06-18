@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\MemberModel;
+use Illuminate\Foundation\Console\Presets\React;
 use Illuminate\Support\Facades\Hash;
 
 class MemberController extends Controller
@@ -71,6 +72,11 @@ class MemberController extends Controller
     }
     public function update(Request $request, $id)
     {
+        // dd($request->all());
+
+        $this->validate($request, [
+            'profilephoto' => 'required|required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
         $data_member = \App\MemberModel::find($id);
         $data_member->update($request->all());
         $data_member->un_password = $request->password;
@@ -79,6 +85,12 @@ class MemberController extends Controller
         $data_member->jabatan = $request->jabatan;
         $data_member->divisi = $request->divisi;
         $data_member->kantor = $request->kantor;
+        $data_member->facebook = $request->facebook;
+        $data_member->instagram = $request->instagram;
+        if ($request->hasFile('profilephoto')) {
+            $request->file('profilephoto')->move('media/profilephoto/' . $data_member->nama_lengkap . '/', $request->file('profilephoto')->getClientOriginalName());
+            $data_member->profilephoto = $request->file('profilephoto')->getClientOriginalName();
+        }
         $data_member->updated_by = auth()->user()->nama_lengkap;
         $data_member->created_by = auth()->user()->nama_lengkap;
         $data_member->save();

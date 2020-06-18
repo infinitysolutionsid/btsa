@@ -13,15 +13,15 @@ class DashController extends Controller
     {
         if (auth()->user()->role != ['hrd', 'umum', 'it'])
             $issueData = DB::table('issuereport_tb')
-                ->select('issuereport_tb.*')
-                ->orderBy('issuereport_tb.tanggal', 'DESC')
-                ->orderBy('issuereport_tb.jam', 'DESC')
+                ->join('users', 'issuereport_tb.nama_lengkap', '=', 'users.nama_lengkap')
+                ->select('issuereport_tb.*', 'users.nama_lengkap', 'users.profilephoto')
+                ->orderBy('issuereport_tb.created_at', 'DESC')
                 ->get();
         else
             $issueData = DB::table('issuereport_tb')
-                ->select('issuereport_tb.*')
-                ->orderBy('issuereport_tb.tanggal', 'DESC')
-                ->orderBy('issuereport_tb.jam', 'DESC')
+                ->join('users', 'issuereport_tb.nama_lengkap', '=', 'users.nama_lengkap')
+                ->select('issuereport_tb.*', 'users.nama_lengkap', 'users.profilephoto')
+                ->orderBy('issuereport_tb.created_at', 'DESC')
                 ->where('issuereport_tb.tujuan', '=', auth()->user()->role)
                 ->get();
         $data_member = DB::table('users')

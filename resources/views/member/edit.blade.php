@@ -2,9 +2,9 @@
 @section('title','Member edit managements')
 @section('content')
 <div class="card">
-    <div class="card-title">
-        <h4>Edit Member Managements</h4>
-    </div>
+    {{-- <div class="card-title">
+        <h4>General Information</h4>
+    </div> --}}
     <div class="card-body">
         @if (session('sukses'))
         <div class="alert alert-success alert-dismissible fade show">
@@ -13,12 +13,38 @@
             <strong>Successfull!</strong> {{session('sukses')}}
         </div>
         @endif
-        <form action="/member/{{$data_member->id}}/update" method="POST">
+        @if(count($errors)>0)
+        @foreach ($errors->all() as $error)
+        <div class="form-row">
+            <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissible fade show" id="alert-success" role="alert">
+                    {{$error}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @endif
+        <form action="/member/{{auth()->user()->id}}/update" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="basic-elements">
                 <div class="row">
+                    <h4>General Information</h4>
                     <div class="col-md-12">
                         <div class="form-row">
+                            <div class="col-12">
+                                <img class="photoprofileimg"
+                                    src="{{asset('media/profilephoto/'.$data_member->nama_lengkap.'/'.$data_member->profilephoto)}}"
+                                    alt="">
+                                <div class="form-group">
+                                    <label for="">Foto profil</label><span style="color:red;"> *</span>
+                                    <input type="file" class="form-control" name="profilephoto" placeholder="Hai"
+                                        required>
+                                    <small class="text-muted">Max upload image size is 2MB</small>
+                                </div>
+                            </div>
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="nama_lengkap">Nama Lengkap</label>
@@ -54,7 +80,7 @@
                             <div class="col-3">
                                 <div class="form-group">
                                     <label for="role">Tipe user</label>
-                                    <select name="role" id="role" class="form-control custom-select">
+                                    {{-- <select name="role" id="role" class="form-control custom-select">
                                         <option value="#" disabled selected>Select type of item</option>
                                         <option value="administrator" @if($data_member->role=='administrator') selected
                                             @endif>Administrator</option>
@@ -75,7 +101,9 @@
                                         <option value="user" @if($data_member->role=='user') selected @endif>User (Issue
                                             Report)
                                         </option>
-                                    </select>
+                                    </select> --}}
+                                    <input type="text" name="role" id="role" value="{{$data_member->role}}"
+                                        class="form-control" readonly>
                                 </div>
                             </div>
                             <div class="col-3">
@@ -133,15 +161,34 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
+                        <h4>Informasi Opsional</h4>
+                        <h6>Social Links</h6>
+                        <div class="form-group">
+                            <div class="input-group input-group-default">
+                                <span class="input-group-btn"><button class="btn btn-secondary"><i
+                                            class="ti-facebook"></i> facebook.com/</button></span>
+                                <input type="text" placeholder="username" value="{{$data_member->instagram}}"
+                                    name="facebook" class="form-control">
+                            </div>
+                            <div class="input-group input-group-default">
+                                <span class="input-group-btn"><button class="btn btn-secondary"><i
+                                            class="ti-instagram"></i> instagram.com/</button></span>
+                                <input type="text" placeholder="username" value="{{$data_member->instagram}}"
+                                    name="instagram" class="form-control">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="status">Status</label>
-                            <select name="status" id="status" class="form-control custom-select">
+                            {{-- <select name="status" id="status" class="form-control custom-select">
                                 <option value="active" @if($data_member->status=='active') selected @endif>Active
                                 </option>
                                 <option value="inactive" @if($data_member->status=='inactive') selected
                                     @endif>Inactive
                                 </option>
-                            </select>
+                            </select> --}}
+                            <input type="text" name="status" id="status" class="form-control"
+                                value="{{$data_member->status}}" readonly>
                         </div>
                     </div>
                 </div>

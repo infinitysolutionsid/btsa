@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Http\File;
 // CLEAR AND OPTIMIZE
 Route::get('/clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');
@@ -37,6 +39,9 @@ Route::get('/newissue', function () {
 //         $message->subject('Laravel Mail Test Raw');
 //     });
 // });
+Route::get('/btsa-mobile', function () {
+    return File::get(public_path() . '/btsa-mobile/index.php');
+});
 
 Route::get('/', 'DashboardController@index');
 Route::post('/send', 'DashboardController@sendEmail');

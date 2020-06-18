@@ -40,5 +40,4 @@ class successMakeNewIssue extends Mailable
                 'status' => $this->issueData->approve,
             ])
             ->markdown('emails.sites.newIssue');
-    }
 }
