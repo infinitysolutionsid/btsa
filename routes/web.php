@@ -57,6 +57,7 @@ Route::get('/step2', 'candidateController@step2');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'DashController@index');
+    // Route::get('member/{id}/{username}', 'MemberController@view');
     Route::get('member/{id}/edit', 'MemberController@edit');
     Route::post('member/{id}/update', 'MemberController@update');
 

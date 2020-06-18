@@ -17,6 +17,11 @@ class MemberController extends Controller
             ->get();
         return view('member.index', ['data_member' => $data_member]);
     }
+    public function view($username)
+    {
+        $member = MemberModel::find($username);
+        dd($member);
+    }
     public function addnewmember(Request $request)
     {
         $data_member = new \App\MemberModel;

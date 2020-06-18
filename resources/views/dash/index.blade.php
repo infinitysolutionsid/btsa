@@ -97,7 +97,8 @@ $vesselcount = $vessel->count();
                 @foreach ($issueData->take(4) as $data)
                 <div class="media">
                     <div class="media-left">
-                        <a href="#"><img class="media-object" src="file/{{$data->profilephoto}}" alt=""></a>
+                        <a href="#"><img class="media-object"
+                                src="file/{{$data->profilephoto}}" alt=""></a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">{{$data->nama_lengkap}}</h4>
