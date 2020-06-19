@@ -2144,6 +2144,8 @@ footer p {
 .recent-comment .media-left img {
     border-radius: 100px;
     width: 40px;
+    height: 40px;
+    object-fit: cover;
 }
 
 .recent-comment .media-body {
