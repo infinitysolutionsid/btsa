@@ -26,7 +26,6 @@
                         <th>#</th>
                         <th>Fullname</th>
                         <th>Username</th>
-
                         <th>Role</th>
                         <th>Status</th>
                         <th>Last login info</th>
@@ -58,13 +57,13 @@
                             {{$dt_member->last_login}}
                             @endif
                         </td>
-                        <td><button class="btn btn-rounded btn-primary btn-sm" data-toggle="modal"
+                        <td>
+                            <button class="btn btn-rounded btn-primary btn-sm" data-toggle="modal"
                                 data-target="#detailsuser{{$dt_member->id}}"><i class="fas fa-info-circle"></i></button>
-                            <a href="/member/{{$dt_member->id}}/edit"><button
-                                    class="btn btn-rounded btn-warning btn-sm"><i class="fas fa-edit"></i></button></a>
-                            <a href="/member/{{$dt_member->id}}/delete"><button
-                                    class="btn btn-rounded btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
-                        </td>
+                                <a href="/member/{{$dt_member->id}}/edit"><button class="btn btn-rounded btn-warning btn-sm"><i
+                                        class="fas fa-edit"></i></button></a> <a
+                                href="/member/{{$dt_member->id}}/delete"><button class="btn btn-rounded btn-danger btn-sm"><i
+                                        class="fas fa-trash"></i></button></a></td>
                     </tr>
                     <!-- Modal -->
                     <div class="modal fade" id="detailsuser{{$dt_member->id}}" tabindex="-1" role="dialog"

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Main CSS/JS-->
-    <link href="{!!asset('css/candidate.css')!!}" rel="stylesheet">
+    <link href="{!!url('https://res.cloudinary.com/btsa-co-id/raw/upload/v1587520539/jscsstxtfiledll/candidate.css')!!}" rel="stylesheet">
 
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -350,8 +350,9 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Tanggal masuk kerja</label>
-                                <input type="text" name="req_datein" class="form-control" data-position="right top"
-                                    required maxlength="10" pattern=".{10,}">
+                                <input type="text" name="req_datein" class="datepicker-here form-control"
+                                    data-position="right top" data-language="en" required maxlength="10"
+                                    pattern=".{10,}">
                                 <small class="form-text text-muted">Format tanggal masuk kerja: DD/MM/YYYY</small>
                             </div>
                             <div class="form-group col-md-4">
@@ -410,7 +411,7 @@
                 maxYear: parseInt(moment().format('YYYY'), 10)
             }, function (start, end, label) {
                 var years = moment().diff(start, 'years');
-                alert("Kamu berumur " + years + " saat ini!");
+                alert("You are " + years + " years old!");
             });
         });
 

@@ -15,9 +15,9 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-        content="BTSA Logistics adalah Expedisi, EMKL, EMKU & Custom Clearance di Indonesia. Berada di Jakarta, Medan, Surabaya, Semarang, Palembang, Pekan Baru, Bali,  Makasar dan Lombok.">
+        content="BTSA Logistics adalah Expedisi, EMKL, EMKU & Custom Clearance dan juga termasuk daftar perusahaan custom clearance di Indonesia. Berada di Jakarta, Medan, Surabaya, Semarang, Palembang, Pekan Baru, Bali,  Makasar dan Lombok.">
     <meta name="keywords"
-        content="PPJK, EMKL, Expedisi, Export-Import, Custom Clearance, BTSA, BTSA LOGISTICS, Ekspedisi, Jasa Ekspedisi">
+        content="PPJK, EMKL, Expedisi, Export-Import, Custom Clearance, BTSA, BTSA LOGISTICS, Bea Cukai Indonesia, Jasa Ekspedisi, Custom Clearance Indonesia, PPJK Indonesia, Daftar perusahaan Bea Cukai di Indonesia">
     <meta name="author" content="Bintang Cato Jeremia L Tobing">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link expr:href='data:blog.url' hreflang='x-default' rel='alternate' />
@@ -42,7 +42,6 @@
     </script>
     <script src="https://res.cloudinary.com/btsa-co-id/raw/upload/v1541554459/jscsstxtfiledll/js/script.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     {{-- facebook open graphs --}}
     <meta property="fb:admins" content="1282698325202260">
     <meta property="og:site_name" content="BTSA LOGISTICS PPJK | EMKL | EMKU" />
@@ -52,11 +51,9 @@
     <meta property="og:description" content="@yield('metadesc')" />
     <meta property="og:image"
         content="{!!url('https://res.cloudinary.com/btsa-co-id/image/upload/v1585810115/popupimg/ogimage.jpg')!!}">
-
 </head>
 
 <body id="mypage" data-spy="scroll" data-target=".navbar" data-offset="90">
-
 
     <!-- Auto PopUp -->
     <div class="modal fade" id="global-modal" role="dialog">
@@ -105,8 +102,7 @@
                     <li><a href="/candidate" target="_blank">Karir</a></li>
                     @if(auth()->check())
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true"><span><img class="media-object"
-                                    src="{{asset('file/'.auth()->user()->profilephoto)}}"></span>
+                            aria-haspopup="true"><span><img class="media-object" src="{{asset('file/'.auth()->user()->profilephoto)}}"></span>
                             {{auth()->user()->nama_lengkap}}</a>
                         <ul class="dropdown-menu">
                             <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
@@ -143,8 +139,8 @@
                                             </button></a>
                                     </div>
                                     <div class="col-sm-6">
-                                        <a href="/restricted"><button type="button" class="btn btn-custom"
-                                                style="width:270px; height:60px;">BTSA Restricted
+                                        <a href="/restricted"><button type="button"
+                                                class="btn btn-custom" style="width:270px; height:60px;">BTSA Restricted
                                                 Area<br>
                                                 <font class="personalonly"><i>-For Company Only-</i></font>
                                             </button></a>
@@ -171,7 +167,7 @@
                         aria-expanded="false" data-toggle="modal" data-target="#companyprofile">Our Company Profile
                         <span class="caret"></span></button>
                 </a>
-                <a href="https://btsa.co.id/news"><button class="btn btn-default btn-md" type="button"
+                <a href="https://btsa.co.id/news/id/"><button class="btn btn-default btn-md" type="button"
                         aria-haspopup="true" aria-expanded="false">Our Blog</button></a>
             </div>
         </div>
@@ -188,11 +184,11 @@
                 <div class="modal-body">
                     <div class="col-md text-center">
                         <a
-                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1583202940/CompanyProfile/Company_Profile_BTSA_2020_-_IND.pdf"><button
+                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1583546578/CompanyProfile/Company_Profile_BTSA_2020_IND.pdf"><button
                                 class="btn btn-primary btn-md" type="button" aria-haspopup="true"
                                 aria-expanded="false">Bahasa Indonesia</button></a>
                         <a
-                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1583202939/CompanyProfile/Company_Profile_BTSA_2020_-_ENG.pdf"><button
+                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1583546577/CompanyProfile/Company_Profile_BTSA_2020_ENG.pdf"><button
                                 class="btn btn-primary btn-md" type="button" aria-haspopup="true"
                                 aria-expanded="false">Bahasa Inggris</button></a>
                     </div>
@@ -1505,42 +1501,42 @@
             </div><br>
             <div class="row slideanim">
                 <div class="col-sm-4">
-                    <span style="color: #282662; font-size: 4rem;"><i class="fab fa-sketch"></i></span>
+                    <span style="color: #282662; font-size: 4rem;" alt="budaya perusahaan BTSA Logistics"><i class="fab fa-sketch"></i></span>
                     <h4 style="color: #212121;"><strong>Integrity</strong></h4>
                     <p>Memiliki sikap kejujuran, terbuka, bertanggung jawab dan dapat dipercaya dalam melayani pelanggan
                         internal dan eksternal.</p>
                 </div>
                 <div class="col-sm-4">
-                    <span style="color: #282662; font-size: 4rem;"><i class="fab fa-algolia"></i></span>
-                    <h4 style="color: #212121;"><strong>Be Proactive</strong></h4>
-                    <p>Tanggap dan inisiatif dalam menghadapi situasi internal dan eksternal untuk mencapai hal-hal yang
-                        lebih baik bagi perusahaan, karyawan dan pelanggan.</p>
+                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fas fa-crown"></i></span>
+                    <h4 style="color: #212121;"><strong>Loyality</strong></h4>
+                    <p>Loyal dan setia terhadap perusahaan, karyawan dan pelanggan utama.</p>
                 </div>
                 <div class="col-sm-4">
-                    <span style="color: #282662; font-size: 4rem;"><i class="far fa-handshake"></i></span>
-                    <h4 style="color: #212121;"><strong>Service</strong></h4>
-                    <p>Memberikan pelayanan prima kepada pelanggan internal dan eksternal perusahaan</p>
+                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fas fa-eye"></i></span>
+                    <h4 style="color: #212121;"><strong>Visioner</strong></h4>
+                    <p>Memiliki pandangan atau visi kedepan serta mampu membuat rencana untuk mewujudkannya.</p>
                 </div>
             </div><br>
             <div class="row slideanim">
                 <div class="col-sm-3">
-                    <span style="color: #282662; font-size: 4rem;"><i class="fas fa-crown"></i></span>
-                    <h4 style="color: #212121;"><strong>Loyality</strong></h4>
-                    <p>Loyal dan setia terhadap perusahaan, karyawan dan pelanggan utama.</p>
+                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fab fa-algolia"></i></span>
+                    <h4 style="color: #212121;"><strong>Be Proactive</strong></h4>
+                    <p>Tanggap dan inisiatif dalam menghadapi situasi internal dan eksternal untuk mencapai hal-hal yang
+                        lebih baik bagi perusahaan, karyawan dan pelanggan.</p>
                 </div>
                 <div class="col-sm-3">
-                    <span style="color: #282662; font-size: 4rem;"><i class="fas fa-users"></i></span>
+                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fas fa-users"></i></span>
                     <h4 style="color: #212121;"><strong>Team Work</strong></h4>
                     <p>Saling bekerja sama, menghormati, menghargai sesama rekan kerja dan pelanggan untuk mencapai
                         tujuan dan visi perusahaan.</p>
                 </div>
                 <div class="col-sm-3">
-                    <span style="color: #282662; font-size: 4rem;"><i class="fas fa-eye"></i></span>
-                    <h4 style="color: #212121;"><strong>Visioner</strong></h4>
-                    <p>Memiliki pandangan atau visi kedepan serta mampu membuat rencana untuk mewujudkannya.</p>
+                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="far fa-handshake"></i></span>
+                    <h4 style="color: #212121;"><strong>Service</strong></h4>
+                    <p>Memberikan pelayanan prima kepada pelanggan internal dan eksternal perusahaan</p>
                 </div>
                 <div class="col-sm-3">
-                    <span style="color: #282662; font-size: 4rem;"><i class="fas fa-star"></i></span>
+                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fas fa-star"></i></span>
                     <h4 style="color: #212121;"><strong>Awareness</strong></h4>
                     <p>Menyadari dan selalu bertindak positif serta bertanggung jawab untuk membuat lingkungan internal
                         dan eksternal menjadi lebih baik.</p>
@@ -1839,9 +1835,8 @@
                                 title="Learn about us on Wiki">
                                 <i class="fab fa-wikipedia-w fa-2x" title="Add us on Facebook"
                                     style="color: #fff"></i></a></li>
-                        <li><a href="http://www.youtube.com/c/BTSALogisticsYourReliableLogisticsPartner"
-                                data-toggle="tooltip" target="_blank" class="myTooltip" data-placement="bottom"
-                                title="Watch us on Youtube">
+                        <li><a href="http://www.youtube.com/c/BTSALogisticsYourReliableLogisticsPartner" data-toggle="tooltip"
+                                target="_blank" class="myTooltip" data-placement="bottom" title="Watch us on Youtube">
                                 <i class="fab fa-youtube fa-2x" title="Add us on Facebook" style="color: #fff"></i></a>
                         </li>
                     </ul>

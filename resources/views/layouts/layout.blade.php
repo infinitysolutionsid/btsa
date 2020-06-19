@@ -1,5 +1,5 @@
 @inject('Member','\App\MemberModel')
-@inject('WarningModel','\App\WarningDB')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +12,7 @@
     <meta name="title" content="BTSA LOGISTICS SYSTEM">
     <meta name="language" content="English">
     <meta name="author" content="Bintang Jeremia Tobing">
+
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
     <link rel="shortcut icon"
@@ -31,14 +32,8 @@
     </script>
     <link rel="stylesheet"
         href="{!!url('https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css')!!}" />
-    <link rel="stylesheet" href="{!!asset('css/index.css')!!}">
-    <link rel="stylesheet" href="{!!asset('css/custom.css')!!}">
-    <style>
-        .tab {
-            margin-left: 40px;
-        }
-
-    </style>
+        <link rel="stylesheet" href="{!!asset('css/index.css')!!}">
+        <link rel="stylesheet" href="{!!asset('css/custom.css')!!}">
 </head>
 <!-- Styles -->
 <link href="{!! asset('css/lib/weather-icons.css')!!}" rel="stylesheet" />
@@ -76,9 +71,8 @@
                                 <h1>@if(($Hour >= 01) && ($Hour<=11)) {{'Selamat pagi'}} @elseif(($Hour>=11) && ($Hour
                                         <=15)) {{'Selamat siang'}} @elseif(($Hour>=15)&& ($Hour<=18)) {{'Selamat sore'}}
                                                 @else{{'Selamat malam'}} @endif <strong>
-                                                {{Auth::user()->nama_lengkap}}.</strong></h1>
-                                <p class="text-muted">Jabatan anda adalah
-                                    {{Auth::user()->jabatan}}, {{Auth::user()->role}}
+                                                {{auth()->user()->nama_lengkap}}.</strong></h1>
+                                <p class="text-muted">Jabatan anda adalah <strong>{{auth()->user()->jabatan}}, {{auth()->user()->role}}</strong>
                                 </p>
                             </div>
                         </div>
@@ -130,12 +124,6 @@
 
     </script>
     <script src="{!!asset('js/lib/jquery.min.js')!!}"></script>
-    <script type="text/javascript">
-        function warningnotice_approve() {
-            document.getElementById("approve_btnwarningnotice").submit();
-        }
-
-    </script>
     <script src="{!!asset('js/lib/jquery.nanoscroller.min.js')!!}"></script>
     <!-- nano scroller -->
     <script src="{!!asset('js/lib/menubar/sidebar.js')!!}"></script>
@@ -143,6 +131,7 @@
     <!-- sidebar -->
     <script src="{!!asset('js/lib/bootstrap.min.js')!!}"></script>
 
+    <!-- bootstrap -->
 
     <script src="{!!asset('js/lib/circle-progress/circle-progress.min.js')!!}"></script>
     <script src="{!!asset('js/lib/circle-progress/circle-progress-init.js')!!}"></script>
@@ -223,8 +212,6 @@
         })
 
     </script>
-
-
 </body>
 
 </html>

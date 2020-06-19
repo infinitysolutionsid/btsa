@@ -28,6 +28,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
+
                         <th>Tanggal selesai</th>
                         <th>Notes</th>
                         <th>Kendala</th>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\itemModel;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
 
 class DashController extends Controller
 {
@@ -14,13 +13,13 @@ class DashController extends Controller
         if (auth()->user()->role != ['hrd', 'umum', 'it'])
             $issueData = DB::table('issuereport_tb')
                 ->join('users', 'issuereport_tb.nama_lengkap', '=', 'users.nama_lengkap')
-                ->select('issuereport_tb.*', 'users.nama_lengkap', 'users.profilephoto', 'users.username')
+                ->select('issuereport_tb.*', 'users.nama_lengkap', 'users.profilephoto')
                 ->orderBy('issuereport_tb.created_at', 'DESC')
                 ->get();
         else
             $issueData = DB::table('issuereport_tb')
                 ->join('users', 'issuereport_tb.nama_lengkap', '=', 'users.nama_lengkap')
-                ->select('issuereport_tb.*', 'users.nama_lengkap', 'users.profilephoto', 'users.username')
+                ->select('issuereport_tb.*', 'users.nama_lengkap', 'users.profilephoto')
                 ->orderBy('issuereport_tb.created_at', 'DESC')
                 ->where('issuereport_tb.tujuan', '=', auth()->user()->role)
                 ->get();
@@ -48,7 +47,7 @@ class DashController extends Controller
             ->where('issuereport_tb.status', '=', 'Batal')
             ->select('issuereport_tb.*')
             ->get();
-        $quote = DB::table('quote')
+            $quote = DB::table('quote')
             ->where('quote.status', '=', 'Selesai')
             ->select('quote.*')
             ->limit(1)
@@ -64,11 +63,6 @@ class DashController extends Controller
             ->select('quote.*', 'users.profilephoto')
             ->orderByRaw('quote.updated_at', 'DESC')
             ->get();
-        $warningget = DB::table('warningdb')
-            ->where('warningdb.approved_by', '=', 'unapproved')
-            ->get();
-        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData, 'quote' => $quote, 'quotedash' => $quotedash, 'quoteds' => $quoteds, 'warningget' => $warningget]);
-        // dd(Auth::user());
-        // print_r(Auth::user());
+        return view('dash.index', ['data_member' => $data_member, 'data_legal' => $data_legal, 'vessel' => $vessel, 'irtotalselesai' => $irtotalselesai, 'irtotal' => $irtotal, 'irtotalbselesai' => $irtotalbselesai, 'irtotalbatal' => $irtotalbatal, 'issueData' => $issueData, 'quote' => $quote, 'quotedash' => $quotedash, 'quoteds' => $quoteds]);
     }
 }

@@ -15,12 +15,10 @@ class candidateDB extends Model
         'nama_panggilan',
         'tempat_lahir',
         'tanggal_lahir',
-        'kota_domisili',
-        'pendidikan',
-        'kelamin',
         'NoKtp',
         'NoSim',
         'NoNpwp',
+        'kelamin',
         'NoBpjs',
         'suku', 'agama',
         'golongandarah',
@@ -37,7 +35,9 @@ class candidateDB extends Model
         'fasilitas',
         'ktpfile',
         'simfile',
-        'statusinterview'
+        'statusinterview',
+        'kota_domisili',
+        'pendidikan',
     ];
     public function getAvatar()
     {

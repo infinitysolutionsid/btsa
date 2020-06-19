@@ -7,12 +7,6 @@ use \App\candidateDB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Support\Jsonable;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Input;
-
-use App\religionDB;
-use App\sukuDB;
-use App\loker;
 
 class candidateController extends Controller
 {
@@ -40,12 +34,12 @@ class candidateController extends Controller
         $interviewer->tempat_lahir = $request->tempat_lahir;
         $interviewer->tanggal_lahir = $request->tanggal_lahir;
         $interviewer->NoKtp = $request->NoKtp;
-        $interviewer->NoSim = $request->NoSim;
-        $interviewer->NoNpwp = $request->NoNpwp;
-        $interviewer->NoBpjs = $request->NoBpjs;
         $interviewer->pendidikan = $request->pendidikan;
         $interviewer->kota_domisili = $request->kota_domisili;
         $interviewer->kelamin = $request->gender;
+        $interviewer->NoSim = $request->NoSim;
+        $interviewer->NoNpwp = $request->NoNpwp;
+        $interviewer->NoBpjs = $request->NoBpjs;
         $interviewer->suku = $request->suku;
         $interviewer->agama = $request->agama;
         $interviewer->golongandarah = $request->golongandarah;
@@ -60,7 +54,7 @@ class candidateController extends Controller
         $interviewer->info_lowongan = $request->info_lowongan;
         $interviewer->req_datein = $request->req_datein;
         $interviewer->income = $request->income;
-        if ($request->hasFile('profilephoto')) {
+if ($request->hasFile('profilephoto')) {
             $request->file('profilephoto')->move('file/img/' . $request->nama_lengkap, $request->file('profilephoto')->getClientOriginalName());
             $interviewer->profilephoto = $request->file('profilephoto')->getClientOriginalName();
         }
@@ -76,20 +70,27 @@ class candidateController extends Controller
             $request->file('simfile')->move('file/doc/' . $request->nama_lengkap . '/sim/', $request->file('simfile')->getClientOriginalName());
             $interviewer->simfile = $request->file('simfile')->getClientOriginalName();
         }
-
         $interviewer->save();
         return view('candidate.form2');
     }
     public function managements()
     {
+        // if (request()->has('available_position')) {
+        //     $candidate = \App\loker::where('available_position', request('available_position'))->paginate(10);
+        // } else {
+        //     $candidate = DB::table('candidate')
+        //         ->select('candidate.*')
+        //         ->orderBy('candidate.created_at', 'DESC')
+        //         ->paginate(10);
+        // }
         if (request()->has('appliedposition')) {
-            $candidate = \App\candidateDB::where('appliedposition', request('appliedposition'))->paginate(200)->appends('appliedposition', request('appliedposition'));
+            $candidate = \App\candidateDB::where('appliedposition', request('appliedposition'))->get()->appends('appliedposition', request('appliedposition'));
         } else {
             $candidate = DB::table('candidate')
                 ->select('candidate.*')
                 // ->where('candidate.appliedposition', '!=', '')
-
-                ->paginate(500);
+                
+                ->get();
         }
         $filter_candidate = DB::table('loker')
             ->select('loker.available_position')

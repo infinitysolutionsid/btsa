@@ -162,7 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
-        Telegram\Bot\Laravel\TelegramServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -233,7 +232,6 @@ return [
         'JsonLd'   => Artesaos\SEOTools\Facades\JsonLd::class,
         // or
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
-        'Telegram' => Telegram\Bot\Laravel\Facades\Telegram::class,
 
     ],
 

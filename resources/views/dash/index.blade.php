@@ -97,6 +97,7 @@ $vesselcount = $vessel->count();
                 @foreach ($issueData->take(4) as $data)
                 <div class="media">
                     <div class="media-left">
+                        @inject('aavatar','App\MemberModel')
                         <a href="#"><img class="media-object"
                                 src="file/{{$data->profilephoto}}" alt=""></a>
                     </div>
