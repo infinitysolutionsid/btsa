@@ -17,6 +17,7 @@
     height: 100px;
     margin: .5rem 1rem;
     border-radius: 50%;
+
 }
 
 .photoprofileimg-header {
@@ -34,6 +35,16 @@
     margin: .1rem .1rem;
 }
 
+.scroll-user-active .row {
+    border-top: 1px solid #eee;
+
+}
+
+.scroll-user-active .media-body {
+    margin-top: 5px;
+    margin-left: .5rem !important;
+}
+
 .scroll-user-active .row:hover {
     cursor: pointer;
     background-color: rgba(206, 212, 218, 0.15);
@@ -46,9 +57,98 @@
     height: 500px;
 }
 
+
 .user img {
     object-fit: cover;
-    width: 50px;
-    height: 50px;
+    width: 50px !important;
+    height: 50px !important;
     border-radius: 50%;
+    -webkit-box-shadow: 4px 4px 14px -6px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: 4px 4px 14px -6px rgba(0, 0, 0, 0.56);
+    box-shadow: 4px 4px 14px -6px rgba(0, 0, 0, 0.56);
+}
+
+.user .media-body .muted-text {
+    font-size: .8rem !important;
+    color: #565656;
+}
+
+.user .media-body .nametitle {
+    color: #3c3c3c;
+}
+
+.message-wrapper {
+    overflow-y: scroll;
+    overflow-x: none !important;
+    height: 500px !important;
+    background-color: rgb(244, 244, 244);
+    border-radius: .25rem;
+}
+
+.message-wrapper {
+    padding: 10px;
+}
+
+.messages p {
+    margin-bottom: 0;
+}
+
+.messages .message {
+    margin-bottom: 1rem;
+}
+
+.scroll-user-active .activeuser {
+    margin-left: -24px;
+    margin-top: 34px;
+}
+
+.scroll-user-active .countmsg {
+    background-color: #343957;
+    color: #fff !important;
+    border-radius: 50%;
+}
+
+.scroll-user-active .btn-circle {
+    border-radius: 50%;
+}
+
+.received,
+.sent {
+    width: 50%;
+    padding: 10px 1rem;
+}
+
+.received {
+    background: #fff;
+    border-radius: .5rem .5rem .5rem .25rem;
+}
+
+.sent {
+    background-color: #343957;
+    float: right;
+    text-align: right;
+    border-radius: .5rem .5rem .25rem .5rem;
+}
+
+.sent p {
+    color: #fff;
+}
+
+.message .date {
+    font-size: 10px;
+}
+
+#messages input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0 0 0;
+    display: inline-block;
+    border-radius: .25rem;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+#messages input[type=text]:focus {
+    border: 1px solid #aaa;
 }

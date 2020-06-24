@@ -14,6 +14,8 @@
 }
 
 .navbar-nav .media-object {
+    object-fit: cover;
+    height: 23px;
     width: 23px;
     border-radius: 50%;
     display: inline-block;

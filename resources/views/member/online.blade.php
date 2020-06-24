@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-5 text-left" style="padding-right:0px;">
                         <div class="media mb-4">
-                            <h4>Online Users</h4>
+                            <h4>Direct Messages</h4>
                         </div>
                         <div class="scroll-user-active">
                             @foreach ($users as $user)
@@ -17,9 +17,13 @@
                                     <div class="user media selectmed" id="{{$user->id}}">
                                         <img class="mr-2 img-messagesuser" src="{{asset('file/'.$user->profilephoto)}}"
                                             alt="{{$user->nama_lengkap}} picture.">
+                                        @if($user->isOnline())
+                                        <span class="text-success activeuser"><i class="fas fa-circle"></i></span>
+                                        @else
+                                        <span class="text-danger activeuser"><i class="fas fa-circle"></i></span>
+                                        @endif
                                         <div class="media-body">
-                                            <h6 class="mt-0">{{$user->nama_lengkap}}
-                                                {{-- will show unread count --}}
+                                            <h6 class="mt-0 nametitle">{{$user->nama_lengkap}}
                                                 </h5>
                                                 <p class="muted-text">{{$user->email}}</p>
                                         </div>
@@ -27,11 +31,8 @@
                                 </div>
                                 <div class="col-lg-2 text-center" style="margin-top: 10px;">
                                     <div class="statustrace">
-                                        @if($user->isOnline())
-                                        <li class="text-success"><span><i class="fas fa-circle"></i></span></li>
-                                        @else
-                                        <li class="text-danger"><span><i class="fas fa-circle"></i></span></li>
-                                        @endif
+                                        {{-- <li class="text-primary countmsg">1</li> --}}
+                                        <button class="btn btn-primary btn-circle btn-sm">5</button>
                                     </div>
                                 </div>
                             </div>
@@ -39,9 +40,7 @@
                         </div>
                     </div>
                     <div class="col-lg-7" id="messages">
-                        <div class="media mb-4">
-                            <h4>Your Messages</h4>
-                        </div>
+
                     </div>
                 </div>
             </div>

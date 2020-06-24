@@ -4,12 +4,10 @@
 <div class="card">
     <div class="card-title">
         <h4>Queue Issue Reports</h4>
-        <a href="#addIR">
-            <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right" data-toggle="modal"
-                data-target="#addIR">
-                <span class="ti-plus"></span> Request new IR
-            </button>
-        </a>
+        <button type="button" class="btn btn-primary btn-flat btn-addon m-b-10 float-right" data-toggle="modal"
+            data-target="#addIR">
+            <span class="ti-plus"></span> Request new IR
+        </button>
     </div>
     <div class="card-body">
         @if (session('sukses'))

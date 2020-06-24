@@ -11,7 +11,7 @@
                 </div>
                 <div class="float-right">
                     <ul>
-                        <li class="header-icon dib"><i class="far fa-bell"></i>
+                        <li class="header-icon dib"><i class="far fa-bell"></i><span class="badgenotif">5</span>
                             <div class="drop-down">
                                 <div class="dropdown-content-heading">
                                     <span class="text-left">Recent Notifications</span>
@@ -21,10 +21,10 @@
                                         <li>
                                             <a href="#">
                                                 <div class="notification-content">
-                                                    <!--<small class="notification-timestamp pull-right">02:34-->
-                                                    <!--    PM</small>-->
-                                                    <div class="notification-heading">Features on maintenance</div>
-                                                    <div class="notification-text">This features is on developing...</div>
+                                                    <small class="notification-timestamp pull-right">02:34
+                                                        PM</small>
+                                                    <div class="notification-heading">Mr. John</div>
+                                                    <div class="notification-text">5 members joined today </div>
                                                 </div>
                                             </a>
                                         </li>
@@ -53,15 +53,18 @@
                                             </a>
                                         </li>
                                         <li class="text-center">
-                                            <a href="#" class="more-link">See All</a>
+                                            <a href="/direct-messages" class="more-link">Lihat semua pesan</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
-                        <li class="header-icon dib"><span class="user-avatar">{{auth()->user()->nama_lengkap}} <span><img class="photoprofileimg-header" src="{{asset('file/'.auth()->user()->profilephoto)}}"
-                                        alt="display picture {{auth()->user()->nama_lengkap}}"></span> <i
-                                    class="ti-angle-down f-s-10"></i></span>
+                        @inject('avatar','App\Membermodel')
+                        <li class="header-icon dib"><span class="user-avatar">{{auth()->user()->nama_lengkap}}
+                                <span><img class="photoprofileimg-header"
+                                        src="{{asset('file/'.auth()->user()->profilephoto)}}"
+                                        alt="display picture {{auth()->user()->nama_lengkap}}"></span>
+                                <i class="ti-angle-down f-s-10"></i></span>
                             <div class="drop-down dropdown-profile">
                                 <div class="dropdown-content-heading">
                                     <span class="text-left">{{auth()->user()->nama_lengkap}}</span>

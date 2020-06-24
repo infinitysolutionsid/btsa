@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\MemberModel;
 use Illuminate\Foundation\Console\Presets\React;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use App\messagesDB;
 
 class MemberController extends Controller
 {
@@ -19,8 +21,22 @@ class MemberController extends Controller
     }
     public function online()
     {
-        $users = MemberModel::orderBy('nama_lengkap', 'ASC')->get();
+        $users = MemberModel::where('id', '!=', Auth::id())->orderBy('nama_lengkap', 'ASC')->get();
         return view('member.online', ['users' => $users]);
+    }
+    public function getMessage($id)
+    {
+        // return $id;
+        // getting all message for selected user
+        // getting those message which is from Auth::id and to = user id
+        $my_id = Auth::user()->id;
+        $messages = messagesDB::where(function ($query) use ($id, $my_id) {
+            $query->where('from_id', $my_id)->where('to_id', $id);
+        })->orWhere(function ($query) use ($id, $my_id) {
+            $query->where('from_id', $id)->where('to_id', $my_id);
+        })->get();
+        // return view('member.messages', ['messages' => $messages]);
+        dd($my_id);
     }
     public function view($username)
     {

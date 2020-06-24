@@ -57,6 +57,7 @@ Route::get('/step2', 'candidateController@step2');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/online-users', 'MemberController@online');
+    Route::get('/message/{id}', 'MemberController@getMessage')->name('message');
 
     Route::get('/dashboard', 'DashController@index');
     // Route::get('member/{id}/{username}', 'MemberController@view');
@@ -64,7 +65,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('member/{id}/update', 'MemberController@update');
 
     // PESAN
-    Route::get('/direct-messages', 'MessagesController@index');
+    // Route::get('/direct-messages', 'MessagesController@index');
 });
 Route::group(['middleware' => ['auth', 'roleCheck:administrator']], function () {
     // ROUTE VIEW
