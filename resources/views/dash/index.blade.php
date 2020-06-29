@@ -98,8 +98,7 @@ $vesselcount = $vessel->count();
                 <div class="media">
                     <div class="media-left">
                         @inject('aavatar','App\MemberModel')
-                        <a href="#"><img class="media-object"
-                                src="file/{{$data->profilephoto}}" alt=""></a>
+                        <a href="#"><img class="media-object" src="file/{{$data->profilephoto}}" alt=""></a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">{{$data->nama_lengkap}}</h4>
