@@ -48,10 +48,8 @@
 <link href="{!! asset('css/lib/themify-icons.css')!!}" rel="stylesheet">
 <link href="{!! asset('css/lib/menubar/sidebar.css')!!}" rel="stylesheet">
 <link href="{!! asset('css/lib/bootstrap.min.css')!!}" rel="stylesheet">
-{{-- <link href="{!!asset('css/lib/datatable/dataTables.bootstrap.min.css')!!}" rel="stylesheet" />
-        <link href="{!!asset('css/lib/datatable/buttons.bootstrap.min.css')!!}" rel="stylesheet" /> --}}
 <link rel="stylesheet" type="text/css"
-    href="{!!url('https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css')!!}">
+    href="{!!url('https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css')!!}">
 
 <link href="{!! asset('css/lib/helper.css')!!}" rel="stylesheet">
 <link href="{!! asset('css/style.css')!!}" rel="stylesheet">
@@ -96,7 +94,6 @@
                     </div>
                     <!-- /# column -->
                 </div>
-
                 <!-- /# row -->
                 <section id="main-content">
                     @yield('content')
@@ -112,24 +109,13 @@
             </div>
         </div>
     </div>
-    <div id="search">
-        <button type="button" class="close">×</button>
-        <form>
-            <input type="search" value="" placeholder="type keyword(s) here" />
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
-    <!-- jquery vendor -->
-    {{-- <script src="{!!asset('js/lib/data-table/dataTables.buttons.min.js')!!}"></script>
-        <script src="{!!asset('js/lib/data-table/dataTables.min.js')!!}"></script>
-        <script src="{!!asset('js/lib/data-table/datatables-init.js')!!}"></script> --}}
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
 
     </script>
-    <script src="{!!asset('js/lib/jquery.min.js')!!}"></script>
+    {{-- <script src="{!!asset('js/lib/jquery.min.js')!!}"></script> --}}
     <script type="text/javascript">
         function warningnotice_approve() {
             document.getElementById("approve_btnwarningnotice").submit();
@@ -142,22 +128,6 @@
     <script src="{!!asset('js/lib/preloader/pace.min.js')!!}"></script>
     <!-- sidebar -->
     <script src="{!!asset('js/lib/bootstrap.min.js')!!}"></script>
-
-
-    <script src="{!!asset('js/lib/circle-progress/circle-progress.min.js')!!}"></script>
-    <script src="{!!asset('js/lib/circle-progress/circle-progress-init.js')!!}"></script>
-
-    <script src="{!!asset('js/lib/morris-chart/raphael-min.js')!!}"></script>
-    <script src="{!!asset('js/lib/morris-chart/morris.js')!!}"></script>
-    <script src="{!!asset('js/lib/morris-chart/morris-init.js')!!}"></script>
-
-    <!--  flot-chart js -->
-    <script src="{!!asset('js/lib/flot-chart/jquery.flot.js')!!}"></script>
-    <script src="{!!asset('js/lib/flot-chart/jquery.flot.resize.js')!!}"></script>
-    <script src="{!!asset('js/lib/flot-chart/flot-chart-init.js')!!}"></script>
-    <!-- // flot-chart js -->
-
-
     <script src="{!!asset('js/lib/vector-map/jquery.vmap.js')!!}"></script>
     <!-- scripit init-->
     <script src="{!!asset('js/lib/vector-map/jquery.vmap.min.js')!!}"></script>
@@ -166,47 +136,33 @@
     <!-- scripit init-->
     <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.world.js')!!}"></script>
     <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.algeria.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.argentina.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.brazil.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.france.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.germany.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.greece.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.iran.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.iraq.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.russia.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.tunisia.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.europe.js')!!}"></script>
-    <!-- scripit init-->
-    <script src="{!!asset('js/lib/vector-map/country/jquery.vmap.usa.js')!!}"></script>
-    <!-- scripit init-->
     <script src="{!!asset('js/lib/vector-map/vector.init.js')!!}"></script>
-
-    <script src="{!!asset('js/lib/weather/jquery.simpleWeather.min.js')!!}"></script>
-    <script src="{!!asset('js/lib/weather/weather-init.js')!!}"></script>
     <script src="{!!asset('js/lib/owl-carousel/owl.carousel.min.js')!!}"></script>
     <script src="{!!asset('js/lib/owl-carousel/owl.carousel-init.js')!!}"></script>
     <script src="{!!asset('js/scripts.js')!!}"></script>
 
+    {{-- datatables needs --}}
+    <script type="text/javascript" charset="utf8" src="{!!url('https://code.jquery.com/jquery-3.5.1.js')!!}"></script>
     <script type="text/javascript" charset="utf8"
-        src="{!!url('https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js')!!}"></script>
+        src="{!!url('https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')!!}"></script>
+    <script type="text/javascript" charset="utf8"
+        src="{!!url('https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js')!!}"></script>
     <script>
         $(document).ready(function () {
             $('#veseltab').DataTable();
         });
 
     </script>
-    <!-- scripit init-->
+    <script>
+        $(document).ready(function () {
+            $('#memberTables').DataTable({
+                scrollY: 600,
+            });
+        });
+
+    </script>
+    {{-- End datatables --}}
+
     {{-- TINY MCE --}}
     <script src="https://cdn.tiny.cloud/1/8ll77vzod9z7cah153mxwug6wu868fhxsr291kw3tqtbu9om/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
@@ -230,7 +186,7 @@
 
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
     <script>
         var receiver_id = '';
         var my_id = "{{ Auth::id()}} ";

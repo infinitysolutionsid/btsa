@@ -24,12 +24,12 @@
     {!! JsonLd::generate() !!}
     {{-- END --}}
     <meta name="title" content="starwhisper. | Contact Us">
-    <meta name="keywords" content="clothing store, mens clothing, clothing brand, designer clothes, brand name, clothes, apparel, starwhisper, jual kaos terbaik">
+    <meta name="keywords" content="PPJK, EMKL, Expedisi, Export-Import, Custom Clearance, BTSA, BTSA LOGISTICS, Bea Cukai Indonesia, Jasa Ekspedisi, Custom Clearance Indonesia, PPJK Indonesia, Daftar perusahaan Bea Cukai di Indonesia">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <meta name="author" content="Bintang Jeremia Tobing">
-    
+
     <title>starwhisper. | Contact us</title>
   </head>
   <body>
@@ -40,7 +40,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
+
       <div class="collapse justify-content-end navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav">
           <li class="nav-item active">
@@ -101,9 +101,9 @@
                         <button type="submit" class="btn btn-starwhisper">Submit!</button>
                     </form>
                 </div>
-                
+
             </div>
-            
+
         </div>
     </section>
 <section class="footercase" id="footercase">
