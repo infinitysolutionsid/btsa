@@ -200,6 +200,12 @@
 
     <script type="text/javascript" charset="utf8"
         src="{!!url('https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js')!!}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#veseltab').DataTable();
+        });
+
+    </script>
     <!-- scripit init-->
     {{-- TINY MCE --}}
     <script src="https://cdn.tiny.cloud/1/8ll77vzod9z7cah153mxwug6wu868fhxsr291kw3tqtbu9om/tinymce/5/tinymce.min.js"

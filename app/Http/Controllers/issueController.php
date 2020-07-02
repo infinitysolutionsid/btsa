@@ -33,7 +33,7 @@ class issueController extends Controller
         $issueData->created_by = auth()->user()->nama_lengkap;
         $issueData->logIP = $request->getClientIp();
         $issueData->save();
-        
+
         return back()->with('sukses', 'Tiket IR kamu berhasil dibuat. Tunggu respon dari pihak ' . $request->tujuan . ' ya. Terima kasih.');
     }
     public function itCheck()
@@ -110,7 +110,7 @@ class issueController extends Controller
         $issueData->updated_by = auth()->user()->nama_lengkap;
         $issueData->logIP = $request->getClientIp();
         $issueData->save();
-        
+
         \Mail::to('support@btsa.co.id')->send(new successMakeNewIssue($issueData));
         return back()->with('sukses', 'Terima kasih udah approve. Sekarang laporannya akan diteruskan ke pihak terkait.');
     }

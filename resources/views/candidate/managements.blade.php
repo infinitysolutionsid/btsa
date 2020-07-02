@@ -7,97 +7,87 @@
     </div>
 
     <div class="card-body">
-        <form action="/candidate/managements/search" method="post">
+        {{-- <form action="/candidate/managements/search" method="post">
             {{ csrf_field() }}
-            <div class="advancedfilter">
-                <div class="form-row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="">Posisi Jabatan</label>
-                            <select name="position" class="form-control custom-select">
-                                <option disabled>Pilih salah satu...</option>
-                                @if(count($filter_candidate)>0)
-                                @foreach ($filter_candidate as $lowongan)
-                                <option value="{{$lowongan->available_position}}">{{$lowongan->available_position}}
-                                </option>
-                                @endforeach
-                                @else
-                                <option disabled>Empty records</option>
-                                @endif
-                            </select>
-                        </div>
+        <div class="advancedfilter">
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Posisi Jabatan</label>
+                        <select name="position" class="form-control custom-select">
+                            <option disabled>Pilih salah satu...</option>
+                            @if(count($filter_candidate)>0)
+                            @foreach ($filter_candidate as $lowongan)
+                            <option value="{{$lowongan->available_position}}">{{$lowongan->available_position}}
+                            </option>
+                            @endforeach
+                            @else
+                            <option disabled>Empty records</option>
+                            @endif
+                        </select>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="">Pendidikan</label>
-                            <select name="pendidikan" class="form-control custom-select">
-                                <option value="SMA/SMK">SMA/SMK</option>
-                                <option value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="form-group">
-                            <label for="">Gender</label>
-                            <select name="gender" class="form-control custom-select">
-                                <option value="Pria">Pria</option>
-                                <option value="Wanita">Wanita</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="">Agama</label>
-                            <select name="agama" class="form-control custom-select">
-                                @if(count($agama)>0)
-                                @foreach ($agama as $agm)
-                                <option value="{{$agm->religion_name}}">{{$agm->religion_name}}
-                                </option>
-                                @endforeach
-                                @else
-                                <option disabled>Empty records</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="">Suku</label>
-                            <select name="suku" class="form-control custom-select">
-                                @if(count($suku)>0)
-                                @foreach ($suku as $sukuid)
-                                <option value="{{$sukuid->nama_suku}}">{{$sukuid->nama_suku}}
-                                </option>
-                                @endforeach
-                                @else
-                                <option disabled>Empty records</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-
-                    {{-- <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="">Usia</label>
-                            <select name="position" class="form-control custom-select">
-                                <option value="Staff Personalia">Staff Personalia</option>
-                                <option value="Staff Accounting">Staff Accounting</option>
-                            </select>
-                        </div>
-                    </div> --}}
                 </div>
-                <div class="form-row text-right">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-sm btn-block"><i class="fas fa-filter"></i>
-                                Filter</button>
-                        </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">Pendidikan</label>
+                        <select name="pendidikan" class="form-control custom-select">
+                            <option value="SMA/SMK">SMA/SMK</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                            <option value="S3">S3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label for="">Gender</label>
+                        <select name="gender" class="form-control custom-select">
+                            <option value="Pria">Pria</option>
+                            <option value="Wanita">Wanita</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="">Agama</label>
+                        <select name="agama" class="form-control custom-select">
+                            @if(count($agama)>0)
+                            @foreach ($agama as $agm)
+                            <option value="{{$agm->religion_name}}">{{$agm->religion_name}}
+                            </option>
+                            @endforeach
+                            @else
+                            <option disabled>Empty records</option>
+                            @endif
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="">Suku</label>
+                        <select name="suku" class="form-control custom-select">
+                            @if(count($suku)>0)
+                            @foreach ($suku as $sukuid)
+                            <option value="{{$sukuid->nama_suku}}">{{$sukuid->nama_suku}}
+                            </option>
+                            @endforeach
+                            @else
+                            <option disabled>Empty records</option>
+                            @endif
+                        </select>
                     </div>
                 </div>
             </div>
-        </form>
+            <div class="form-row text-right">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-sm btn-block"><i class="fas fa-filter"></i>
+                            Filter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form> --}}
         @if (session('sukses'))
         <div class="alert alert-success alert-dismissible fade show">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
@@ -112,11 +102,7 @@
                         <th>Posisi</th>
                         <th>Tanggal Melamar</th>
                         <th>Nama Pelamar</th>
-                        <th style="display:none;">Suku</th>
-                        <th style="display:none;">Agama</th>
-                        <th style="">Pendidikan</th>
-                        <th style="display:none;">Kelamin</th>
-                        <th style="display:none;">Kota Domisili</th>
+                        {{-- <th>Pendidikan</th> --}}
                         <th>Tempat Tanggal Lahir</th>
                         <th>Details</th>
                         <th>Action</th>
@@ -130,18 +116,17 @@
                         <td>{{$cnd->appliedposition}}</td>
                         <td>{{date('d M Y', strtotime($cnd->created_at))}}</td>
                         <td><strong>{{$cnd->nama_lengkap}}</strong></td>
-                        <td style="display:none">{{$cnd->suku}}</td>
-                        <td style="display:none">{{$cnd->agama}}</td>
-                        <td style="">{{$cnd->pendidikan}}</td>
-                        <td style="display:none">{{$cnd->kelamin}}</td>
-                        <td style="display:none">{{$cnd->kota_domisili}}</td>
+                        {{-- <td>{{$cnd->pendidikan}}</td> --}}
                         <td>{{$cnd->tempat_lahir}}, {{$cnd->tanggal_lahir}}</td>
                         <td><span data-toggle="modal" data-target="#detailpelamar{{$cnd->candidate_id}}">
                                 <button type="button" class="btn btn-info btn-sm" title="Detail data pelamar"
                                     data-toggle="tooltip" data-placement="top">
                                     <span style="color:white;"><i class="fas fa-info-circle"></i> Data
-                                        lengkap</span></button>
-                            </span></td>
+                                        lengkap
+                                    </span>
+                                </button>
+                            </span>
+                        </td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Button action">
                                 @if($cnd->statusinterview!='interviewed' && auth()->user()->role != 'head')
@@ -155,7 +140,6 @@
                                         href="/candidate/managements/{{$cnd->candidate_id}}/updateinterview">
                                         <span style="color:white;"><i class="fas fa-check"></i></span></a></button>
                                 @else
-
                                 @endif
                             </div>
                         </td>
@@ -213,7 +197,8 @@
                                                 <a href="{{asset('file/doc/'.$cnd->nama_lengkap.'/'.$cnd->filecv)}}"
                                                     target="_blank"><button class="btn btn-secondary btn-sm"
                                                         type="button">Curriculum
-                                                        Vitae</button></a>
+                                                        Vitae</button>
+                                                </a>
                                             </div>
                                             <div class="col-lg-2 text-right">
                                                 <img src="{{asset('file/img/'.$cnd->nama_lengkap.'/'.$cnd->profilephoto)}}"
@@ -236,7 +221,6 @@
                                             <span style="color:white;"><i class="fas fa-check"></i> Tandai sebagai yang
                                                 sudah interview</span></a></button>
                                     @else
-
                                     @endif
                                 </div>
                             </div>
@@ -245,7 +229,6 @@
                     @endforeach
                     @else
                     <td colspan="7" class="text-center">No data founded!</td>
-
                     @endif
                 </tbody>
             </table>
@@ -254,10 +237,5 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#veseltab').DataTable();
-    });
 
-</script>
 @endsection
