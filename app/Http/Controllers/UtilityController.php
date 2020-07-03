@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 use \App\cityDB;
 use \App\loker;
+use App\Mail\adalowonganMail;
 use \App\religionDB;
 use \App\sukuDB;
 
@@ -62,6 +63,11 @@ class UtilityController extends Controller
         $lokerID->created_by = auth()->user()->nama_lengkap;
         $lokerID->updated_by = auth()->user()->nama_lengkap;
         $lokerID->save();
+
+        $emailsub = [
+            'bintangdrummertobing@gmail.com', 'bintang.infinitysolutions@gmail.com'
+        ];
+        \Mail::to($emailsub)->send(new adalowonganMail($lokerID));
         return back()->with('suksesloker', 'Posisi baru berhasil ditambahkan!');
     }
     public function deletekota($city_id)

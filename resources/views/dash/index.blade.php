@@ -107,7 +107,7 @@ $vesselcount = $vessel->count();
                             <div class="badge badge-success">{{$data->id}}</div>
                             <div class="badge badge-warning">{{$data->approve}}</div>
                             @if($data->status=='Selesai')
-                            <div class="badge badge-primary">{{$data->status}}</div>
+                            <div class="badge badge-primary">di{{$data->status}}kan oleh {{$data->updated_by}} </div>
                             @elseif($data->status=='Belum Selesai' && $data->approve=='unApproved')
                             <div class="badge badge-danger">Mohon minta untuk diapprove atasan.</div>
                             @else
