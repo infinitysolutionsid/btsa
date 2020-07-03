@@ -35,7 +35,6 @@
                 </thead>
                 <tbody>
                     @if(!$issueData->isEmpty())
-
                     @php $no = 1; @endphp
                     @foreach($issueData as $dt_issue)
                     <tr>
@@ -81,14 +80,7 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#memberTables').DataTable({
-            scrollY: 600,
-        });
-    });
 
-</script>
 <!-- Modal -->
 <div class="modal fade" id="addIR" tabindex="-1" role="dialog" aria-labelledby="addIR" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

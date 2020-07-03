@@ -91,14 +91,6 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#memberTables').DataTable({
-            scrollY: 300,
-        });
-    });
-
-</script>
 <!-- Modal -->
 <div class="modal fade" id="requestQuote" tabindex="-1" role="dialog" aria-labelledby="requestQuote" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

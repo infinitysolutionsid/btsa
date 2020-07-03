@@ -58,14 +58,6 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#memberTables').DataTable({
-            scrollY: 600,
-        });
-    });
-
-</script>
 
 <!-- Modal -->
 @foreach($issueData as $dt_issue)

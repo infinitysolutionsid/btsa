@@ -60,10 +60,11 @@
                         <td>
                             <button class="btn btn-rounded btn-primary btn-sm" data-toggle="modal"
                                 data-target="#detailsuser{{$dt_member->id}}"><i class="fas fa-info-circle"></i></button>
-                                <a href="/member/{{$dt_member->id}}/edit"><button class="btn btn-rounded btn-warning btn-sm"><i
-                                        class="fas fa-edit"></i></button></a> <a
-                                href="/member/{{$dt_member->id}}/delete"><button class="btn btn-rounded btn-danger btn-sm"><i
-                                        class="fas fa-trash"></i></button></a></td>
+                            <a href="/member/{{$dt_member->id}}/edit"><button
+                                    class="btn btn-rounded btn-warning btn-sm"><i class="fas fa-edit"></i></button></a>
+                            <a href="/member/{{$dt_member->id}}/delete"><button
+                                    class="btn btn-rounded btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
+                        </td>
                     </tr>
                     <!-- Modal -->
                     <div class="modal fade" id="detailsuser{{$dt_member->id}}" tabindex="-1" role="dialog"
@@ -119,13 +120,6 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#memberTables').DataTable();
-    });
-
-</script>
-<!-- Modal -->
 <div class="modal fade" id="additem" tabindex="-1" role="dialog" aria-labelledby="additem" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
