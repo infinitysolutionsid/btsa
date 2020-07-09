@@ -33,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://res.cloudinary.com/btsa-co-id/raw/upload/v1553436777/style.css" rel="stylesheet">
+    <link href="https://res.cloudinary.com/btsa-co-id/raw/upload/v1594267701/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129070772-1"></script>
@@ -61,7 +61,7 @@
             <div class="modal-content">
                 <div class="modal-body" style="padding:0; background-color:#fff;">
                     <img class="img-full img-responsive"
-                        src="https://res.cloudinary.com/btsa-co-id/image/upload/v1582945809/jscsstxtfiledll/img/Peta_BTSA_28Feb2020.jpg"
+                        src="https://res.cloudinary.com/btsa-co-id/image/upload/v1594267344/optimized/Peta_BTSA_28Feb2020.jpg"
                         style="height:100%; width:100%;">
                 </div>
             </div>
@@ -80,7 +80,7 @@
                     <span class="icon-bar" style="background-color: #e92b2f;"></span>
                 </button>
                 <a href="#home" class="navbar-brand">
-                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503536/jscsstxtfiledll/img/brand.png"
+                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1594267343/optimized/brand.png"
                         alt="brand" style="float:none !important">
                 </a>
             </div>
@@ -98,6 +98,7 @@
                             <li><a href="#contact">KANTOR KAMI</a></li>
                         </ul>
                     </li>
+                    <li><a href="https://btsa.co.id/news">News</a></li>
                     <li><a href="https://btsa.co.id/gallery.html" target="_blank">Galeri</a></li>
                     <li><a href="/candidate" target="_blank">Karir</a></li>
                     @if(auth()->check())
@@ -162,7 +163,7 @@
                 <!-- <h1 class="slide"><strong>BTSA LOGISTICS</strong></h1>
         <h3 class="slideanim">DOMESTIC | EXPORT | IMPORT | TRUCKING</h3>
         <h3 class="slideanim">BY SEA | BY LAND | BY AIR</h3>-->
-                <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541504580/jscsstxtfiledll/img/logobtsa.png"
+                <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1594267344/optimized/logobtsa.png"
                     class="responsive text-center" alt=""><br>
                 <a href="#"><button class="btn btn-default btn-md dropdown-toggle" type="button" aria-haspopup="true"
                         aria-expanded="false" data-toggle="modal" data-target="#companyprofile">Our Company Profile
@@ -223,1250 +224,7 @@
         </div>
     </section>
     <!-- End Section About Us -->
-    <!-- Section News -->
-    <section class="news" id="news">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h2><strong>NEWS</strong></h2>
-                    <hr style="width: 50px; height: 3px; border:0; background-color: #fff;">
-                </div>
-            </div>
-            <div class="row">
-                <!-- Download Domestic News -->
-                <div class="col-sm-4">
-                    <h4>DOMESTIC NEWS</h4>
-                    <button type="button" class="btn btn-custom" id="myBtnD" style="width:150px;">Buka file
-                        Domestic</button>
-                    <div class="modal fade" id="myModalD" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content" style="background-color:#fff;">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span
-                                            aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" style="color:#212121;">DOMESTIC NEWS</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <h5 style="color:#212121;"><strong>ISTILAH ISTILAH EMKL</strong></h5>
-                                    <a href="file/IstilahIstilahDalamEMKL.pdf" target="_blank"><button type="button"
-                                            class="btn btn-default">DOWNLOAD FILE</button></a><br><br>
-                                    <embed src="file/IstilahIstilahDalamEMKL.pdf#toolbar=0&navpanes=0&scrollbar=0"
-                                        width="500" height="500">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Download Domestic News -->
-                <!-- Download Export News -->
-                <div class="col-sm-4">
-                    <h4>EXPORT NEWS</h4>
-                    <button type="button" class="btn btn-custom" id="myBtnE" style="width:150px;">Buka file
-                        Export</button>
-                    <div class="modal fade" id="myModalE" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content" style="background-color:#fff;">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span
-                                            aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" style="color:#212121;">EXPORT NEWS</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <h5 style="color:#212121;"><strong>PERATURAN MENTERI KEUANGAN NOMOR 156/
-                                            PMK.07/2008</strong></h5>
-                                    <a href="file/MenkeuNomor156.PDF" target="_blank"><button type="button"
-                                            class="btn btn-default">DOWNLOAD FILE</button></a><br><br>
-                                    <embed src="file/MenkeuNomor156.PDF#toolbar=0&navpanes=0&scrollbar=0" width="500"
-                                        height="500">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Download Eksport News -->
-                <!-- Download Import News -->
-                <div class="col-sm-4">
-                    <h4>IMPORT NEWS</h4>
-                    <button type="button" class="btn btn-custom" id="myBtnI" style="width:150px;">Buka file
-                        Import</button>
-                    <div class="modal fade" id="myModalI" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content" style="background-color:#fff;">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span
-                                            aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" style="color:#212121;">IMPORT NEWS</h4>
-                                </div>
-                                <div class="modal-body text-left">
-                                    <div class="panel-group">
-                                        <!-- Panel Registrasi -->
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapseregistrasi">Registrasi</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseregistrasi" class="panel-collapse collapse"
-                                                style="color:#212121">
-                                                <div class="panel-body">
-                                                    <!-- Struktur Panel Body Judul, Paragraf dan Button Download -->
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                            <h5><strong>1. PERATURAN MENTERI KEUANGAN NOMOR 156/
-                                                                    PMK.07/2008</strong></h5>
-                                                            <p>Foto Copy Berwarna EFIN (Electronic Filing Identification
-                                                                Number)<br>
-                                                                Foto Copy Berwarna NPWP PT / CV / UD.<br>
-                                                                Foto Copy Berwarna Akta Pendirian + SK Kemenkumham untuk
-                                                                PT.<br>
-                                                                Foto Copy Berwarna Akta Perubahan Terakhir + SK
-                                                                Kemenkumham<br>
-                                                                Foto Copy Berwarna KTP dan NPWP Direktur sesuai Akta
-                                                                Perubahan<br>
-                                                                Foto Copy Berwarna KTP dan NPWP Komisaris sesuai Akta
-                                                                Perubahan<br>
-                                                                Foto Copy Berwarna SIUP/IUI/IUT<br>
-                                                                Foto Copy Berwarna TDP (Jika Eksportir)<br>
-                                                                Foto Copy Berwarna API (Jika Importir)<br>
-                                                                Surat Pernyataan sesuai format BC (Format Terlampir) NB
-                                                                : Surat di print di Kop Surat, tempel materai, tanda
-                                                                tangan dan stempel.<br>
-                                                                Foto Copy Berwarna Akte Kepemilikan/ HGB/ IMB/ Surat
-                                                                Sewa<br>
-                                                                Foto Copy Berwarna Rekening Koran (Giro)/ Buku Tabungan/
-                                                                Referensi Bank<br>
-                                                                Struktur Organisasi</p>
-                                                            <a href="file/import/KelengkapandatauntukregistrasiNIK.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>2. PERMOHONAN REGISTRASI PPK ONLINE KARANTINA
-                                                                    BELAWAN</strong></h5>
-                                                            <a href="file/import/permohanankarantinabaru.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>3. DOKUMEN PERSYARATAN (REGISTRASI) UNTUK
-                                                                    MEMPROLEH USER ID DAN PASSWORD VPTI ONLINE LAPORAN
-                                                                    SURVEYOR</strong></h5>
-                                                            <p>Nomor Pokok Wajib Pajak(NPWP)<br>
-                                                                Tanda Daftar Perusahaan(TDP)<br>
-                                                                Surat Izin Usaha Perdagangan(SIUP)<br>
-                                                                Angka Pengenal Importir(API)<br>
-                                                                Importir Terdaftar (IT), sesuai dengan komoditi yang
-                                                                akan verifikasi dan diimpor untuk jenis komoditi yang
-                                                                dipersyaratkan<br>
-                                                                Importir Produsen (IP), sesuai dengan komoditi yang akan
-                                                                verifikasi dan diimpor untuk jenis komoditi yang
-                                                                dipersyaratkan<br>
-                                                                Persetujuan Impor (PI), sesuai dengan komoditi yang akan
-                                                                verifikasi dan diimpor untuk jenis komoditi yang
-                                                                dipersyaratkan<br>
-                                                                Surat Pernyataan Penyerahan Dokumen Asli</p>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>4. KELENGKAPAN DATA UNTUK PENGAJUAN PERSETUJUAN
-                                                                    IMPORT BESI</strong></h5>
-                                                            <p><strong>I. Tahap Pertama : Emailkan kelengkapan data
-                                                                    dibawah ini :</strong><br>
-                                                                API (Scan Berwarana)<br>
-                                                                NPWP (Scan Berwarna)<br>
-                                                                NIK (Scan Berwarna)<br>
-                                                                SIUP (Scan Berwarna)<br>
-                                                                TDP (Scan Berwarna)<br>
-                                                                <strong>II. Tahap Kedua : Siapkan dokumen Asli dibawah
-                                                                    ini :</strong><br>
-                                                                API (Asli)<br>
-                                                                NPWP (Asli)<br>
-                                                                SIUP (Asli)<br>
-                                                                TDP (Asli)<br>
-                                                                Surat Kuasa (Format Terlampir)<br></p>
-                                                            <a href="file/import/SURATKUASAUNTUKPEMBUATANPIBESIBAJA.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                            <p><strong>III. Tahap Ketiga : Lengkapi kelengkapan data
-                                                                    dibawah ini :</strong><br>
-                                                                Sales Contract (ditanda tangani oleh Importir dan
-                                                                Pembeli). NB: khusus API-U pengimport bahan baku dan
-                                                                bahan setengah jadi<br>
-                                                                Kebutuhan Barang untuk Satu Tahun Penjualan Perusahaan
-                                                                Pemilik API (ditanda tangani oleh President
-                                                                Direktur)<br>
-                                                                Laporan Penjualan dan Realisasi Import Barang Dua Tahun
-                                                                Terakhir Perusahaan Pemilik API (ditanda tangani oleh
-                                                                President Direktur)<br>
-                                                                Penjelasan Teknis Komposisi Kandungan Besi (jika bahan
-                                                                baku dan setengah jadi)<br>
-                                                                RKIB(Rencana Kebutuhan Import Barang)<br></p>
-                                                            <a href="file/import/PenjelasanTeknis.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE
-                                                                    PDF1</button></a><br><br>
-                                                            <a href="file/import/RKIB.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    PDF2</button></a><br><br>
-                                                            <a href="file/import/Agreement.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    PDF3</button></a><br><br>
-                                                            <a href="file/import/KebutuhanBarang1th.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE
-                                                                    PDF4</button></a><br><br>
-                                                            <a href="file/import/LaporanPenjualan&RealisasiImporduatahunTerakhir.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE
-                                                                    PDF5</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>5. SOSIALISASI REGISTRASI KEPABEANAN PENGGUNA
-                                                                    JASA</strong></h5>
-                                                            <a href="file/import/011.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>6. PERATURAN MENTERI KEUANGAN REPUBLIK INDONESIA
-                                                                    NOMOR 179/PMK.04/2016 TENTANG REGISTRASI
-                                                                    KEPABEANAN</strong></h5>
-                                                            <a href="file/import/179~PMK.04~2016Per.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>7. KELENGKAPAN DATA PEMBUATAN API</strong></h5>
-                                                            <p><strong>Kelengkapan data untuk pembuatan API-U
-                                                                    :<br></strong>
-                                                                API asli (bagi yang sudah memiliki API).<br>
-                                                                Izin Industri / SIUP<br>
-                                                                TDP<br>
-                                                                HO<br>
-                                                                Surat Domisili<br>
-                                                                NPWP Perusahaan<br>
-                                                                Akte Pendirian Perusahaan dan pengesahannya (Lampirkan
-                                                                yang lama dan yang baru)<br>
-                                                                KTP Direktur dan NPWP Direktur<br>
-                                                                Pas Photo 3x4 (latar merah) 4 lembar<br>
-                                                                Surat Referensi dari Bank yang rekening atas nama
-                                                                perusahaan.<br>Surat referensi ditujukan ke Badan
-                                                                Pelayanan Perijinan Terpadu Provinsi Sumatera Utara. Isi
-                                                                surat tersebut dibuat untuk keperluan pembuatan Angka
-                                                                Pengenal
-                                                                Importir - Umum (API-U).<br><br>
-                                                                <strong>Kelengkapan data untuk pembuatan API-P
-                                                                    :<br></strong>
-                                                                API asli (bagi yang sudah memiliki API).<br>
-                                                                Izin Industri / SIUP<br>
-                                                                TDP<br>
-                                                                HO<br>
-                                                                Surat Domisili<br>
-                                                                NPWP Perusahaan<br>
-                                                                Akte Pendirian Perusahaan dan pengesahannya (Lampirkan
-                                                                yang lama dan yang baru)<br>
-                                                                KTP Direktur dan NPWP Direktur<br>
-                                                                Pas Photo 3x4 (latar merah) 4 lembar</p>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>8. HIMBAUAN REGISTRASI ULANG DARI BEA
-                                                                    CUKAI</strong></h5>
-                                                            <a href="file/import/himbauanregistrasiulang.PDF"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>9. PERATURAN MENTERI KEUANGAN REPUBLIK INDONESIA
-                                                                    NOMOR 59/PMK.04/2014 TENTANG REGISTRASI
-                                                                    KEPABEANAN</strong></h5>
-                                                            <a href="file/import/PMK-59_2014_registrasikepabeanan.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>10. SOSIALISASI TENTANG REGISTRASI KEPABEANAN
-                                                                    PADA KAMIS, 16 JUNI 2016</strong></h5>
-                                                            <a href="file/import/PMK-59_2014_registrasikepabeanan.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>11. KEMENTERIAN KEUANGAN REPUBLIK INDONESIA
-                                                                    SALINAN PERATURAN DIREKTUR JENDERAL BEA DAN CUKAI
-                                                                    NOMOR PER-10/BC/2014 TENTANG PETUNJUK PELAKSANAAN
-                                                                    REGISTRASI KEPABEANAN</strong></h5>
-                                                            <a href="file/import/10bc2014.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Panel Registrasi -->
-                                        <!-- Panel Document -->
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapsedocument">Document</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapsedocument" class="panel-collapse collapse"
-                                                style="color:#212121">
-                                                <div class="panel-body">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                            <h5><strong>1. DAFTAR SATUAN JUMLAH BARANG YANG DIGUNAAN
-                                                                    DALAM PEMBERITAHUAN PABEAN 104_PMK.04_2018</strong>
-                                                            </h5>
-                                                            <a href="file/import/104_PMK.04_2018Per%20PEMBERITAHUAN%20PABEAN%20-JENIS%20SATUANG%20BARANG-%20BERLAKU030918.pdf"
-                                                                target="_blank">
-                                                                <button type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>2. PER 1 JANUARI 2019, NIK TIDAK BERLAKU LAGI.
-                                                                    WAJIB NIB</strong></h5>
-                                                            <p><strong>Informasi terkait perubahan sistem CEISA untuk
-                                                                    mendukung OSS :</strong><br>
-                                                                1. Registrasi sebagai importir dan eksportir di portal
-                                                                INSW sudah ditutup. Registrasi baru ataupun perubahan
-                                                                data hanya bisa dilakukan di Sistem OSS. Untuk selain
-                                                                sebagai importir dan eksportir, saat ini registrasi
-                                                                masih
-                                                                diajukan melalui portal INSW.<br><br>
-                                                                2. Data NIB dari sistem OSS telah mengalir ke sistem BC
-                                                                setiap +/- 10 menit sekali. Data ini telah dimasukkan ke
-                                                                dalam referensi CEISA Impor dan Ekspor. Sistem telah
-                                                                otomatis mengupdate data alamat dan kode kegiatan
-                                                                dari
-                                                                pengguna jasa sesuai data NIB. <br><br>
-                                                                3. Bagi Pengguna jasa baru yang mendaftar lewat OSS
-                                                                dapat langsung menggunakan NIBnya untuk melakukan
-                                                                aktivasi modul PIB atau PEB dengan memasukkan NIB 13
-                                                                digit pada saat aktivasi. Untuk pengiriman PIB melalui
-                                                                PPJK,
-                                                                PPJK
-                                                                wajib memasukkan NIB 13 digit. <br><br>
-                                                                4. Bagi Pengguna Jasa lama yang membuat NIB di sistem
-                                                                OSS, modul PIB atau PEB nya tidak perlu dilakukan
-                                                                aktivasi ulang, kecuali ada perubahan nama dan alamat.
-                                                                Modul yang lama tetap bisa dipakai untuk mengirimkan PIB
-                                                                atau
-                                                                PEB.</p><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>3. DASAR HUKUM PERSONAL EFFECT (BARANG
-                                                                    KIRIMAN)</strong></h5>
-                                                            <p><strong>Dasar Hukum Personal Effect (Barang
-                                                                    Kiriman)</strong><br>
-                                                                &emsp;1.&emsp; UU RI No.10/1995 jo. UU RI No. 17/2006
-                                                                <br>
-                                                                &emsp;2.&emsp; Permenkeu RI No. 28/PMK.04/2008 tgl 11
-                                                                Februari 2008 tentang Pembebasan Bea Masuk atas Impor
-                                                                Barang Pindahan (mencabut Kepmenkeu RI
-                                                                No.137/KMK.05/1997) <br>
-                                                                &emsp;3.&emsp; Kepmenkeu RI No.236/KMK.03/2003 tgl 03
-                                                                Juni 2003 � Barang Pindahan bebas PPN & PPh <br><br>
-                                                                <strong>BARANG PINDAHAN</strong> adalah Barang-barang
-                                                                keperluan rumah tangga milik orang yang semula
-                                                                berdomisili di luar negeri, kemudian dibawa pindah ke
-                                                                dalam negeri <br>
-                                                                Fasilitas : Pembebasan bea Masuk kecuali terhadap
-                                                                barang: <br>
-                                                                &emsp;1.&emsp; Barang Dagangan <br>
-                                                                &emsp;2.&emsp; Kendaraan Bermotor <br><br>
-                                                                <strong>Fasilitas pembebasan Bea Masuk diberikan
-                                                                    kepada:</strong><br>
-                                                                1. PNS / ANGGOTA TNI / POLRI dgn kriteria :<br>
-                                                                &emsp;I.&emsp; Menjalankan tugas ke luar negeri minimal
-                                                                1 (satu) tahun, dengan atau tanpa keluarga, yang
-                                                                dibuktikan dengan SK Penempatan ke LN dan SK Penarikan
-                                                                kembali ke Indonesia dari instansi terkait;<br>
-                                                                &emsp;II.&emsp; Menjalankan tugas belajar di luar negeri
-                                                                minimal 1 (satu) tahun, dengan atau tanpa keluarga, yang
-                                                                dibuktikan dengan surat keterangan belajar di luar
-                                                                negeri dari instansi yang bersangkutan. <br>
-                                                                Dokumen yang diperlukan : <br>
-                                                                &emsp;I.&emsp; SK Penempatan ke LN dan SK Penarikan <br>
-                                                                &emsp;II.&emsp; Surat keterangan belajar <br><br>
 
-                                                                2. Pelajar, mahasiswa, atau orang yang belajar di luar
-                                                                negeri minimal 1 (satu) tahun yang dibuktikan dgn surat
-                                                                keterangan telah selesai belajar. Dokumen yang
-                                                                diperlukan : Surat keterangan selesai belajar <br><br>
-
-                                                                3. TKI yang ditempatkan pada perwakilan Indonesia di LN
-                                                                minimal 1 (satu) tahun secara terus menerus, berdasarkan
-                                                                perjanjian kerja dengan DEPLU yg dibuktikan dgn surat
-                                                                keterangan dari perwakilan RI tempat bekerja dan
-                                                                surat perjanjian dengan DEPLU. Dokumen yang diperlukan:
-                                                                Surat keterangan dari perwakilan RI tempat bekerja dan
-                                                                surat perjanjian dengan DEPLU. <br><br>
-
-                                                                4. WNI yg karena pekerjaannya pindah dan berdiam di LN
-                                                                minimal 1 (satu) tahun secara terus menerus yang
-                                                                dibuktikan dgn surat keterangan pindah dan rincian
-                                                                barang yg ditandasahkan oleh Perwakilan RI di negara
-                                                                ybs.
-                                                                Dokumen
-                                                                yang diperlukan: surat keterangan pindah dan rincian
-                                                                barang yg ditandasahkan oleh Perwakilan RI di negara
-                                                                ybs. <br><br>
-
-                                                                5. WNA yg karena pekerjaannya pindah ke dalam daerah
-                                                                pabean Indonesia bersama keluarganya setelah mendapatkan
-                                                                : <br>
-                                                                &emsp;I.&emsp; Izin menetap sementara dari Dirjen
-                                                                Imigrasi yang dibuktikan dgn Kartu Izin Menetap
-                                                                Sementara min 1 (satu) tahun <br><br>
-                                                                &emsp;II.&emsp; Izin kerja sementara dari departemen yg
-                                                                membidangi tenaga kerja yg dibuktikan dgn Kartu Izin
-                                                                Kerja Sementara min 1 (satu) tahun. <br><br>
-                                                                Dokumen yang diperlukan :<br>Kartu Izin Menetap
-                                                                Sementara (KIMS) dan Kartu Izin Kerja Sementara (KITAS)
-                                                                <br><br>
-                                                                Persyaratan Waktu Tiba Barang Pindahan: <br>
-                                                                &emsp;I.&emsp; Harus tiba bersama-sama pemilik <br>
-                                                                &emsp;II.&emsp; Atau paling lama 3 bulan sebelum atau
-                                                                sesudah pemilik tiba di Indonesia <br><br>
-                                                                Dokumen Pabean yang disunakan adalah Pemberitahuan Impor
-                                                                Barang Tertentu (PIBT) dilampiri : <br>
-                                                                &emsp;I.&emsp; Daftar rincian barang, jenis, perkiraan
-                                                                Nilai Pabean atas barang barang pindahan yang dimintakan
-                                                                Pembebasan bea Masuk yang telah ditandasahkan <br>
-                                                                &emsp;II.&emsp; Surat atau Dolumen yang terkait
-                                                                (KIMS/KITAS/SURAT KETERANGAN BELAJAR, dsb) <br>
-                                                                &emsp;III.&emsp; Fotokopy Paspor</p>
-                                                            <a href="file/import/Surat%20Permohonan%20Pemberitahuan%20Import%20Barang%20Khusus.doc"
-                                                                target="_blank">
-                                                                <button type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE DOC</button></a>
-                                                            <a href="file/import/SK%20CUSTOMS.docx" target="_blank">
-                                                                <button type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE DOC</button></a><br><br>
-                                                            <a href="file/import/Surat%20Kuasa%20Pelindo%20dan%20Tukar%20DO.docx"
-                                                                target="_blank">
-                                                                <button type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE DOC</button>
-                                                            </a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>4. KEWAJIBAN PENCANTUMAN NPWP DAN HS CODE PADA
-                                                                    INWARD MANIFEST DAN PADA BILL OF LADING</strong>
-                                                            </h5>
-                                                            <img src="file/import/penetapanPemberlakuan.png"
-                                                                class="img-responsive myTooltip" data-toggle="tooltip"
-                                                                data-placement="bottom" title="Penetapan Pemberlakuan">
-                                                            <a href="file/import/RKSP_MANIFES.pptx"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE RSKP
-                                                                    MANIFES</button></a>
-                                                            <a href="file/import/158_PMK.04_2017Per.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                            <a href="file/import/Contoh_BL_NPWP1.jpg"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">LIHAT FILE
-                                                                    GAMBAR</button></a>
-                                                            <a href="file/import/BL_HS_dan_npwp.jpg"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">LIHAT FILE
-                                                                    GAMBAR</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>5. KELENGKAPAN DOKUMEN UNTUK IMPORT KACANG TANAH
-                                                                    (GROUNDNUT KERNELS) HS CODE : 1202.42.00</strong>
-                                                            </h5>
-                                                            <p>
-                                                                &emsp;1.&emsp;BL ( Bill Of Lading ) <br>
-                                                                &emsp;2.&emsp;Invoice<br>
-                                                                &emsp;3.&emsp;Packing List<br>
-                                                                &emsp;4.&emsp;Pytosanitary Certificate<br>
-                                                                &emsp;5.&emsp;Fumigation Certificate<br>
-                                                                &emsp;6.&emsp;Health/ Quality Certificate<br>
-                                                                &emsp;7.&emsp;Certificate Of Analysis<br>
-                                                                &emsp;8.&emsp;Prior Notice<br>
-                                                                &emsp;9.&emsp;Certificate of Origin<br>
-                                                            </p><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>6. SYARAT KELENGKAPAN DOKUMEN UNTUK PERMOHONAN
-                                                                    FORM A</strong></h5>
-                                                            <p>
-                                                                &emsp;1.&emsp;Surat permohonan bernomor surat + ttd +
-                                                                materai <br>
-                                                                &emsp;2.&emsp;Surat kuasa bermaterai <br>
-                                                                &emsp;3.&emsp;Fotokopi PIB bernopen + ttd + stempel <br>
-                                                                &emsp;4.&emsp;Respon sppb <br>
-                                                                &emsp;5.&emsp;F. Copy Invoice <br>
-                                                                &emsp;6.&emsp;F. Copy Packing List <br>
-                                                                &emsp;7.&emsp;Gesekan no. rangka dan no. mesin (asli)
-                                                                <br>
-                                                                &emsp;8.&emsp;Brosur Unit <br>
-                                                                &emsp;9.&emsp;VIN deoder dari industri pembuat negara
-                                                                asal <br>
-                                                                &emsp;10.&emsp;Surat keterangan manufacture Tahun
-                                                                pembuatan dari industri pembuat negara asal
-                                                            </p><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>7. CONTOH SKB PPH PASAL 22 IMPOR</strong></h5>
-                                                            <a href="file/import/SKB%20PPh%20Pasal%2022003.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>8. KELENGKAPAN VERIFICATION REQUEST DALAM
-                                                                    PEMBUATAN LAPORAN SURVEYOR</strong></h5>
-                                                            <p>
-                                                                &emsp;-&emsp;Invoice dan Packing List <br>
-                                                                &emsp;-&emsp;Nama Exporter, PIC, alamat, negara, kota,
-                                                                Telepon, fax, email, port of loading <br>
-                                                                &emsp;-&emsp;Alamat Inspeksi , email , Negara Telepon
-                                                                dan PIC <br>
-                                                            </p><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>9. STATEMENT TRANSIT PELAYARAN DAN CERTIFICATE
-                                                                    OF NON MANIPULATION</strong></h5>
-                                                            <a href="file/import/Statement%20transit%20Pelayaran.jpg"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">LIHAT FILE
-                                                                    GAMBAR</button></a>
-                                                            <a href="file/import/Stement%20letter%20transit.jpg"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">LIHAT FILE
-                                                                    GAMBAR</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>10. PERATURAN MENTERI PERDAGANGAN REPUBLIK
-                                                                    INDONESIA NOMOR 70/M-DAG/PER/9/2015 TENTANG LAPORAN
-                                                                    REALISASI</strong></h5>
-                                                            <p>
-                                                                <strong>Pasal 23</strong><br>
-                                                                &emsp;1. Perusahaan pemilik API-U atau API-P sebagaimana
-                                                                dimaksud dalam Pasal 17 ayat (1) wajib melaporkan
-                                                                realisasi impor, baik terealisasi maupun tidak
-                                                                terealisasi, sekali dalam 3 (tiga) bulan kepada Kepala
-                                                                BKPM.
-                                                                <br>
-                                                                &emsp;2. Perusahaan pemilik API-P sebagaimana dimaksud
-                                                                dalam Pasal 17 ayat (2) wajib melaporkan realisasi
-                                                                impor, baik terealisasi maupun tidak terealisasi, sekali
-                                                                dalam 3 (tiga) bulan kepada Direktur Jenderal. <br>
-                                                                &emsp;3. Perusahaan pemilik API-U atau API-P sebagaimana
-                                                                dimaksud dalam Pasal 17 ayat (3) dan ayat (4) wajib
-                                                                melaporkan realisasi impor, baik terealisasi maupun
-                                                                tidak terealisasi, sekali dalam 3 (tiga) bulan kepada
-                                                                Kepala
-                                                                Dinas Provinsi dengan tembusan kepada Kepala Dinas
-                                                                Kabupaten/Kota dimana perusahaan berdomisili. <br>
-                                                                &emsp;4. Laporan realisasi impor, baik terealisasi
-                                                                maupun tidak terealisasi, sebagaimana dimaksud pada ayat
-                                                                (1), ayat (2), dan ayat (3) wajib juga disampaikan
-                                                                melalui website http://api.kemendag.go.id. <br>
-                                                                &emsp;5. Kepala BKPM, Kepala Dinas Provinsi, dan Kepala
-                                                                Badan Pengusahaan menyampaikan laporan rekapitulasi
-                                                                realisasi impor masing-masing perusahaan pemilik API-U
-                                                                dan API-P, secara periodik setiap 3 (tiga) bulan
-                                                                sekali kepada
-                                                                Menteri.
-                                                            </p><br>
-                                                            <a href="file/import/peraturan.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>11. PERATURAN MENTERI PERDAGANGAN REPUBLIK
-                                                                    INDONESIA NOMOR 75/M-DAG/PER/2018 TENTANG
-                                                                    NIB</strong></h5>
-                                                            <a href="file/import/nomor-75-tahun-2018.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                            <a href="file/import/NIBPT.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>12. PERATURAN MENTERI PERDAGANGAN REPUBLIK
-                                                                    INDONESIA NO.87/M-DAG/PER/10/2015 TENTANG KETENTUAN
-                                                                    IMPOR PRO</strong></h5>
-                                                            <a href="file/import/IT-PERMENDAG.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>13. ISTILAH DALAM EMKL, PPJK, EXPORT DAN
-                                                                    IMPORT</strong></h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>14. PMK 158/PMK.04/2017 : DALAM HAL BARANG YANG
-                                                                    DI IMPORT LEBIH DARI 5 JENIS, MAKA HARUS DIURAIKAN
-                                                                    MINIMAL 5 JENIS BARANG YANG PALING BESAR SESUAI
-                                                                    NILAI PABEAN, BERAT BRUTO ATAU VOLUME BARANGNYA
-                                                                    .</strong></h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>15. SURAT EDARAN SURAT KETERANGAN BEBAS (SKB)
-                                                                    PPH 23 DI PELINDO</strong></h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>16. SYARAT KELENGKAPAN PENDAFTARAN PLB</strong>
-                                                            </h5>
-                                                            <p>
-                                                                &emsp;1.&emsp;Akte Pendirian dan Perubahan (jika ada)
-                                                                <br>
-                                                                &emsp;2.&emsp;NPWP <br>
-                                                                &emsp;3.&emsp;NIB & NIK <br>
-                                                                &emsp;4.&emsp;API <br>
-                                                                &emsp;5.&emsp;PI <br>
-                                                                &emsp;6.&emsp;SPPKP <br>
-                                                                &emsp;7.&emsp;SKT<br>
-                                                                &emsp;8.&emsp;SIUP<br>
-                                                                &emsp;9.&emsp;DOMISILI<br>
-                                                                &emsp;10.&emsp;KTP DIREKTUR
-                                                            </p><br><br>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Panel Document -->
-                                        <!-- Panel Tarif -->
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapsetarif">Tarif</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapsetarif" class="panel-collapse collapse"
-                                                style="color:#212121">
-                                                <div class="panel-body">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                            <h5><strong>1. PP NO 35 TAHUN 2016 TENTANG JENIS DAN TARIF
-                                                                    ATAS JENIS PNBP YANG BERLAKU PADA KEMENTERIAN
-                                                                    PERTANIAN</strong></h5>
-                                                            <a href="file/import/PP%20No%2035%20Tahun%202016%20Tentang%20Jenis%20dan%20Tarif%20atas%20Jenis%20PNBP%20yang%20berlaku%20pada%20Kementerian%20Pertanian.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>2. SURAT PEMBERITAHUAN DARI BALAI BESAR
-                                                                    KARANTINA PERTANIAN BELAWAN TENTANG PENYESUAIAN
-                                                                    PNB</strong></h5>
-                                                            <a href="file/import/PNBP.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>3. 27/PMK.010/2017 : PENETAPAN TARIF BEA MASUK
-                                                                    DALAM RANGKA ASEAN-INDIA FREE TRADE AREA</strong>
-                                                            </h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>4. TARIF PENUMPUKAN BICT DAN GRAHA</strong></h5>
-                                                            <p>
-                                                                <strong>Berikut merupakan tarif penumpukan di BICT dan
-                                                                    PT.Graha Segara per 01 Oktober 2016 - saat
-                                                                    ini</strong><br>
-                                                                <strong>Untuk 20"</strong><br>
-                                                                Hari 1 = Rp 267.949 x jumlah kontainer <br>
-                                                                Hari 2 = Rp 103.125 x jumlah kontainer <br>
-                                                                Hari 3 = Rp 185.625 x jumlah kontainer <br>
-                                                                Hari 4 dan seterusnya = Rp 288.750 x jumlah kontainer x
-                                                                hari <br>
-                                                                ADM = Rp 55.000 <br>
-                                                                <strong>Untuk 40"</strong><br>
-                                                                Hari 1 = Rp 416.999 x jumlah kontainer <br>
-                                                                Hari 2 = Rp 206.250 x jumlah kontainer <br>
-                                                                Hari 3 = Rp 371.250 x jumlah kontainer <br>
-                                                                Hari 4 dan seterusnya = Rp 577.500 x jumlah kontainer x
-                                                                hari <br>
-                                                                ADM = Rp 55.000 <br>
-                                                                <i>Harga diatas sudah termasuk PPN , LOLO, dan Pas
-                                                                    Kendaraan</i><br>
-                                                                <i>Khusus penumpukan di Graha Segara dikenakan biaya
-                                                                    materai</i><br><br>
-                                                            </p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Panel Tarif -->
-                                        <!-- Panel Tracking -->
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapseTracking">Tracking</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseTracking" class="panel-collapse collapse"
-                                                style="color:#212121">
-                                                <div class="panel-body">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                            <h5><strong>1. VESSEL SCHEDULE</strong></h5>
-                                                            <a href="http://bict.pelindo1.co.id/index.php?bd=2&mn=produk&cnt=produk&produ=prod_99"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">VISIT
-                                                                    LINK</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>2. TRACKING BARANG KIRIMAN VIA UDARA</strong>
-                                                            </h5>
-                                                            <a href="http://www.beacukai.go.id/barangkiriman.html"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">VISIT
-                                                                    LINK</button></a><br><br>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Panel Tracking -->
-                                        <!-- Panel Format Surat -->
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapseformatsurat">Format
-                                                        Surat</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseformatsurat" class="panel-collapse collapse"
-                                                style="color:#212121">
-                                                <div class="panel-body">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                            <h5><strong>1. SURAT KUASA PERMOHONAN UJI LAB PENGUJIAN DAN
-                                                                    INDENTIFIKASI BARANG BESERTA DAFTA HARGA
-                                                                    PENGUJIAN</strong></h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a><br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>2. SYARAT PENDAFTARAN NAMA PERUSAHAAN DI PELINDO
-                                                                    1 BELAWAN</strong></h5>
-                                                            <p><strong>Untuk melakukan pendaftaran nama perusahaan di
-                                                                    Pelindo, diperlukan dokumen sebagai berikut
-                                                                    :</strong><br>
-                                                                Angka Pengenal Importir (API) <br>
-                                                                Nomor Pokok Wajib Pajak (NPWP) <br>
-                                                                Surat Pengukuhan Pengusaha Kena Pajak (SPPKP) <br>
-                                                                Surat Keterangan Domisili (SKD) <br>
-                                                                Fotokopi KTP salah satu kepala perusahaan <br>
-                                                                Surat Keterangan Terdaftar (SKT) <br>
-                                                                Surat Kuasa dengan form seperti yang terlampir (dengan
-                                                                kop surat dan materai) <br>
-                                                                Surat Pernyataan dengan form seperti yang terlampir
-                                                                (dengan kop surat dan materai) <br>
-                                                                Surat Permohonan Registrasi seperti terlampir (dengan
-                                                                kop surat dan materai) <br>
-                                                                Tanda Daftar Perusahaan (TDP) <br>
-                                                                Akte Pendirian Perusahaan <br>
-                                                                Halaman Depan Rekening Bank <br><br>
-                                                                NB : untuk FORM DATA PELANGGAN, hanya diisi DATA
-                                                                PERUSAHAAN dan <br> DATA PENANGGUNG JAWAB disertai
-                                                                tandatangan + stempel di halaman kedua (untuk data
-                                                                petugas, akan diisi oleh pihak kami selaku EMKL).</p>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">Download Form Data
-                                                                    Cosignee</button></a> <br><br>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">Download Pendaftaran Pelindo
-                                                                    2017</button></a> <br><br>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">Download Surat Permohonan
-                                                                    Cosignee Terbaru</button></a> <br><br>
-                                                            <a href="file/import/Surat%20kuasa%20consignee%20ke%20EMKL.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">Download Surat Kuasa
-                                                                    Cosignee ke EMKL</button></a> <br><br>
-                                                            <a href="file/import/SURAT%20PERNYATAAN%20cosigne.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">Download Form Data
-                                                                    Cosignee</button></a> <br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>3. DOKUMEN PENDUKUNG REDRESS MANIFEST BESERTA
-                                                                    CONTOH SURAT</strong></h5>
-                                                            <a href="file/import/redress%20manifest01.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">Download File</button></a>
-                                                            <br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>4. FORMULIR PERMOHONAN MENJADI ANGGOTA PPK
-                                                                    ONLINE KARANTINA TUMBUHAN / HEWAN DI TANJUNG
-                                                                    PRIUK.</strong></h5>
-                                                            <a href="file/import/FORM%20PPK%20ON%20LINE%20OK.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">Download File</button></a>
-                                                            <br><br>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>5. FORM DNP (DEKLARASI NILAI PABEAN)</strong>
-                                                            </h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">Download File</button></a>
-                                                            <br><br>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Panel Format Surat -->
-                                        <!-- Panel Lartas -->
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapselartas">Lartas</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapselartas" class="panel-collapse collapse"
-                                                style="color:#212121">
-                                                <div class="panel-body">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                            <h5><strong>1. NOMOR 63/M-DAG/PER/8/2017 TENTANG PERUBAHAN
-                                                                    ATAS PERATURAN MENTERI PERDAGANGAN NOMOR
-                                                                    82/M-DAG/PER/12/2016 TENTANG KETENTUAN IMPORT BESI
-                                                                    ATAU BAJA, BAJA PADUAN, DAN PRODUK
-                                                                    TURUNANNYA</strong></h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>2. LANGKAH-LANGKAH PENGECEKAN HSCODE UNTUK
-                                                                    IMPORTASI</strong></h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>3. PENDAFTARAN LPK SNI</strong></h5>
-                                                            <a href="file/import/pendaftaran%20LPK%20sNI.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>4. DAFTAR JENIS MEDIA PEMBAWA HAMA PENYAKIT
-                                                                    HEWAN KARANTINA YANG DIHAPUS DARI PORTAL INDONESIA
-                                                                    NATIONAL SINGLE WINDOW</strong></h5>
-                                                            <a href="file/import/Keputusan%20Kabadan%20No%20870%20Thn%202017karantina.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>5. DAFTAR SNI WAJIB</strong></h5>
-                                                            <a href="http://pustan.kemenperin.go.id/List_SNI_Wajib"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">VISIT LINK</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>6. NOMOR 82/M-DAG/PER/12/2016. TENTANG.
-                                                                    KETENTUAN IMPOR BESIATAU BAJA, BAJA PADUAN,. DAN
-                                                                    PRODUK TURUNANNYA.</strong></h5>
-                                                            <a href="file/import/207.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>7. PEMBERLAKUAN STANDAR NASIONAL INDONESIA PIPA
-                                                                    BAJA SALURAN AIR DENGAN ATAU TANPA LAPISAN SENG
-                                                                    SECARA WAJIB</strong></h5>
-                                                            <a href="file/import/11m-indper22016.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Panel Lartas -->
-                                        <!-- Panel PDRI -->
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapsepdri">PDRI</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapsepdri" class="panel-collapse collapse"
-                                                style="color:#212121">
-                                                <div class="panel-body">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                            <h5><strong>1. DAFTAR IMPOR BARANG-BARANG TERTENTU YANG
-                                                                    DIKENAKAN PEMUNGUTAN PAJAK PENGHASILAN 22
-                                                                    10%</strong></h5>
-                                                            <a href="file/import/110_PMK_010_2018Per.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>2. TANGGAL KURS BERLAKU: 06 JUNI 2018 - 26 JUNI
-                                                                    2018 KMK NOMOR 26/KM.10/2018</strong></h5>
-                                                            <a href="file/import/KMK%20Kurs%206-26%20Juni%202018.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>3. SURAT EDARAN DIRJEN BEA & CUKAI DALAM RANGKA
-                                                                    SKEMA FREE TRADE AGREEMENT</strong></h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>4. PERATURAN MENTERI KEUANGAN NOMOR
-                                                                    267/PMK.010/2015</strong></h5>
-                                                            <a href="267pmk0102015.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>5. STANDARISASI BIDANG PERDAGANGAN : PMK
-                                                                    24</strong></h5>
-                                                            <a href="file/import/24m-dagper42016-id-1463995966.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>6. PENETAPAN TARIF BEA MASUK DALAM RANGKA ASEAN
-                                                                    - CHINA FREE TRADE AREA TAHUN 2018</strong></h5>
-                                                            <a href="file/import/26pmk0102017.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>7. PEMUNGUTAN PAJAK PENGHASILAN PASAL 22
-                                                                    SEHUBUNGAN DENGAN PEMBAYARAN ATAS PENYERAHAN BARANG
-                                                                    DAN KEGIATAN BIDANG IMPORT ATAU KEGIATAN USAHA
-                                                                    DIBIDANG LAIN</strong></h5>
-                                                            <a href="file/import/34pmk-0102017per.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>8. PMK042011 MENGENAI BARANG DIKUASAI</strong>
-                                                            </h5>
-                                                            <a href="file/import/01.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>9. DRAFT STRUKTUR BTKI 2017 PER 16 SEPT
-                                                                    2016</strong></h5>
-                                                            <a href="file/import/16022017-01.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>10. TABEL KORELASI 2012-2017 INDONESIA</strong>
-                                                            </h5>
-                                                            <a href="file/import/16022017-02.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>11. 6~PMK.010~2017 - BTKI 2017</strong></h5>
-                                                            <a href="file/import/16022017-03.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>12. PMK 6/PMK.010/2017, SISTEM KLASIFIKASI
-                                                                    BARANG, TARIF BEA MASUK ATAS BARANG IMPOR</strong>
-                                                            </h5>
-                                                            <a href="file/import/208.pdf" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD
-                                                                    FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>13. PEMERIKSAAN FISIK (PER-12-2016)</strong>
-                                                            </h5>
-                                                            <a href="file/import/Pemeriksaan%20Fisik%20(PER-12-2016).pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>14. ALUR PEMBAYARAN DAN PENYETORAN</strong></h5>
-                                                            <a href="file/import/Alur%20Pembayaran%20dan%20Penyetoran.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>15. MATERI SOSIALISASI BILLING - DIT.
-                                                                    PPS_20160617</strong></h5>
-                                                            <a href="file/import/Materi%20Sosialisasi%20Billing%20-%20Dit.%20PPS_20160617.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>16. PANDUAN BPPM</strong></h5>
-                                                            <a href="file/import/Panduan%20BPPM.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>17. PMK 32_PMK.05_2014_BAYTOR
-                                                                    ELEKTRONIK</strong></h5>
-                                                            <a href="file/import/PMK%2032_PMK.05_2014_Baytor%20Elektronik.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>18. PMK 40_PMK.04_2016_BC ELEKTRONIK</strong>
-                                                            </h5>
-                                                            <a href="file/import/PMK%2040_PMK.04_2016_BC%20elektronik.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>19. 205~PMK.04~2015PERATURAN TARIF
-                                                                    MASUK</strong></h5>
-                                                            <a href="file/import/205~PMK.04~2015Peraturan%20tarif%20masuk.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>20. PMK34_PMK.04_2016 TTG NILAI PABEAN UNTUK
-                                                                    PENGHITUNGAN BEA MASUK</strong></h5>
-                                                            <a href="file/import/PMK34_PMK.04_2016%20ttg%20Nilai%20Pabean%20untuk%20Penghitungan%20Bea%20Masuk.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>21. SOSIALISASI PMK
-                                                                    34_2016_STAKEHOLDERS_19-5-2016</strong></h5>
-                                                            <a href="file/import/Sosialisasi%20PMK%2034_2016_stakeholders_19-5-2016.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>22. PMK 67_PMK.04_2016 TTG DEKLARASI INISIATIF
-                                                                    ATAS NP UNTUK PENGHITUNGAN BEA MASUK</strong></h5>
-                                                            <a href="file/import/PMK%2067_PMK.04_2016%20ttg%20Deklarasi%20Inisiatif%20atas%20NP%20untuk%20Penghitungan%20Bea%20MAsuk.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>23. SOSIALISASI PMK 67_2016 PENGGUNA JASA
-                                                                    19-5-2016</strong></h5>
-                                                            <a href="file/import/sosialisasi%20PMK%2067_2016%20pengguna%20jasa%2019-5-2016.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>24. 267/PMK.010/2015 TENTANG KRITERIA DAN/ATAU
-                                                                    RINCIAN TERNAK, BAHAN PAKAN UNTUK PEMBUATAN
-                                                                    PAKAN_TERNAK DAN PAKAN IKAN YANG ATAS IMPOR DAN/ATAU
-                                                                    PENYERAHANNYA DIBEBASKAN DARI PENGENAAN PAJAK
-                                                                    PERTAMBAHAN</strong></h5>
-                                                            <a href="file/import/Peraturan%20Menteri%20Keuangan%20Nomor%20267-PMK010-2015.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>25. 28/PMK.04/2008 TENTANG PEMBEBASAN BEAMASUK
-                                                                    ATAS IMPOR BARANG PINDAHAN</strong></h5>
-                                                            <p>
-                                                                <strong>Barang Pindahan</strong><br>
-                                                                <strong>DASAR HUKUM</strong><br>
-                                                                &emsp;1. Undang-Undang Nomor 10 Tahun 1995 tentang
-                                                                Kepabeanan sebagaimana telah diubah dengan Undang-Undang
-                                                                Nomor 17 Tahun 2006; <br>
-                                                                &emsp;2. Peraturan Menteri Keuangan Nomor 28/PMK.04/2008
-                                                                Tentang Pembebasan Bea Masuk Atas Impor Barang Pindahan.
-                                                                <br><br>
-                                                                <strong>PENGERTIAN</strong><br><br>
-
-                                                                &emsp;1. Barang Pindahan adalah barang-barang keperluan
-                                                                rumah tangga milik orang yang semula berdomisili di luar
-                                                                negeri, kemudian dibawa pindah ke dalam negeri. <br>
-                                                                &emsp;2. Import barang pindahan diberikan pembebasan bea
-                                                                masuk TETAPI tidak berlaku terhadap barang pindahan yang
-                                                                dikategorikan sebagai barang dagangan atau kendaraan
-                                                                bermotor. <br><br>
-                                                                <strong>Pembebasan bea masuk atas impor barang pindahan
-                                                                    diberikan kepada : </strong><br>
-                                                                &emsp; A. Pegawai Negeri Sipil, anggota Tentara Nasional
-                                                                Indonesia atau Polisi Negara Republik Indonesia dengan
-                                                                kriteria :<br>
-                                                                &emsp;&emsp;1. Menjalankan tugas ke luar negeri paling
-                                                                singkat 1 (satu) tahun, dengan atau tanpa keluarga, yang
-                                                                dibuktikan dengan surat keputusan penempatan ke luar
-                                                                negeri dan surat keputusan penarikan kembali ke
-                                                                Indonesia dari
-                                                                instansi yang bersangkutan; <br>
-                                                                &emsp;&emsp;2. Menjalankan tugas belajar di luar negeri
-                                                                paling singkat 1 (satu) tahun, dengan atau tanpa
-                                                                keluarga, yang dibuktikan dengan surat keterangan
-                                                                belajar di luar negeri dari instansi yang bersangkutan.
-                                                                <br><br>
-                                                                &emsp; B. Pelajar, mahasiswa, atau orang yang belajar di
-                                                                luar negeri paling singkat 1 (satu) tahun yang
-                                                                dibuktikan dengan surat keterangan telah selesai
-                                                                belajar. <br>
-                                                                &emsp; C. Tenaga Kerja Indonesia yang ditempatkan pada
-                                                                perwakilan Indonesia di luar negeri paling singkat 1
-                                                                (satu) tahun secara terus menerus, berdasarkan
-                                                                perjanjian kerja dengan Departemen Luar Negeri yang
-                                                                dibuktikan
-                                                                dengan
-                                                                surat keterangan dari Perwakilan Republik Indonesia
-                                                                tempat bekerja dan surat perjanjian kerja dengan
-                                                                Departemen Luar Negeri; <br>
-                                                                &emsp; D. Warga negara Indonesia yang karena
-                                                                pekerjaannya pindah dan beridam di luar negeri paling
-                                                                singkat 1 (satu) tahun secara terus-menerus, yang
-                                                                dibuktikan dengan surat keterangan pindah dan rincian
-                                                                barang yang
-                                                                telah
-                                                                ditandasahkan oleh perwakilan Republik Indonesia di
-                                                                negara yang bersangkutan; <br>
-                                                                &emsp; E. Warga negara asing yang karena pekerjaannya
-                                                                pindah ke dalam daerah pabean Indonesia bersama
-                                                                keluarganya setelah mendapatkan: <br>
-                                                                &emsp;&emsp;1. Izin menetap sementara dari Direktoral
-                                                                Jendral Imigrasi yang dibuktikan dengan Kartu Izin
-                                                                Menetap Sementara paling singkat 1 (satu) tahun; dan
-                                                                <br>
-                                                                &emsp;&emsp;2. izin kerja sementara dari departemen yang
-                                                                membidangi tenaga kerja yang dibuktikan dengan Kartu
-                                                                Izin Kerja Tenaga Asing Sementara paling singkat 1
-                                                                (satu) tahun. <br><br>
-                                                                Barang Pindahan yang diimpor dan diberikan fasilitas
-                                                                pembebasan bea masuk, harus tiba bersama-sama pemilik
-                                                                yang bersangkutan atau paling lama 3 (tiga) bulan
-                                                                sesudah atau sebelum pemilik barang yang bersangkutan
-                                                                tiba
-                                                                di Indonesia <br>
-                                                            </p>
-                                                            <a href="file/import/personalefect28pmk.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE 1</button></a>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    2</button></a>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    3</button></a>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    4</button></a>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    5</button></a>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    6</button></a>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    7</button></a>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    8</button></a>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    9</button></a><br><br>
-                                                            <a href="file/import/404.html" target="_blank"><button
-                                                                    type="button" class="btn btn-default">DOWNLOAD FILE
-                                                                    10</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>26. PER-16/BC/2016 TENTANG PETUNJUK PELAKSANAAN
-                                                                    PENGELUARAN BARANG IMPORT UNTUK DIPAKAI.</strong>
-                                                            </h5>
-                                                            <a href="file/import/peraturan%20pengeluaran%20barang%20impor%20utk%20di%20pakai.pdf"
-                                                                target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <h5><strong>27. PENYAMPAIAN MENGENAI PELAKSANAN E-FORM D
-                                                                    ATIGA MELALUI FLARFORM ASEAN SINGLE WINDOW (ASW)
-                                                                    OLEH MALAYSIA</strong></h5>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                            <a href="404.html" target="_blank"><button type="button"
-                                                                    class="btn btn-default">DOWNLOAD FILE</button></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Panel PDRI -->
-                                        <!-- Panel Surat Edaran -->
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" href="#collapsesuratedaran">Surat
-                                                        Edaran</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapsesuratedaran" class="panel-collapse collapse"
-                                                style="color:#212121">
-                                                <div class="panel-body">
-                                                    <h5><strong>SURAT EDARAN JAM KERJA BICT SELAMA RAMADHAN 1439H DAN
-                                                            IDUL FITRI 1439H</strong></h5>
-                                                    <a href="file/import" target="_blank"><button type="button"
-                                                            class="btn btn-default">Download File</button></a> <br><br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Panel Edaran -->
-
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Download Import News -->
-            </div>
-        </div>
-        <script>
-
-        </script>
-    </section>
-    <!-- Section End News -->
     <!-- Section Visi & Misi -->
     <section class="visimisi" id="visimisi">
         <div class="container-fluid text-center">
@@ -1679,30 +437,26 @@
             </div><br><br>
             <div class="row slideanim">
                 <div class="col-sm-6">
-                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541648529/jscsstxtfiledll/img/xperience100.png"
-                        style="width:55px; height:55px;">
+                    <span style="font-size:5rem; color: #282662;"><i class="fab fa-black-tie"></i></span>
                     <h4 style="color: #282662;"><strong>SUDAH BERPENGALAMAN</strong></h4>
                     <p>Sudah berpengalaman sejak tahun 2000<br>BTSA LOGISTICS telah hadir dan memiliki pengalaman selama
                         lebih dari 18 Tahun.</p>
                 </div>
                 <div class="col-sm-6">
-                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541644844/jscsstxtfiledll/img/chronometer100.png"
-                        style="width:55px; height:55px;">
+                    <span style="font-size:5rem; color: #282662;"><i class="fas fa-clock"></i></span>
                     <h4 style="color: #282662;"><strong>RESPON YANG CEPAT</strong></h4>
                     <p>Kami memiliki tim khusus untuk merespon segala keperluan Anda.</p>
                 </div>
             </div><br><br>
             <div class="row slideanim">
                 <div class="col-sm-6">
-                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541644295/jscsstxtfiledll/img/team100.png"
-                        style="width:55px; height:55px;">
+                    <span style="font-size:5rem; color: #282662;"><i class="fas fa-users"></i></span>
                     <h4 style="color: #282662;"><strong>TEAM</strong></h4>
                     <p>Kami memiliki tim yang responsif, berkompetensi, berintegritas,<br>berorientasi terhadap layanan
                         dan kerja sama tim.</p>
                 </div>
                 <div class="col-sm-6">
-                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541645254/jscsstxtfiledll/img/partner100.png"
-                        style="width:55px; height:55px;">
+                    <span style="font-size:5rem; color: #282662;"><i class="fas fa-network-wired"></i></span>
                     <h4 style="color: #282662;"><strong>JARINGAN</strong></h4>
                     <p>Kami memiliki jaringan yang sangat luas dan<br> menguasai pengiriman Antar Pulau,<br>
                         Export/Import via laut dan udara,<br>Trucking mobil kecil hingga besar,<br>
@@ -1711,8 +465,7 @@
             </div><br><br>
             <div class="row slideanim">
                 <div class="col-sm-6">
-                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541645648/jscsstxtfiledll/img/develop100.png"
-                        style="width:55px; height:55px;">
+                    <span style="font-size:5rem; color: #282662;"><i class="fas fa-chart-line"></i></span>
                     <h4 style="color: #282662;"><strong>PERKEMBANGAN</strong></h4>
                     <p>Kami selalu berkembang untuk memberikan kenyamanan untuk Anda.</p>
                 </div>
@@ -1729,11 +482,6 @@
                     <h4 style="color: #282662;"><strong>KONTRAK</strong></h4>
                     <p>Kami selalu memberikan kontrak kerja yang jelas, profesional dan transparan.</p>
                 </div>
-                <!-- <div class="col-sm-6">
-          <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1548642716/jscsstxtfiledll/img/truckbtsa100.png" style="width:55px; height:55px;">
-          <h4 style="color: #282662;"><strong>TANGIBLE</strong></h4>
-          <p>Kami memiliki kendaraan/truck tersendiri.</p>
-        </div> -->
             </div>
         </div>
     </section>
@@ -1763,7 +511,7 @@
                             Pertanian (Barantan) baik Manajemen Mutu maupun Teknis.</p>
                     </div>
                     <div class="col-sm-6 slideanim">
-                        <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1556161745/jscsstxtfiledll/img/IS.png"
+                        <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1594267344/optimized/IS.png"
                             height="150px" width="150px;">
                         <h4 class="slideanim"><strong><a href="https://infinitysolutions.co.id"
                                     style="text-decoration:none; color:#fff;" target="_blank">PT.BENUA SOLUSI
@@ -1883,9 +631,31 @@
                         <a href="mailto:plpestindo@gmail.com" style="text-decoration:none; color:#fff">
                             plpestindo@gmail.com</a></p><br>
                     <h4>LOKASI KAMI</h4>
-                    <p><iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126932.82811066089!2d106.81830748289255!3d-6.177467720022987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5761b0a7d4f%3A0xc028c76f0a420b47!2sPT.+BERLIAN+TRANSTAR+ABADI+JAKARTA+%2F+PPJK+JAKARTA!5e0!3m2!1sen!2sid!4v1552883361046"
-                            width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+                    <p>
+                        <div class="mapouter">
+                            <div class="gmap_canvas"><iframe width="376" height="249" id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=PT%20BERLIAN%20TRANSTAR%20ABADI%20JAKARTA&t=&z=9&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                    href="https://www.whatismyip-address.com/nordvpn-coupon/">nordvpn 2 year offer</a>
+                            </div>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 249px;
+                                    width: 376px;
+                                }
+
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 249px;
+                                    width: 376px;
+                                }
+
+                            </style>
+                        </div>
+                    </p>
                     <h4>TRANSLATE</h4>
                     <div id="google_translate_element"></div>
 
@@ -1900,6 +670,12 @@
 
                     <script type="text/javascript"
                         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    <a href="https://cww.verifytrustseal.com/verification/
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb21haW5JZCI6IjkyODIxIiwidGhlbWUiOiJkYXJrIiwiaG9zdG5hbWUiOiJsb2dpbi5jd2F0Y2guY29tb2RvLmNvbSIsImxhbmd1YWdlIjoiZW4iLCJpYXQiOjE1OTQyNjQ0Mjh9.qzHqn4OZ29k6siB0FLwGtrQyuMNjkzt1o04UJR6WTso?clang=en"
+                        target="_blank"><img
+                            src="https://cww.verifytrustseal.com/seal/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb21haW5JZCI6IjkyODIxIiwidGhlbWUiOiJkYXJrIiwiaG9zdG5hbWUiOiJsb2dpbi5jd2F0Y2guY29tb2RvLmNvbSIsImxhbmd1YWdlIjoiZW4iLCJpYXQiOjE1OTQyNjQ0Mjh9.qzHqn4OZ29k6siB0FLwGtrQyuMNjkzt1o04UJR6WTso?clang=en"
+                            style="max-width:120; max-height:60; right:0px; bottom:0px; z-index:9999"
+                            alt="cww trust seal"></a>
                 </div>
             </div><br>
             <h4>BERIKAN WAKTU ANDA UNTUK MENGISI SURVEY YANG TELAH KAMI SEDIAKAN</h4>
@@ -1918,7 +694,6 @@
         </div>
     </section>
     <!-- End Contact -->
-    <script src="https://kit.fontawesome.com/ae026c985d.js"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
