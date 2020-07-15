@@ -7,17 +7,29 @@ use \App\candidateDB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Support\Jsonable;
+use App\cityDB;
+use App\sukuDB;
+use App\religionDB;
+use App\loker;
+use App\provinces;
+use App\domisili;
+use App\kecamatan;
+use App\kelurahan;
 
 class candidateController extends Controller
 {
     public function index()
     {
-        $interviewer = \App\candidateDB::all();
-        $kota = \App\cityDB::all();
-        $suku = \App\sukuDB::all();
-        $agama = \App\religionDB::all();
-        $loker = \App\loker::all();
-        return view('candidate.index', ['interviewer' => $interviewer, 'kota' => $kota, 'suku' => $suku, 'agama' => $agama, 'loker' => $loker]);
+        $interviewer = candidateDB::all();
+        $kota = cityDB::all();
+        $suku = sukuDB::all();
+        $agama = religionDB::all();
+        $loker = loker::all();
+        $provinces = provinces::all();
+        $domisili = domisili::all();
+        $kecamatan = kecamatan::all();
+        $kelurahan = kelurahan::all();
+        return view('candidate.index', ['interviewer' => $interviewer, 'kota' => $kota, 'suku' => $suku, 'agama' => $agama, 'loker' => $loker, 'domisili' => $domisili, 'provinces' => $provinces, 'kecamatan' => $kecamatan, 'kelurahan' => $kelurahan]);
     }
     public function step2()
     {
@@ -54,7 +66,7 @@ class candidateController extends Controller
         $interviewer->info_lowongan = $request->info_lowongan;
         $interviewer->req_datein = $request->req_datein;
         $interviewer->income = $request->income;
-if ($request->hasFile('profilephoto')) {
+        if ($request->hasFile('profilephoto')) {
             $request->file('profilephoto')->move('file/img/' . $request->nama_lengkap, $request->file('profilephoto')->getClientOriginalName());
             $interviewer->profilephoto = $request->file('profilephoto')->getClientOriginalName();
         }
@@ -89,7 +101,7 @@ if ($request->hasFile('profilephoto')) {
             $candidate = DB::table('candidate')
                 ->select('candidate.*')
                 // ->where('candidate.appliedposition', '!=', '')
-                
+
                 ->get();
         }
         $filter_candidate = DB::table('loker')

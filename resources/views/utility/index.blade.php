@@ -247,6 +247,7 @@
         });
 
     </script>
+
 </div>
 
 {{-- BARIS UNTUK MODAL TIAP TIAP MODUL --}}
@@ -395,4 +396,5 @@
         </div>
     </div>
 </div>
+
 @endsection

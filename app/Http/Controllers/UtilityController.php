@@ -10,6 +10,9 @@ use \App\loker;
 use App\Mail\adalowonganMail;
 use \App\religionDB;
 use \App\sukuDB;
+use \App\domisili;
+use \App\kecamatan;
+use \App\kelurahan;
 
 class UtilityController extends Controller
 {
@@ -27,7 +30,16 @@ class UtilityController extends Controller
         $lowongan = DB::table('loker')
             ->select('loker.*')
             ->get();
-        return view('utility.index', ['city' => $city, 'suku' => $suku, 'agama' => $agama, 'lowongan' => $lowongan]);
+        $domisili = DB::table('domisilis')
+            ->select('domisilis.*')
+            ->get();
+        $kecamatans = DB::table('kecamatans')
+            ->select('kecamatans.*')
+            ->get();
+        $kelurahans = DB::table('kelurahans')
+            ->select('kelurahans.*')
+            ->get();
+        return view('utility.index', ['city' => $city, 'suku' => $suku, 'agama' => $agama, 'lowongan' => $lowongan, 'domisili' => $domisili, 'kecamatans' => $kecamatans, 'kelurahans' => $kelurahans]);
     }
     public function kotaaddnew(Request $request)
     {
@@ -55,6 +67,27 @@ class UtilityController extends Controller
         $agamaID->updated_by = auth()->user()->nama_lengkap;
         $agamaID->save();
         return back()->with('suksesagama', 'Agama baru berhasil ditambahkan!');
+    }
+    public function kotadomisiliaddnew(Request $request)
+    {
+        $agamaID = new domisili();
+        $agamaID->domisili_name = $request->domisili_name;
+        $agamaID->save();
+        return back()->with('suksesdomisili', 'Kota Domisili baru berhasil ditambahkan!');
+    }
+    public function kelurahanaddnew(Request $request)
+    {
+        $agamaID = new kelurahan();
+        $agamaID->kelurahan_name = $request->kelurahan_name;
+        $agamaID->save();
+        return back()->with('sukseskelurahan', 'Kelurahan baru berhasil ditambahkan!');
+    }
+    public function kecamatanaddnew(Request $request)
+    {
+        $agamaID = new kecamatan();
+        $agamaID->kecamatan_name = $request->kecamatan_name;
+        $agamaID->save();
+        return back()->with('sukseskecamatan', 'Kecamatan baru berhasil ditambahkan!');
     }
     public function lowonganaddnew(Request $request)
     {
@@ -119,6 +152,45 @@ class UtilityController extends Controller
                 DB::statement('ALTER TABLE loker AUTO_INCREMENT = ' . (count(loker::all()) + 1) . ';');
 
                 return back()->with('suksesloker', 'Loker berhasil dihapus');
+            }
+        }
+    }
+    public function deletedomisili($id)
+    {
+        $datadomisili = domisili::find($id);
+
+        if ($datadomisili) {
+            if ($datadomisili->delete()) {
+
+                DB::statement('ALTER TABLE domisilis AUTO_INCREMENT = ' . (count(domisili::all()) + 1) . ';');
+
+                return back()->with('suksesdomisili', 'Domisili berhasil dihapus');
+            }
+        }
+    }
+    public function deletekelurahan($id)
+    {
+        $datakelurahan = kelurahan::find($id);
+
+        if ($datakelurahan) {
+            if ($datakelurahan->delete()) {
+
+                DB::statement('ALTER TABLE kelurahans AUTO_INCREMENT = ' . (count(kelurahan::all()) + 1) . ';');
+
+                return back()->with('sukseskelurahan', 'Kelurahan berhasil dihapus');
+            }
+        }
+    }
+    public function deletekecamatan($id)
+    {
+        $datakecamatan = kecamatan::find($id);
+
+        if ($datakecamatan) {
+            if ($datakecamatan->delete()) {
+
+                DB::statement('ALTER TABLE kecamatans AUTO_INCREMENT = ' . (count(kecamatan::all()) + 1) . ';');
+
+                return back()->with('sukseskecamatan', 'Kecamatan berhasil dihapus');
             }
         }
     }
