@@ -8,13 +8,12 @@
     <meta name="description" content="Apply for job in BTSA Logistics">
     <meta name="author" content="Bintang J Tobing">
     <meta name="keywords" content="Apply Job, Apply Job BTSA Logistics, BTSA Logistics, Interviewer, Candidate">
-
     <link rel="shortcut icon"
         href="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico">
     <title>Apply for job @BTSA LOGISTICS</title>
     <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"
         type="93f47f1b769aaff014497fc3-text/javascript"></script>
-
+    <meta name="_token" content="{{csrf_token()}}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -32,8 +31,9 @@
                 <div class="card-heading">
                     <h2 class="title">Apply for job</h2>
                 </div>
-                <form action="/candidate/proses/Vbi9S6TfLlW0IeXrJZDt9n2IKjiLMiO3qQ168R11YeYFxCJ7WttxBDFao7c0"
-                    method="post" enctype="multipart/form-data">
+                <?php $tokens = str_random(60); ?>
+                <form action="/candidate/proses/{{$tokens}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="card-body">
                         <input type="hidden" name="_token" value="MMotMH0YWpKSaxaphPzNwBJJxFTBuAaoxaWzt50u">
                         <div class="form-row">
@@ -192,7 +192,7 @@
                                     <option value="S3">S3</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="">Agama</label>
                                 <select name="agama" class="custom-select">
                                     <option value="Protestan">Protestan
@@ -218,7 +218,7 @@
                                     <option value="O">O</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="">Anak ke:</label>
                                 <select name="anak_ke" id="" class="custom-select mr-sm-2">
                                     <option value="1">1</option>
@@ -229,7 +229,7 @@
                                     <option value="6">6</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="">Provinsi: <i class="fas fa-star-of-life"></i></label>
                                 <select name="provinsi" id="provinsi" class="custom-select mr-sm-2" required>
 
@@ -237,32 +237,36 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Kota Domisili: <i class="fas fa-star-of-life"></i></label>
-                                <select name="kota_domisili" id="kabupaten" class="custom-select mr-sm-2" required>
-
+                                <select name="domisili" id="domisili" class="custom-select mr-sm-2" required>
+                                    <option value="">Pilih</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Kecamatan: <i class="fas fa-star-of-life"></i></label>
                                 <select name="kecamatan" id="kecamatan" class="custom-select mr-sm-2" required>
+                                    <option value="">Pilih</option>
 
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Kelurahan: <i class="fas fa-star-of-life"></i></label>
                                 <select name="kelurahan" id="kelurahan" class="custom-select mr-sm-2" required>
+                                    <option value="">Pilih</option>
 
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Alamat KTP <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" name="alamatKtp" class="form-control" required>
+                                <textarea name="alamatKtp" cols="30" rows="6" class="form-control"
+                                    placeholder="Sesuai alamat KTP kamu" required></textarea>
                                 <small class="form-text text-muted">Alamat yang diisi harus sesuai dengan alamat yang
                                     tertera di
                                     KTP.</small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Alamat Tinggal <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" name="alamatTinggal" class="form-control" required>
+                                <textarea name="alamatTinggal" cols="30" rows="6" class="form-control"
+                                    placeholder="Alamat tempat tinggal kamu sekarang" required></textarea>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="">Status Rumah <i class="fas fa-star-of-life"></i></label>
@@ -319,9 +323,7 @@
                             <div class="name">Upload CV</div>
                             <div class="value">
                                 <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="file_cv" id="file" required>
-                                    <label class="label--file" for="file">Choose file</label>
-                                    <span class="input-file__info">No file chosen</span>
+                                    <input class="form-control" type="file" name="file_cv" id="file" required>
                                 </div>
                                 <div class="label--desc">Upload your CV/Resume or any other relevant file. Max file size
                                     2
@@ -387,8 +389,85 @@
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
         data-cf-settings="93f47f1b769aaff014497fc3-|49" defer=""></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
-        
+        $(document).ready(function () {
+            loadProvinsi();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            function loadProvinsi() {
+                $.ajax({
+                    method: 'GET',
+                    url: '/candidate/get-provinsi',
+                    success: function (response) {
+                        console.log(response);
+                        let html = "<option value=''>Pilih provinsi</option>";
+                        response.map(function (v) {
+                            html += `<option value="${v.provinces_id}">${v.name}</option>`;
+                        })
+                        $('#provinsi').html(html);
+                    },
+                    error: function (err) {
+                        console.log("error", err);
+                    }
+                });
+            }
+            $('#provinsi').change(function () {
+                var provinsi = $("#provinsi").val();
+                console.log("provinsi", provinsi);
+                $.ajax({
+                    method: 'GET',
+                    url: '/candidate/get-domisili/' + provinsi,
+                    success: function (response) {
+                        console.log(response);
+                        let html = "<option value=''>Pilih domisili</option>";
+                        response.map(function (v) {
+                            html += `<option value="${v.id}">${v.name}</option>`;
+                        })
+                        $("#domisili").html(html);
+                    }
+                });
+            });
+
+            $("#domisili").change(function () {
+                var domisili = $("#domisili").val();
+                console.log("kecamatan", kecamatan);
+                $.ajax({
+                    method: 'GET',
+                    url: "/candidate/get-kecamatan/" + domisili,
+                    success: function (response) {
+                        console.log(response);
+                        let html = "<option value=''>Pilih kecamatan</option>";
+                        response.map(function (v) {
+                            html += `<option value="${v.id}">${v.name}</option>`;
+                        })
+                        $("#kecamatan").html(html)
+                    }
+                });
+            });
+
+            $("#kecamatan").change(function () {
+                var kecamatan = $("#kecamatan").val();
+                console.log("kelurahan", kelurahan);
+                $.ajax({
+                    method: 'GET',
+                    url: "/candidate/get-kelurahan/" + kecamatan,
+                    success: function (response) {
+                        console.log(response);
+                        let html = "<option value=''>Pilih kelurahan</option>";
+                        response.map(function (v) {
+                            html += `<option value="${v.id}">${v.name}</option>`;
+                        })
+                        $("#kelurahan").html(html)
+                    }
+                });
+            });
+        });
+
     </script>
 </body>
 

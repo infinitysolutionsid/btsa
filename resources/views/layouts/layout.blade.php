@@ -11,6 +11,7 @@
     <title>@yield('title') | BTSA LOGISTICS SYSTEM</title>
     <meta name="title" content="BTSA LOGISTICS SYSTEM">
     <meta name="language" content="English">
+    <meta name="_token" content="{{csrf_token()}}" />
     <meta name="author" content="Bintang Jeremia Tobing">
     <!-- ================= Favicon ================== -->
     <!-- Standard -->

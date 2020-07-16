@@ -37,7 +37,6 @@ class candidateController extends Controller
     }
     public function proses(Request $request)
     {
-
         $interviewer = new \App\candidateDB();
         $interviewer->candidate_id;
         $interviewer->appliedposition = $request->appliedposition;
@@ -54,6 +53,10 @@ class candidateController extends Controller
         $interviewer->NoBpjs = $request->NoBpjs;
         $interviewer->suku = $request->suku;
         $interviewer->agama = $request->agama;
+        $interviewer->provinces = $request->provinsi;
+        $interviewer->domisilis = $request->domisili;
+        $interviewer->kecamatans = $request->kecamatan;
+        $interviewer->kelurahans = $request->kelurahan;
         $interviewer->golongandarah = $request->golongandarah;
         $interviewer->anak_ke = $request->anak_ke;
         $interviewer->alamatKtp = $request->alamatKtp;
@@ -66,24 +69,25 @@ class candidateController extends Controller
         $interviewer->info_lowongan = $request->info_lowongan;
         $interviewer->req_datein = $request->req_datein;
         $interviewer->income = $request->income;
-        if ($request->hasFile('profilephoto')) {
-            $request->file('profilephoto')->move('file/img/' . $request->nama_lengkap, $request->file('profilephoto')->getClientOriginalName());
-            $interviewer->profilephoto = $request->file('profilephoto')->getClientOriginalName();
-        }
-        if ($request->hasFile('file_cv')) {
-            $request->file('file_cv')->move('file/doc/' . $request->nama_lengkap, $request->file('file_cv')->getClientOriginalName());
-            $interviewer->filecv = $request->file('file_cv')->getClientOriginalName();
-        }
-        if ($request->hasFile('ktpfile')) {
-            $request->file('ktpfile')->move('file/doc/' . $request->nama_lengkap . '/ktp/', $request->file('ktpfile')->getClientOriginalName());
-            $interviewer->ktpfile = $request->file('ktpfile')->getClientOriginalName();
-        }
-        if ($request->hasFile('simfile')) {
-            $request->file('simfile')->move('file/doc/' . $request->nama_lengkap . '/sim/', $request->file('simfile')->getClientOriginalName());
-            $interviewer->simfile = $request->file('simfile')->getClientOriginalName();
-        }
-        $interviewer->save();
-        return view('candidate.form2');
+        // if ($request->hasFile('profilephoto')) {
+        //     $request->file('profilephoto')->move('file/img/' . $request->nama_lengkap, $request->file('profilephoto')->getClientOriginalName());
+        //     $interviewer->profilephoto = $request->file('profilephoto')->getClientOriginalName();
+        // }
+        // if ($request->hasFile('file_cv')) {
+        //     $request->file('file_cv')->move('file/doc/' . $request->nama_lengkap, $request->file('file_cv')->getClientOriginalName());
+        //     $interviewer->filecv = $request->file('file_cv')->getClientOriginalName();
+        // }
+        // if ($request->hasFile('ktpfile')) {
+        //     $request->file('ktpfile')->move('file/doc/' . $request->nama_lengkap . '/ktp/', $request->file('ktpfile')->getClientOriginalName());
+        //     $interviewer->ktpfile = $request->file('ktpfile')->getClientOriginalName();
+        // }
+        // if ($request->hasFile('simfile')) {
+        //     $request->file('simfile')->move('file/doc/' . $request->nama_lengkap . '/sim/', $request->file('simfile')->getClientOriginalName());
+        //     $interviewer->simfile = $request->file('simfile')->getClientOriginalName();
+        // }
+        dd($interviewer);
+        // $interviewer->save();
+        // return view('candidate.form2');
     }
     public function managements()
     {
@@ -191,5 +195,47 @@ class candidateController extends Controller
         $cnd->save();
 
         return redirect('/candidate/managements')->with('sukses', 'Candidate sudah diupdate ke status sudah datang interview.');
+    }
+
+    public function getprovinsi()
+    {
+        $provinsi = DB::table('provinces')
+            ->orderBy('provinces.name', 'ASC')
+            ->select('provinces.*')
+            ->get();
+        return ($provinsi);
+        // gitu ya bang
+        // ini nnti nampilnya dimana? di
+        // return all data nya disini
+    }
+
+    // bebas cuma variable
+    public function getdomisili($provinces_id)
+    {
+        $domisili = DB::table('domisilis')
+            ->where('domisilis.provinces_id', '=', $provinces_id)
+            ->orderBy('domisilis.name', 'ASC')
+            ->select('domisilis.*')
+            ->get();
+        return ($domisili);
+    }
+    public function getkecamatan($id)
+    {
+        $kecamatan = DB::table('kecamatans')
+            ->where('kecamatans.domisilis_id', '=', $id)
+            ->orderBy('kecamatans.name', 'ASC')
+            ->select('kecamatans.*')
+            ->get();
+        return ($kecamatan);
+    }
+
+    public function getkelurahan($id)
+    {
+        $kelurahan = DB::table('kelurahans')
+            ->where('kelurahans.kecamatans_id', '=', $id)
+            ->orderBy('kelurahans.name', 'ASC')
+            ->select('kelurahans.*')
+            ->get();
+        return ($kelurahan);
     }
 }

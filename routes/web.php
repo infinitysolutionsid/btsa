@@ -50,8 +50,17 @@ Route::get('/restricted', 'AuthController@login')->name('signin');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 Route::post('/member/registered/{tokens}', 'MemberController@registered');
-Route::get('/candidate', 'candidateController@index');
-Route::post('candidate/proses/{tokens}', 'candidateController@proses');
+
+// Candidate proses
+Route::prefix('candidate')->group(function () {
+    Route::get('/', 'candidateController@index');
+    Route::post('/proses/{tokens}', 'candidateController@proses');
+
+    Route::get('/get-provinsi', 'candidateController@getprovinsi');
+    Route::get('/get-domisili/{province_id}', 'candidateController@getdomisili');
+    Route::get('/get-kecamatan/{id}', 'candidateController@getkecamatan');
+    Route::get('/get-kelurahan/{id}', 'candidateController@getkelurahan');
+});
 Route::get('/step2', 'candidateController@step2');
 
 
