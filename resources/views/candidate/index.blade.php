@@ -13,12 +13,11 @@
     <title>Apply for job @BTSA LOGISTICS</title>
     <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"
         type="93f47f1b769aaff014497fc3-text/javascript"></script>
-    <meta name="_token" content="{{csrf_token()}}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <meta name="csrf_token" content="{{csrf_token()}}">
     <link href="https://res.cloudinary.com/btsa-co-id/raw/upload/v1587520539/jscsstxtfiledll/candidate.css"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -31,14 +30,12 @@
                 <div class="card-heading">
                     <h2 class="title">Apply for job</h2>
                 </div>
-                <?php $tokens = str_random(60); ?>
-                <form action="/candidate/proses/{{$tokens}}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                <form action="/candidate/proses" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="card-body">
-                        <input type="hidden" name="_token" value="MMotMH0YWpKSaxaphPzNwBJJxFTBuAaoxaWzt50u">
                         <div class="form-row">
                             <label for="" class="my-1 mr-2">Posisi yang dilamar</label>
-                            <select name="appliedposition" id="" class="custom-select my-1 mr-sm-2" required>
+                            <select required name="appliedposition" id="" class="custom-select my-1 mr-sm-2">
                                 <option disabled>Pilih salah satu...</option>
                                 <option value="Staff Accounting">Staff Accounting
                                 </option>
@@ -56,20 +53,20 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="">Upload foto profil kamu <i class="fas fa-star-of-life"></i></label>
-                                <input type="file" name="profilephoto" class="form-control" required>
+                                <input required type="file" name="profilephoto" class="form-control">
                                 <small class="form-text text-muted">Foto profil harus diatur berukuran 3x4cm dengan
                                     ukuran
                                     dibawah 500kb</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Upload KTP <i class="fas fa-star-of-life"></i></label>
-                                <input type="file" name="ktpfile" class="form-control" required>
+                                <input required type="file" name="ktpfile" class="form-control">
                                 <small class="form-text text-muted">Foto KTP harus diatur
                                     dengan memiliki ukuran
                                     dibawah 500kb</small>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="">Upload SIM <i class="fas fa-star-of-life"></i></label>
+                                <label for="">Upload SIM</label>
                                 <input type="file" name="simfile" class="form-control">
                                 <small class="form-text text-muted">Foto SIM harus diatur
                                     dengan memiliki ukuran
@@ -77,53 +74,37 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Nama Lengkap <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_lengkap"
-                                    required>
+                                <input required type="text" class="form-control" placeholder="Nama Lengkap"
+                                    name="nama_lengkap">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Nama Panggilan <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" name="nama_panggilan" id="" placeholder="Nama Panggilan"
-                                    class="form-control" required>
+                                <input required type="text" name="nama_panggilan" id="" placeholder="Nama Panggilan"
+                                    class="form-control">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Tempat Lahir <i class="fas fa-star-of-life"></i></label>
-                                <select name="tempat_lahir" id="" class="custom-select mr-sm-2" required>
+                                <select required name="tempat_lahir" id="" class="custom-select mr-sm-2">
                                     <option selected>Pilih salah satu...</option>
-                                    <option value="Medan">Medan
+                                    @if(count($kota)>0)
+                                    @foreach ($kota as $city)
+                                    <option value="{{$city->city_name}}">{{$city->city_name}}
                                     </option>
-                                    <option value="Jakarta">Jakarta
-                                    </option>
-                                    <option value="Surabaya">Surabaya
-                                    </option>
-                                    <option value="Makassar">Makassar
-                                    </option>
-                                    <option value="Palembang">Palembang
-                                    </option>
-                                    <option value="Riau">Riau
-                                    </option>
-                                    <option value="Pekanbaru">Pekanbaru
-                                    </option>
-                                    <option value="Lombok">Lombok
-                                    </option>
-                                    <option value="Bali">Bali
-                                    </option>
-                                    <option value="Semarang">Semarang
-                                    </option>
-                                    <option value="Batam">Batam
-                                    </option>
-                                    <option value="Papua">Papua
-                                    </option>
+                                    @endforeach
+                                    @else
+                                    <option disabled>Empty records</option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Tanggal Lahir <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" id="datepicker" name="tanggal_lahir" class=" form-control"
-                                    data-position="right top" required maxlength="10" pattern=".{10,}">
+                                <input required type="text" id="datepicker" name="tanggal_lahir" class=" form-control"
+                                    data-position="right top" maxlength="10" pattern=".{10,}">
                                 <small class="form-text text-muted">Format tanggal lahir: DD/MM/YYYY</small>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="">Gender: <i class="fas fa-star-of-life"></i></label>
-                                <select name="gender" class="custom-select mr-sm-2" required>
+                                <select required name="gender" class="custom-select mr-sm-2">
                                     <option value="Pria">Pria</option>
                                     <option value="Wanita">Wanita</option>
                                 </select>
@@ -146,46 +127,20 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Suku <i class="fas fa-star-of-life"></i></label>
-                                <select name="suku" class="custom-select" required>
-                                    <option value="Sunda">Sunda
+                                <select required name="suku" class="custom-select">
+                                    @if(count($suku)>0)
+                                    @foreach ($suku as $suku)
+                                    <option value="{{$suku->suku_id}}">{{$suku->nama_suku}}
                                     </option>
-                                    <option value="Jawa">Jawa
-                                    </option>
-                                    <option value="Batak">Batak
-                                    </option>
-                                    <option value="Madura">Madura
-                                    </option>
-                                    <option value="Betawi">Betawi
-                                    </option>
-                                    <option value="Minangkabau">Minangkabau
-                                    </option>
-                                    <option value="Tionghoa">Tionghoa
-                                    </option>
-                                    <option value="Bugis">Bugis
-                                    </option>
-                                    <option value="Melayu">Melayu
-                                    </option>
-                                    <option value="Arab">Arab
-                                    </option>
-                                    <option value="Banten">Banten
-                                    </option>
-                                    <option value="Banjar">Banjar
-                                    </option>
-                                    <option value="Bali">Bali
-                                    </option>
-                                    <option value="Sasak">Sasak
-                                    </option>
-                                    <option value="Dayak">Dayak
-                                    </option>
-                                    <option value="Makassar">Makassar
-                                    </option>
-                                    <option value="Cirebon">Cirebon
-                                    </option>
+                                    @endforeach
+                                    @else
+                                    <option disabled>Empty records</option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Pendidikan Terakhir <i class="fas fa-star-of-life"></i></label>
-                                <select name="pendidikan" class="custom-select mr-sm-2" required>
+                                <select required name="pendidikan" class="custom-select mr-sm-2">
                                     <option value="SMA/SMK">SMA/SMK</option>
                                     <option value="S1">S1</option>
                                     <option value="S2">S2</option>
@@ -195,23 +150,20 @@
                             <div class="form-group col-md-3">
                                 <label for="">Agama</label>
                                 <select name="agama" class="custom-select">
-                                    <option value="Protestan">Protestan
+                                    @if(count($agama)>0)
+                                    @foreach ($agama as $agama)
+                                    <option value="{{$agama->religion_id}}">{{$agama->religion_name}}
                                     </option>
-                                    <option value="Katolik">Katolik
-                                    </option>
-                                    <option value="Buddha">Buddha
-                                    </option>
-                                    <option value="Hindu">Hindu
-                                    </option>
-                                    <option value="Kong Hu Cu">Kong Hu Cu
-                                    </option>
-                                    <option value="Islam">Islam
-                                    </option>
+                                    @endforeach
+                                    @else
+                                    <option disabled>Empty records</option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="">Golongan Darah</label>
                                 <select name="golongandarah" class="custom-select mr-sm-2">
+                                    <option>Pilih Golongan Darah</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
                                     <option value="AB">AB</option>
@@ -221,6 +173,7 @@
                             <div class="form-group col-md-1">
                                 <label for="">Anak ke:</label>
                                 <select name="anak_ke" id="" class="custom-select mr-sm-2">
+                                    <option>Pilih anak ke</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -231,26 +184,26 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Provinsi: <i class="fas fa-star-of-life"></i></label>
-                                <select name="provinsi" id="provinsi" class="custom-select mr-sm-2" required>
+                                <select required name="provinsi" id="provinsi" class="custom-select mr-sm-2">
 
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Kota Domisili: <i class="fas fa-star-of-life"></i></label>
-                                <select name="domisili" id="domisili" class="custom-select mr-sm-2" required>
+                                <select required name="domisili" id="domisili" class="custom-select mr-sm-2">
                                     <option value="">Pilih</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Kecamatan: <i class="fas fa-star-of-life"></i></label>
-                                <select name="kecamatan" id="kecamatan" class="custom-select mr-sm-2" required>
+                                <select required name="kecamatan" id="kecamatan" class="custom-select mr-sm-2">
                                     <option value="">Pilih</option>
 
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Kelurahan: <i class="fas fa-star-of-life"></i></label>
-                                <select name="kelurahan" id="kelurahan" class="custom-select mr-sm-2" required>
+                                <select required name="kelurahan" id="kelurahan" class="custom-select mr-sm-2">
                                     <option value="">Pilih</option>
 
                                 </select>
@@ -258,7 +211,7 @@
                             <div class="form-group col-md-6">
                                 <label for="">Alamat KTP <i class="fas fa-star-of-life"></i></label>
                                 <textarea name="alamatKtp" cols="30" rows="6" class="form-control"
-                                    placeholder="Sesuai alamat KTP kamu" required></textarea>
+                                    placeholder="Sesuai alamat KTP kamu"></textarea>
                                 <small class="form-text text-muted">Alamat yang diisi harus sesuai dengan alamat yang
                                     tertera di
                                     KTP.</small>
@@ -266,11 +219,11 @@
                             <div class="form-group col-md-6">
                                 <label for="">Alamat Tinggal <i class="fas fa-star-of-life"></i></label>
                                 <textarea name="alamatTinggal" cols="30" rows="6" class="form-control"
-                                    placeholder="Alamat tempat tinggal kamu sekarang" required></textarea>
+                                    placeholder="Alamat tempat tinggal kamu sekarang"></textarea>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="">Status Rumah <i class="fas fa-star-of-life"></i></label>
-                                <select name="statusrumah" class="custom-select mr-sm-2" required>
+                                <select required name="statusrumah" class="custom-select mr-sm-2">
                                     <option value="Kontrak">Kontrak</option>
                                     <option value="Milik Keluarga">Milik Keluarga</option>
                                     <option value="Milik Sendiri">Milik Sendiri</option>
@@ -280,7 +233,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Email aktif <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" name="email" id="" class="form-control" required
+                                <input required type="text" name="email" id="" class="form-control"
                                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                                 <small class="form-text text-muted">Format email: <a href="/cdn-cgi/l/email-protection"
                                         class="__cf_email__"
@@ -288,12 +241,12 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">No. HP yang bisa dihubungi <i class="fas fa-star-of-life"></i></label>
-                                <input type="text" name="noHp" id="" class="form-control" required pattern=".{12,}">
+                                <input required type="text" name="noHp" id="" class="form-control" pattern=".{12,}">
                                 <small class="form-text text-muted">Format nomor HP: 0812********</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Info Lowongan dari <i class="fas fa-star-of-life"></i></label>
-                                <select name="info_lowongan" class="custom-select mr-sm-2" required id="">
+                                <select required name="info_lowongan" class="custom-select mr-sm-2" id="">
                                     <option value="Media Sosial">Media Sosial</option>
                                     <option value="Koran/Majalah/Media Cetak lainnya">Koran/Majalah/Media Cetak lainnya
                                     </option>
@@ -305,17 +258,16 @@
                             <div class="form-group col-md-4">
                                 <label for="">Tanggal masuk kerja</label>
                                 <input type="text" name="req_datein" class="datepicker-here form-control"
-                                    data-position="right top" data-language="en" required maxlength="10"
-                                    pattern=".{10,}">
+                                    data-position="right top" data-language="en" maxlength="10" pattern=".{10,}">
                                 <small class="form-text text-muted">Format tanggal masuk kerja: DD/MM/YYYY</small>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="">Gaji yang diharapkan</label>
-                                <select name="income" id="" class="custom-select mr-sm-2" required>
+                                <select name="income" id="" class="custom-select mr-sm-2">
                                     <option disabled>Pilih salah satu...</option>
                                     <option value=">Rp.1.000.000">>Rp.1.000.000</option>
                                     <option value=">=Rp.2.000.000">>=Rp.2.000.000</option>
-                                    <option value=">=Rp.5.000.000">>=Rp.5.000.000</option>
+                                    <option value=">=Rp.3.500.000">>=Rp.3.500.000</option>
                                 </select>
                             </div>
                         </div>
@@ -323,7 +275,7 @@
                             <div class="name">Upload CV</div>
                             <div class="value">
                                 <div class="input-group js-input-file">
-                                    <input class="form-control" type="file" name="file_cv" id="file" required>
+                                    <input required class="form-control" type="file" name="file_cv" id="file">
                                 </div>
                                 <div class="label--desc">Upload your CV/Resume or any other relevant file. Max file size
                                     2
@@ -393,13 +345,13 @@
     <script type="text/javascript">
         $(document).ready(function () {
             loadProvinsi();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
 
             function loadProvinsi() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 $.ajax({
                     method: 'GET',
                     url: '/candidate/get-provinsi',
@@ -418,7 +370,6 @@
             }
             $('#provinsi').change(function () {
                 var provinsi = $("#provinsi").val();
-                console.log("provinsi", provinsi);
                 $.ajax({
                     method: 'GET',
                     url: '/candidate/get-domisili/' + provinsi,
