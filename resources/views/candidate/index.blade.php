@@ -12,7 +12,7 @@
         href="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico">
     <title>Apply for job @BTSA LOGISTICS</title>
     <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"
-        type="93f47f1b769aaff014497fc3-text/javascript"></script>
+        type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -296,20 +296,20 @@
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"
-        type="93f47f1b769aaff014497fc3-text/javascript">
+        type="text/javascript">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
-        type="93f47f1b769aaff014497fc3-text/javascript">
+        type="text/javascript">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"
-        type="93f47f1b769aaff014497fc3-text/javascript">
+        type="text/javascript">
     </script>
 
-    <script type="93f47f1b769aaff014497fc3-text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js">
     </script>
-    <script type="93f47f1b769aaff014497fc3-text/javascript">
+    <script type="text/javascript">
         $(function () {
             $('input[name="tanggal_lahir"]').daterangepicker({
                 singleDatePicker: true,
@@ -323,7 +323,7 @@
         });
 
     </script>
-    <script type="93f47f1b769aaff014497fc3-text/javascript">
+    <script type="text/javascript">
         $(function () {
             $('input[name="req_datein"]').daterangepicker({
                 singleDatePicker: true,
@@ -334,12 +334,12 @@
         });
 
     </script>
-    <script type="93f47f1b769aaff014497fc3-text/javascript"
+    <script type="text/javascript"
         src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="93f47f1b769aaff014497fc3-text/javascript"
+    <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
-        data-cf-settings="93f47f1b769aaff014497fc3-|49" defer=""></script>
+        data-cf-settings="|49" defer=""></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
