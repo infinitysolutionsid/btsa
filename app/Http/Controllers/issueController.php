@@ -32,8 +32,15 @@ class issueController extends Controller
         $issueData->jam = date('H:i:s');
         $issueData->created_by = auth()->user()->nama_lengkap;
         $issueData->logIP = $request->getClientIp();
-        $issueData->save();
-
+        if (!$request->hasFile('lampiran')) {
+            $issueData->save();
+        } else {
+            $lamp = $request->file('lampiran');
+            $filename = time() . '.' . $lamp->getClientOriginalExtension();
+            $request->file('lampiran')->move('file/lampiran/issue/', $filename);
+            $issueData->lampiran = $filename;
+            $issueData->save();
+        }
         return back()->with('sukses', 'Tiket IR kamu berhasil dibuat. Tunggu respon dari pihak ' . $request->tujuan . ' ya. Terima kasih.');
     }
     public function itCheck()

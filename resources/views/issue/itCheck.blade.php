@@ -28,10 +28,10 @@
                         <th>#</th>
                         <th>Pelapor</th>
                         <th>Tanggal</th>
-                        <th>Tiket no.</th>
+                        <th>Ref.</th>
                         <th>Kendala</th>
                         <th>Status</th>
-                        <th>Approved by</th>
+                        <th>Appr.</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -42,7 +42,7 @@
                     <tr>
                         <th scope="row">{{$no++}}</th>
                         <td>{{$dt_issue->nama_lengkap}}</td>
-                        <td><span class="badge badge-success">{{$dt_issue->tanggal}}</span> {{$dt_issue->jam}}</td>
+                        <td><span class="badge badge-success">{{$dt_issue->tanggal}}</span></td>
                         <td><span class="badge badge-primary">{{$dt_issue->id}}</span></td>
                         <td>{!!strip_tags($dt_issue->kendala)!!}</td>
                         <td class="text-center">
@@ -59,7 +59,12 @@
                         </td>
                         <td>{{$dt_issue->approve}}</td>
                         <td>
-
+                            <span data-toggle="modal" data-target="#modaldetails{{$dt_issue->id}}">
+                                <button type="submit" class="btn btn-success btn-outline" data-toggle="tooltip"
+                                    data-placement="left" title="Lihat detail?">
+                                    <span><i class="fas fa-info-circle"></i></span>
+                                </button>
+                            </span>
                             <span data-toggle="modal" data-target="#modalSolusi{{$dt_issue->id}}">
                                 <button type="submit" class="btn btn-success btn-outline" data-toggle="tooltip"
                                     data-placement="left" title="Selesaikan!">
@@ -132,7 +137,7 @@
 <div class="modal fade" id="addIR" tabindex="-1" role="dialog" aria-labelledby="addIR" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form action="/queue/addnew" method="POST">
+            <form action="/queue/addnew" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-header">
                     <h5 class="modal-title" id="addIR">Tambah IR Baru</h5>
@@ -150,13 +155,23 @@
                                         <input type="text" class="form-control" name="nama_lengkap"
                                             value="{{auth()->user()->nama_lengkap}}" readonly>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="kepada">Tujuan IR</label>
-                                        <select name="tujuan" id="tujuan" class="form-control custom-select">
-                                            <option value="it">IT</option>
-                                            <option value="umum">Umum</option>
-                                            <option value="hrd">HRD</option>
-                                        </select>
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="kepada">Tujuan IR</label>
+                                                <select name="tujuan" id="tujuan" class="form-control custom-select">
+                                                    <option value="it">IT</option>
+                                                    <option value="umum">Umum</option>
+                                                    <option value="hrd">HRD</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="kepada">Upload lampiran screenshot issue atau file</label>
+                                                <input type="file" name="lampiran" id="" class="form-control">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="role">Laporkan kendalanya:</label>
@@ -177,4 +192,32 @@
     </div>
 </div>
 
-@endsection
+<!-- Modal -->
+@foreach($issueData as $dt_issue)
+<div class="modal fade" id="modaldetails{{$dt_issue->id}}" tabindex="-1" role="dialog"
+    aria-labelledby="#modaldetails{{$dt_issue->id}}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="#modaldetails{{$dt_issue->id}}">Issue Detail
+                    <b>#{{$dt_issue->id}}</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8 text-left">
+                        <b>Nama pelapor</b> {{$dt_issue->nama_lengkap}}<br>
+                        <b>Kendala</b> {!!$dt_issue->kendala!!} <br>
+                        <b>Telah diapprove oleh</b> {{$dt_issue->approve}}
+                    </div>
+                    <div class="col-md-4 text-left">
+                        <a target="_blank" href="file/lampiran/issue/{{$dt_issue->lampiran}}">
+                            <img src=" file/lampiran/issue/{{$dt_issue->lampiran}}" style="max-width:200px;">
+                        </a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> @endforeach @endsection

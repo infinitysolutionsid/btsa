@@ -44,7 +44,7 @@
                         <th>Translate Ind</th>
                         <th>Link terbit</th>
                         <th>Status</th>
-                        <th>Checked by</th>
+                        <th>Check.</th>
                         @if(auth()->user()->role=='administrator')
                         <th>Action</th>
                         @endif

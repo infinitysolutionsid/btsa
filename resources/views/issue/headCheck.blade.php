@@ -26,10 +26,10 @@
                     <tr>
                         <th>#</th>
                         <th>Pelapor</th>
-                        <th>Antrian No.</th>
+                        <th>Ref.</th>
                         <th>Kendala</th>
                         <th>Status</th>
-                        <th>Checked by</th>
+                        <th>Check.</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -85,7 +85,7 @@
 <div class="modal fade" id="addIR" tabindex="-1" role="dialog" aria-labelledby="addIR" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form action="/queue/addnew" method="POST">
+            <form action="/queue/addnew" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-header">
                     <h5 class="modal-title" id="addIR">Tambah IR Baru</h5>
@@ -103,13 +103,23 @@
                                         <input type="text" class="form-control" name="nama_lengkap"
                                             value="{{auth()->user()->nama_lengkap}}" readonly>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="kepada">Tujuan IR</label>
-                                        <select name="tujuan" id="tujuan" class="form-control custom-select">
-                                            <option value="it">IT</option>
-                                            <option value="umum">Umum</option>
-                                            <option value="hrd">HRD</option>
-                                        </select>
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="kepada">Tujuan IR</label>
+                                                <select name="tujuan" id="tujuan" class="form-control custom-select">
+                                                    <option value="it">IT</option>
+                                                    <option value="umum">Umum</option>
+                                                    <option value="hrd">HRD</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="kepada">Upload lampiran screenshot issue atau file</label>
+                                                <input type="file" name="lampiran" id="" class="form-control">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="role">Laporkan kendalanya:</label>

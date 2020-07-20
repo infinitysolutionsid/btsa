@@ -103,7 +103,8 @@ $quote = DB::table('quote')->where('quote.status','=','loading')->get();
                         <li><a href="/itCheck">IT & PU Checked</a></li>
                         <li><a href="/itSolved">IT & PU Solved IR</a></li>
                         @endif
-                        @if(Auth::user()->role=='head' || Auth::user()->role=='administrator')
+                        @if(Auth::user()->role=='head' || Auth::user()->role=='administrator' ||
+                        Auth::user()->role=='hrd')
                         <li><a href="/headCheck">Head Checked</a></li>
                         @endif
 

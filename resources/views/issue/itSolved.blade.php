@@ -49,7 +49,7 @@
                                 <span><i class="fas fa-info-circle"></i> See details</span>
                             </button></td>
                         <td>{!!strip_tags(str_limit($dt_issue->kendala, $limit=100))!!}</td>
-                        <td style="text-align:right;"><img class="media-object" src="{{$Member->getAvatar()}}">
+                        <td style="text-align:right;">
                             {{$dt_issue->updated_by}}</td>
                     </tr> @endforeach @else <td colspan="7" class="text-center">No data founded!</td>
                     @endif
@@ -85,10 +85,6 @@
                     <p>{!!$dt_issue->solusi!!}</p>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
     </div>
 </div>
@@ -98,7 +94,7 @@
 <div class="modal fade" id="addIR" tabindex="-1" role="dialog" aria-labelledby="addIR" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form action="/queue/addnew" method="POST">
+            <form action="/queue/addnew" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-header">
                     <h5 class="modal-title" id="addIR">Tambah IR Baru</h5>
@@ -116,13 +112,23 @@
                                         <input type="text" class="form-control" name="nama_lengkap"
                                             value="{{auth()->user()->nama_lengkap}}" readonly>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="kepada">Tujuan IR</label>
-                                        <select name="tujuan" id="tujuan" class="form-control custom-select">
-                                            <option value="IT">IT</option>
-                                            <option value="Umum">Umum</option>
-                                            <option value="HRD">HRD</option>
-                                        </select>
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="kepada">Tujuan IR</label>
+                                                <select name="tujuan" id="tujuan" class="form-control custom-select">
+                                                    <option value="it">IT</option>
+                                                    <option value="umum">Umum</option>
+                                                    <option value="hrd">HRD</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="kepada">Upload lampiran screenshot issue atau file</label>
+                                                <input type="file" name="lampiran" id="" class="form-control">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="role">Laporkan kendalanya:</label>
