@@ -7,6 +7,10 @@
     border: 0px;
 }
 
+.kendalacs:hover {
+    cursor: pointer;
+}
+
 ::-webkit-scrollbar-thumb {
     background: #343957;
 }

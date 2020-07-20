@@ -42,7 +42,9 @@
                         <td>{{$dt_issue->nama_lengkap}}</td>
                         <td><span class="badge badge-success">{{$dt_issue->tanggal}}</span></td>
                         <td><span class="badge badge-primary">{{$dt_issue->id}}</span></td>
-                        <td><a data-toggle="modal" data-target="#modaldetails{{$dt_issue->}}"></a></td>
+                        <td><a class="kendalacs" data-toggle="modal"
+                                data-target="#modaldetails{{$dt_issue->id}}">{!!strip_tags(str_limit($dt_issue->kendala,$limit=150))!!}</a>
+                        </td>
                         <td>
                             <div class="btn-group btn-group-toggle">
                                 <span data-toggle="modal" data-target="#modaldetails{{$dt_issue->id}}">
