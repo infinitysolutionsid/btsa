@@ -68,6 +68,27 @@
         </div>
     </div>
     <!-- End Auto PopUp -->
+    <!-- Modal -->
+    <div id="companyprofile" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content" style="background-color: #fff; padding-bottom:15px;">
+                <div class="modal-body">
+                    <div class="col-md text-center">
+                        <h5>Choose our company profile</h5>
+                        <a
+                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1595220647/CompanyProfile/Company_Profile_BTSA_2020_IND.pdf"><button
+                                class="btn btn-primary btn-md" type="button" aria-haspopup="true"
+                                aria-expanded="false">Bahasa Indonesia</button></a>
+                        <a
+                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1595220647/CompanyProfile/Company_Profile_BTSA_2020_ENG.pdf"><button
+                                class="btn btn-primary btn-md" type="button" aria-haspopup="true"
+                                aria-expanded="false">Bahasa Inggris</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -174,34 +195,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <div id="companyprofile" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-sm">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-md text-center">
-                        <a
-                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1583546578/CompanyProfile/Company_Profile_BTSA_2020_IND.pdf"><button
-                                class="btn btn-primary btn-md" type="button" aria-haspopup="true"
-                                aria-expanded="false">Bahasa Indonesia</button></a>
-                        <a
-                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1583546577/CompanyProfile/Company_Profile_BTSA_2020_ENG.pdf"><button
-                                class="btn btn-primary btn-md" type="button" aria-haspopup="true"
-                                aria-expanded="false">Bahasa Inggris</button></a>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">x</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
     <!-- Section About Us -->
     <section class="aboutus" id="aboutus">
         <div class="container-fluid text-center">
