@@ -25,13 +25,11 @@
             <table id="memberTables" class="table table-hover" style="width:100%">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th width="30px">#</th>
                         <th>Pelapor</th>
                         <th>Tanggal</th>
-                        <th>Ref.</th>
+                        <th width="50px">Ref.</th>
                         <th>Kendala</th>
-                        <th>Status</th>
-                        <th>Appr.</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -44,48 +42,37 @@
                         <td>{{$dt_issue->nama_lengkap}}</td>
                         <td><span class="badge badge-success">{{$dt_issue->tanggal}}</span></td>
                         <td><span class="badge badge-primary">{{$dt_issue->id}}</span></td>
-                        <td>{!!strip_tags($dt_issue->kendala)!!}</td>
-                        <td class="text-center">
-                            @if($dt_issue->status=='Selesai')
-                            <span style="font-size: 1rem; color: green;" title="Telah Selesai." data-toggle="tooltip"
-                                data-placement="top"><i class="fas fa-check-circle"></i></span>
-                            @elseif($dt_issue->status=='Belum Selesai')
-                            <span style="font-size: 1rem; color: #e18a19;" title="Belum selesai! Kapan dikerjai?"
-                                data-toggle="tooltip" data-placement="top"><i class="fas fa-pause-circle"></i></span>
-                            @else
-                            <span style="font-size: 1rem; color: red;" title="Udah dibatalin." data-toggle="tooltip"
-                                data-placement="top"><i class="fas fa-times-circle"></i></span>
-                            @endif
-                        </td>
-                        <td>{{$dt_issue->approve}}</td>
+                        <td><a data-toggle="modal" data-target="#modaldetails{{$dt_issue->}}"></a></td>
                         <td>
-                            <span data-toggle="modal" data-target="#modaldetails{{$dt_issue->id}}">
-                                <button type="submit" class="btn btn-success btn-outline" data-toggle="tooltip"
-                                    data-placement="left" title="Lihat detail?">
-                                    <span><i class="fas fa-info-circle"></i></span>
-                                </button>
-                            </span>
-                            <span data-toggle="modal" data-target="#modalSolusi{{$dt_issue->id}}">
-                                <button type="submit" class="btn btn-success btn-outline" data-toggle="tooltip"
-                                    data-placement="left" title="Selesaikan!">
-                                    <span><i class="far fa-check-circle"></i></span>
-                                </button>
-                            </span>
-                            {{-- </form> --}}
-                            <form action="/itCheck/sementara/{{$dt_issue->id}}" method="post">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-warning btn-outline" data-toggle="tooltip"
-                                    data-placement="left" title="Tunda dulu deh.">
-                                    <span><i class="far fa-pause-circle"></i></span>
-                                </button>
-                            </form>
-                            <form action="/itCheck/batal/{{$dt_issue->id}}" method="post">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-danger btn-outline" data-toggle="tooltip"
-                                    data-placement="left" title="Batalkan!">
-                                    <span><i class="far fa-times-circle"></i></span>
-                                </button>
-                            </form>
+                            <div class="btn-group btn-group-toggle">
+                                <span data-toggle="modal" data-target="#modaldetails{{$dt_issue->id}}">
+                                    <button type="submit" class="btn btn-primary btn-outline" data-toggle="tooltip"
+                                        data-placement="left" title="Lihat detail?">
+                                        <span><i class="fas fa-info-circle"></i></span>
+                                    </button>
+                                </span>
+                                <span data-toggle="modal" data-target="#modalSolusi{{$dt_issue->id}}">
+                                    <button type="submit" class="btn btn-success btn-outline" data-toggle="tooltip"
+                                        data-placement="left" title="Selesaikan!">
+                                        <span><i class="far fa-check-circle"></i></span>
+                                    </button>
+                                </span>
+                                {{-- </form> --}}
+                                <form action="/itCheck/sementara/{{$dt_issue->id}}" method="post">
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-warning btn-outline" data-toggle="tooltip"
+                                        data-placement="left" title="Tunda dulu deh.">
+                                        <span><i class="far fa-pause-circle"></i></span>
+                                    </button>
+                                </form>
+                                <form action="/itCheck/batal/{{$dt_issue->id}}" method="post">
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-danger btn-outline" data-toggle="tooltip"
+                                        data-placement="left" title="Batalkan!">
+                                        <span><i class="far fa-times-circle"></i></span>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                     {{-- modal solusi --}}
@@ -209,13 +196,17 @@
                 <div class="row">
                     <div class="col-md-8 text-left">
                         <b>Nama pelapor</b> {{$dt_issue->nama_lengkap}}<br>
-                        <b>Kendala</b> {!!$dt_issue->kendala!!} <br>
+                        <b>Kendala</b> {!!strip_tags($dt_issue->kendala)!!} <br><br>
                         <b>Telah diapprove oleh</b> {{$dt_issue->approve}}
                     </div>
+                    @if(!$dt_issue->lampiran == '')
                     <div class="col-md-4 text-left">
                         <a target="_blank" href="file/lampiran/issue/{{$dt_issue->lampiran}}">
                             <img src=" file/lampiran/issue/{{$dt_issue->lampiran}}" style="max-width:200px;">
-                        </a> </div>
+                        </a>
+                    </div>
+                    @else
+                    @endif
                 </div>
             </div>
         </div>
