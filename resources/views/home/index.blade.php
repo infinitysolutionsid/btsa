@@ -1,726 +1,1173 @@
-<!--AppDelegate-->
-<!--STARPROJECTX-->
-<!--Created by Bintang Cato Jeremia Tobing on 23/04/19.-->
-<!--Copyright © 2019 Bintang Cato Jeremia Tobing. All rights reserved.-->
-@inject('Member','\App\MemberModel')
 <!DOCTYPE html>
-<html lang="id" id="home">
+<html dir="ltr" lang="en-US">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>BTSA LOGISTICS PPJK | EMKL | EMKU</title>
-    <link rel="shortcut icon"
-        href="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="bintangtobing" />
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="BTSA Logistics adalah Expedisi, EMKL, EMKU & Custom Clearance dan juga termasuk daftar perusahaan custom clearance di Indonesia. Berada di Jakarta, Medan, Surabaya, Semarang, Palembang, Pekan Baru, Bali,  Makasar dan Lombok.">
-    <meta name="keywords"
-        content="PPJK, EMKL, Expedisi, Export-Import, Custom Clearance, BTSA, BTSA LOGISTICS, Bea Cukai Indonesia, Jasa Ekspedisi, Custom Clearance Indonesia, PPJK Indonesia, Daftar perusahaan Bea Cukai di Indonesia">
-    <meta name="author" content="Bintang Cato Jeremia L Tobing">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link expr:href='data:blog.url' hreflang='x-default' rel='alternate' />
-    <meta content='Indonesia' name='geo.placename' />
-    <meta content='id' name='geo.country' />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://res.cloudinary.com/btsa-co-id/raw/upload/v1594267701/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129070772-1"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://res.cloudinary.com/btsa-co-id/raw/upload/v1541504267/jscsstxtfiledll/js/jquery-3.1.1.min.js">
-    </script>
-    <script src="https://res.cloudinary.com/btsa-co-id/raw/upload/v1541554459/jscsstxtfiledll/js/script.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    {{-- facebook open graphs --}}
-    <meta property="fb:admins" content="1282698325202260">
-    <meta property="og:site_name" content="BTSA LOGISTICS PPJK | EMKL | EMKU" />
-    <meta property="og:url" content="{{Request::url()}}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="@yield('title')" />
-    <meta property="og:description" content="@yield('metadesc')" />
-    <meta property="og:image"
-        content="{!!url('https://res.cloudinary.com/btsa-co-id/image/upload/v1585810115/popupimg/ogimage.jpg')!!}">
+    <!-- Stylesheets
+	============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900|Caveat+Brush&display=swap"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{!!asset('homepage/css/bootstrap.css')!!}" type="text/css" />
+    <link rel="stylesheet" href="{!!asset('homepage/style.css')!!}" type="text/css" />
+    <link rel="stylesheet" href="{!!asset('homepage/css/swiper.css')!!}" type="text/css" />
+
+    <link rel="stylesheet" href="{!!asset('homepage/css/dark.css')!!}" type="text/css" />
+    <link rel="stylesheet" href="{!!asset('homepage/css/font-icons.css')!!}" type="text/css" />
+    <link rel="stylesheet" href="{!!asset('homepage/css/animate.css')!!}" type="text/css" />
+    <link rel="stylesheet" href="{!!asset('homepage/css/magnific-popup.css')!!}" type="text/css" />
+
+    <link rel="stylesheet" href="{!!asset('homepage/css/custom.css')!!}" type="text/css" />
+    <link rel="stylesheet" href="{!!asset('homepage/css/calendar.css')!!}" type="text/css" />
+
+    <!-- NonProfit Demo Specific Stylesheet -->
+    <link rel="stylesheet" href="{!!asset('homepage/css/colors.php?color=C6C09C')!!}" type="text/css" />
+    <!-- Theme Color -->
+    <link rel="stylesheet" href="{!!asset('homepage/demos/btsa/css/fonts.css')!!}" type="text/css" />
+    <link rel="stylesheet" href="{!!asset('homepage/demos/btsa/nonprofit.css')!!}" type="text/css" />
+    <!-- / -->
+
+    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+
+    <!-- Document Title
+	============================================= -->
+    <title>NonProfit Demo | Canvas</title>
+
 </head>
 
-<body id="mypage" data-spy="scroll" data-target=".navbar" data-offset="90">
+<body class="stretched">
 
-    <!-- Auto PopUp -->
-    <div class="modal fade" id="global-modal" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body" style="padding:0; background-color:#fff;">
-                    <img class="img-full img-responsive"
-                        src="https://res.cloudinary.com/btsa-co-id/image/upload/v1594267344/optimized/Peta_BTSA_28Feb2020.jpg"
-                        style="height:100%; width:100%;">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Auto PopUp -->
-    <!-- Modal -->
-    <div id="companyprofile" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-sm">
-            <!-- Modal content-->
-            <div class="modal-content" style="background-color: #fff; padding-bottom:15px;">
-                <div class="modal-body">
-                    <div class="col-md text-center">
-                        <h5>Choose our company profile</h5>
-                        <a
-                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1595220647/CompanyProfile/Company_Profile_BTSA_2020_IND.pdf"><button
-                                class="btn btn-primary btn-md" type="button" aria-haspopup="true"
-                                aria-expanded="false">Bahasa Indonesia</button></a>
-                        <a
-                            href="https://res.cloudinary.com/blogbtsa/image/upload/v1595220647/CompanyProfile/Company_Profile_BTSA_2020_ENG.pdf"><button
-                                class="btn btn-primary btn-md" type="button" aria-haspopup="true"
-                                aria-expanded="false">Bahasa Inggris</button></a>
+    <!-- Document Wrapper
+	============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+		============================================= -->
+        <header id="header" class="header-size-custom border-bottom-0" data-sticky-shrink="false">
+            <div id="header-wrap">
+                <div class="container">
+                    <div class="header-row justify-content-lg-between">
+
+                        <!-- Logo
+						============================================= -->
+                        <div id="logo" class="mr-lg-5">
+                            <a href="index.html" class="standard-logo"
+                                data-dark-logo="demos/business/images/logo-dark.png"><img
+                                    src="demos/business/images/logo.png" alt="Canvas Logo"></a>
+                            <a href="index.html" class="retina-logo"
+                                data-dark-logo="demos/business/images/logo-dark@2x.png"><img
+                                    src="demos/business/images/logo@2x.png" alt="Canvas Logo"></a>
+                        </div><!-- #logo end -->
+
+                        <div class="header-misc">
+                            <a href="#" class="button button-rounded button-light">
+                                <div>Donate</div>
+                            </a>
+                        </div>
+
+                        <div id="primary-menu-trigger">
+                            <svg class="svg-trigger" viewBox="0 0 100 100">
+                                <path
+                                    d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20">
+                                </path>
+                                <path d="m 30,50 h 40"></path>
+                                <path
+                                    d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20">
+                                </path>
+                            </svg>
+                        </div>
+
+                        <!-- Primary Navigation
+						============================================= -->
+                        <nav class="primary-menu with-arrows mr-lg-auto">
+
+                            <ul class="menu-container align-self-start">
+                                <li class="menu-item"><span class="menu-bg col-auto align-self-start d-flex"></span>
+                                </li>
+                                <li class="menu-item active"><a class="menu-link" href="#">
+                                        <div>Home</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link" href="#">
+                                        <div>About</div>
+                                    </a>
+                                    <ul class="sub-menu-container">
+                                        <li class="menu-item"><a class="menu-link" href="#">
+                                                <div>Dropdown 1</div>
+                                            </a></li>
+                                        <li class="menu-item"><a class="menu-link" href="#">
+                                                <div>Dropdown 2</div>
+                                            </a></li>
+                                        <li class="menu-item"><a class="menu-link" href="#">
+                                                <div>Dropdown 3</div>
+                                            </a></li>
+                                        <li class="menu-item"><a class="menu-link" href="#">
+                                                <div>Dropdown 4</div>
+                                            </a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item"><a class="menu-link" href="#">
+                                        <div>Causes</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link" href="#">
+                                        <div>Events</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link" href="#">
+                                        <div>Contact</div>
+                                    </a></li>
+                            </ul>
+
+                        </nav><!-- #primary-menu end -->
+
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar" style="background-color: #e92b2f;"></span>
-                    <span class="icon-bar" style="background-color: #e92b2f;"></span>
-                    <span class="icon-bar" style="background-color: #e92b2f;"></span>
-                </button>
-                <a href="#home" class="navbar-brand">
-                    <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1594267343/optimized/brand.png"
-                        alt="brand" style="float:none !important">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Tentang Kami <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#aboutus">SIAPA KAMI?</a></li>
-                            <li><a href="#visimisi">VISI & MISI</a></li>
-                            <li><a href="#values">NILAI KAMI</a></li>
-                            <li><a href="#services">JASA KAMI</a></li>
-                            <li><a href="#why">MENGAPA KAMI?</a></li>
-                            <li><a href="#contact">KANTOR KAMI</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="https://btsa.co.id/news">News</a></li>
-                    <li><a href="https://btsa.co.id/gallery.html" target="_blank">Galeri</a></li>
-                    <li><a href="/candidate" target="_blank">Karir</a></li>
-                    @if(auth()->check())
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true"><span><img class="media-object"
-                                    src="{{asset('file/'.auth()->user()->profilephoto)}}"></span>
-                            {{auth()->user()->nama_lengkap}}</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                            <li><a href="/logout"><i class="fas fa-times"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="login"><a href="#" id="myBtnLogin" style="color:#fff !important"><span
-                                class="glyphicon glyphicon-user"></span> LOGIN</a></li>
-                    <div class="modal fade" id="myModalLogin" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content" style="background-color:#fff;">
-                                <div class="modal-header" style="color:#fff; background-color:#282662;">
-                                    <h4 class="modal-title text-center">- CHOOSE YOUR LOGIN PAGE -</h4>
+            <div class="header-wrap-clone"></div>
+        </header><!-- #header end -->
+
+        <!-- Slider
+		============================================= -->
+        <section id="slider" class="slider-element dark swiper_wrapper slider-parallax min-vh-75">
+            <div class="slider-inner">
+
+                <div class="swiper-container swiper-parent">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide dark">
+                            <div class="container">
+                                <div class="slider-caption">
+                                    <div>
+                                        <h2 class="nott" data-animate="fadeInUp">Help the Homeless.</h2>
+                                        <a href="#" data-animate="fadeInUp" data-delay="400"
+                                            class="button button-rounded button-large button-light shadow nott ls0 ml-0 mt-4">Know
+                                            More</a>
+                                    </div>
                                 </div>
-                                <div class="modal-body text-center row">
-                                    <div class="col-sm-6" style="margin-bottom:10px;">
-                                        <a href="/queue"><button type="button" class="btn btn-danger"
-                                                style="width:270px; height:60px;">BTSA Issue
-                                                Report<br>
-                                                <font class="personalonly"><i>-For Company Only-</i></font>
-                                            </button></a>
+                            </div>
+                            <div class="swiper-slide-bg"
+                                style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('demos/nonprofit/images/slider/1.jpg') no-repeat center center; background-size: cover;">
+                            </div>
+                        </div>
+                        <div class="swiper-slide dark">
+                            <div class="container">
+                                <div class="slider-caption">
+                                    <div>
+                                        <h2 class="nott" data-animate="fadeInUp">Donate with Kindness.</h2>
+                                        <a href="#" data-animate="fadeInUp" data-delay="400"
+                                            class="button button-rounded button-large button-light shadow nott ls0 ml-0 mt-4">Know
+                                            More</a>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <a href="https://btsa.co.id/comingsoon.html" target="_blank"><button
-                                                type="button" class="btn btn-custom"
-                                                style="width:270px; height:60px;">Data Customer</button></a><br><br>
+                                </div>
+                            </div>
+                            <div class="swiper-slide-bg"
+                                style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.8)), url('demos/nonprofit/images/slider/2.jpg') no-repeat center center; background-size: cover;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-navs">
+                        <div class="slider-arrow-left"><i class="icon-line-arrow-left"></i></div>
+                        <div class="slider-arrow-right"><i class="icon-line-arrow-right"></i></div>
+                    </div>
+                    <div class="swiper-scrollbar">
+                        <div class="swiper-scrollbar-drag">
+                            <div class="slide-number">
+                                <div class="slide-number-current"></div><span>/</span>
+                                <div class="slide-number-total"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Content
+		============================================= -->
+        <section id="content">
+            <div class="content-wrap py-0" style="overflow: visible">
+
+                <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1382 58" width="100%" height="60"
+                    preserveAspectRatio="none" style="position: absolute; top: -58px; left:0; z-index: 1">
+                    <path style="fill:#FFF;" d="M1.52.62s802.13,127,1380,0v56H.51Z" /></svg>
+
+                <div class="container">
+
+                    <div class="slider-feature w-100">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3 px-1">
+                                <a href="#"
+                                    class="card center border-left-0 border-right-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 font-weight-semibold text-uppercase ls1">
+                                    <div class="card-body">
+                                        <i class="icon-line-align-center"></i>View Our Mission
                                     </div>
-                                    <div class="col-sm-6" style="margin-bottom:10px;">
-                                        <a href="https://trello.com/login?returnUrl=%2Fb%2FzCkoX57j"
-                                            target="_blank"><button type="button" class="btn btn-danger"
-                                                style="width:270px; height:60px;">Dokumen Surat<br>
-                                                <font class="personalonly"><i>-For Company Only-</i></font>
-                                            </button></a>
+                                </a>
+                            </div>
+                            <div class="col-md-3 px-1">
+                                <a href="#"
+                                    class="card center border-left-0 border-right-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 font-weight-semibold text-uppercase ls1">
+                                    <div class="card-body">
+                                        <i class="icon-line-umbrella"></i>Top Founders
                                     </div>
-                                    <div class="col-sm-6">
-                                        <a href="/restricted"><button type="button" class="btn btn-custom"
-                                                style="width:270px; height:60px;">BTSA Restricted
-                                                Area<br>
-                                                <font class="personalonly"><i>-For Company Only-</i></font>
-                                            </button></a>
+                                </a>
+                            </div>
+                            <div class="col-md-3 px-1">
+                                <a href="#"
+                                    class="card center border-left-0 border-right-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 font-weight-semibold text-uppercase ls1">
+                                    <div class="card-body">
+                                        <i class="icon-line-mail"></i>Request a Quote
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section mt-3"
+                    style="background: #FFF url('demos/nonprofit/images/others/1.jpg') no-repeat 100% 50% / auto 100%;">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-7 center">
+                                <div class="heading-block border-bottom-0 mb-4">
+                                    <h2 class="mb-4 nott">Unconditional Help</h2>
+                                </div>
+                                <div class="svg-line bottommargin-sm">
+                                    <img src="demos/nonprofit/images/divider-1.svg" alt="svg divider" height="20">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quasi, dolorum
+                                    blanditiis eius laboriosam, quidem temporibus, dolor quod voluptatum perferendis
+                                    ullam. Odio sequi at dolore consequatur ad, odit expedita tenetur.</p>
+                            </div>
+                        </div>
+                        <div class="row mt-5 col-mb-50 mb-0">
+                            <div class="col-md-3">
+                                <div class="feature-box flex-column pl-0">
+                                    <div class="fbox-media position-relative">
+                                        <img src="demos/nonprofit/images/icons/donate.svg" alt="Featured Icon"
+                                            width="60" class="mb-3">
+                                    </div>
+                                    <div class="fbox-content px-0">
+                                        <h3 class="nott ls0"><a href="#" class="text-dark">Give Donation.</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, dolore,
+                                            voluptates!</p>
+                                        <a href="#"
+                                            class="button button-rounded button-border nott ls0 font-weight-normal ml-0 mt-4">Donate
+                                            Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="feature-box flex-column pl-0">
+                                    <div class="fbox-media position-relative">
+                                        <img src="demos/nonprofit/images/icons/volunteer.svg" alt="Featured Icon"
+                                            width="60" class="mb-3">
+                                    </div>
+                                    <div class="fbox-content px-0">
+                                        <h3 class="nott ls0"><a href="#" class="text-dark">Become a Volunteer.</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, provident.
+                                        </p>
+                                        <a href="#"
+                                            class="button button-rounded button-border nott ls0 font-weight-normal ml-0 mt-4">Join
+                                            Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="feature-box flex-column pl-0">
+                                    <div class="fbox-media position-relative">
+                                        <img src="demos/nonprofit/images/icons/help-child.svg" alt="Featured Icon"
+                                            width="60" class="mb-3">
+                                    </div>
+                                    <div class="fbox-content px-0">
+                                        <h3 class="nott ls0"><a href="#" class="text-dark">Help the Children.</a></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa!</p>
+                                        <a href="#"
+                                            class="button button-rounded button-border nott ls0 font-weight-normal ml-0 mt-4">Help
+                                            Now</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Akhir Navbar -->
-    <div class="headertop">
-        <div class="row text-center">
-            <div class="col-sm-12 text-center">
-                <!-- <h1 class="slide"><strong>BTSA LOGISTICS</strong></h1>
-        <h3 class="slideanim">DOMESTIC | EXPORT | IMPORT | TRUCKING</h3>
-        <h3 class="slideanim">BY SEA | BY LAND | BY AIR</h3>-->
-                <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1594267344/optimized/logobtsa.png"
-                    class="responsive text-center" alt=""><br>
-                <a href="#"><button class="btn btn-default btn-md dropdown-toggle" type="button" aria-haspopup="true"
-                        aria-expanded="false" data-toggle="modal" data-target="#companyprofile">Our Company Profile
-                        <span class="caret"></span></button>
-                </a>
-                <a href="https://btsa.co.id/news/id/"><button class="btn btn-default btn-md" type="button"
-                        aria-haspopup="true" aria-expanded="false">Our Blog</button></a>
-            </div>
-        </div>
-    </div>
+                </div>
 
-    <!-- Section About Us -->
-    <section class="aboutus" id="aboutus">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2><strong>SIAPA KAMI?</strong></h2>
-                    <hr style="width: 100px; height: 3px; border:0; background-color: #282662">
-                    <h4 class="slideanim">Kami adalah perusahaan<br>BTSA LOGISTICS</h4>
-                    <p class="slideanim">Didirikan pada tahun 2000, BTSA Logistics telah menjadi salah satu perusahaan
-                        jasa ekspedisi
-                        di Indonesia.<br>Saat ini kami terdiri dari 4 departemen : <i>Domestic, Export, Import</i> dan
-                        <i>Trucking</i>.
-                        <br><strong>BTSA Logistics</strong> tergabung dalam <strong>PT. Berlian Tangguh
-                            Sejahtera</strong> untuk legalitas departemen
-                        <i>Domestic</i><br> dan <strong>PT. Berlian Transtar Abadi</strong> untuk legalitas departemen
-                        <i>Export, Import</i> dan
-                        <i>Trucking</i>.</p>
+                <div class="container">
+                    <div class="w-100 position-relative">
+                        <div class="donor-img d-flex align-items-center rounded parallax mx-auto shadow-sm w-100"
+                            data-bottom-top="background-position:0px 0px;"
+                            data-top-bottom="background-position:0px -50px;"
+                            style="height: 500px; background: url('demos/nonprofit/images/others/3.jpg') no-repeat center center / cover">
+                        </div>
+                        <div class="card bg-white border-0 center py-sm-4 px-sm-5 p-2 shadow-sm"
+                            style="position: absolute; top: 50%; right: 80px; transform: translateY(-50%);">
+                            <div class="card-body">
+                                <div class="color h1 mb-3"><i class="icon-heart"></i></div>
+                                <small class="text-uppercase font-weight-normal ls2 text-muted mb-3 d-block">Our Top
+                                    Donor</small>
+                                <h3 class="display-3 font-weight-bold mb-3 font-secondary">$2.4M</h3>
+                                <p class="text-uppercase font-weight-medium text-muted">:Raised</p>
+                                <a href="#" class="button-svg">View More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section About Us -->
 
-    <!-- Section Visi & Misi -->
-    <section class="visimisi" id="visimisi">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2>VISI KAMI</h2>
-                    <hr style="width: 70px; height: 3px; border:0; background-color: #fff">
-                    <h4 class="slideanim">Menjadi perusahaan ekspedisi terpercaya di Indonesia.</h4>
-                </div>
-            </div><br><br>
-            <div class="col-sm-12">
-                <h2 class="slide">MISI KAMI</h2>
-                <hr style="width: 70px; height: 3px; border:0; background-color: #fff">
-                <p class="col-sm-12 slideanim">1. Mempersiapkan SDM yang berkompeten di bidangnya serta berintegritas
-                    tinggi.<br>
-                    2. Memberikan pelayanan prima seperti kecepatan, keamanan dan keselamatan pengiriman barang.<br>
-                    3. Senantiasa menyampaikan informasi serta solusi kreatif untuk memecahkan masalah pelanggan.<br>
-                    4. Berupaya menghasilkan / menciptakan efisiensi dan efektifitas bersama pelanggan dan mitra usaha
-                    dalam proses bisnis.<br>
-                    5. Memperluas jaringan bisnis dan kemitraan sesuai kebutuhan pasar.</p>
-            </div>
-        </div>
-    </section>
+                <div class="section bg-transparent mt-0 mb-4">
+                    <div class="container clearfix">
+                        <div class="row justify-content-center" style="margin-top: 100px">
+                            <div class="col-md-7 center">
+                                <div class="heading-block border-bottom-0 mb-4">
+                                    <h2 class="mb-4 nott">Our Charity Causes</h2>
+                                </div>
+                                <div class="svg-line bottommargin-sm clearfix">
+                                    <img src="demos/nonprofit/images/divider-1.svg" alt="svg divider" height="20">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quasi, dolorum
+                                    blanditiis eius laboriosam, quidem temporibus, dolor quod voluptatum perferendis
+                                    ullam. Odio sequi at dolore consequatur ad, odit expedita tenetur.</p>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Section Nilai -->
-    <section class="values" id="values">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2><strong>BUDAYA PERUSAHAAN</strong></h2>
-                    <hr style="width: 100px; height: 3px; border:0; background-color: #282662">
+                    <div class="owl-carousel owl-carousel-full image-carousel carousel-widget topmargin-sm"
+                        data-stage-padding="20" data-margin="10" data-center="true" data-loop="true" data-nav="true"
+                        data-autoplay="500000" data-speed="400" data-pagi="true" data-items-xs="1" data-items-sm="2"
+                        data-items-md="2" data-items-lg="3" data-items-xl="4">
+
+                        <div class="oc-item text-left">
+                            <img src="demos/nonprofit/images/cause/1.jpg" alt="Image 1" class="rounded">
+                            <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                                <small class="text-uppercase font-weight-normal ls1 color mb-2 d-block">Homeless</small>
+                                <h3 class="mb-3"><a href="#">Clean Water for All</a></h3>
+                                <ul class="skills mb-3">
+                                    <li data-percent="57">
+                                        <div class="progress">
+                                            <div class="progress-percent">
+                                                <div class="counter counter-inherit">
+                                                    $<span data-from="0" data-to="119700" data-refresh-interval="10"
+                                                        data-speed="1100" data-comma="true"></span> Donated of $210,000
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Aut atque quidem consequuntur officiis vitae illo omnis inventore aliquam assumenda
+                                    iusto mollitia illum similique eum libero rem possimus et, ipsam sapiente..</p>
+                                <a href="#"
+                                    class="button button-rounded button-border nott ls0 font-weight-medium m-0 d-flex align-self-start">Donate
+                                    Now</a>
+                            </div>
+                        </div>
+
+                        <div class="oc-item text-left">
+                            <img src="demos/nonprofit/images/cause/3.jpg" alt="Image 1" class="rounded">
+                            <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                                <small
+                                    class="text-uppercase font-weight-normal ls1 color mb-2 d-block">Education</small>
+                                <h3 class="mb-3"><a href="#">Education for All</a></h3>
+                                <ul class="skills mb-3">
+                                    <li data-percent="45">
+                                        <div class="progress">
+                                            <div class="progress-percent">
+                                                <div class="counter counter-inherit">
+                                                    $<span data-from="0" data-comma="true" data-to="76500"
+                                                        data-refresh-interval="10" data-speed="1100"></span> Donated of
+                                                    $170,000
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Nostrum voluptatum quaerat, nisi illum rerum consequatur nemo.</p>
+                                <a href="#"
+                                    class="button button-rounded button-border nott ls0 font-weight-medium m-0 d-flex align-self-start">Donate
+                                    Now</a>
+                            </div>
+                        </div>
+
+                        <div class="oc-item text-left">
+                            <img src="demos/nonprofit/images/cause/2.jpg" alt="Image 1" class="rounded">
+                            <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                                <small class="text-uppercase font-weight-normal ls1 color mb-2 d-block">Food</small>
+                                <h3 class="mb-3"><a href="#">Food for Hungry</a></h3>
+                                <ul class="skills mb-3">
+                                    <li data-percent="51">
+                                        <div class="progress">
+                                            <div class="progress-percent">
+                                                <div class="counter counter-inherit">
+                                                    $<span data-from="0" data-comma="true" data-to="81600"
+                                                        data-refresh-interval="10" data-speed="1100"></span> Donated of
+                                                    $160,000
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Nostrum voluptatum quaerat, nisi illum rerum consequatur nemo.</p>
+                                <a href="#"
+                                    class="button button-rounded button-border nott ls0 font-weight-medium m-0 d-flex align-self-start">Donate
+                                    Now</a>
+                            </div>
+                        </div>
+
+                        <div class="oc-item text-left">
+                            <img src="demos/nonprofit/images/cause/4.jpg" alt="Image 1" class="rounded">
+                            <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                                <small class="text-uppercase font-weight-normal ls1 color mb-2 d-block">Medicine</small>
+                                <h3 class="mb-3"><a href="#">Help from Injuries</a></h3>
+                                <ul class="skills mb-3">
+                                    <li data-percent="45">
+                                        <div class="progress">
+                                            <div class="progress-percent">
+                                                <div class="counter counter-inherit">
+                                                    $<span data-from="0" data-comma="true" data-to="86800"
+                                                        data-refresh-interval="10" data-speed="1100"></span> Donated of
+                                                    $310,000
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Nostrum voluptatum quaerat, nisi illum rerum consequatur nemo.</p>
+                                <a href="#"
+                                    class="button button-rounded button-border nott ls0 font-weight-medium m-0 d-flex align-self-start">Donate
+                                    Now</a>
+                            </div>
+                        </div>
+
+                        <div class="oc-item text-left">
+                            <img src="demos/nonprofit/images/cause/5.jpg" alt="Image 1" class="rounded">
+                            <div class="oc-desc d-flex flex-column justify-content-center shadow-lg">
+                                <small
+                                    class="text-uppercase font-weight-normal ls1 color mb-2 d-block">Education</small>
+                                <h3 class="mb-3"><a href="#">Education for All</a></h3>
+                                <ul class="skills mb-3">
+                                    <li data-percent="45">
+                                        <div class="progress">
+                                            <div class="progress-percent">
+                                                <div class="counter counter-inherit">
+                                                    $<span data-from="0" data-comma="true" data-to="76500"
+                                                        data-refresh-interval="10" data-speed="1100"></span> Donated of
+                                                    $170,000
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Nostrum voluptatum quaerat, nisi illum rerum consequatur nemo.</p>
+                                <a href="#"
+                                    class="button button-rounded button-border nott ls0 font-weight-medium m-0 d-flex align-self-start">Donate
+                                    Now</a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            </div><br>
-            <div class="row slideanim">
-                <div class="col-sm-4">
-                    <span style="color: #282662; font-size: 4rem;" alt="budaya perusahaan BTSA Logistics"><i
-                            class="fab fa-sketch"></i></span>
-                    <h4 style="color: #212121;"><strong>Integrity</strong></h4>
-                    <p>Memiliki sikap kejujuran, terbuka, bertanggung jawab dan dapat dipercaya dalam melayani pelanggan
-                        internal dan eksternal.</p>
+
+                <div class="clear"></div>
+
+                <div class="container-fluid my-5 clearfix">
+                    <div class="d-flex flex-column align-items-center justify-content-center center counter-section position-relative py-5"
+                        style="background: url('demos/nonprofit/images/world-map.png') no-repeat center center/ contain">
+                        <div class="mx-auto center" style="max-width: 1000px">
+                            <h3>Our mission is to help people by distributing Money and Service globally.</h3>
+                        </div>
+
+                        <div class="row align-items-stretch m-0 w-100 clearfix">
+
+                            <div class="col-lg-3 col-sm-6 center mt-5">
+                                <img src="demos/nonprofit/images/icons/breakfast.svg" alt="Counter Icon" width="70"
+                                    class="mb-4">
+                                <div class="counter font-secondary"><span data-from="100" data-to="11265"
+                                        data-refresh-interval="50" data-speed="2100" data-comma="true"></span>+</div>
+                                <h5 class="nott ls0 mt-0"><u>Meals Surved</u></h5>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6 center mt-5">
+                                <img src="demos/nonprofit/images/icons/volunteers.svg" alt="Counter Icon" width="70"
+                                    class="mb-4">
+                                <div class="counter font-secondary"><span data-from="100" data-to="2500"
+                                        data-refresh-interval="50" data-speed="2200" data-comma="true"></span>+</div>
+                                <h5 class="nott ls0 mt-0"><u>Volunteers</u></h5>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6 center mt-5">
+                                <img src="demos/nonprofit/images/icons/educated.svg" alt="Counter Icon" width="70"
+                                    class="mb-4">
+                                <div class="counter font-secondary"><span data-from="100" data-to="17408"
+                                        data-refresh-interval="25" data-speed="2300" data-comma="true"></span>+</div>
+                                <h5 class="nott ls0 mt-0"><u>Person Educated</u></h5>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6 center mt-5">
+                                <img src="demos/nonprofit/images/icons/shelter.svg" alt="Counter Icon" width="70"
+                                    class="mb-4">
+                                <div class="counter font-secondary"><span data-from="150" data-to="13413"
+                                        data-refresh-interval="50" data-speed="2100" data-comma="true"></span>+</div>
+                                <h5 class="nott ls0 mt-0"><u>Got Shelter</u></h5>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fas fa-crown"></i></span>
-                    <h4 style="color: #212121;"><strong>Loyality</strong></h4>
-                    <p>Loyal dan setia terhadap perusahaan, karyawan dan pelanggan utama.</p>
+
+                <div class="clear"></div>
+
+                <div class="section"
+                    style="background: url('demos/nonprofit/images/others/section-bg.jpg') no-repeat center center / cover; padding: 80px 0;">
+                    <div class="container clearfix">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3 class="mb-2">Our Mission <span>&amp;</span> Goals</h3>
+                                <div class="svg-line mb-2 clearfix">
+                                    <img src="demos/nonprofit/images/divider-1.svg" alt="svg divider" height="10">
+                                </div>
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
+                                    deleniti veritatis nostrum, temporibus vero maxime quisquam quaerat doloremque fugit
+                                    nesciunt.</p>
+                                <div class="row mission-goals gutter-30 mb-0">
+                                    <div class="col-md-6">
+                                        <div class="feature-box fbox-plain bg-white mx-0">
+                                            <div class="fbox-media position-relative col-auto p-0 mr-4">
+                                                <img src="demos/nonprofit/images/icons/home.svg" alt="Featured Icon 1"
+                                                    width="50">
+                                            </div>
+                                            <div class="fbox-content">
+                                                <h3 class="nott ls0"><a href="#" class="text-dark">Homeless
+                                                        Charities.</a></h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="feature-box fbox-plain bg-white mx-0">
+                                            <div class="fbox-media position-relative col-auto p-0 mr-4">
+                                                <img src="demos/nonprofit/images/icons/health.svg" alt="Featured Icon 2"
+                                                    width="50">
+                                            </div>
+                                            <div class="fbox-content">
+                                                <h3 class="nott ls0"><a href="#" class="text-dark">Health Charities.</a>
+                                                </h3>
+                                                <p>Continually restore adaptive paradigms after "outside.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="feature-box fbox-plain bg-white mx-0">
+                                            <div class="fbox-media position-relative col-auto p-0 mr-4">
+                                                <img src="demos/nonprofit/images/icons/education.svg"
+                                                    alt="Featured Icon 3" width="50">
+                                            </div>
+                                            <div class="fbox-content">
+                                                <h3 class="nott ls0"><a href="#" class="text-dark">Education
+                                                        Charities.</a></h3>
+                                                <p>Quickly benchmark client-centered vortals without cutting.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="feature-box fbox-plain bg-white mx-0">
+                                            <div class="fbox-media position-relative col-auto p-0 mr-4">
+                                                <img src="demos/nonprofit/images/icons/animal.svg" alt="Featured Icon 4"
+                                                    width="50">
+                                            </div>
+                                            <div class="fbox-content">
+                                                <h3 class="nott ls0"><a href="#" class="text-dark">Animal Charities.</a>
+                                                </h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="feature-box fbox-plain bg-white mx-0">
+                                            <div class="fbox-media position-relative col-auto p-0 mr-4">
+                                                <img src="demos/nonprofit/images/icons/environmental.svg"
+                                                    alt="Featured Icon 5" width="50">
+                                            </div>
+                                            <div class="fbox-content">
+                                                <h3 class="nott ls0"><a href="#" class="text-dark">Eco Charities.</a>
+                                                </h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="feature-box fbox-plain bg-white mx-0">
+                                            <div class="fbox-media position-relative col-auto p-0 mr-4">
+                                                <img src="demos/nonprofit/images/icons/food.svg" alt="Featured Icon 6"
+                                                    width="50">
+                                            </div>
+                                            <div class="fbox-content">
+                                                <h3 class="nott ls0"><a href="#" class="text-dark">Food Charities.</a>
+                                                </h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 mt-5 mt-lg-0">
+                                <h3 class="mb-2">Latest Videos</h3>
+                                <div class="svg-line mb-2 clearfix">
+                                    <img src="demos/nonprofit/images/divider-1.svg" alt="svg divider" height="10">
+                                </div>
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit excepturi ipsa!
+                                </p>
+                                <div class="clear"></div>
+                                <a href="https://www.youtube.com/watch?v=VqmFKnHG5q8" data-lightbox="iframe"
+                                    class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+                                    style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01)), url('demos/nonprofit/images/others/5.jpg') no-repeat center center / cover; height: 300px"><i
+                                        class="icon-play"></i></a>
+                                <div class="row mt-4" data-lightbox="gallery">
+                                    <div class="col-sm-6">
+                                        <a href="https://www.youtube.com/watch?v=hc7iuc5KZ8Y" data-lightbox="iframe"
+                                            class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color left"
+                                            style="background: url('demos/nonprofit/images/others/4.jpg') no-repeat center center / cover; height: 140px"><i
+                                                class="icon-play icon-small"></i></a>
+                                    </div>
+
+                                    <div class="col-sm-6 mt-4 mt-sm-0">
+                                        <a href="https://www.youtube.com/watch?v=VqmFKnHG5q8" data-lightbox="iframe"
+                                            class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color left"
+                                            style="background: url('demos/nonprofit/images/others/2.jpg') no-repeat center center / cover; height: 140px"><i
+                                                class="icon-play icon-small"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fas fa-eye"></i></span>
-                    <h4 style="color: #212121;"><strong>Visioner</strong></h4>
-                    <p>Memiliki pandangan atau visi kedepan serta mampu membuat rencana untuk mewujudkannya.</p>
+
+                <div class="section bg-transparent">
+                    <div class="container clearfix">
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-md-7 center">
+                                <div class="heading-block border-bottom-0 mb-4">
+                                    <h2 class="mb-4 nott">Happy Volunteers</h2>
+                                </div>
+                                <div class="svg-line bottommargin-sm clearfix">
+                                    <img src="demos/nonprofit/images/divider-1.svg" alt="svg divider" height="20">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quasi, dolorum
+                                    blanditiis eius laboriosam, quidem temporibus, dolor quod voluptatum perferendis
+                                    ullam. Odio sequi at dolore consequatur ad, odit expedita tenetur.</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-around">
+                            <div class="col-lg-2 col-md-4 col-6">
+                                <div class="team overflow-hidden">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/1.jpg" alt="Penny Tool">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Penny
+                                            Tool<small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                                <div class="team mt-5">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/6.jpg" alt="Piff Jenkins">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Piff
+                                            Jenkins<small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-6 mt-4">
+                                <div class="team">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/2.jpg" alt="Rodney Artich">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Rodney
+                                            Artich<small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                                <div class="team mt-5">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/7.jpg" alt="Weir Doe">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Weir
+                                            Doe<small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-6">
+                                <div class="team">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/3.jpg" alt="Jackson Pot">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Jackson
+                                            Pot<small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                                <div class="team mt-5">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/8.jpg" alt="Phillip Anthropy ">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Phillip Anthropy
+                                            <small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-6 mt-5">
+                                <div class="team">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/4.jpg" alt="Eric Widget">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Eric
+                                            Widget<small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                                <div class="team mt-5">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/9.jpg" alt="Giles Posture">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Giles
+                                            Posture<small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-6 mt-1">
+                                <div class="team">
+                                    <div class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/5.jpg" alt="Gunther Beard">
+                                    </div>
+                                    <div class="team-desc">
+                                        <h4 class="team-title pt-3 mb-0 font-weight-medium nott">Gunther
+                                            Beard<small>Volunteers</small></h4>
+                                    </div>
+                                </div>
+                                <div class="team full-border imagescalein mt-5">
+                                    <a href="#" class="team-image">
+                                        <img src="demos/nonprofit/images/volunteers/10.jpg" alt="Apply Volunteer"
+                                            class="rounded-0">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div><br>
-            <div class="row slideanim">
-                <div class="col-sm-3">
-                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fab fa-algolia"></i></span>
-                    <h4 style="color: #212121;"><strong>Be Proactive</strong></h4>
-                    <p>Tanggap dan inisiatif dalam menghadapi situasi internal dan eksternal untuk mencapai hal-hal yang
-                        lebih baik bagi perusahaan, karyawan dan pelanggan.</p>
+
+                <div class="bg-color subscribe-section position-relative" style="margin-top: 100px;">
+                    <div class="container" style="z-index: 2;">
+                        <div class="center collapsed subscribe-section-target" data-toggle="collapse"
+                            data-target="#target-1">
+                            <div class="subscribe-icon"><i class="icon-envelope21"></i></div>
+                            <h2 class="mb-0 mt-2 position-relative" style="z-index: 1;">Click here to Subscribe our
+                                Newsletter <i class="icon-arrow-down position-relative" style="top: 5px"></i>
+                            </h2>
+                        </div>
+                        <div class="collapse" id="target-1">
+                            <div class="form-widget pb-5" data-alert-type="false">
+
+                                <div class="form-result"></div>
+
+                                <div class="nonprofit-loader css3-spinner" style="position: absolute;">
+                                    <div class="css3-spinner-bounce1"></div>
+                                    <div class="css3-spinner-bounce2"></div>
+                                    <div class="css3-spinner-bounce3"></div>
+                                </div>
+                                <div id="nonprofit-submitted" class="center">
+                                    <h4 class="font-weight-semibold mb-0">Thank You for Contact Us! Our Team will
+                                        contact you asap on your email Address.</h4>
+                                </div>
+
+                                <form id="nonprofit" class="row mt-2" action="include/form.php" method="post"
+                                    enctype="multipart/form-data">
+                                    <div class="col-md-4 mb-4 mb-md-1">
+                                        <label for="nonprofit-name">Name:</label>
+                                        <input type="text" name="nonprofit-name" id="nonprofit-name"
+                                            class="form-control border-form-control required" value=""
+                                            placeholder="Enter your Full Name">
+                                    </div>
+                                    <div class="col-md-4 mb-4 mb-md-1">
+                                        <label for="nonprofit-phone">Contact:</label>
+                                        <input type="text" name="nonprofit-phone" id="nonprofit-phone"
+                                            class="form-control border-form-control" value=""
+                                            placeholder="Enter your Contact Number">
+                                    </div>
+                                    <div class="col-md-4 mb-4 mb-md-1">
+                                        <label for="nonprofit-email">Email:</label>
+                                        <input type="email" name="nonprofit-email" id="nonprofit-email"
+                                            class="form-control border-form-control required" value=""
+                                            placeholder="Enter your Email">
+                                    </div>
+                                    <div class="col-12 d-none">
+                                        <input type="text" id="nonprofit-botcheck" name="nonprofit-botcheck" value="" />
+                                    </div>
+                                    <button type="submit" name="nonprofit-submit"
+                                        class="btn button button-rounded button-xlarge button-dark bg-dark shadow nott ls0 m-0 subscribe-button">Subscribe
+                                        Now</button>
+                                    <input type="hidden" name="prefix" value="nonprofit-">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        style="background-image: url('demos/nonprofit/images/divider-4.svg'); position: absolute; bottom: -20px; left: 0; width: 100%; height: 60px; z-index: 1;">
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fas fa-users"></i></span>
-                    <h4 style="color: #212121;"><strong>Team Work</strong></h4>
-                    <p>Saling bekerja sama, menghormati, menghargai sesama rekan kerja dan pelanggan untuk mencapai
-                        tujuan dan visi perusahaan.</p>
+
+                <div class="section m-0 p-0 row align-items-stretch clearfix"
+                    style="background-color: rgba(198,192,156, 0.15);">
+                    <div class="col-lg-4 dark d-flex flex-column align-items-center center justify-content-center"
+                        style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('demos/nonprofit/images/others/event.jpg') center center repeat; background-size: cover; min-height: 300px;">
+                        <h2 class="display-4 px-4 font-weight-bold mb-4 d-block">Events Overview</h2>
+                    </div>
+                    <div class="col-lg-8 col-padding">
+                        <div class="events-calendar">
+                            <div class="events-calendar-header clearfix">
+                                <div
+                                    class="calendar-month-year d-flex text-left justify-content-between align-items-center w-100">
+                                    <div>
+                                        <span id="calendar-month" class="calendar-month text-dark"></span>
+                                        <span id="calendar-year" class="calendar-year text-dark"></span>
+                                    </div>
+                                    <nav>
+                                        <span id="calendar-prev" class="calendar-prev bg-color"><i
+                                                class="icon-chevron-left text-dark"></i></span>
+                                        <span id="calendar-next" class="calendar-next bg-color"><i
+                                                class="icon-chevron-right text-dark"></i></span>
+                                        <span id="calendar-current" class="calendar-current bg-color"
+                                            title="Got to current date"><i class="icon-reload text-dark"></i></span>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div id="calendar" class="fc-calendar-container"></div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="far fa-handshake"></i></span>
-                    <h4 style="color: #212121;"><strong>Service</strong></h4>
-                    <p>Memberikan pelayanan prima kepada pelanggan internal dan eksternal perusahaan</p>
+
+                <div class="section bg-transparent" style="padding: 80px 0">
+                    <div class="container clearfix">
+                        <div class="row justify-content-center">
+                            <div class="col-md-7 center">
+                                <div class="heading-block border-bottom-0 mb-4">
+                                    <h2 class="mb-4 nott">Who Work With Us</h2>
+                                </div>
+                                <div class="svg-line bottommargin-sm clearfix">
+                                    <img src="demos/nonprofit/images/divider-1.svg" alt="svg divider" height="15">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quasi, dolorum
+                                    blanditiis eius laboriosam, quidem temporibus, dolor quod voluptatum perferendis
+                                    ullam. Odio sequi at dolore consequatur ad, odit expedita tenetur.</p>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="col-md-11 my-5">
+                                <ul class="clients-grid grid-2 grid-sm-3 grid-md-5 mb-0">
+                                    <li class="grid-item"><a href="#"><img src="images/clients/1.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/2.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/3.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/4.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/5.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/6.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/7.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/8.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/9.png" alt="Clients"></a>
+                                    </li>
+                                    <li class="grid-item"><a href="#"><img src="images/clients/10.png"
+                                                alt="Clients"></a></li>
+                                </ul>
+                            </div>
+                            <h5 class="font-weight-normal text-black-50 mb-0">If you want to work with for nonprofit? <a
+                                    href="#"><u>Send your Details</u></a>.</h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <span style="color: #282662; font-size: 4rem;" alt=""><i class="fas fa-star"></i></span>
-                    <h4 style="color: #212121;"><strong>Awareness</strong></h4>
-                    <p>Menyadari dan selalu bertindak positif serta bertanggung jawab untuk membuat lingkungan internal
-                        dan eksternal menjadi lebih baik.</p>
+
+                <div class="line line-sm my-0 clearfix"></div>
+                <div class="clear"></div>
+                <div class="section section-details mb-0 bg-white" style="padding: 80px 0 160px;">
+                    <div class="w-100 h-100 d-none d-md-block"
+                        style="position: absolute; top: 0; left: 0; background: #FFF url('demos/nonprofit/images/others/6.jpg') no-repeat bottom right / cover;">
+                    </div>
+                    <div class="container clearfix">
+                        <div class="row">
+                            <div class="col-md-4 px-4 mb-5">
+                                <h4 class="font-weight-medium mb-4">About Canvas</h4>
+                                <p class="mb-3">Proactively re-engineer pandemic models rather than cost effective
+                                    catalysts for change.</p>
+                                <abbr title="Location"><strong>Location:</strong></abbr><a href="#"> View the
+                                    Map</a><br>
+                                <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>
+                                <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+                            </div>
+
+                            <div class="col-md-4 px-4 mb-5">
+                                <h4 class="font-weight-medium mb-4">Our Partners</h4>
+                                <p>Conveniently pontificate worldwide services vis-a-vis e-business portals.
+                                    Phosfluorescently re-engineer global methodologies vis-a-vis standards compliant
+                                    platforms.</p>
+                            </div>
+
+                            <div class="col-md-4 px-4 mb-5">
+                                <h4 class="font-weight-medium mb-4">Mission</h4>
+                                <p>Collaboratively reintermediate enterprise e-commerce with turnkey architectures.
+                                    Conveniently actualize <a href="#">testing</a> procedures before superior
+                                    meta-services. Formulate cross-unit <a href="#">Energistically</a> with pandemic
+                                    markets.</p>
+                            </div>
+
+                            <div class="col-md-4 px-4 mb-5 mb-md-0">
+                                <h4 class="font-weight-medium mb-4">Support</h4>
+                                <p class="mb-3">Compellingly enable premium alignments rather than sustainable content.
+                                </p>
+                                <a href="#" class="mb-1 d-block"><i class="icon-envelope21 position-relative"
+                                        style="top: 1px;"></i> no.reply@canvas.com</a>
+                                <div class="font-weight-medium mb-2 d-block">Monday - Friday 10:30 -18:00</div>
+                                <a href="#" class="social-icon si-dark si-small si-facebook" title="Facebook">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+
+                                <a href="#" class="social-icon si-dark si-small si-delicious" title="Delicious">
+                                    <i class="icon-delicious"></i>
+                                    <i class="icon-delicious"></i>
+                                </a>
+
+                                <a href="#" class="social-icon si-dark si-small si-paypal" title="Paypal">
+                                    <i class="icon-paypal"></i>
+                                    <i class="icon-paypal"></i>
+                                </a>
+
+                                <a href="#" class="social-icon si-dark si-small si-flattr" title="Flattr">
+                                    <i class="icon-flattr"></i>
+                                    <i class="icon-flattr"></i>
+                                </a>
+
+                                <a href="#" class="social-icon si-dark si-small si-android" title="Android">
+                                    <i class="icon-android"></i>
+                                    <i class="icon-android"></i>
+                                </a>
+
+                                <a href="#" class="social-icon si-dark si-small si-smashmag" title="Smashmag">
+                                    <i class="icon-smashmag"></i>
+                                    <i class="icon-smashmag"></i>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4 px-4 mb-5 mb-md-0">
+                                <h4 class="font-weight-medium mb-4">Testimonials</h4>
+                                <div id="oc-testi" class="owl-carousel testimonials-carousel carousel-widget"
+                                    data-margin="0" data-nav="false" data-pagi="false" data-items="1"
+                                    data-autoplay="6000" data-loop="true" data-animate-in="fadeIn"
+                                    data-animate-out="fadeOut">
+
+                                    <div class="oc-item">
+                                        <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                            <div class="testi-content">
+                                                <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur
+                                                    ullam quibusdam cum libero illo rerum repellendus!</p>
+                                                <div class="testi-meta ls1"> Fig Nelson</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="oc-item">
+                                        <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                            <div class="testi-content">
+                                                <p>Completely e-enable premier infomediaries and long-term high-impact
+                                                    process improvements. Completely provide access to B2C.</p>
+                                                <div class="testi-meta ls1"> Bailey Wonger</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- #content end -->
+
+        <!-- Footer
+		============================================= -->
+        <footer id="footer" style="background-color: #002D40;">
+
+            <div class="container">
+
+                <!-- Footer Widgets
+				============================================= -->
+                <div class="footer-widgets-wrap dark clearfix"
+                    style="background: radial-gradient(rgba(0,45,64,.5), rgba(0,45,64,.1), rgba(0,45,64,.5)), url('demos/nonprofit/images/others/footer.jpg') repeat center center / cover;  padding: 150px 0">
+                    <div class="mx-auto center" style="max-width: 700px;">
+                        <h2 class="display-2 font-weight-bold text-white mb-0 ls1 font-secondary mb-4"><i
+                                class="icon-heart d-block mb-3"></i>Help the Homeless &amp; Hungry People.</h2>
+                        <a href="#"
+                            class="button button-rounded button-xlarge button-white bg-white button-light text-dark shadow nott ls0 ml-0 mt-5">Donate
+                            Now</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyrights
+			============================================= -->
+            <div id="copyrights" class="bg-color">
+
+                <div class="container clearfix">
+
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-md-6">
+                            Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
+                            <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-md-flex flex-md-column align-items-md-end mt-4 mt-md-0">
+                            <div class="copyrights-menu copyright-links clearfix">
+                                <a href="#">About</a>/<a href="#">Features</a>/<a href="#">FAQs</a>/<a
+                                    href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+        <!-- Floating Contact
+		============================================= -->
+        <div class="floating-contact-wrap">
+            <div class="floating-contact-btn shadow">
+                <i class="floating-contact-icon btn-unactive icon-envelope21"></i>
+                <i class="floating-contact-icon btn-active icon-line-plus"></i>
+            </div>
+            <div class="floating-contact-box">
+                <div id="q-contact" class="widget quick-contact-widget clearfix">
+                    <div class="floating-contact-heading bg-color p-4 rounded-top">
+                        <h3 class="mb-0 font-secondary h2 ls0">Quick Contact 👋</h3>
+                        <p class="mb-0">Get in Touch with Us</p>
+                    </div>
+                    <div class="form-widget bg-white" data-alert-type="false">
+                        <div class="form-result"></div>
+                        <div class="floating-contact-loader css3-spinner" style="position: absolute;">
+                            <div class="css3-spinner-bounce1"></div>
+                            <div class="css3-spinner-bounce2"></div>
+                            <div class="css3-spinner-bounce3"></div>
+                        </div>
+                        <div id="floating-contact-submitted" class="p-5 center">
+                            <i class="icon-line-mail h1 color"></i>
+                            <h4 class="font-weight-normal mb-0 font-body">Thank You for Contact Us! Our Team will
+                                contact you asap on your email Address.</h4>
+                        </div>
+                        <form class="mb-0" id="floating-contact" action="include/form.php" method="post"
+                            enctype="multipart/form-data">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-transparent"><i class="icon-user-alt"></i></span>
+                                </div>
+                                <input type="text" name="floating-contact-name" id="floating-contact-name"
+                                    class="form-control required" value="" placeholder="Enter your Full Name">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-transparent"><i class="icon-at"></i></span>
+                                </div>
+                                <input type="email" name="floating-contact-email" id="floating-contact-email"
+                                    class="form-control required" value="" placeholder="Enter your Email Address">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-transparent"><i class="icon-comment21"></i></span>
+                                </div>
+                                <textarea name="floating-contact-message" id="floating-contact-message"
+                                    class="form-control required" cols="30" rows="4"></textarea>
+                            </div>
+                            <input type="hidden" id="floating-contact-botcheck" name="floating-contact-botcheck"
+                                value="" />
+                            <button type="submit" name="floating-contact-submit"
+                                class="btn btn-dark btn-block py-2">Send Message</button>
+                            <input type="hidden" name="prefix" value="floating-contact-">
+                            <input type="hidden" name="subject" value="Messgae From Floating Contact">
+                            <input type="hidden" name="html_title" value="Floating Contact Message">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Section Nilai -->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- JavaScripts
+	============================================= -->
+    <script src="{!!asset('homepage/js/plugins.min.js')!!}"></script>
+    <script src="{!!asset('homepage/js/jquery.js')!!}"></script>
+    <script src="{!!asset('homepage/js/jquery.calendario.js')!!}"></script>
+    <script src="{!!asset('homepage/demos/btsa/js/events.js')!!}"></script>
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="js/functions.js"></script>
+
     <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-7105573463810993",
-            enable_page_level_ads: true
+        jQuery(document).ready(function ($) {
+            var elementParent = $('.floating-contact-wrap');
+            $('.floating-contact-btn').off('click').on('click', function () {
+                elementParent.toggleClass('active', );
+            });
         });
 
-    </script>
-    <!-- Section Services -->
-    <section class="services" id=services>
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2 class=""><strong>JASA KAMI</strong></h2>
-                    <h4>Inilah jasa yang kami tawarkan</h4>
-                    <hr style="width: 100px; height: 3px; border:0; background-color: #fff">
-                </div>
-            </div><br>
-            <div class="row slideanim">
-                <div class="col-sm-3">
-                    <span style="font-size:3rem;"><i class="fas fa-globe-asia"></i></span>
-                    <h4><strong>DOMESTIC</strong></h4>
-                    <p>Kami menyediakan jasa pengiriman via laut ke seluruh wilayah di Indonesia meliputi :<br>
-                        <p>1. EMKL (Ekspedisi Muatan Kapal Laut)<br>
-                            2. Breakbulk <br>
-                            3. Pengiriman alat berat <br>
-                            4. Barang Pindahan <br>
-                            5. Pengiriman Mobil <br>
-                        </p>
-                    </p>
-                </div>
-                <div class="col-sm-3">
-                    <span style="font-size:3rem;"><i class="fas fa-expand-arrows-alt"></i></span>
-                    <h4><strong>EXPORT</strong></h4>
-                    <p>Kami hadir di pelabuhan / bandara :<br>
-                        <p>
-                            1. Tanjung Priuk, Jakarta<br>
-                            2. Belawan, Sumatera Utara<br>
-                            3. Kualanamu, Sumatera Utara<br>
-                            4. Soekarno Hatta, Jakarta<br>
-                            5. Pelabuhan Tanjung Perak, Surabaya<br>
-                            6. bandara Juanda, Surabaya<br>
-                            7. Pelabuhan Soekarno Hatta, Makassar<br>
-                            8. Pelabuhan Boom Baru, Palembang<br>
-                            9. Bandara Sultan Mahmud Badaruddin II, Palembang<br>
-                        </p>
-                    </p>
-                </div>
-                <div class="col-sm-3">
-                    <span style="font-size:3rem;"><i class="fas fa-file-import"></i></span>
-                    <h4><strong>IMPORT</strong></h4>
-                    <p>Kami hadir di pelabuhan / bandara :<br>
-                        <p>
-                            1. Tanjung Priuk, Jakarta<br>
-                            2. Belawan, Sumatera Utara<br>
-                            3. Kualanamu, Sumatera Utara<br>
-                            4. Soekarno Hatta, Jakarta<br>
-                            5. Pelabuhan Tanjung Perak, Surabaya<br>
-                            6. bandara Juanda, Surabaya<br>
-                            7. Pelabuhan Soekarno Hatta, Makassar<br>
-                            8. Pelabuhan Boom Baru, Palembang<br>
-                            9. Bandara Sultan Mahmud Badaruddin II, Palembang<br>
-                        </p>
-                    </p>
-                </div>
-                <div class="col-sm-3">
-                    <span style="font-size:3rem;"><i class="fas fa-truck-loading"></i></span>
-                    <h4><strong>TRUCKING</strong></h4>
-                    <p>Kami menyediakan jasa trucking yang meliputi :
-                        <p>
-                            1. Trailer<br>
-                            2. Dump Truck<br>
-                            3. Lost bak<br>
-                            4. Mobil Box roda 4/6<br>
-                        </p>
-                    </p>
-                </div>
-            </div><br><br>
-            <div class="row slideanim">
-                <div class="col-sm-3">
-                    <span style="font-size:3rem;"><i class="fas fa-plane-departure"></i></span>
-                    <h4><strong>PENGIRIMAN VIA UDARA</strong></h4>
-                    <p>Kami menyediakan jasa pengiriman via udara meliputi :<br>
-                        <p>
-                            1. Door to door service<br>
-                            2. Airport to airport service<br>
-                            3. Custom Clearance in Airport<br>
-                        </p>
-                    </p>
-                </div>
-                <div class="col-sm-3">
-                    <span style="font-size:3rem;"><i class="fas fa-dolly-flatbed"></i></span>
-                    <h4><strong>PROYEK KARGO</strong></h4>
-                    <p>Kami menyediakan jasa proyek kargo :<br>
-                        <p>
-                            1. Custom Clearance<br>
-                            2. Heavy Equipment<br>
-                            3. Moving over size cargo<br>
-                            4. Carter LCT<br>
-                            5. Carter Shipment.
-                        </p>
-                    </p>
-                </div>
-                <div class="col-sm-3">
-                    <span style="font-size:3rem;"><i class="fas fa-warehouse"></i></span>
-                    <h4><strong>WAREHOUSE HANDLING</strong></h4>
-                    <p>Kami hadir di Medan & Palembang
-                    </p>
-                </div>
-                <div class="col-sm-3">
-                    <span style="font-size:3rem;"><i class="fas fa-people-carry"></i></span>
-                    <h4><strong>DISTRIBUTION HANDLING</strong></h4>
-                    <p>Kami hadir di seluruh pulau Sumatera
+        var cal = $('#calendar').calendario({
+                onDayClick: function ($el, $contentEl, dateProperties) {
 
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section Services -->
+                    for (var key in dateProperties) {
+                        console.log(key + ' = ' + dateProperties[key]);
+                    }
 
-    <!-- Section Why choose us -->
-    <section class="why" id="why">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2><strong>MENGAPA MEMILIH KAMI?</strong></h2>
-                    <hr style="width: 100px; height: 3px; border:0; background-color: #282662">
-                </div>
-            </div><br><br>
-            <div class="row slideanim">
-                <div class="col-sm-6">
-                    <span style="font-size:5rem; color: #282662;"><i class="fab fa-black-tie"></i></span>
-                    <h4 style="color: #282662;"><strong>SUDAH BERPENGALAMAN</strong></h4>
-                    <p>Sudah berpengalaman sejak tahun 2000<br>BTSA LOGISTICS telah hadir dan memiliki pengalaman selama
-                        lebih dari 18 Tahun.</p>
-                </div>
-                <div class="col-sm-6">
-                    <span style="font-size:5rem; color: #282662;"><i class="fas fa-clock"></i></span>
-                    <h4 style="color: #282662;"><strong>RESPON YANG CEPAT</strong></h4>
-                    <p>Kami memiliki tim khusus untuk merespon segala keperluan Anda.</p>
-                </div>
-            </div><br><br>
-            <div class="row slideanim">
-                <div class="col-sm-6">
-                    <span style="font-size:5rem; color: #282662;"><i class="fas fa-users"></i></span>
-                    <h4 style="color: #282662;"><strong>TEAM</strong></h4>
-                    <p>Kami memiliki tim yang responsif, berkompetensi, berintegritas,<br>berorientasi terhadap layanan
-                        dan kerja sama tim.</p>
-                </div>
-                <div class="col-sm-6">
-                    <span style="font-size:5rem; color: #282662;"><i class="fas fa-network-wired"></i></span>
-                    <h4 style="color: #282662;"><strong>JARINGAN</strong></h4>
-                    <p>Kami memiliki jaringan yang sangat luas dan<br> menguasai pengiriman Antar Pulau,<br>
-                        Export/Import via laut dan udara,<br>Trucking mobil kecil hingga besar,<br>
-                        Jasa fumigasi standart Barantan dan Jasa Pest Control.</p>
-                </div>
-            </div><br><br>
-            <div class="row slideanim">
-                <div class="col-sm-6">
-                    <span style="font-size:5rem; color: #282662;"><i class="fas fa-chart-line"></i></span>
-                    <h4 style="color: #282662;"><strong>PERKEMBANGAN</strong></h4>
-                    <p>Kami selalu berkembang untuk memberikan kenyamanan untuk Anda.</p>
-                </div>
-                <div class="col-sm-6">
-                    <span class="glyphicon glyphicon-time logo-why" style="color: #282662;"></span>
-                    <h4 style="color: #282662;"><strong>ON TIME</strong></h4>
-                    <p>Kami selalu bekerja dengan target dan itu yang membuat kami selalu On Time dalam mengerjakan
-                        sesuatu.</p>
-                </div>
-            </div><br><br>
-            <div class="row slideanim">
-                <div class="col-sm-12">
-                    <span class="glyphicon glyphicon-copy logo-why" style="color: #282662;"></span>
-                    <h4 style="color: #282662;"><strong>KONTRAK</strong></h4>
-                    <p>Kami selalu memberikan kontrak kerja yang jelas, profesional dan transparan.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section Why choose us -->
-
-    <!-- Section Partner -->
-    <section class="partnerplp" id="partnerplp">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2><strong>PARTNER OF</strong></h2>
-                    <hr style="width: 100px; height: 3px; border:0; background-color:#fff;">
-                </div><br>
-                <div class="row">
-                    <div class="col-sm-6 slideanim">
-                        <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1541504860/jscsstxtfiledll/img/plp.png"
-                            height="150px" width="150px;">
-                        <h4 class="slideanim"><strong><a href="http://plpestindo.co.id"
-                                    style="text-decoration:none; color:#fff;" target="_blank">PT.PANCA LESTARI
-                                    PESTINDO</a></strong></h4>
-                        <p class="slideanim"><strong>PT. Panca Lestari Pestindo</strong> adalah perusahaan yang bergerak
-                            di bidang jasa Fumigasi dan Pengendalian Hama (Pest Control).
-                            <br>Berdiri pada Maret 2016, dan telah memiliki tenaga kompeten yang telah mengikuti
-                            pelatihan di Bekasi tepatnya <br>di Balai Uji Terap Teknik Dan Metode Karantina Pertanian
-                            (BUTTMKP) yang bersertifikat
-                            <br>dari Standar Badan Karantina
-                            Pertanian (Barantan) baik Manajemen Mutu maupun Teknis.</p>
-                    </div>
-                    <div class="col-sm-6 slideanim">
-                        <img src="https://res.cloudinary.com/btsa-co-id/image/upload/v1594267344/optimized/IS.png"
-                            height="150px" width="150px;">
-                        <h4 class="slideanim"><strong><a href="https://infinitysolutions.co.id"
-                                    style="text-decoration:none; color:#fff;" target="_blank">PT.BENUA SOLUSI
-                                    TEKNOLOGI</a></strong></h4>
-                        <p class="slideanim"><strong>PT. Benua Solusi Teknologi</strong> adalah perusahaan dibidang
-                            teknologi informasi yang muncul di Indonesia.
-                            <br>Berdiri pada Januari 2019, dan kami terus berkomitmen untuk meningkatkan kecerdasan dan
-                            keahlian kami <br>dengan demikian kami bisa mencapai kesuksesan kami melalui
-                            <br>pencapaian kinerja dan kualitas yang tinggi.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section Partner -->
-
-    <!-- Section Gallery -->
-    <section class="gallery" id="gallery">
-
-    </section>
-    <!-- End Section Gallery -->
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2><strong>KANTOR KAMI</strong></h2>
-                    <hr style="width: 100px; height: 3px; border:0; background-color: #fff">
-                </div>
-                <div class="col-sm-4 text-left">
-                    <h4><strong>PT.BERLIAN TANGGUH SEJAHTERA</strong></h4>
-                    <p>Jalan Williem Iskandar Komp. MMTC B 84-85<br>Medan Estate, Deli Serdang Medan 20371
-                        <br><span class="glyphicon glyph icon-phone-alt"></span><a href="tel:06180032999"
-                            style="text-decoration:none; color:#fff"> (061) 8003 2999</a> | Fax. (061) 8003 2996<br>
-                        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:market@btsa.co.id"
-                            style="text-decoration:none; color:#fff"> market@btsa.co.id</a><br>
-                        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:market@btsa.co.id"
-                            style="text-decoration:none; color:#fff"> sales_ap@btsa.co.id</a></p><br>
-                    <h4><strong>PT.SUMBER TRANSTAR ABADI</strong></h4>
-                    <p>Jalan Veteran No.173C Kec.Ilir Timur I,<br>Kel. Kepandean Baru - Palembang 31025
-                        <br><span class="glyphicon glyph icon-phone-alt"></span><a href="tel:0711354811"
-                            style="text-decoration:none; color:#fff">(0711) 354811</a> | Fax. (0711) 358880 <br>
-                        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:welly@stalogistics.co.id"
-                            style="text-decoration:none; color:#fff"> welly@stalogistics.co.id</a><br>
-                        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:wel_gun8@yahoo.com"
-                            style="text-decoration:none; color:#fff"> wel_gun8@yahoo.com</a></p><br>
-                    <h4><strong>HUBUNGI KAMI</strong></h4>
-                    <p>Kamu dapat mengirim pesan lewat <a href="mailto:market@btsa.co.id" style="color:#fff">email
-                            kami</a> untuk mendapatkan penawaran yang terbaik.</p>
-                    <ul style="padding-left:0; margin-left:0;">
-                        <li><a href="https://www.facebook.com/BTSALogistics/" data-toggle="tooltip" target="_blank"
-                                class="myTooltip" data-placement="bottom" title="Add Me!">
-                                <i class="fab fa-facebook fa-2x" title="Add us on Facebook" style="color: #fff"></i></a>
-                        </li>
-                        <li><a href="https://www.instagram.com/btsalogistics" data-toggle="tooltip" target="_blank"
-                                class="myTooltip" data-placement="bottom" title="Follow Me">
-                                <i class="fab fa-instagram fa-2x" title="Add us on Instagram"
-                                    style="color: #fff"></i></a></li>
-                        <li><a href="https://maps.google.com/maps?cid=14920346747173850009" data-toggle="tooltip"
-                                target="_blank" class="myTooltip" data-placement="bottom" title="Locate us on Maps">
-                                <i class="fas fa-map-marked-alt fa-2x" title="Add us on Facebook"
-                                    style="color: #fff"></i></a></li>
-                        <li><a href="https://local.google.com/place?id=14920346747173850009&use=srp#fpstate=lie"
-                                data-toggle="tooltip" target="_blank" class="myTooltip" data-placement="bottom"
-                                title="Search us on Google">
-                                <i class="fab fa-google fa-2x" title="Add us on Facebook" style="color: #fff"></i></a>
-                        </li>
-                        <li><a href="https://id.wikipedia.org/wiki/Pengguna:Btsalogistics" data-toggle="tooltip"
-                                target="_blank" class="myTooltip" data-placement="bottom"
-                                title="Learn about us on Wiki">
-                                <i class="fab fa-wikipedia-w fa-2x" title="Add us on Facebook"
-                                    style="color: #fff"></i></a></li>
-                        <li><a href="http://www.youtube.com/c/BTSALogisticsYourReliableLogisticsPartner"
-                                data-toggle="tooltip" target="_blank" class="myTooltip" data-placement="bottom"
-                                title="Watch us on Youtube">
-                                <i class="fab fa-youtube fa-2x" title="Add us on Facebook" style="color: #fff"></i></a>
-                        </li>
-                    </ul>
-
-                </div>
-                <div class="col-sm-4 text-left">
-                    <h4><strong>PT.BERLIAN TRANSTAR ABADI</strong></h4>
-                    <p><strong>Medan</strong><br>Jalan Williem Iskandar Komp. MMTC C 93-94<br>Medan Estate, Deli Serdang
-                        Medan 20371
-                        <br><span class="glyphicon glyphicon-phone-alt"></span><a href="tel:06180033461"
-                            style="text-decoration:none; color:#fff"> (061) 8003 3461</a> | Fax. (061) 8003 2996<br>
-                        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:market@btsa.co.id"
-                            style="text-decoration:none; color:#fff"> market@btsa.co.id</a></p><br>
-                    <p><strong>Jakarta</strong><br>Ruko Gading Bukit Indah Blok SB No.25<br>Jl. Raya Gading Kirana,
-                        RT.18/RW.8<br>Kelapa Gading Barat, Jakarta Utara 14240
-                        <br><span class="glyphicon glyphicon-phone-alt"></span><a href="tel:02145854261"
-                            style="text-decoration:none; color:#ffffff"> (021) 4585 4261</a><br>
-                        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:market@btsa.co.id"
-                            style="text-decoration:none; color:#fff"> market@btsa.co.id</a></p><br>
-                    <p><strong>Surabaya</strong><br>Jl. Kalimas Baru Blok A-8 No.29, Perak Utara, Kec. Pabean
-                        Cantian<br>Kota SBY, Jawa Timur 60165<br>
-                        <span class="glyphicon glyphicon-phone-alt"></span><a href="tel:02145854261"
-                            style="text-decoration:none; color:#ffffff"> (021) 4585 4261</a><br>
-                        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:market@btsa.co.id"
-                            style="text-decoration:none; color:#fff"> market@btsa.co.id</a></p><br>
-                    <p><strong>Makassar</strong><br>Jalan gunung latimojong<br>Ruko latimojong indah blok A - 28<br>
-                        <span class="glyphicon glyphicon-phone-alt"></span><a href="tel:04113633366"
-                            style="text-decoration:none; color:#fff"> (0411) 363 3366</a><br>
-                        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:market@btsa.co.id"
-                            style="text-decoration:none; color:#fff"> market@btsa.co.id</a></p>
-                </div>
-                <div class="col-sm-4 text-left">
-                    <h4><strong>PT.PANCA LESTARI PESTINDO</strong></h4>
-                    <p>Jalan Williem Iskandar Komp. MMTC C 93-94<br>Medan Estate, Deli Serdang Medan 20371
-                        <br><span class="glyphicon glyphicon-phone-alt"></span><a href="tel:06180033461"
-                            style="text-decoration:none; color:#fff"> (061) 8003 3461</a><br>
-                        <span class="glyphicon glyphicon-phone-alt"></span> (+62) 812 6214 2299
-                        <br><span class="glyphicon glyphicon-envelope"></span><a href="mailto:market@plpestindo.co.id"
-                            style="text-decoration:none; color:#fff"> market@plpestindo.co.id</a><br>
-                        <span class="glyphicon glyphicon-envelope"></span>
-                        <a href="mailto:plpestindo@gmail.com" style="text-decoration:none; color:#fff">
-                            plpestindo@gmail.com</a></p><br>
-                    <h4>LOKASI KAMI</h4>
-                    <p>
-                        <div class="mapouter">
-                            <div class="gmap_canvas"><iframe width="376" height="249" id="gmap_canvas"
-                                    src="https://maps.google.com/maps?q=PT%20BERLIAN%20TRANSTAR%20ABADI%20JAKARTA&t=&z=9&ie=UTF8&iwloc=&output=embed"
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                    href="https://www.whatismyip-address.com/nordvpn-coupon/">nordvpn 2 year offer</a>
-                            </div>
-                            <style>
-                                .mapouter {
-                                    position: relative;
-                                    text-align: right;
-                                    height: 249px;
-                                    width: 376px;
-                                }
-
-                                .gmap_canvas {
-                                    overflow: hidden;
-                                    background: none !important;
-                                    height: 249px;
-                                    width: 376px;
-                                }
-
-                            </style>
-                        </div>
-                    </p>
-                    <h4>TRANSLATE</h4>
-                    <div id="google_translate_element"></div>
-
-                    <script type="text/javascript">
-                        function googleTranslateElementInit() {
-                            new google.translate.TranslateElement({
-                                pageLanguage: 'en'
-                            }, 'google_translate_element');
-                        }
-
-                    </script>
-
-                    <script type="text/javascript"
-                        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                    <a href="https://cww.verifytrustseal.com/verification/
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb21haW5JZCI6IjkyODIxIiwidGhlbWUiOiJkYXJrIiwiaG9zdG5hbWUiOiJsb2dpbi5jd2F0Y2guY29tb2RvLmNvbSIsImxhbmd1YWdlIjoiZW4iLCJpYXQiOjE1OTQyNjQ0Mjh9.qzHqn4OZ29k6siB0FLwGtrQyuMNjkzt1o04UJR6WTso?clang=en"
-                        target="_blank"><img
-                            src="https://cww.verifytrustseal.com/seal/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb21haW5JZCI6IjkyODIxIiwidGhlbWUiOiJkYXJrIiwiaG9zdG5hbWUiOiJsb2dpbi5jd2F0Y2guY29tb2RvLmNvbSIsImxhbmd1YWdlIjoiZW4iLCJpYXQiOjE1OTQyNjQ0Mjh9.qzHqn4OZ29k6siB0FLwGtrQyuMNjkzt1o04UJR6WTso?clang=en"
-                            style="max-width:120; max-height:60; right:0px; bottom:0px; z-index:9999"
-                            alt="cww trust seal"></a>
-                </div>
-            </div><br>
-            <h4>BERIKAN WAKTU ANDA UNTUK MENGISI SURVEY YANG TELAH KAMI SEDIAKAN</h4>
-            <a href="https://www.emailmeform.com/builder/form/hvT9ZiE8kuaNG31"><button
-                    class="btn btn-default btn-lg">TAKE THE SURVEY!</button></a>
-            <br><br><br>
-            <!-- Footer -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <p><a href="LICENSE" target="_blank" style="color:#fff;">&copy;Copyright 2018</a> - <a
-                            href="https://www.infinitysolutions.co.id" style="color:#fff;">Infinity Solutions</a><br>
-                        Ref. Company Profile Aug 2018</p>
-                </div>
-            </div>
-            <!-- End Footer -->
-        </div>
-    </section>
-    <!-- End Contact -->
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function () {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/5c296f057a79fc1bddf2bc18/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-
-    </script>
-    <!--End of Tawk.to Script-->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
                 },
-                i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                caldata: canvasEvents
+            }),
+            $month = $('#calendar-month').html(cal.getMonthName()),
+            $year = $('#calendar-year').html(cal.getYear());
 
-        ga('create', 'UA-130007559-1', 'auto');
-        ga('send', 'pageview');
+        $('#calendar-next').on('click', function () {
+            cal.gotoNextMonth(updateMonthYear);
+        });
+        $('#calendar-prev').on('click', function () {
+            cal.gotoPreviousMonth(updateMonthYear);
+        });
+        $('#calendar-current').on('click', function () {
+            cal.gotoNow(updateMonthYear);
+        });
+
+        function updateMonthYear() {
+            $month.html(cal.getMonthName());
+            $year.html(cal.getYear());
+        };
 
     </script>
+
 
 </body>
 
