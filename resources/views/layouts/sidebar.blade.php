@@ -13,6 +13,11 @@ $quote = DB::table('quote')->where('quote.status','=','loading')->get();
                 <li class="label">Main Focus</li>
                 <li><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
                 <li><a href="/online-users"><i class="ti-signal"></i> Online Users</a></li>
+                <li class="label">Web Admin</li>
+                <li><a href="/dashboard/gallery"><i class="ti-camera"></i> Gallery</a></li>
+                <li><a href="/dashboard/blog"><i class="ti-folder"></i> Blog</a>
+                <li><a href="/dashboard/delivery-sys"><i class="ti-panel"></i> Tracking Delivery Sys</a>
+                </li>
                 <li class="label">Management</li>
                 @if(Auth::user()->role == 'administrator')
                 <li><a href="/member"><i class="ti-user"></i> User Managements</a></li>

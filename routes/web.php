@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Http\File;
+use Illuminate\Support\Facades\Redirect;
 // CLEAR AND OPTIMIZE
 Route::get('/clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');
@@ -32,6 +33,20 @@ Route::get('/clear-view', function () {
 Route::get('/newissue', function () {
     return view('emails.sites.newIssue');
 });
+
+// Social Media Redirect
+Route::get('/facebook', function () {
+    return Redirect::to('https://facebook.com/BTSALogistics');
+});
+Route::get('/instagram', function () {
+    return Redirect::to('https://www.instagram.com/btsalogistics');
+});
+Route::get('/youtube', function () {
+    return Redirect::to('https://www.youtube.com/c/BTSALogisticsYourReliableLogisticsPartner');
+});
+Route::get('/wikipedia', function () {
+    return Redirect::to('https://id.wikipedia.org/wiki/Pengguna:Btsalogistics');
+});
 // TEST EMAIL COMMENT
 // Route::get('/kirimemail', function () {
 //     \Mail::raw('Hallo Bintang', function ($message) {
@@ -43,7 +58,13 @@ Route::get('/btsa-mobile', function () {
     return File::get(public_path() . '/btsa-mobile/index.php');
 });
 
+// Homepage Data
 Route::get('/', 'DashboardController@index');
+Route::get('/tentang-kami', 'DashboardController@tentangkami');
+Route::get('/blog', 'DashboardController@blog');
+Route::get('/galeri', 'DashboardController@galeri');
+Route::get('/karir', 'DashboardController@karir');
+
 Route::post('/send', 'DashboardController@sendEmail');
 Route::get('/404', 'DashboardController@ernodata');
 Route::get('/restricted', 'AuthController@login')->name('signin');
@@ -208,4 +229,14 @@ Route::group(['middleware' => ['auth', 'roleCheck:head,it,administrator,hrd']], 
     Route::post('/notice/addnew', 'WarningController@requestnew');
     Route::post('/approve-warning-notice/{id}', 'WarningController@approve');
     Route::post('/checked-by-hrd/{id}', 'WarningController@confirmed');
+});
+
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
+    Route::get('/gallery', 'DashController@gallery');
+    Route::get('/delivery-sys', 'DashController@deliver');
+    Route::get('/blog', 'DashController@blog');
+
+    // Tambah item galeri
+    Route::get('/gallery/add-album', 'DashController@addalbum')->name('view.album');
+    Route::post('/gallery/add-album', 'DashController@prosesalbum')->name('proses.album');
 });

@@ -1,0 +1,15 @@
+.copyright-links a {
+    color: #fff;
+}
+
+.imgpartner {
+    width: 130px;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+.imgpartner:hover {
+    cursor: pointer;
+    filter: grayscale(0);
+    transition: .5s ease-in-out;
+}

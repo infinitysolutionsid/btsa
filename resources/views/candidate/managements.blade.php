@@ -161,6 +161,11 @@
                                         <div class="row">
                                             <div class="col-lg-10 text-left">
                                                 <h4>Informasi umum</h4>
+                                                @if($cnd->statusinterview == 'interviewed')
+                                                <p><span style="color:green;"><i class="fas fa-circle"></i> Sudah
+                                                        pernah di-interview.</span></p>
+                                                @else
+                                                @endif
                                                 <p style="color: #121212;">
                                                     Nama lengkap : {{$cnd->nama_lengkap}}<br>
                                                     NIK : {{$cnd->NoKtp}}<br>
