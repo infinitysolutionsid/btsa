@@ -40,6 +40,9 @@
         }
 
     </style>
+    <link rel="stylesheet"
+        href="{!!url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css')!!}">
+    <link rel="stylesheet" href="{!!url('https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css')!!}">
 </head>
 <!-- Styles -->
 <link href="{!! asset('css/lib/weather-icons.css')!!}" rel="stylesheet" />
@@ -145,23 +148,10 @@
     {{-- datatables needs --}}
     <script type="text/javascript" charset="utf8" src="{!!url('https://code.jquery.com/jquery-3.5.1.js')!!}"></script>
     <script type="text/javascript" charset="utf8"
-        src="{!!url('https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')!!}"></script>
+        src="{!!url('https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js')!!}"></script>
     <script type="text/javascript" charset="utf8"
-        src="{!!url('https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js')!!}"></script>
-    <script>
-        $(document).ready(function () {
-            $('#veseltab').DataTable();
-        });
-
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('#memberTables').DataTable({
-                scrollY: 600,
-            });
-        });
-
-    </script>
+        src="{!!url('https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js')!!}"></script>
+    @yield('datatables_script')
     {{-- End datatables --}}
 
     {{-- TINY MCE --}}
@@ -171,7 +161,8 @@
         tinymce.init({
             selector: 'textarea',
             branding: false,
-            menubar: false,
+            plugins: 'image',
+            a11y_advanced_options: true,
             setup: function (editor) {
                 editor.on('change', function (e) {
                     editor.save();

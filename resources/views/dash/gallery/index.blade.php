@@ -10,7 +10,6 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                     <strong>Well done!</strong> {{session('selamat')}}
-
                 </div>
             </div>
         </div>

@@ -239,4 +239,12 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     // Tambah item galeri
     Route::get('/gallery/add-album', 'DashController@addalbum')->name('view.album');
     Route::post('/gallery/add-album', 'DashController@prosesalbum')->name('proses.album');
+
+    // Blog
+    Route::get('/blog/add-blog', 'DashController@addblog')->name('view.blog');
+    Route::post('/blog/add-blog', 'DashController@prosesblog')->name('proses.blog');
+    Route::get('/blog/trash/{id}', 'DashController@trashblog');
+
+    // Delivery-SYS
+    Route::post('/delivery-sys/add-new-order', 'DashController@addorder')->name('add.order');
 });

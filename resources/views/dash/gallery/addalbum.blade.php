@@ -14,8 +14,8 @@
                 <div class="form-row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input type="text" placeholder="Nama Produk" name="nama_album" id="name"
-                                class="form-control" required>
+                            <input type="text" placeholder="Nama Album" name="nama_album" id="name" class="form-control"
+                                required>
                         </div>
                     </div>
                 </div>
