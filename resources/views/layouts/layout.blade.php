@@ -34,6 +34,11 @@
         href="{!!url('https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css')!!}" />
     <link rel="stylesheet" href="{!!asset('css/index.css')!!}">
     <link rel="stylesheet" href="{!!asset('css/custom.css')!!}">
+
+    {{-- Datepicker --}}
+
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
     <style>
         .tab {
             margin-left: 40px;
@@ -205,6 +210,7 @@
 
     </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     @yield('script')
 </body>
 

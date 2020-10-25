@@ -1,8 +1,9 @@
 @extends('home.index')
 @section('activehome','active')
+@section('titlepage','Home')
 @section('content')
 <?php $current = Date('Y'); $born = 2000; $count= $current-$born; ?>
-<section id="slider" class="slider-element dark swiper_wrapper slider-parallax min-vh-75">
+<section id="slider" class="slider-element dark swiper_wrapper slider-parallax min-vh-75" style="overflow: visible">
     <div class="slider-inner">
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
@@ -63,7 +64,7 @@
             <div class="slider-feature w-100">
                 <div class="row justify-content-center">
                     <div class="col-md-6 px-1">
-                        <a href="#"
+                        <a href="/trace-track"
                             class="card center border-left-0 border-right-0 border-top-0 border-bottom border-bottom shadow py-3 rounded-0 font-weight-semibold text-uppercase ls1">
                             <div class="card-body">
                                 <i class="icon-line-map-pin"></i>Track Your Shipment

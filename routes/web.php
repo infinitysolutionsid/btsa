@@ -65,6 +65,11 @@ Route::get('/blog', 'DashboardController@blog');
 Route::get('/galeri', 'DashboardController@galeri');
 Route::get('/karir', 'DashboardController@karir');
 
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/trace-track', 'DashboardController@traceview');
+    Route::get('/result', 'DashboardController@traceresult');
+});
+
 Route::post('/send', 'DashboardController@sendEmail');
 Route::get('/404', 'DashboardController@ernodata');
 Route::get('/restricted', 'AuthController@login')->name('signin');
@@ -247,4 +252,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
     // Delivery-SYS
     Route::post('/delivery-sys/add-new-order', 'DashController@addorder')->name('add.order');
+    Route::post('/delivery-sys/add-new-tracking/{order_id}', 'DashController@addnewtrack');
+    Route::post('/delivery-sys/update-transit-tracking/{order_id}', 'DashController@updatetransit');
 });
+Route::get('/get-profiles', 'DashController@getprofiles');

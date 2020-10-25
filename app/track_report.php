@@ -15,5 +15,6 @@ class track_report extends Model
         'status',
         'container_type_system',
         'estimated_arrival_date',
+        'updated_by', 'activity',
     ];
 }

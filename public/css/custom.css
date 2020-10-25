@@ -169,3 +169,11 @@
     font-size: 11px;
     color: red;
 }
+
+thead tr th:last-child {
+    text-align: left !important;
+}
+
+tbody tr td:last-child {
+    text-align: left !important;
+}

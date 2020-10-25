@@ -163,16 +163,15 @@ class DashController extends Controller
     public function deliver()
     {
         $trackorder = DB::table('track_orders')
-            ->crossJoin('track_reports')
             ->orderBy('track_orders.order_id', 'ASC')
-            ->select('track_orders.*', 'track_orders.order_id as order_ido', 'track_reports.*')
+            ->select('track_orders.*', 'track_orders.order_id as order_ido')
             ->get();
-        foreach ($trackorder as $key => $report) {
-            $trackorder[$key]->reports = DB::table('track_reports')
-                ->where('order_id', $report->order_id)
-                ->select('track_reports.*', 'track_reports.order_id as order_idrep')
-                ->first();
-        }
+        // foreach ($trackorder as $key => $report) {
+        //     $trackorder[$key]->reports = DB::table('track_reports')
+        //         ->where('order_id', $report->order_id)
+        //         ->select('track_reports.*', 'track_reports.order_id as order_idrep')
+        //         ->first();
+        // }
         // dd($trackorder);
         return view('dash.deliver.index', ['trackorder' => $trackorder]);
     }
@@ -197,6 +196,7 @@ class DashController extends Controller
         $track->sender_city = $request->sender_city;
         $track->receiver = $request->receiver;
         $track->receiver_city = $request->receiver_city;
+        $track->order_status = 'Order Created';
         $track->save();
         $trackId = $track->order_id;
 
@@ -209,8 +209,105 @@ class DashController extends Controller
         $report->status = 'Order Created';
         $report->container_type_system = '-';
         $report->estimated_arrival_date = '-';
+        $report->updated_by = auth()->user()->nama_lengkap;
         $report->save();
         return redirect()->back()->with('selamat', 'Data order track baru anda berhasil disimpan!');
         // dd($request->all());
+    }
+    public function addnewtrack(Request $request, $order_id)
+    {
+        $btsa = 'BTSA';
+        $year = Date('Y');
+        $randomid = mt_rand(1000, 9999);
+        $randomidreport = mt_rand(100, 999);
+        $month = Date('md');
+        $compact = $btsa . $year . $randomid . $month;
+        $justNumber = $year . $randomid . $month;
+
+
+        $order = DB::table('track_orders')
+            ->where('track_orders.order_id', '=', $order_id)
+            ->update([
+                'track_orders.order_status' => 'Manifested',
+                'track_orders.updated_at' => \Carbon\Carbon::now(),
+                'track_orders.updated_by' => auth()->user()->nama_lengkap
+            ]);
+
+        $report = DB::table('track_reports')
+            ->Insert(
+                [
+                    'track_reports.track_id' => $btsa . $month . $randomidreport,
+                    'track_reports.order_id' => $order_id,
+                    'track_reports.current_location' => $request->current_location,
+                    'track_reports.last_location' => '-',
+                    'track_reports.container_type_system' => $request->container_type_system,
+                    'track_reports.estimated_arrival_date' => $request->estimated_arrival_date,
+                    'track_reports.status' => 'Manifested',
+                    'track_reports.created_at' => \Carbon\Carbon::now(),
+                    'track_reports.updated_at' => \Carbon\Carbon::now(),
+                    'track_reports.updated_by' => auth()->user()->nama_lengkap,
+
+                    'track_reports.activity' => $request->activity,
+                ]
+            );
+
+        return redirect()->back()->with('selamat', 'Track order berhasil dibuat.');
+        // dd($request->all());
+    }
+    public function updatetransit(Request $request, $order_id)
+    {
+        $btsa = 'BTSA';
+        $year = Date('Y');
+        $randomid = mt_rand(1000, 9999);
+        $randomidreport = mt_rand(100, 999);
+        $month = Date('md');
+        $compact = $btsa . $year . $randomid . $month;
+        $justNumber = $year . $randomid . $month;
+
+        $statusget = $request->order_status;
+
+        $order = DB::table('track_orders')
+            ->where('track_orders.order_id', '=', $order_id)
+            ->update([
+                'track_orders.order_status' => $statusget,
+                'track_orders.updated_at' => \Carbon\Carbon::now(),
+                'track_orders.updated_by' => auth()->user()->nama_lengkap
+            ]);
+
+        $getreport = DB::table('track_reports')
+            ->where('track_reports.order_id', '=', $order_id)
+            ->orderBy('track_reports.updated_at', 'DESC')
+            ->first();
+
+        $report = DB::table('track_reports')
+            ->Insert(
+                [
+                    'track_reports.track_id' => $btsa . $month . $randomidreport,
+                    'track_reports.order_id' => $order_id,
+                    'track_reports.current_location' => $request->current_location,
+                    'track_reports.last_location' => $request->last_location,
+                    'track_reports.container_type_system' => $getreport->container_type_system,
+                    'track_reports.estimated_arrival_date' => $getreport->estimated_arrival_date,
+                    'track_reports.status' => $statusget,
+                    'track_reports.created_at' => \Carbon\Carbon::now(),
+                    'track_reports.updated_at' => \Carbon\Carbon::now(),
+                    'track_reports.updated_by' => auth()->user()->nama_lengkap,
+                    'track_reports.activity' => $request->activity,
+                ]
+            );
+        return redirect()->back()->with('selamat', 'Track order berhasil diupdate ke status ' . $statusget . '. Terima kasih.');
+    }
+    public function getprofiles()
+    {
+        $getreport = DB::table('track_reports')
+            ->where('track_reports.order_id', '=', 'BTSA202067391020')
+            ->orderBy('track_reports.updated_at', 'DESC')
+            ->first();
+
+        // foreach($report as $reports)
+        // {
+        //     $reports->
+        // }
+        dd($getreport->container_type_system);
     }
 }

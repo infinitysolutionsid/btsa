@@ -15,5 +15,6 @@ class track_order extends Model
         'sender_city',
         'created_by',
         'updated_by',
+        'order_status', 'activity',
     ];
 }

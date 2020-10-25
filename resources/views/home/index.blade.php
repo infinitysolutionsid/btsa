@@ -27,15 +27,15 @@
     <!-- Theme Color -->
     <link rel="stylesheet" href="{!!asset('webpage/demos/btsa/css/fonts.css')!!}" type="text/css" />
     <link rel="stylesheet" href="{!!asset('webpage/demos/btsa/nonprofit.css')!!}" type="text/css" />
+    <script src="https://kit.fontawesome.com/bf3b9c3659.js" crossorigin="anonymous"></script>
     <!-- / -->
 
     <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
 
     <!-- Document Title
 	============================================= -->
-    <title>BTSA LOGISTICS PPJK | EMKL | EMKU</title>
-    <link rel="shortcut icon"
-        href="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico">
+    <title>@yield('titlepage') | BTSA LOGISTICS PPJK | EMKL | EMKU</title>
+    <link rel="shortcut icon" href="{!!asset('faviconv2.ico')!!}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
         content="BTSA Logistics adalah Expedisi, EMKL, EMKU & Custom Clearance dan juga termasuk daftar perusahaan custom clearance di Indonesia. Berada di Jakarta, Medan, Surabaya, Semarang, Palembang, Pekan Baru, Bali,  Makasar dan Lombok.">

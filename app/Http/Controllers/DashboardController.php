@@ -13,7 +13,7 @@ use Artesaos\SEOTools\Facades\JsonLd;
 use Illuminate\Support\Facades\DB;
 use App\Album;
 use App\AlbumPhoto;
-
+use Illuminate\Support\Facades\Input;
 
 class DashboardController extends Controller
 {
@@ -96,5 +96,30 @@ class DashboardController extends Controller
             echo 'Message could not be sent';
             echo 'Mail error: ' . $mail->ErrorInfo;
         }
+    }
+    public function traceview()
+    {
+        // session()->flush();
+        return view('webpage.trace');
+    }
+    public function traceresult(Request $request)
+    {
+        $getQ = Input::get('trackid');
+        // dd($getQ);
+        $result = DB::table('track_orders')
+            ->join('track_reports', 'track_orders.order_id', '=', 'track_reports.order_id')
+            ->where('track_orders.order_id', '=', $getQ)
+            ->select('track_orders.*', 'track_reports.*', 'track_reports.order_id as trackorderId')
+            ->orderBy('track_reports.updated_at', 'DESC')
+            ->get()->groupBy('order_id');
+        $results = DB::table('track_orders')
+            ->join('track_reports', 'track_orders.order_id', '=', 'track_reports.order_id')
+            ->where('track_orders.order_id', '=', $getQ)
+            ->select('track_orders.*', 'track_reports.*', 'track_reports.order_id as trackorderId')
+            ->orderBy('track_reports.updated_at', 'DESC')
+            ->get();
+
+        return view('webpage.traceresult', ['result' => $result, 'results' => $results]);
+        // dd($results);
     }
 }
