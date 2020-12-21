@@ -4,7 +4,7 @@
 {{-- Modal tambah order --}}
 <div class="modal fade" id="addorder" tabindex="-1" role="dialog" aria-labelledby="addorder" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content modal-lg">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Add new order track</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -29,45 +29,90 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Sender:</label>
-                                <input type="text" name="sender" placeholder="Write sender name..." class="form-control"
-                                    required>
+                        <div class="col-7">
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Sender Name:</label>
+                                        <input type="text" name="sender" placeholder="Write sender name..."
+                                            class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Sender Address:</label>
+                                        <input type="text" name="sender_address" placeholder="Write sender address..."
+                                            class="form-control" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="">Receiver:</label>
-                                <input type="text" name="receiver" placeholder="Write receiver name..."
-                                    class="form-control" required>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Receiver:</label>
+                                        <input type="text" name="receiver" placeholder="Write receiver name..."
+                                            class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Receiver Address:</label>
+                                        <input type="text" name="receiver_address"
+                                            placeholder="Write receiver address..." class="form-control" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="Sender City:">Sender City:</label>
-                                <select name="sender_city" id="sender_city" class="
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="Sender City:">Sender City:</label>
+                                        <select name="sender_city" id="sender_city" class="
                                 form-control custom-select" required>
-                                    <option>Choose city...</option>
-                                    <option value="Medan">Medan</option>
-                                    <option value="Pekanbaru">Pekanbaru</option>
-                                    <option value="Palembang">Palembang</option>
-                                    <option value="Jakarta">Jakarta</option>
-                                    <option value="Semarang">Semarang</option>
-                                    <option value="Surabaya">Surabaya</option>
-                                    <option value="Bali">Bali</option>
-                                    <option value="Lombok">Lombok</option>
-                                    <option value="Makassar">Makassar</option>
-                                </select>
+                                            <option>Choose city...</option>
+                                            <option value="Medan">Medan</option>
+                                            <option value="Pekanbaru">Pekanbaru</option>
+                                            <option value="Palembang">Palembang</option>
+                                            <option value="Jakarta">Jakarta</option>
+                                            <option value="Semarang">Semarang</option>
+                                            <option value="Surabaya">Surabaya</option>
+                                            <option value="Bali">Bali</option>
+                                            <option value="Lombok">Lombok</option>
+                                            <option value="Makassar">Makassar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Receiver City:</label>
+                                        <input type="text" name="receiver_city" id="" class="form-control"
+                                            placeholder="Write the receiver city..." required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Payload</label>
+                                        <select name="payload" id="" class="form-control custom-select" required>
+                                            <option value="Weight (Kg)">Weight (Kg)</option>
+                                            <option value="Volume (M)">Volume (M)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Payload Value:</label>
+                                        <input type="text" name="payload_value" class="form-control"
+                                            placeholder="Ex: 25" required>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col-5">
                             <div class="form-group">
-                                <label for="">Receiver City:</label>
-                                <input type="text" name="receiver_city" id="" class="form-control"
-                                    placeholder="Write the receiver city..." required>
+                                <label for="">Isi barang / Deskripsi</label>
+                                <textarea name="stuff_desc" id="" cols="30" rows="30" class="form-control"
+                                    placeholder="Tulis isi barang atau deskripsi barang"></textarea>
                             </div>
                         </div>
                     </div>
@@ -193,6 +238,8 @@
                             <a href="#" class="btn btn-success btn-rounded"><span><i class="fas fa-check"></i></span>
                                 Track Delivered</a>
                             @endif
+                            <a href="" data-target="#viewtrack{{$to->order_id}}" data-toggle="modal"
+                                class="btn btn-secondary btn-rounded"><span><i class="fas fa-info-alt"></i></span></a>
                         </td>
                     </tr>
 
@@ -387,6 +434,60 @@
                                                             delivery</button>
                                                     </div>
                                                 </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Modal View Track Delivery --}}
+                    <div class="modal fade" id="viewtrack{{$to->order_id}}" tabindex="-1" role="dialog"
+                        aria-labelledby="viewtrack{{$to->order_id}}" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="viewtrack{{$to->order_id}}">Update Track Delivery for
+                                        #{{$to->order_id}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h5>Order Informations</h5>
+                                                <p>
+                                                    Pesanan dibuat pada, {{$to->created_at}}. <br>
+                                                    Track ID number {{$to->order_id}} <br>
+                                                    <br>
+                                                    Pengirim: {{$to->sender}} <br>
+                                                    Kota Pengirim: {{$to->sender_city}} <br>
+                                                    Penerima: {{$to->receiver}} <br>
+                                                    Kota Penerima: {{$to->receiver_city}} <br>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h5>Updated Order Informations</h5>
+                                                <p>
+                                                    Status pengiriman terbaru: <strong><span
+                                                            style="color:green;">{{$to->order_status}}</span></strong>
+                                                    <br>
+                                                    Penanggung jawab pengiriman: {{$to->updated_by}} <br>
+                                                    <br>
+                                                    Pesanan di-update terakhir: {{$to->updated_at}} <br>
+                                                    <div class="my-3">
+                                                        {!!QrCode::format('svg')->style('round',
+                                                        0.9)->EyeColor(0,41,37,98,214,62,57)->size(100)->merge('iconbtsa.png',
+                                                        .3,
+                                                        true)->errorCorrection('H')->generate(URL::to('/track/qrcode/'.$to->order_id))!!}
+                                                    </div>
+
+                                                </p>
+                                                <br>
+
                                             </div>
                                         </div>
                                     </div>

@@ -154,18 +154,25 @@
                                                         <span style="">Kami telah menerima laporan issue
                                                             mengenai
                                                             sistem/program/jaringan sistem
-                                                            perusahaan.<br><br>Yang melapor
-                                                            mengenai laporan
-                                                            ini: <br>
-                                                            {{$issueData->nama_lengkap}}<br>
-                                                            Dan yang sudah menyetujui laporan ini:<br>
+                                                            perusahaan.<br><br>
+                                                            <h5>Yang melapor
+                                                                mengenai laporan
+                                                                ini:</h5> <br>
+                                                            Nama Pelapor: {{$issueData->nama_lengkap}}<br>
+                                                            Email Pelapor: @if($issueData->email != '') <a
+                                                                href="mailto:{{$issueData->email}}?subject=Re:[Ticket#{{$issueData->id}}] Important: Issue Report have been made to our systems."
+                                                                target="_top">{{$issueData->email}}</a>
+                                                            @else Email pelapor tidak ditemukan. @endif <br><br>
+                                                            <h5>Dan yang sudah menyetujui laporan ini:</h5><br>
                                                             {{$issueData->approve}}<br><br>
                                                             Mohon ditindak lanjuti laporan dengan nomor antrian
                                                             #{{$issueData->id}} yang
                                                             berisi mengenai:
                                                             <br>
                                                             {!!$issueData->kendala!!}
-                                                            <br></span></p>
+                                                            <br>
+                                                        </span>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <!--[if mso]></td></tr></table><![endif]-->

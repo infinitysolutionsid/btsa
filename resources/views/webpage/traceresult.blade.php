@@ -12,6 +12,8 @@
                         <abbr title="Track ID">{{$itemN[0]->trackorderId}}</abbr></h1>
                 </div>
             </div>
+        </div>
+        <div class="container">
             <div class="row headresult">
                 <div class="col-lg-12">
                     <div class="row">
@@ -103,8 +105,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+
 </section>
 @endsection

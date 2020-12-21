@@ -11,8 +11,7 @@
     <link rel="shortcut icon"
         href="https://res.cloudinary.com/btsa-co-id/image/upload/v1541503574/jscsstxtfiledll/icon/starlogo.ico">
     <title>Apply for job @BTSA LOGISTICS</title>
-    <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous"
-        type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/ae026c985d.js" crossorigin="anonymous" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -37,12 +36,10 @@
                             <label for="" class="my-1 mr-2">Posisi yang dilamar</label>
                             <select required name="appliedposition" id="" class="custom-select my-1 mr-sm-2">
                                 <option disabled>Pilih salah satu...</option>
-                                <option value="Staff Accounting">Staff Accounting
+                                @foreach($loker as $loker)
+                                <option value="{{$loker->available_position}}">{{$loker->available_position}}
                                 </option>
-                                <option value="Mekanik Perbaikan">Mekanik Perbaikan
-                                </option>
-                                <option value="Operator Depo">Operator Depo
-                                </option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-row">
@@ -334,10 +331,8 @@
         });
 
     </script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
         data-cf-settings="|49" defer=""></script>
 

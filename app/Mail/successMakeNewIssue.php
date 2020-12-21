@@ -38,6 +38,7 @@ class successMakeNewIssue extends Mailable
                 'kendala' => $this->issueData->kendala,
                 'tujuan' => $this->issueData->tujuan,
                 'status' => $this->issueData->approve,
+                'email' => $this->issueData->email,
             ])
             ->markdown('emails.sites.newIssue');
     }

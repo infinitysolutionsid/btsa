@@ -194,8 +194,12 @@ class DashController extends Controller
         $track->order_id = $request->order_id;
         $track->sender = $request->sender;
         $track->sender_city = $request->sender_city;
+        $track->sender_address = $request->sender_address;
         $track->receiver = $request->receiver;
         $track->receiver_city = $request->receiver_city;
+        $track->receiver_address = $request->receiver_address;
+        $track->payload = $request->payload . $request->payload_value;
+        $track->stuff_desc = $request->stuff_desc;
         $track->order_status = 'Order Created';
         $track->save();
         $trackId = $track->order_id;

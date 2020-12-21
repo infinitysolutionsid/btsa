@@ -11,7 +11,7 @@
                 </div>
                 <div class="float-right">
                     <ul>
-                        <li class="header-icon dib"><i class="far fa-bell"></i><span class="badgenotif">5</span>
+                        {{-- <li class="header-icon dib"><i class="far fa-bell"></i><span class="badgenotif">5</span>
                             <div class="drop-down">
                                 <div class="dropdown-content-heading">
                                     <span class="text-left">Recent Notifications</span>
@@ -58,7 +58,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                         @inject('avatar','App\Membermodel')
                         <li class="header-icon dib"><span class="user-avatar">{{auth()->user()->nama_lengkap}}
                                 <span><img class="photoprofileimg-header"

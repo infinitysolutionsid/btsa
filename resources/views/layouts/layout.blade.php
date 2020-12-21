@@ -48,28 +48,50 @@
     <link rel="stylesheet"
         href="{!!url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css')!!}">
     <link rel="stylesheet" href="{!!url('https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css')!!}">
-</head>
-<!-- Styles -->
-<link href="{!! asset('css/lib/weather-icons.css')!!}" rel="stylesheet" />
-<link href="{!! asset('css/lib/owl.carousel.min.css')!!}" rel="stylesheet" />
-<link href="{!! asset('css/lib/owl.theme.default.min.css')!!}" rel="stylesheet" />
-<link href="{!! asset('css/lib/font-awesome.min.css')!!}" rel="stylesheet">
-<link href="{!! asset('css/lib/themify-icons.css')!!}" rel="stylesheet">
-<link href="{!! asset('css/lib/menubar/sidebar.css')!!}" rel="stylesheet">
-<link href="{!! asset('css/lib/bootstrap.min.css')!!}" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-    href="{!!url('https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css')!!}">
+    <!-- Styles -->
+    <link href="{!! asset('css/lib/weather-icons.css')!!}" rel="stylesheet" />
+    <link href="{!! asset('css/lib/owl.carousel.min.css')!!}" rel="stylesheet" />
+    <link href="{!! asset('css/lib/owl.theme.default.min.css')!!}" rel="stylesheet" />
+    <link href="{!! asset('css/lib/font-awesome.min.css')!!}" rel="stylesheet">
+    <link href="{!! asset('css/lib/themify-icons.css')!!}" rel="stylesheet">
+    <link href="{!! asset('css/lib/menubar/sidebar.css')!!}" rel="stylesheet">
+    <link href="{!! asset('css/lib/bootstrap.min.css')!!}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="{!!url('https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css')!!}">
 
-<link href="{!! asset('css/lib/helper.css')!!}" rel="stylesheet">
-<link href="{!! asset('css/style.css')!!}" rel="stylesheet">
+    <link href="{!! asset('css/lib/helper.css')!!}" rel="stylesheet">
+    <link href="{!! asset('css/style.css')!!}" rel="stylesheet">
+    <script>
+        $(document).ready(function ($) {
+            window.onload = function () {
+                $("#global-modal-dash").delay(1000).modal('show');
+            }
+        });
+
+    </script>
 </head>
 
 <body>
     <?php
         date_default_timezone_set("Asia/Jakarta");
         $timeNow = date('H:i');
-        $Hour = date('H');
+        $time=Date('H:i');
+        if($time>'05:30' && $time<'10:00'){
+            $salam='Morning' ;
+            $emoji='#127774;';
+        } elseif($time>='10:00' && $time < '15:00' ){
+            $salam='Noon' ;
+            $emoji='#127780;';
+        }elseif($time>'18:00'){
+                $salam='Afternoon';
+                $emoji='#127767;';
+                }else{
+                $salam='Night';
+                $emoji='#127772;';
+            }
+
     ?>
+    @yield('autopopup')
     @include('layouts.sidebar')
     <!-- /# sidebar -->
     @include('layouts.header')
@@ -80,12 +102,10 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>@if(($Hour >= 01) && ($Hour<=11)) {{'Selamat pagi'}} @elseif(($Hour>=11) && ($Hour
-                                        <=15)) {{'Selamat siang'}} @elseif(($Hour>=15)&& ($Hour<=18)) {{'Selamat sore'}}
-                                                @else{{'Selamat malam'}} @endif <strong>
-                                                {{Auth::user()->nama_lengkap}}.</strong></h1>
+                                <h1><span style="font-size:24px;">&{{$emoji}}</span> Good {{$salam}} <strong>
+                                        {{Auth::user()->nama_lengkap}}.</strong></h1>
                                 <p class="text-muted">Jabatan anda adalah
-                                    {{Auth::user()->jabatan}}, {{Auth::user()->role}}
+                                    {{Auth::user()->jabatan}},{{Auth::user()->role}}.
                                 </p>
                             </div>
                         </div>
@@ -212,6 +232,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     @yield('script')
+
 </body>
 
 </html>

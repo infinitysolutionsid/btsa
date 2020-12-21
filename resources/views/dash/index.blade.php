@@ -1,5 +1,38 @@
 @extends('layouts.layout')
 @section('title','Home')
+<?php $emailInfo = Auth::user()->email; ?>
+@section('autopopup')
+@if($emailInfo!='')
+<!-- Auto PopUp -->
+<div class="modal fade" id="global-modal-dash" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color: transparent !important; border:0 !important;">
+            <div class="modal-body">
+                <a href="" data-dismiss="modal"><img class="img-responsive"
+                        src="https://res.cloudinary.com/bintangtobing-com/image/upload/v1604896215/webpublic/thank-you_popup.png"
+                        style="width:100%; height: 100%;"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Auto PopUp -->
+@else
+{{-- false --}}
+<!-- Auto PopUp -->
+<div class="modal fade" id="global-modal-dash" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color: transparent !important; border:0 !important;">
+            <div class="modal-body">
+                <a href="/member/{{auth()->user()->id}}/edit"><img class="img-responsive"
+                        src="https://res.cloudinary.com/bintangtobing-com/image/upload/v1604896215/webpublic/reminder_popup.png"
+                        style="width:100%; height: 100%;"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Auto PopUp -->
+@endif
+@endsection
 @section('content')
 <?php $datamember = $data_member->count();
 $legalcount = $data_legal->count();
@@ -7,23 +40,6 @@ $vesselcount = $vessel->count();
 ?>
 <div class="row">
     <div class="container-fluid">
-        <div class="col-lg-12 text-left">
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong><span><i class="fas fa-info-circle"></i></span> Pesan Penting!</strong><br> Halo
-                {{auth()->user()->nama_lengkap}}, berhubungan nya dengan terus adanya peningkatan website dan keamanan
-                website, diharapkan semua pengguna Issue Report BTSA Logistics untuk melakukan <b>update data pada
-                    Profile
-                    pojok kanan atas</b> lalu tekan <b>Setting</b>, dan <b>isi email di kolom yang tersedia</b>. Dan
-                juga isi
-                data
-                yang belum
-                dilengkapi. Jika tidak mengerti, harap untuk menghubungi pihak IT. Terima kasih! <br><br> Salam hormat,
-                <br>Bintang Tobing <br>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
         {{-- <div class="col-lg-12 text-center quoterow">
             @foreach ($quote as $item)
             <a href="{{$item->link_preview}}">

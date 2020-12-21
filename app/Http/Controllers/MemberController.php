@@ -100,10 +100,6 @@ class MemberController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request->all());
-
-        $this->validate($request, [
-            'profilephoto' => 'required|required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
         $data_member = \App\MemberModel::find($id);
         $data_member->update($request->all());
         $data_member->un_password = $request->password;
@@ -123,6 +119,6 @@ class MemberController extends Controller
         $data_member->updated_by = auth()->user()->nama_lengkap;
         $data_member->created_by = auth()->user()->nama_lengkap;
         $data_member->save();
-        return back()->with('sukses', 'Member data has been successfully updated!');
+        return redirect('/dashboard')->with('sukses', 'Member data has been successfully updated!');
     }
 }

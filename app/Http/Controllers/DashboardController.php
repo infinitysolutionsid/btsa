@@ -13,6 +13,7 @@ use Artesaos\SEOTools\Facades\JsonLd;
 use Illuminate\Support\Facades\DB;
 use App\Album;
 use App\AlbumPhoto;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\Input;
 
 class DashboardController extends Controller
@@ -121,5 +122,33 @@ class DashboardController extends Controller
 
         return view('webpage.traceresult', ['result' => $result, 'results' => $results]);
         // dd($results);
+    }
+    public function qrcodetrack($order_id, Request $request)
+    {
+        $result = DB::table('track_orders')
+            ->join('track_reports', 'track_orders.order_id', '=', 'track_reports.order_id')
+            ->where('track_orders.order_id', '=', $order_id)
+            ->select('track_orders.*', 'track_reports.*', 'track_reports.order_id as trackorderId')
+            ->orderBy('track_reports.updated_at', 'DESC')
+            ->get()->groupBy('order_id');
+        $results = DB::table('track_orders')
+            ->join('track_reports', 'track_orders.order_id', '=', 'track_reports.order_id')
+            ->where('track_orders.order_id', '=', $order_id)
+            ->select('track_orders.*', 'track_reports.*', 'track_reports.order_id as trackorderId')
+            ->orderBy('track_reports.updated_at', 'DESC')
+            ->get();
+
+        return view('webpage.traceresult', ['result' => $result, 'results' => $results]);
+    }
+    public function printpdf($order_id, Request $request)
+    {
+        $results = DB::table('track_orders')
+            ->join('track_reports', 'track_orders.order_id', '=', 'track_reports.order_id')
+            ->where('track_orders.order_id', '=', $order_id)
+            ->select('track_orders.*', 'track_reports.*', 'track_reports.order_id as trackorderId')
+            ->orderBy('track_reports.updated_at', 'DESC')
+            ->get();
+
+        $pdfGet = PDF::loadview('webpage.pdforder', ['results' => $results]);
     }
 }

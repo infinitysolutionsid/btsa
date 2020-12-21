@@ -15,6 +15,6 @@ class track_order extends Model
         'sender_city',
         'created_by',
         'updated_by',
-        'order_status', 'activity',
+        'order_status', 'activity', 'payload', 'receiver_address', 'sender_address', 'stuff_desc'
     ];
 }

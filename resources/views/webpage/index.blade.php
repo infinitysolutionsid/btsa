@@ -1,6 +1,7 @@
 @extends('home.index')
 @section('activehome','active')
 @section('titlepage','Home')
+
 @section('content')
 <?php $current = Date('Y'); $born = 2000; $count= $current-$born; ?>
 <section id="slider" class="slider-element dark swiper_wrapper slider-parallax min-vh-75" style="overflow: visible">

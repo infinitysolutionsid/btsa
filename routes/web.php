@@ -64,10 +64,18 @@ Route::get('/tentang-kami', 'DashboardController@tentangkami');
 Route::get('/blog', 'DashboardController@blog');
 Route::get('/galeri', 'DashboardController@galeri');
 Route::get('/karir', 'DashboardController@karir');
+// Route::get('/qrcode', function () {
+//     return QrCode::size(200)->generate('hallo');
+// });
 
 Route::group(['middleware' => 'web'], function () {
     Route::get('/trace-track', 'DashboardController@traceview');
     Route::get('/result', 'DashboardController@traceresult');
+    Route::get('/track/qrcode/{order_id}', 'DashboardController@qrcodetrack');
+    // Route::get('/print/{order_id}', 'DashbordController@printpdf');
+    Route::get('/print', function () {
+        return view('webpage.pdforder');
+    });
 });
 
 Route::post('/send', 'DashboardController@sendEmail');
@@ -256,3 +264,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     Route::post('/delivery-sys/update-transit-tracking/{order_id}', 'DashController@updatetransit');
 });
 Route::get('/get-profiles', 'DashController@getprofiles');
+
+Route::get('/old', function () {
+    return view('home.indexold');
+});

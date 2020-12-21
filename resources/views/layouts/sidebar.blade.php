@@ -12,7 +12,7 @@ $quote = DB::table('quote')->where('quote.status','=','loading')->get();
             <ul>
                 <li class="label">Main Focus</li>
                 <li><a href="/dashboard"><i class="ti-home"></i> Dashboard</a></li>
-                <li><a href="/online-users"><i class="ti-signal"></i> Online Users</a></li>
+                {{-- <li><a href="/online-users"><i class="ti-signal"></i> Online Users</a></li> --}}
                 <li class="label">Web Admin</li>
                 <li><a href="/dashboard/gallery"><i class="ti-camera"></i> Gallery</a></li>
                 <li><a href="/dashboard/blog"><i class="ti-folder"></i> Blog</a>
@@ -56,7 +56,7 @@ $quote = DB::table('quote')->where('quote.status','=','loading')->get();
                     </ul>
                 </li>
                 @endif
-                @if(Auth::user()->role=='it' || Auth::user()->role=='head')
+                {{-- @if(Auth::user()->role=='it' || Auth::user()->role=='head')
                 <li><a class="sidebar-sub-toggle"><i class="ti-email"></i> Warning Notice <span
                             class="btn btn-danger btn-sm m-l-35">@if($WarningModel->count()>=1){{$WarningModel->count()}}
                             @else
@@ -67,7 +67,7 @@ $quote = DB::table('quote')->where('quote.status','=','loading')->get();
 
                     </ul>
                 </li>
-                @endif
+                @endif --}}
                 @if(Auth::user()->role=='hrd')
                 <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid2-alt"></i> Candidate<span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
